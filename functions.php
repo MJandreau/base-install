@@ -434,32 +434,32 @@ add_filter( 'the_content_more_link', 'baseinstall_remove_more_link_scroll' );
  * You can have multiple wrappers (base-single.php, base-page.php, etc.) and they can be overwritten like any other template
  * Based on Scribu and Sage
  */
-// function baseinstall_template_path() {
-// 	return baseinstall_wrapper::$main_template;
-// }
-// function baseinstall_template_base() {
-// 	return baseinstall_wrapper::$base;
-// }
-// class baseinstall_wrapper {
-// 	/**
-// 	 * Stores the full path to the main template file
-// 	 */
-// 	static $main_template;
-// 	/**
-// 	 * Stores the base name of the template file; e.g. 'page' for 'page.php' etc.
-// 	 */
-// 	static $base;
-// 	static function wrap( $template ) {
-// 		self::$main_template = $template;
-// 		self::$base = substr( basename( self::$main_template ), 0, -4 );
-// 		if ( 'index' == self::$base )
-// 			self::$base = false;
-// 		$templates = array( 'base.php' );
-// 		if ( self::$base )
-// 			array_unshift( $templates, sprintf( 'base-%s.php', self::$base ) );
-// 		return locate_template( $templates );
-// 	}
-// }
-// add_filter( 'template_include', array( 'baseinstall_wrapper', 'wrap' ), 99 );
+function baseinstall_template_path() {
+	return baseinstall_wrapper::$main_template;
+}
+function baseinstall_template_base() {
+	return baseinstall_wrapper::$base;
+}
+class baseinstall_wrapper {
+	/**
+	 * Stores the full path to the main template file
+	 */
+	static $main_template;
+	/**
+	 * Stores the base name of the template file; e.g. 'page' for 'page.php' etc.
+	 */
+	static $base;
+	static function wrap( $template ) {
+		self::$main_template = $template;
+		self::$base = substr( basename( self::$main_template ), 0, -4 );
+		if ( 'index' == self::$base )
+			self::$base = false;
+		$templates = array( 'base.php' );
+		if ( self::$base )
+			array_unshift( $templates, sprintf( 'base-%s.php', self::$base ) );
+		return locate_template( $templates );
+	}
+}
+add_filter( 'template_include', array( 'baseinstall_wrapper', 'wrap' ), 99 );
 
 
