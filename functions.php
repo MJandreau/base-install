@@ -431,7 +431,7 @@ add_filter( 'the_content_more_link', 'baseinstall_remove_more_link_scroll' );
 /**
  * THEME WRAPPER
  * Don't Repeat Yourself - header, footer, and sidebar are called in base.php for staying DRY
- * You can have multiple wrappers (base-single.php, base-page.php, etc.) and they can be overwritten just like any other template
+ * You can have multiple wrappers (base-single.php, base-page.php, etc.) and they can be overwritten like any other template
  * Based on Scribu and Sage
  */
 // function baseinstall_template_path() {
