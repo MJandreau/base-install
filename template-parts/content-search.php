@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Base_Install_Four
+ * @package Base_Install
  */
 
 ?>
@@ -15,7 +15,7 @@
 
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php baseinstallfour_posted_on(); ?>
+			<?php baseinstall_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -25,6 +25,6 @@
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php baseinstallfour_entry_footer(); ?>
+		<?php baseinstall_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

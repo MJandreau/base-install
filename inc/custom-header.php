@@ -8,33 +8,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Base_Install_Four
+ * @package Base_Install
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses baseinstallfour_header_style()
+ * @uses baseinstall_header_style()
  */
-function baseinstallfour_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'baseinstallfour_custom_header_args', array(
+function baseinstall_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'baseinstall_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'baseinstallfour_header_style',
+		'wp-head-callback'       => 'baseinstall_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'baseinstallfour_custom_header_setup' );
+add_action( 'after_setup_theme', 'baseinstall_custom_header_setup' );
 
-if ( ! function_exists( 'baseinstallfour_header_style' ) ) :
+if ( ! function_exists( 'baseinstall_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
- * @see baseinstallfour_custom_header_setup().
+ * @see baseinstall_custom_header_setup().
  */
-function baseinstallfour_header_style() {
+function baseinstall_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	/*

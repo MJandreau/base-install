@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Base_Install_Four
+ * @package Base_Install
  */
 
 ?>
@@ -19,7 +19,7 @@
 			the_content();
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'baseinstallfour' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'baseinstall' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -31,7 +31,7 @@
 				edit_post_link(
 					sprintf(
 						/* translators: %s: Name of current post */
-						esc_html__( 'Edit %s', 'baseinstallfour' ),
+						esc_html__( 'Edit %s', 'baseinstall' ),
 						the_title( '<span class="screen-reader-text">"', '"</span>', false )
 					),
 					'<span class="edit-link">',
