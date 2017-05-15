@@ -25,8 +25,8 @@
 
 // START Editing Project Variables.
 // Project related.
-var project                 = 'BaseInstall'; // Project Name.
-var projectURL              = 'dev2'; // Project URL. Could be something like localhost:8888.
+var project                 = 'Base_Install'; // Project Name.
+var projectURL              = 'baseinstall'; // Project URL. Could be something like localhost:8888.
 var productURL              = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Translation related.
@@ -39,15 +39,15 @@ var team                    = 'WPTie <your_email@email.com>'; // Team's Email ID
 var translatePath           = './languages' // Where to save the translation files.
 
 // Style related.
-var styleSRC                = './assets/scss/style.scss'; // Path to main .scss file.
+var styleSRC                = './assets/sass/style.scss'; // Path to main .scss file.
 var styleDestination        = './'; // Path to place the compiled CSS file at the root folder
 
 // JavaScript related.
 // var scriptSRC             = './assets/js/vendor/*.js'; // Path to JS folder if you don't care about concat order
 var scriptSRC             = [
                               './assets/js/vendor/jquery-2.2.4.js', 
-                              './assets/js/vendor/skip-link-focus-fix.js', 
-                              './assets/js/custom/*.js'
+                              // './assets/js/vendor/skip-link-focus-fix.js', 
+                              // './assets/js/custom/*.js'
                             ]; // Path to JS vendor and custom files in order.
 var scriptDestination     = './assets/js/'; // Path to place the compiled JS vendors file.
 var scriptFile            = 'scripts'; // Compiled JS vendors file name.
@@ -57,7 +57,7 @@ var imagesSRC               = './assets/img/raw/**/*.{png,jpg,gif,svg}'; // Sour
 var imagesDestination       = './assets/img/'; // Destination folder of optimized images
 
 // Watch file paths
-var styleWatchFiles         = './assets/scss/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
+var styleWatchFiles         = './assets/sass/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
 var scriptJSWatchFiles      = ['./assets/js/vendor/*.js', './assets/js/custom/*.js']; // Path to all JS files.
 var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files.
 
