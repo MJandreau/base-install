@@ -1,0 +1,354 @@
+.site-header {
+  display: block;
+  position: relative; // change this to fixed if desired
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  // border-top: 1px solid $navbar-border;
+  // border-bottom: 1px solid $navbar-border;
+  background: $navbar-color;
+}
+
+// navbar
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+.navbar {  
+  box-sizing: border-box;
+  padding: 0;
+  
+  // transition: $transistion_duration;
+
+  // .header-scrolled & {
+  //   background-color: darken($background-body, 5%);
+  //   @include dropShadow;
+  // }
+}
+
+// .has-scrolled-nav {
+//   .navbar {
+//     background-color: red;
+//   }
+//   .navbar-inner {
+
+//   }
+//   .navbar-menu {
+
+//   }
+//   .navbar-item {
+//     .navbar-link {
+
+//     }
+//   }
+// }
+
+.navbar-inner {
+  // height: $navbar-height;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+    margin: 0 auto;
+
+  @include mobile {
+    // width: $container-width-mobile;
+    // padding: 0;
+  }
+
+  @include phablet {
+    // width: $container-width-phablet;
+    max-width: 960px;
+  }
+}
+
+.navbar-menu {
+  // background: $navbar-color;
+  // border-bottom: 1px solid $navbar-border;
+  box-sizing: border-box;
+  margin-top: -1px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  list-style: none;
+  margin-bottom: 0; 
+  // left: 0;
+  // top: $navbar-height;
+  // top: calc($navbar-height - 1px);
+  transition: max-height $transistion_duration ease-out;
+  // padding: 0 20px;
+  padding: 0;
+  overflow: hidden;
+  max-height: 0;
+
+  &.active-menu {
+    max-height: 32em;
+  }
+
+  // @include mobile {
+  //   padding: 0;
+  // }
+
+  @include laptop {
+    background: transparent;
+    border: none;
+    top: auto;
+    left: auto;
+    position: relative;
+    display: inline-block;
+    width: auto;
+    float: right;
+    max-height: none;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    position: relative;
+    margin-bottom: 0; 
+    list-style: none;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    float: none;
+    text-align: left;
+    border-top: 1px solid $navbar-border;
+
+    @include mobile {
+      // width: $container-width-mobile;
+    }
+
+    // @include phablet {
+    //   width: $container-width-phablet;
+    // }
+
+    @include laptop {
+      display: inline-block;
+      margin: 0;
+      width: auto;
+      border: none;
+
+      & + li {
+        margin-left: 1em;
+      }
+    }
+  }
+
+  a {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    margin: 0;
+    text-decoration: none;
+    line-height: $navbar-height;
+    color: $navbar-font-color; 
+
+    &:hover,
+    &:focus,
+    &.active {
+      color: lighten($navbar-font-color, 15%); 
+    }
+  }
+}
+
+
+
+.title {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .2rem;
+  margin: 0;
+  line-height: $navbar-height;
+  color: $navbar-font-color; 
+
+  a {
+    color: $navbar-font-color;
+    text-decoration: none;
+    text-decoration: none;
+  }
+}
+
+
+
+// navbar-toggle
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+.navbar-toggle {
+  display: block;
+  z-index: 9000;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: ($navbar-height / 2);
+  height: $navbar-height;
+  font-size: 0;
+  text-indent: -9999px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  float: right;
+  position: relative;
+
+  @include laptop {
+    display: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  /* active state, i.e. menu open */
+  &.is-active {
+    background-color: transparent;
+  }
+
+  &.is-active span {
+    background-color: lighten($navbar-font-color, 15%);
+    transform: rotate(-225deg);
+  }
+
+  &.is-active span::before {
+    background-color: lighten($navbar-font-color, 15%);
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  &.is-active span::after {
+    background-color: transparent;
+    bottom: 0;
+    transform: rotate(-0deg);
+  }
+
+  &.is-active span::before,
+  &.is-active span::after {
+    transition: $transistion_duration;
+    // transition-delay: $transistion_duration;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    top: ($navbar-height / 2) - ($navbar-toggle-bar / 2);
+    left: $navbar-toggle-pad;
+    right: $navbar-toggle-pad;
+    height: $navbar-toggle-bar;
+    background-color: $navbar-font-color;
+    transition-duration: $transistion_duration;
+    // transition-delay: $transistion_duration;
+
+    &::before, 
+    &::after {
+      position: absolute;
+      display: block;
+      left: 0;
+      width: 100%;
+      height: $navbar-toggle-bar;
+      background-color: $navbar-font-color;
+      content: "";
+      transition-duration: $transistion_duration;
+      // transition-delay: $transistion_duration;
+    }
+    
+    &::before {
+      top: -$navbar-toggle-bar - $navbar-toggle-bar_space;
+      transition-property: top, transform;
+    }
+
+    &::after {
+      bottom: -$navbar-toggle-bar - $navbar-toggle-bar_space;
+      transition-property: bottom, transform;
+    }
+  }
+}
+
+
+
+
+
+// Previous/Next links w/background images on single pages
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+.post-navigation {
+  a {
+    background: $primary-color;
+    background-repeat: no-repeat !important; // marked important to override featured image placement
+    background-position: center !important;
+    background-size: cover !important;
+    text-align: center;
+    color: #fff;
+    border:none;
+    display: block;
+    overflow: hidden;
+    text-decoration: none;
+    margin-bottom: 4rem;
+
+    h5 {
+      margin: 0;
+      padding: $navbar-height 20px;
+      transition: background-color $transistion_duration;
+      &:hover {
+        background-color:rgba(0,0,0,0.5);
+      }
+    }
+  }
+}
+
+
+
+
+
+// Scrollup
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+a.scrollup {
+  display: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: $navbar-color;
+  border: 1px solid #fff;
+  transition: background-color $transistion_duration;
+  color: #fff;
+  padding: .5rem;
+  text-align: center;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1rem;
+  // line-height: 2rem;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+    background: darken($navbar-color, 5%);
+  }
+}
+
+.chevron::before {
+  border-style: solid;
+  content: '';
+  display: block;
+  position: relative;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  border-width: $navbar-toggle-bar $navbar-toggle-bar 0 0;
+  top: $navbar-toggle-bar / 2;
+  height: $navbar-toggle-bar_space * 1.2;
+  width: $navbar-toggle-bar_space * 1.2;
+  margin: $navbar-toggle-bar_space * 2;
+}
+
+
+
+

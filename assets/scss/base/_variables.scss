@@ -1,0 +1,51 @@
+// Variables
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Responsive breakpoints for mixins found in _functions.scss
+$width_mobile: 480px;
+$width_phablet: 640px;
+$width_tablet: 800px;
+$width_laptop: 1000px;
+$width_desktop: 1200px;
+$width_hdtv: 1600px;
+$hidden_mobile: 639px;
+
+// Colors
+$light-grey: #e1e1e1 !default;
+$dark-grey: #333 !default;
+$primary-color: #29526D !default;
+$secondary-color: lighten($dark-grey, 13.5%) !default;
+$border-color: #bbb !default;
+$link-color: $primary-color !default;
+$navbar-color: $primary-color !default;
+$font-color: #5a5a5a !default;
+$navbar-border: lighten($navbar-color, 13.5%) !default;
+$navbar-font-color: #fff !default;
+$hero-bg-color: lighten($navbar-color, 7%) !default;
+$trans-white: rgba(255,255,255,0.5);
+
+// Typography
+$font-headings: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family: "Lato", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+//Grid Variables
+$container-width: 960px !default;
+$container-width-mobile: 85% !default;
+$container-width-phablet: 80% !default;
+$total-columns: 12 !default;
+$column-width: 100% / $total-columns !default; // calculates individual column width based off of # of columns
+$column-margin: 2.0rem !default; // space between columns calculated in grid
+
+// Misc
+$global-radius: 4px !default;
+$navbar-height: 6.5rem !default;
+
+// $navbar-toggle-width: ($navbar-height / 2);       // width of button area
+// $navbar-toggle-height: $navbar-height;      // height of button area
+$navbar-toggle-bar: .2rem;        // thickness of button bars
+$navbar-toggle-pad: 0;       // left/right padding between button area and bars.
+$navbar-toggle-bar_space: .5rem;     // spacing between button bars
+
+$transistion_duration: .3s;
+
+

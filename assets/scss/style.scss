@@ -1,0 +1,96 @@
+/*!
+Theme Name: Style Speaks
+Author: Mike Jandreau
+Author URI: https://www.mikejandreau.net/
+Description: Custom WordPress theme for Ronald Byrd
+Version: 1.0.0
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+Base
+ - normalize
+ - variables
+ - functions
+ - elements
+ - utils
+ - typography
+
+Components 
+ - grid
+ - hero
+ - navigation
+ - footer
+ - buttons
+ - forms
+ - lists
+ - tables
+ - spacing
+ - syntax
+ - media-queries
+
+--------------------------------------------------------------*/
+
+// Base files
+@import "base/normalize";
+@import "base/variables";
+@import "base/functions";
+@import "base/elements";
+@import "base/utils";
+@import "base/typography";
+
+// Components
+@import "components/grid";
+@import "components/spacing";
+@import "components/navigation";
+// @import "components/navigation-top";
+// @import "components/navigation-side";
+@import "components/scrollup";
+@import "components/footer";
+@import "components/buttons";
+@import "components/forms";
+@import "components/lists";
+@import "components/tables";
+// @import "components/syntax";
+@import "components/hero";
+@import "components/media-queries";
+
+
+// // Our variables
+// $base-font-family: Helvetica, Arial, sans-serif;
+// $base-font-size:   16px;
+// $small-font-size:  $base-font-size * 0.875;
+// $base-line-height: 1.5;
+
+// $text-color:       #111;
+// $background-color: #fdfdfd;
+// $brand-color:      #2a7ae2;
+
+// $grey-color:       #828282;
+// $grey-color-light: lighten($grey-color, 40%);
+// $grey-color-dark:  darken($grey-color, 25%);
+
+// // Width of the content area
+// $content-width:    800px;
+
+// $on-palm:          600px;
+// $on-laptop:        800px;
+
+// $transistion_duration: .3s;
+
+// $navbar-toggle-bar: .2rem;        // thickness of button bars
+// $navbar-toggle-bar_space: .5rem;     // spacing between button bars
+
+
+
+// $spacing-unit:     30px;
+
+
+// // // Using media queries with like this:
+// // @include media-query($on-palm) {
+// //     .wrapper {
+// //         padding-right: $spacing-unit / 2;
+// //         padding-left: $spacing-unit / 2;
+// //     }
+// // }
+
