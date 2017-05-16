@@ -103,11 +103,11 @@ add_action( 'widgets_init', 'baseinstall_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
- * The first stylesheet is the minified version
+ * The first stylesheet is the minified version (maybe rename to main or styles later)
  * The second stylesheet is the one WordPress needs to show theme name, version, description, and author info
  */
 function baseinstall_scripts() {
-	
+
 	// wp_enqueue_style( 'baseinstall-min-style', get_template_directory_uri() . '/style.min.css', array(), time() ); 
 
 	wp_enqueue_style( 'baseinstall-style', get_stylesheet_uri() );
@@ -201,14 +201,40 @@ add_filter( 'the_content_more_link', 'baseinstall_remove_more_link_scroll' );
 
 
 
+
+
+/**
+ * ADD FEATURED IMAGE TO HERO
+ * Enable featured image to be background of hero block
+ * Theme has default hero image in hero.scss
+ * If featured image has been set, this function gets ID/URL of image and overrides default CSS 
+ */
+function baseinstall_custom_header_image(){
+	if (has_post_thumbnail()) { //if a thumbnail has been set
+		$imgID = get_post_thumbnail_id($post->ID); //get id of featured image
+		$featuredImage = wp_get_attachment_image_src($imgID, 'full' ); //get url of featured image (returns array)
+		$imgURL = $featuredImage[0]; //get url of image from array
+	    ?>
+		<style type="text/css">
+			.hero {
+				background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<?php // echo $imgURL ?>);
+			}
+		</style>
+	<?php
+	}
+}
+add_action( 'wp_head', 'baseinstall_custom_header_image' );
+
+
+
 /**
  * CUSTOM LOGIN SCREEN
  * overrides default WP logo, background image/color, and form styles
  */
-// function baseinstall_login_logo() { ?>
-    <!-- <style type="text/css">
+function baseinstall_login_logo() { ?>
+    <style type="text/css">
 		.login h1 a {
-		    background-image: url(<?php // echo get_stylesheet_directory_uri(); ?>/assets/img/drs-logo.png);
+		    background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png);
 		    padding-bottom: 0;
 			margin: 0 auto 30px;
 			width: 260px;
@@ -218,8 +244,8 @@ add_filter( 'the_content_more_link', 'baseinstall_remove_more_link_scroll' );
 		}
 		.login  {
 			background-color: #e1e1e1;
-			background: -webkit-linear-gradient(rgba(255 ,255 ,255 ,0.8), rgba(255, 255, 255, 0.8)), url(<?php // echo get_stylesheet_directory_uri(); ?>/assets/img/hero-home7.jpg);
-			background: linear-gradient(rgba(255 ,255 ,255 ,0.8), rgba(255, 255, 255, 0.8)), url(<?php // echo get_stylesheet_directory_uri(); ?>/assets/img/hero-home7.jpg);
+			background: -webkit-linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bg-city.jpg);
+			background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bg-city.jpg);
 			background-repeat: no-repeat !important;
 			background-position: center !important;
 			background-size: cover !important;
@@ -238,8 +264,8 @@ add_filter( 'the_content_more_link', 'baseinstall_remove_more_link_scroll' );
 			width: 280px; 
 		}
 		.wp-core-ui .button-primary {
-			background: #1da5a0;
-			border-color: #1da5a0;
+			background: #0066ae;
+			border-color: #0066ae;
 			text-shadow: none;
 		}
 		.wp-core-ui .button-primary:focus, 
@@ -250,7 +276,7 @@ add_filter( 'the_content_more_link', 'baseinstall_remove_more_link_scroll' );
 		.login #backtoblog a, 
 		.login #nav a {
 			text-decoration: none;
-			color: #1da5a0;
+			color: #0066ae;
 		}
 		.login #backtoblog a:hover, 
 		.login #nav a:hover {
@@ -269,27 +295,27 @@ add_filter( 'the_content_more_link', 'baseinstall_remove_more_link_scroll' );
 				background-size: contain;
 			}
 		}
-    </style> -->
-<?php // }
-// add_action( 'login_head', 'baseinstall_login_logo' );
+    </style>
+<?php }
+add_action( 'login_head', 'baseinstall_login_logo' );
 
 /**
  * CUSTOM LOGIN SCREEN LOGO LINK
  * Redirect custom login logo link to homepage
  */
-// function baseinstall_login_logo_url() {
-//     return home_url();
-// }
-// add_filter( 'login_headerurl', 'baseinstall_login_logo_url' );
+function baseinstall_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'baseinstall_login_logo_url' );
 
 /**
  * CUSTOM LOGIN SCREEN LOGO TITLE
  * Update custom login logo page title
  */
-// function baseinstall_login_logo_url_title( $title ) {
-// 	return esc_attr( get_bloginfo( 'title' ) );
-// }
-// add_filter( 'login_headertitle', 'baseinstall_login_logo_url_title' );
+function baseinstall_login_logo_url_title( $title ) {
+	return esc_attr( get_bloginfo( 'title' ) );
+}
+add_filter( 'login_headertitle', 'baseinstall_login_logo_url_title' );
 
 
 
@@ -297,33 +323,20 @@ add_filter( 'the_content_more_link', 'baseinstall_remove_more_link_scroll' );
  * FAVICONS
  * Add custom favicons to admin dashboard and front end of site
  */
-// function baseinstall_admin_favicon() {
-//   	$admin_favicon_url = get_stylesheet_directory_uri() . '/assets/img/icons/admin-favicon.ico';
-// 	echo '<link rel="shortcut icon" href="' . $admin_favicon_url . '" />';
-// }
-// add_action('login_head', 'baseinstall_admin_favicon');
-// add_action('admin_head', 'baseinstall_admin_favicon');
+function baseinstall_admin_favicon() {
+  	$admin_favicon_url = get_stylesheet_directory_uri() . '/assets/img/icons/admin-favicon.ico';
+	echo '<link rel="shortcut icon" href="' . $admin_favicon_url . '" />';
+}
+add_action('login_head', 'baseinstall_admin_favicon');
+add_action('admin_head', 'baseinstall_admin_favicon');
 
-// function baseinstall_main_favicon() {
-//   	$main_favicon_url = get_stylesheet_directory_uri() . '/assets/img/icons/favicon.ico';
-// 	echo '<link rel="shortcut icon" href="' . $main_favicon_url . '" />';
-// }
-// add_action('wp_head', 'baseinstall_main_favicon');
+function baseinstall_main_favicon() {
+  	$main_favicon_url = get_stylesheet_directory_uri() . '/assets/img/icons/favicon.ico';
+	echo '<link rel="shortcut icon" href="' . $main_favicon_url . '" />';
+}
+add_action('wp_head', 'baseinstall_main_favicon');
 
 
-
-/**
- * REMOVE AUTOGENERATED <p> TAGS FROM HOMEPAGE
- * Homepage has custom HTML which causes extra paragraphs to be generated
- * This prevents WP from adding them
- */
-// function remove_p_from_homepage() {
-//     if(is_front_page()){ 
-// 		remove_filter( 'the_content', 'wpautop' );
-// 		remove_filter( 'the_excerpt', 'wpautop' );
-//     }
-// }
-// add_action( 'wp_enqueue_scripts', 'remove_p_from_homepage' );
 
 
 
@@ -383,28 +396,6 @@ add_filter( 'the_content_more_link', 'baseinstall_remove_more_link_scroll' );
 // }
 // add_filter( 'gettext', 'mj_translation_sort_change', 20, 3 );
 
-
-/**
- * ADD FEATURED IMAGE TO HERO
- * Enable featured image to be background of hero block
- * Theme has default hero image in hero.scss
- * If featured image has been set, this function gets ID/URL of image and overrides default CSS 
- */
-// function custom_header_image(){
-// 	if (has_post_thumbnail()) { //if a thumbnail has been set
-// 		$imgID = get_post_thumbnail_id($post->ID); //get id of featured image
-// 		$featuredImage = wp_get_attachment_image_src($imgID, 'full' ); //get url of featured image (returns array)
-// 		$imgURL = $featuredImage[0]; //get url of image from array
-	    ?>
-		<!-- <style type="text/css">
-			.hero {
-				background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<?php // echo $imgURL ?>);
-			}
-		</style> -->
-	<?php
-// 	}
-// }
-// add_action( 'wp_head', 'custom_header_image' );
 
 
 
