@@ -45,9 +45,10 @@ var styleDestination        = './'; // Path to place the compiled CSS file at th
 // JavaScript related.
 // var scriptSRC             = './assets/js/vendor/*.js'; // Path to JS folder if you don't care about concat order
 var scriptSRC             = [
-                              './assets/js/vendor/jquery-2.2.4.js', 
-                              // './assets/js/vendor/skip-link-focus-fix.js', 
-                              // './assets/js/custom/*.js'
+                              // './assets/js/vendor/jquery-2.2.4.js', // jQuery is optional
+                              './assets/js/vendor/navigation.js', 
+                              './assets/js/vendor/skip-link-focus-fix.js',
+                              './assets/js/custom/*.js'
                             ]; // Path to JS vendor and custom files in order.
 var scriptDestination     = './assets/js/'; // Path to place the compiled JS vendors file.
 var scriptFile            = 'scripts'; // Compiled JS vendors file name.
@@ -81,7 +82,7 @@ const AUTOPREFIXER_BROWSERS = [
 // STOP Editing Project Variables.
 
 /**
- * Load gulp plugins and assing them semantic names.
+ * Load gulp plugins and assign them semantic names.
  */
 var gulp         = require('gulp'); // Gulp of-course
 
@@ -92,6 +93,7 @@ var autoprefixer = require('gulp-autoprefixer'); // Autoprefixing magic.
 var mmq          = require('gulp-merge-media-queries'); // Combine matching media queries into one media query definition.
 
 // JS related plugins.
+var jshint       = require('gulp-jshint'); // Checks JS for errors
 var concat       = require('gulp-concat'); // Concatenates JS files
 var uglify       = require('gulp-uglify'); // Minifies JS files
 
@@ -166,7 +168,7 @@ gulp.task( 'browser-sync', function() {
     .pipe( sass( {
       errLogToConsole: true,
       // outputStyle: 'compact',
-      //outputStyle: 'compressed',
+      // outputStyle: 'compressed',
       // outputStyle: 'nested',
       outputStyle: 'expanded',
       precision: 10
@@ -211,6 +213,8 @@ gulp.task( 'browser-sync', function() {
   */
  gulp.task( 'scripts', function() {
   gulp.src( scriptSRC )
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
     .pipe( concat( scriptFile + '.js' ) )
     .pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
     .pipe( gulp.dest( scriptDestination ) )

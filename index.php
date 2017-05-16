@@ -17,6 +17,7 @@
 <!-- <div class="container"> -->
 
 	<?php
+	
 	if ( have_posts() ) :
 
 		/* Start the Loop */
