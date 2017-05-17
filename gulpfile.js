@@ -48,7 +48,7 @@ var scriptSRC             = [
                               // './assets/js/vendor/jquery-2.2.4.js', // jQuery is optional
                               './assets/js/vendor/navigation.js', 
                               './assets/js/vendor/skip-link-focus-fix.js',
-                              './assets/js/vendor/run_prettify.js',
+                              './assets/js/vendor/prism.js',
                               './assets/js/custom/*.js'
                             ]; // Path to JS vendor and custom files in order.
 var scriptDestination     = './assets/js/'; // Path to place the compiled JS vendors file.
