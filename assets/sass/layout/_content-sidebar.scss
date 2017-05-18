@@ -7,6 +7,7 @@
 
 	.site-main {
 		margin: 0 $size__site-sidebar 0 0;
+		padding-right: 20px;
 	}
 
 	.site-content .widget-area {
@@ -24,7 +25,9 @@
 
 .site-content {
 	// wrap for content area
-	// width: 90%;
+	width: 100%;
+	max-width: 960px;
+	padding: 0 20px;
 	margin: 0 auto;
 }
 
