@@ -1399,6 +1399,7 @@ window.addEventListener("load", function(){
         scrollTo(document.body, document.body.offsetTop, 400);
     });
 });
+
 // function stickyFooter() {
 //     // header, footer, and content element declaration
 //     var footerElement = document.querySelector('.site-footer'),
