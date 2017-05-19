@@ -46,22 +46,22 @@ var styleDestination        = './'; // Path to place the compiled CSS file at th
 // var scriptSRC             = './assets/js/vendor/*.js'; // Path to JS folder if you don't care about concat order
 var scriptSRC             = [
                               // './assets/js/vendor/jquery-2.2.4.js', // jQuery is optional
-                              './assets/js/vendor/navigation.js', 
-                              './assets/js/vendor/skip-link-focus-fix.js',
-                              './assets/js/vendor/prism.js',
-                              './assets/js/custom/*.js'
+                              './assets/js/vendor/navigation.js', // WP navigation mobile and dropdown
+                              './assets/js/vendor/skip-link-focus-fix.js', // WP skip link
+                              './assets/js/vendor/prism.js', // syntax highlighter for code blocks (has associated SASS file for styles/themes)
+                              './assets/js/custom/*.js' // miscellaneous functions 
                             ]; // Path to JS vendor and custom files in order.
 var scriptDestination     = './assets/js/'; // Path to place the compiled JS vendors file.
-var scriptFile            = 'scripts'; // Compiled JS vendors file name.
+var scriptFile            = 'scripts'; // Compiled JS file name.
 
 // Images
 var imagesSRC               = './assets/img/raw/**/*.{png,jpg,gif,svg}'; // Source folder of unoptimized images
 var imagesDestination       = './assets/img/'; // Destination folder of optimized images
 
 // Watch file paths
-var styleWatchFiles         = './assets/sass/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
-var scriptJSWatchFiles      = ['./assets/js/vendor/*.js', './assets/js/custom/*.js']; // Path to all JS files.
-var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files.
+var styleWatchFiles         = './assets/sass/**/*.scss'; // Path to all SASS files.
+var scriptJSWatchFiles      = ['./assets/js/**/*.js']; // Path to all JS files
+var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files
 
 
 // Browsers you care about for autoprefixing.

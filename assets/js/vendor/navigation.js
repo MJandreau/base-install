@@ -12,10 +12,13 @@
 		return;
 	}
 
-	button = container.getElementsByTagName( 'button' )[0];
+	
+	button = document.querySelector('.menu-toggle');
 	if ( 'undefined' === typeof button ) {
 		return;
 	}
+
+
 
 	menu = container.getElementsByTagName( 'ul' )[0];
 

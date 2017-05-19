@@ -24,5 +24,6 @@
 
 <?php wp_footer(); ?>
 
+<button id="scroll-to-top" type="button">To the top</button>
 </body>
 </html>

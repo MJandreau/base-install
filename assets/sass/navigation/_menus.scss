@@ -1,8 +1,9 @@
 .main-navigation {
-	clear: both;
+	// clear: both;
 	display: block;
-	float: left;
+	float: none;
 	width: 100%;
+	// position: relative;
 
 	ul {
 		display: none;
@@ -21,6 +22,7 @@
 			ul {
 				left: -999em;
 				top: 0;
+				background: red;
 			}
 
 			li {
@@ -46,12 +48,15 @@
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
+			background-color: red;
 		}
 	}
 
 	li {
-		float: left;
+		// float: left;
+		display: block;
 		position: relative;
+		background-color: teal;
 
 		&:hover > a,
 		&.focus > a {
@@ -70,18 +75,48 @@
 	}
 }
 
+
+// testing subnav layout
+.main-navigation li a {
+	background-color: red;
+}
+.main-navigation li ul li a {
+	background-color: teal;
+}
+.main-navigation li ul li ul li a {
+	background-color: green;
+}
+
+
 /* Small menu. */
-.menu-toggle,
+// .menu-toggle,
+.menu-toggle {
+	// position: absolute;
+	// top: 0;
+	// right: 0;
+	float: right;
+}
+
 .main-navigation.toggled ul {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+
+
+@include laptop {
 	.menu-toggle {
 		display: none;
 	}
+	.main-navigation {
+		display: inline-block;
+		float: right;
+		width: auto;
+	}
 	.main-navigation ul {
 		display: block;
+	}
+	.main-navigation li {
+		display: inline-block;
 	}
 }
 
@@ -97,11 +132,32 @@
 	.nav-previous {
 		float: left;
 		width: 50%;
+		background-color: red;
 	}
 
 	.nav-next {
 		float: right;
 		text-align: right;
 		width: 50%;
+		background-color: orange;
 	}
 }
+
+
+
+
+
+// scroll to top styles
+#scroll-to-top {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    opacity: 0;
+    transition: opacity .3s;
+
+	&.scrolled {
+		opacity: 1;
+	}
+}
+
+

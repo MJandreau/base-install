@@ -1,2 +1,12 @@
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
+
+
+// Responsive breakpoints for mixins found in _functions.scss
+$width_mobile: 480px;
+$width_phablet: 640px;
+$width_tablet: 800px;
+$width_laptop: 1000px;
+$width_desktop: 1200px;
+$width_hdtv: 1600px;
+$hidden_mobile: 639px;

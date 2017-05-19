@@ -12,10 +12,13 @@
 		return;
 	}
 
-	button = container.getElementsByTagName( 'button' )[0];
+	
+	button = document.querySelector('.menu-toggle');
 	if ( 'undefined' === typeof button ) {
 		return;
 	}
+
+
 
 	menu = container.getElementsByTagName( 'ul' )[0];
 
@@ -1365,3 +1368,66 @@ Prism.hooks.add('complete', function (env) {
 });
 
 }());
+
+// fade #scroll-to-top button in on scroll
+window.addEventListener("load", function(){
+    scrollTo = function(element, to, duration) {
+
+    if (duration < 0) return;
+
+    var difference = to - element.scrollTop,
+        perTick = difference / duration * 10;
+
+        setTimeout(function() {
+            element.scrollTop = element.scrollTop + perTick;
+            if (element.scrollTop === to) return;
+            scrollTo(element, to, duration - 10);
+        }, 10);
+    };
+
+    var scrollTopButton = document.getElementById("scroll-to-top");
+
+    document.addEventListener('scroll', function() {
+        if (document.body.scrollTop > 100) {
+            scrollTopButton.classList.add("scrolled");
+        } else {
+            scrollTopButton.classList.remove("scrolled");
+        }
+    });
+
+    scrollTopButton.addEventListener('click', function() {
+        scrollTo(document.body, document.body.offsetTop, 400);
+    });
+});
+// function stickyFooter() {
+//     // header, footer, and content element declaration
+//     var footerElement = document.querySelector('.site-footer'),
+//         headerElement = document.querySelector('.site-header'),
+//         contentElement = document.querySelector('.site-content'),
+//         windowHeight = window.innerHeight;
+
+//     var elementSize = function (el) {
+//         // console.log(el); // this prints the header, contetn, and footer elements in the console
+//         return el.scrollHeight;
+//     };
+
+//     var footerHeight = elementSize(footerElement),
+//         headerHeight = elementSize(headerElement),
+//         contentHeight = elementSize(contentElement);
+
+//     if (windowHeight > footerHeight + headerHeight + contentHeight) {
+//         footerElement.style.position = "absolute";
+//         footerElement.style.bottom = 0;
+//     }
+// }
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     //noinspection BadExpressionStatementJS
+//     stickyFooter();
+// });
+
+// TODO:
+// - Add a window resize function.
+// - Add a element content watcher to check if the content size changes.
+// - Change selectors to call the element from outside the JS file.
+// - Only expect the footer element.
