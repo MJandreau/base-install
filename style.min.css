@@ -101,11 +101,11 @@ pre[class*="language-"][class*="-php"]:before{content:'PHP'}
 .token.important,.token.bold{font-weight:bold}
 .token.italic{font-style:italic}
 .token.entity{cursor:help}
-pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}
+pre.line-numbers{position:relative;padding-left:3.3333325em;counter-reset:linenumber}
 pre.line-numbers>code{position:relative}
-.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.3333325em;width:2.5em;letter-spacing:-1px;border-right:1px solid #666;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
 .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}
-.line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}
+.line-numbers-rows>span:before{content:counter(linenumber);color:#666;display:block;padding-right:.8333333333em;text-align:right}
 html{box-sizing:border-box}
 *,*:before,*:after{box-sizing:inherit}
 body{background:#fff}
@@ -120,6 +120,7 @@ dt{font-weight:bold}
 dd{margin:0 1.5em 1.5em}
 img{height:auto;max-width:100%}
 figure{margin:1em 0}
+.responsive-table{overflow-x:auto}
 table{margin:0 0 1.5em;width:100%}
 th,td{padding:12px 15px;text-align:left;border-bottom:1px solid #eee}
 th{font-weight:bold}
@@ -214,8 +215,8 @@ embed,iframe,object{max-width:100%}
 .main-navigation{display:inline-block;float:right;width:auto}
 .main-navigation ul{display:block}
 .main-navigation li{display:inline-block}
-}@media screen and (min-width:1000px){.content-area{float:left;margin:0 -25% 0 0;width:100%}
-.site-main{margin:0 25% 0 0;padding-right:20px}
-.site-content .widget-area{float:right;overflow:hidden;width:25%}
+}@media screen and (min-width:1000px){.content-area{float:left;margin:0 -28% 0 0;width:100%}
+.site-main{margin:0 28% 0 0;padding-right:20px}
+.site-content .widget-area{float:right;overflow:hidden;width:28%}
 .site-footer{clear:both;width:100%}
 }
