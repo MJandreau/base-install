@@ -1,3 +1,7 @@
+.responsive-table {
+	overflow-x: auto;
+}
+
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
@@ -5,9 +9,9 @@ table {
 
 th,
 td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #eee;
+	padding: 12px 15px;
+	text-align: left;
+	border-bottom: 1px solid #eee;
 }
 
 th {
@@ -20,10 +24,10 @@ td {
 
 th:first-child,
 td:first-child {
-  padding-left: 0;
+	padding-left: 0;
 }
 
 th:last-child,
 td:last-child {
-  padding-right: 0;
+	padding-right: 0;
 }
