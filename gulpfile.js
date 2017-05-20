@@ -26,7 +26,7 @@
 // START Editing Project Variables.
 // Project related.
 var project                 = 'Base_Install'; // Project Name.
-var projectURL              = 'baseinstall'; // Project URL. Could be something like localhost:8888.
+var projectURL              = 'dev8'; // Project URL. Could be something like localhost:8888.
 var productURL              = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Translation related.
@@ -60,7 +60,7 @@ var imagesDestination       = './assets/img/'; // Destination folder of optimize
 
 // Watch file paths
 var styleWatchFiles         = './assets/sass/**/*.scss'; // Path to all SASS files.
-var scriptJSWatchFiles      = ['./assets/js/**/*.js']; // Path to all JS files
+var scriptJSWatchFiles      = ['./assets/js/vendor/*.js', './assets/js/custom/*.js']; // Path to all JS files
 var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files
 
 
@@ -142,7 +142,7 @@ gulp.task( 'browser-sync', function() {
 
     // Use a specific port (instead of the one auto-detected by Browsersync).
     // port: 7000,
-
+    
   } );
 });
 
