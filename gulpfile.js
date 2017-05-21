@@ -59,10 +59,9 @@ var imagesSRC               = './assets/img/raw/**/*.{png,jpg,gif,svg}'; // Sour
 var imagesDestination       = './assets/img/'; // Destination folder of optimized images
 
 // Watch file paths
-var styleWatchFiles         = './assets/sass/**/*.scss'; // Path to all SASS files.
-var scriptJSWatchFiles      = ['./assets/js/vendor/*.js', './assets/js/custom/*.js']; // Path to all JS files
-var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files
-
+var styleWatchFiles         = './assets/sass/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
+var scriptJSWatchFiles      = ['./assets/js/vendor/*.js', './assets/js/custom/*.js']; // Path to all JS files.
+var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files.
 
 // Browsers you care about for autoprefixing.
 // Browserlist https        ://github.com/ai/browserslist
@@ -94,7 +93,6 @@ var autoprefixer = require('gulp-autoprefixer'); // Autoprefixing magic.
 var mmq          = require('gulp-merge-media-queries'); // Combine matching media queries into one media query definition.
 
 // JS related plugins.
-var jshint       = require('gulp-jshint'); // Checks JS for errors
 var concat       = require('gulp-concat'); // Concatenates JS files
 var uglify       = require('gulp-uglify'); // Minifies JS files
 
@@ -214,8 +212,6 @@ gulp.task( 'browser-sync', function() {
   */
  gulp.task( 'scripts', function() {
   gulp.src( scriptSRC )
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
     .pipe( concat( scriptFile + '.js' ) )
     .pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
     .pipe( gulp.dest( scriptDestination ) )
