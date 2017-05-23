@@ -26,7 +26,7 @@
 // START Editing Project Variables.
 // Project related.
 var project                 = 'Base_Install'; // Project Name.
-var projectURL              = 'baseinstall'; // Project URL. Could be something like localhost:8888.
+var projectURL              = 'dev8'; // Project URL. Could be something like localhost:8888.
 var productURL              = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Translation related.
@@ -120,7 +120,7 @@ var sort         = require('gulp-sort'); // Recommended to prevent unnecessary c
  *    1. Sets the project URL
  *    2. Sets inject CSS
  *    3. You may define a custom port
- *    4. You may want to stop the browser from openning automatically
+ *    4. You may want to stop the browser from opening automatically
  */
 gulp.task( 'browser-sync', function() {
   browserSync.init( {
@@ -136,7 +136,7 @@ gulp.task( 'browser-sync', function() {
     open: true,
 
     // Inject CSS changes.
-    // Commnet it to reload browser for every CSS change.
+    // Comment it to reload browser for every CSS change.
     injectChanges: true,
 
     // Use a specific port (instead of the one auto-detected by Browsersync).
