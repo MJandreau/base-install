@@ -156,8 +156,12 @@ a:hover,a:active{outline:0}
 .site-main .comment-navigation,.site-main .posts-navigation,.site-main .post-navigation{margin:0 0 1.5em;overflow:hidden}
 .comment-navigation .nav-previous,.posts-navigation .nav-previous,.post-navigation .nav-previous{float:left;width:50%;background-color:red}
 .comment-navigation .nav-next,.posts-navigation .nav-next,.post-navigation .nav-next{float:right;text-align:right;width:50%;background-color:orange}
-#scroll-to-top{position:fixed;right:15px;bottom:15px;opacity:0;-webkit-transition:opacity .3s;transition:opacity .3s}
-#scroll-to-top.scrolled{opacity:1}
+.scroll-to-top{box-sizing:border-box;font-size:1.2rem;line-height:2rem;padding:5px;width:80px;height:80px;right:20px;bottom:20px;visibility:visible;filter:alpha(opacity=50);filter:alpha(opacity=50);opacity:.5;cursor:pointer;transition:all 1.2s;-webkit-transition:all 1.2s;-moz-transition:all 1.2s;-ms-transition:all 1.2s;-o-transition:all 1.2s}
+.scroll-to-top{background:0;border:solid 2px #d268d3;color:#f968d3}
+.scroll-to-top{border-radius:0}
+.scroll-to-top{position:fixed}
+.scroll-to-top:hover{filter:alpha(opacity=100);filter:alpha(opacity=100);opacity:1}
+.scroll-to-top--hidden{filter:alpha(opacity=0);filter:alpha(opacity=0);opacity:0;visibility:hidden}
 .screen-reader-text{clip:rect(1px,1px,1px,1px);position:absolute !important;height:1px;width:1px;overflow:hidden}
 .screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;box-shadow:0 0 2px 2px rgba(0,0,0,0.6);clip:auto !important;color:#21759b;display:block;font-size:14px;font-size:.875rem;font-weight:bold;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
 #content[tabindex="-1"]:focus{outline:0}

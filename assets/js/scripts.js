@@ -1369,15 +1369,17 @@ Prism.hooks.add('complete', function (env) {
 
 }());
 
-function scrollToTop(options) {
+
+function Scroller(options) {
   this.options = options;
   this.button = null;
   this.stop = false;
 }
 
-scrollToTop.prototype.constructor = scrollToTop;
+Scroller.prototype.constructor = Scroller;
 
-scrollToTop.prototype.createButton = function() {
+Scroller.prototype.createButton = function() {
+
   this.button = document.createElement('button');
   this.button.classList.add('scroll-to-top');
   this.button.classList.add('scroll-to-top--hidden');
@@ -1385,14 +1387,14 @@ scrollToTop.prototype.createButton = function() {
   document.body.appendChild(this.button);
 };
   
-scrollToTop.prototype.init = function() {
+Scroller.prototype.init = function() {
   this.createButton();
   this.checkPosition();
   this.click();
   this.stopListener();
 };
 
-scrollToTop.prototype.scroll = function() {
+Scroller.prototype.scroll = function() {
   if (this.options.animate === false || this.options.animate === "false") {
     this.scrollNoAnimate();
     return;
@@ -1406,31 +1408,28 @@ scrollToTop.prototype.scroll = function() {
     return;
   }
 };
-
-scrollToTop.prototype.scrollNoAnimate = function() {
+Scroller.prototype.scrollNoAnimate = function() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 };
-
-scrollToTop.prototype.scrollAnimate = function() {
+Scroller.prototype.scrollAnimate = function() {
   if (this.scrollTop() > 0 && this.stop === false) {
     setTimeout(function() {
       this.scrollAnimate();
-      window.scrollBy(0, (-Math.abs(this.scrollTop())/this.options.normal.steps));
-    }.bind(this), (this.options.normal.ms));
+      window.scrollBy(0, (-Math.abs(this.scrollTop())/this.options.normal['steps']));
+    }.bind(this), (this.options.normal['ms']));
   }
 };
-
-scrollToTop.prototype.scrollAnimateLinear = function() {
+Scroller.prototype.scrollAnimateLinear = function() {
   if (this.scrollTop() > 0 && this.stop === false) {
     setTimeout(function() {
       this.scrollAnimateLinear();
-      window.scrollBy(0, -Math.abs(this.options.linear.px));
-    }.bind(this), this.options.linear.ms);
+      window.scrollBy(0, -Math.abs(this.options.linear['px']));
+    }.bind(this), this.options.linear['ms']);
   }
 };
 
-scrollToTop.prototype.click = function() {
+Scroller.prototype.click = function() {
   
   this.button.addEventListener("click", function(e) {
     e.stopPropagation();
@@ -1444,15 +1443,15 @@ scrollToTop.prototype.click = function() {
   
 };
 
-scrollToTop.prototype.hide = function() {
+Scroller.prototype.hide = function() {
   this.button.classList.add("scroll-to-top--hidden");
 };
 
-scrollToTop.prototype.show = function() {
+Scroller.prototype.show = function() {
   this.button.classList.remove("scroll-to-top--hidden");
 };
 
-scrollToTop.prototype.checkPosition = function() {
+Scroller.prototype.checkPosition = function() {
   window.addEventListener("scroll", function(e) {
     if (this.scrollTop() > this.options.showButtonAfter) {
       this.show();
@@ -1462,7 +1461,7 @@ scrollToTop.prototype.checkPosition = function() {
   }.bind(this), false);
 };
 
-scrollToTop.prototype.stopListener = function() {
+Scroller.prototype.stopListener = function() {
   
   // stop animation on slider drag
   var position = this.scrollTop();
@@ -1481,7 +1480,7 @@ scrollToTop.prototype.stopListener = function() {
   }.bind(this), false);
 };
 
-scrollToTop.prototype.stopTimeout = function(ms){
+Scroller.prototype.stopTimeout = function(ms){
    this.stop = true;
          // console.log(this.stop); //
    setTimeout(function() {
@@ -1490,7 +1489,7 @@ scrollToTop.prototype.stopTimeout = function(ms){
    }.bind(this), ms);
 };
 
-scrollToTop.prototype.scrollTop = function(){
+Scroller.prototype.scrollTop = function(){
    var curentScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   return curentScrollTop;
 };
@@ -1513,10 +1512,9 @@ var options = {
     'ms': 1000/60 // Less "ms" => quicker your animation gets, More "ms" =>
   }, 
 };
-// *Create new scrollToTop and run it.
-var scroll = new scrollToTop(options);
+// *Create new Scroller and run it.
+var scroll = new Scroller(options);
 scroll.init();
-
 // function stickyFooter() {
 //     // header, footer, and content element declaration
 //     var footerElement = document.querySelector('.site-footer'),

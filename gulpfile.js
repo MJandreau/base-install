@@ -26,7 +26,7 @@
 // START Editing Project Variables.
 // Project related.
 var project                 = 'Base_Install'; // Project Name.
-var projectURL              = 'dev8'; // Project URL. Could be something like localhost:8888.
+var projectURL              = 'baseinstall'; // Project URL. Could be something like localhost:8888.
 var productURL              = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Translation related.
@@ -45,7 +45,7 @@ var styleDestination        = './'; // Path to place the compiled CSS file at th
 // JavaScript related.
 // var scriptSRC             = './assets/js/vendor/*.js'; // Path to JS folder if you don't care about concat order
 var scriptSRC             = [
-                              './assets/js/vendor/jquery-2.2.4.js', // jQuery is optional
+                              // './assets/js/vendor/jquery-2.2.4.js', // jQuery is optional
                               './assets/js/vendor/navigation.js', // WP navigation mobile and dropdown
                               './assets/js/vendor/skip-link-focus-fix.js', // WP skip link
                               './assets/js/vendor/prism.js', // syntax highlighter for code blocks (has associated SASS file for styles/themes)
