@@ -1370,15 +1370,15 @@ Prism.hooks.add('complete', function (env) {
 }());
 
 
-function Scroller(options) {
+function scrollToTop(options) {
   this.options = options;
   this.button = null;
   this.stop = false;
 }
 
-Scroller.prototype.constructor = Scroller;
+scrollToTop.prototype.constructor = scrollToTop;
 
-Scroller.prototype.createButton = function() {
+scrollToTop.prototype.createButton = function() {
 
   this.button = document.createElement('button');
   this.button.classList.add('scroll-to-top');
@@ -1387,14 +1387,14 @@ Scroller.prototype.createButton = function() {
   document.body.appendChild(this.button);
 };
   
-Scroller.prototype.init = function() {
+scrollToTop.prototype.init = function() {
   this.createButton();
   this.checkPosition();
   this.click();
   this.stopListener();
 };
 
-Scroller.prototype.scroll = function() {
+scrollToTop.prototype.scroll = function() {
   if (this.options.animate === false || this.options.animate === "false") {
     this.scrollNoAnimate();
     return;
@@ -1408,28 +1408,31 @@ Scroller.prototype.scroll = function() {
     return;
   }
 };
-Scroller.prototype.scrollNoAnimate = function() {
+
+scrollToTop.prototype.scrollNoAnimate = function() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 };
-Scroller.prototype.scrollAnimate = function() {
+
+scrollToTop.prototype.scrollAnimate = function() {
   if (this.scrollTop() > 0 && this.stop === false) {
     setTimeout(function() {
       this.scrollAnimate();
-      window.scrollBy(0, (-Math.abs(this.scrollTop())/this.options.normal['steps']));
-    }.bind(this), (this.options.normal['ms']));
-  }
-};
-Scroller.prototype.scrollAnimateLinear = function() {
-  if (this.scrollTop() > 0 && this.stop === false) {
-    setTimeout(function() {
-      this.scrollAnimateLinear();
-      window.scrollBy(0, -Math.abs(this.options.linear['px']));
-    }.bind(this), this.options.linear['ms']);
+      window.scrollBy(0, (-Math.abs(this.scrollTop())/this.options.normal.steps));
+    }.bind(this), (this.options.normal.ms));
   }
 };
 
-Scroller.prototype.click = function() {
+scrollToTop.prototype.scrollAnimateLinear = function() {
+  if (this.scrollTop() > 0 && this.stop === false) {
+    setTimeout(function() {
+      this.scrollAnimateLinear();
+      window.scrollBy(0, -Math.abs(this.options.linear.px));
+    }.bind(this), this.options.linear.ms);
+  }
+};
+
+scrollToTop.prototype.click = function() {
   
   this.button.addEventListener("click", function(e) {
     e.stopPropagation();
@@ -1443,15 +1446,15 @@ Scroller.prototype.click = function() {
   
 };
 
-Scroller.prototype.hide = function() {
+scrollToTop.prototype.hide = function() {
   this.button.classList.add("scroll-to-top--hidden");
 };
 
-Scroller.prototype.show = function() {
+scrollToTop.prototype.show = function() {
   this.button.classList.remove("scroll-to-top--hidden");
 };
 
-Scroller.prototype.checkPosition = function() {
+scrollToTop.prototype.checkPosition = function() {
   window.addEventListener("scroll", function(e) {
     if (this.scrollTop() > this.options.showButtonAfter) {
       this.show();
@@ -1461,7 +1464,7 @@ Scroller.prototype.checkPosition = function() {
   }.bind(this), false);
 };
 
-Scroller.prototype.stopListener = function() {
+scrollToTop.prototype.stopListener = function() {
   
   // stop animation on slider drag
   var position = this.scrollTop();
@@ -1480,7 +1483,7 @@ Scroller.prototype.stopListener = function() {
   }.bind(this), false);
 };
 
-Scroller.prototype.stopTimeout = function(ms){
+scrollToTop.prototype.stopTimeout = function(ms){
    this.stop = true;
          // console.log(this.stop); //
    setTimeout(function() {
@@ -1489,7 +1492,7 @@ Scroller.prototype.stopTimeout = function(ms){
    }.bind(this), ms);
 };
 
-Scroller.prototype.scrollTop = function(){
+scrollToTop.prototype.scrollTop = function(){
    var curentScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   return curentScrollTop;
 };
@@ -1512,8 +1515,8 @@ var options = {
     'ms': 1000/60 // Less "ms" => quicker your animation gets, More "ms" =>
   }, 
 };
-// *Create new Scroller and run it.
-var scroll = new Scroller(options);
+// *Create new scrollToTop and run it.
+var scroll = new scrollToTop(options);
 scroll.init();
 // function stickyFooter() {
 //     // header, footer, and content element declaration
