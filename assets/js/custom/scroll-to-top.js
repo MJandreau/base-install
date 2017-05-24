@@ -46,8 +46,8 @@ scrollToTop.prototype.scrollAnimate = function() {
   if (this.scrollTop() > 0 && this.stop === false) {
     setTimeout(function() {
       this.scrollAnimate();
-      window.scrollBy(0, (-Math.abs(this.scrollTop())/this.options.normal['steps']));
-    }.bind(this), (this.options.normal['ms']));
+      window.scrollBy(0, (-Math.abs(this.scrollTop())/this.options.normal.steps));
+    }.bind(this), (this.options.normal.ms));
   }
 };
 
@@ -55,8 +55,8 @@ scrollToTop.prototype.scrollAnimateLinear = function() {
   if (this.scrollTop() > 0 && this.stop === false) {
     setTimeout(function() {
       this.scrollAnimateLinear();
-      window.scrollBy(0, -Math.abs(this.options.linear['px']));
-    }.bind(this), this.options.linear['ms']);
+      window.scrollBy(0, -Math.abs(this.options.linear.px));
+    }.bind(this), this.options.linear.ms);
   }
 };
 
