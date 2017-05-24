@@ -1368,7 +1368,7 @@ Prism.hooks.add('complete', function (env) {
 });
 
 }());
-
+// Plain JavaScript scroll-to-top button, no jQuery required
 
 function scrollToTop(options) {
   this.options = options;
@@ -1379,10 +1379,9 @@ function scrollToTop(options) {
 scrollToTop.prototype.constructor = scrollToTop;
 
 scrollToTop.prototype.createButton = function() {
-
-  this.button = document.createElement('button');
+  this.button = document.createElement('a');
   this.button.classList.add('scroll-to-top');
-  this.button.classList.add('scroll-to-top--hidden');
+  this.button.classList.add('hide-scroll');
   this.button.textContent = "Top";
   document.body.appendChild(this.button);
 };
@@ -1447,11 +1446,11 @@ scrollToTop.prototype.click = function() {
 };
 
 scrollToTop.prototype.hide = function() {
-  this.button.classList.add("scroll-to-top--hidden");
+  this.button.classList.add("hide-scroll");
 };
 
 scrollToTop.prototype.show = function() {
-  this.button.classList.remove("scroll-to-top--hidden");
+  this.button.classList.remove("hide-scroll");
 };
 
 scrollToTop.prototype.checkPosition = function() {
