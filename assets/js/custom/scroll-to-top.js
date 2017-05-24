@@ -118,7 +118,7 @@ scrollToTop.prototype.stopTimeout = function(ms){
          // console.log(this.stop); //
    setTimeout(function() {
      this.stop = false;
-           console.log(this.stop); //
+           // console.log(this.stop); //
    }.bind(this), ms);
 };
 
