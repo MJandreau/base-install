@@ -1,4 +1,7 @@
 
+// Scroll-to-top button size
+
+
 // scrollup button 
 a.scroll-to-top{
 	display: block;
@@ -20,12 +23,12 @@ a.scroll-to-top{
 
 	// solid button
 	background: $color__link; 
-	border: 2px solid transparent;
+	border: ($scrollUpButtonSize / 4) solid transparent;
 	color: $color_white;
 
 	// button with outline only 
 	// background: none; 
-	// border: 2px solid $color__link;
+	// border: ($scrollUpButtonSize / 4) solid $color__link;
 	// color: $color__link;
 	
 	visibility: visible;
@@ -53,13 +56,13 @@ a.scroll-to-top{
 	&:before {
 		display: inline-block;
 		border-style: solid;
-		border-width: ($scrollUpButtonSize / 5) ($scrollUpButtonSize / 5) 0 0;
-		content: '';
+		border-width: ($scrollUpButtonSize / 4) ($scrollUpButtonSize / 4) 0 0;
 		height: $scrollUpButtonSize;
 		width: $scrollUpButtonSize;
+		top: $scrollUpButtonSize * 1.46666667;
+		left: $scrollUpButtonSize * 1.25;
+		content: '';
 		position: absolute;
-		top: $scrollUpButtonSize * 1.6;
-		left: $scrollUpButtonSize * 1.4;
 		transform: rotate(-45deg);
 		vertical-align: top;
 	}
