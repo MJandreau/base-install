@@ -12,7 +12,7 @@ scrollToTop.prototype.createButton = function() {
   this.button = document.createElement('a');
   this.button.classList.add('scroll-to-top');
   this.button.classList.add('hide-scroll');
-  this.button.textContent = "Top";
+  // this.button.textContent = "Top"; // uncomment if text is preferred to the chevron
   document.body.appendChild(this.button);
 };
   
