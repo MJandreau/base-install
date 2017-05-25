@@ -1368,155 +1368,290 @@ Prism.hooks.add('complete', function (env) {
 });
 
 }());
-// Plain JavaScript scroll-to-top button, no jQuery required
+// Plain JavaScript internal anchor scrolling, no jQuery required
 
-function scrollToTop(options) {
-  this.options = options;
-  this.button = null;
-  this.stop = false;
+initSmoothScrolling();
+
+function initSmoothScrolling() {
+  if (isCssSmoothSCrollSupported()) {
+    document.getElementById('css-support-msg').className = 'supported';
+    return;
+  }
+
+  var duration = 1000; // Speed of scrolling in milliseconds
+
+  var pageUrl = location.hash ?
+    stripHash(location.href) :
+    location.href;
+
+  delegatedLinkHijacking();
+  //directLinkHijacking();
+
+  function delegatedLinkHijacking() {
+    document.body.addEventListener('click', onClick, false);
+
+    function onClick(e) {
+      if (!isInPageLink(e.target))
+        return;
+
+      e.stopPropagation();
+      e.preventDefault();
+
+      jump(e.target.hash, {
+        duration: duration,
+        callback: function() {
+          setFocus(e.target.hash);
+        }
+      });
+    }
+  }
+
+  function directLinkHijacking() {
+    [].slice.call(document.querySelectorAll('a'))
+      .filter(isInPageLink)
+      .forEach(function(a) {
+        a.addEventListener('click', onClick, false);
+      });
+
+    function onClick(e) {
+      e.stopPropagation();
+      e.preventDefault();
+
+      jump(e.target.hash, {
+        duration: duration,
+      });
+    }
+
+  }
+
+  function isInPageLink(n) {
+    return n.tagName.toLowerCase() === 'a' &&
+      n.hash.length > 0 &&
+      stripHash(n.href) === pageUrl;
+  }
+
+  function stripHash(url) {
+    return url.slice(0, url.lastIndexOf('#'));
+  }
+
+  function isCssSmoothSCrollSupported() {
+    return 'scrollBehavior' in document.documentElement.style;
+  }
+
+  // Adapted from:
+  // https://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
+  function setFocus(hash) {
+    var element = document.getElementById(hash.substring(1));
+
+    if (element) {
+      if (!/^(?:a|select|input|button|textarea)$/i.test(element.tagName)) {
+        element.tabIndex = -1;
+      }
+
+      element.focus();
+    }
+  }
+
 }
 
-scrollToTop.prototype.constructor = scrollToTop;
+function jump(target, options) {
+  var
+    start = window.pageYOffset,
+    opt = {
+      duration: options.duration,
+      offset: options.offset || 0,
+      callback: options.callback,
+      easing: options.easing || easeInOutQuad
+    },
+    distance = typeof target === 'string' ?
+    opt.offset + document.querySelector(target).getBoundingClientRect().top :
+    target,
+    duration = typeof opt.duration === 'function' ?
+    opt.duration(distance) :
+    opt.duration,
+    timeStart, timeElapsed;
 
-scrollToTop.prototype.createButton = function() {
-  this.button = document.createElement('a');
-  this.button.classList.add('scroll-to-top');
-  this.button.classList.add('hide-scroll');
-  // this.button.textContent = "Top"; // uncomment if text is preferred to the chevron
-  document.body.appendChild(this.button);
-};
-  
-scrollToTop.prototype.init = function() {
-  this.createButton();
-  this.checkPosition();
-  this.click();
-  this.stopListener();
-};
+  requestAnimationFrame(function(time) {
+    timeStart = time;
+    loop(time);
+  });
 
-scrollToTop.prototype.scroll = function() {
-  if (this.options.animate === false || this.options.animate === "false") {
-    this.scrollNoAnimate();
-    return;
+  function loop(time) {
+    timeElapsed = time - timeStart;
+
+    window.scrollTo(0, opt.easing(timeElapsed, start, distance, duration));
+
+    if (timeElapsed < duration)
+      requestAnimationFrame(loop);
+    else
+      end();
   }
-  if (this.options.animate == "normal") {
-    this.scrollAnimate();
-    return;
+
+  function end() {
+    window.scrollTo(0, start + distance);
+
+    if (typeof opt.callback === 'function')
+      opt.callback();
   }
-  if (this.options.animate == "linear") {
-    this.scrollAnimateLinear();
-    return;
+
+  // Robert Penner's easeInOutQuad - http://robertpenner.com/easing/
+  function easeInOutQuad(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t + b;
+    t--;
+    return -c / 2 * (t * (t - 2) - 1) + b;
   }
-};
 
-scrollToTop.prototype.scrollNoAnimate = function() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-};
+}
+// // Plain JavaScript scroll-to-top button, no jQuery required
 
-scrollToTop.prototype.scrollAnimate = function() {
-  if (this.scrollTop() > 0 && this.stop === false) {
-    setTimeout(function() {
-      this.scrollAnimate();
-      window.scrollBy(0, (-Math.abs(this.scrollTop())/this.options.normal.steps));
-    }.bind(this), (this.options.normal.ms));
-  }
-};
+// function scrollToTop(options) {
+//   this.options = options;
+//   this.button = null;
+//   this.stop = false;
+// }
 
-scrollToTop.prototype.scrollAnimateLinear = function() {
-  if (this.scrollTop() > 0 && this.stop === false) {
-    setTimeout(function() {
-      this.scrollAnimateLinear();
-      window.scrollBy(0, -Math.abs(this.options.linear.px));
-    }.bind(this), this.options.linear.ms);
-  }
-};
+// scrollToTop.prototype.constructor = scrollToTop;
 
-scrollToTop.prototype.click = function() {
+// scrollToTop.prototype.createButton = function() {
+//   this.button = document.createElement('a');
+//   this.button.classList.add('scroll-to-top');
+//   this.button.classList.add('hide-scroll');
+//   // this.button.textContent = "Top"; // uncomment if text is preferred to the chevron
+//   document.body.appendChild(this.button);
+// };
   
-  this.button.addEventListener("click", function(e) {
-    e.stopPropagation();
-      this.scroll();
-  }.bind(this), false);
+// scrollToTop.prototype.init = function() {
+//   this.createButton();
+//   this.checkPosition();
+//   this.click();
+//   this.stopListener();
+// };
+
+// scrollToTop.prototype.scroll = function() {
+//   if (this.options.animate === false || this.options.animate === "false") {
+//     this.scrollNoAnimate();
+//     return;
+//   }
+//   if (this.options.animate == "normal") {
+//     this.scrollAnimate();
+//     return;
+//   }
+//   if (this.options.animate == "linear") {
+//     this.scrollAnimateLinear();
+//     return;
+//   }
+// };
+
+// scrollToTop.prototype.scrollNoAnimate = function() {
+//   document.body.scrollTop = 0;
+//   document.documentElement.scrollTop = 0;
+// };
+
+// scrollToTop.prototype.scrollAnimate = function() {
+//   if (this.scrollTop() > 0 && this.stop === false) {
+//     setTimeout(function() {
+//       this.scrollAnimate();
+//       window.scrollBy(0, (-Math.abs(this.scrollTop())/this.options.normal.steps));
+//     }.bind(this), (this.options.normal.ms));
+//   }
+// };
+
+// scrollToTop.prototype.scrollAnimateLinear = function() {
+//   if (this.scrollTop() > 0 && this.stop === false) {
+//     setTimeout(function() {
+//       this.scrollAnimateLinear();
+//       window.scrollBy(0, -Math.abs(this.options.linear.px));
+//     }.bind(this), this.options.linear.ms);
+//   }
+// };
+
+// scrollToTop.prototype.click = function() {
   
-  this.button.addEventListener("dblclick", function(e) {
-    e.stopPropagation();
-      this.scrollNoAnimate();
-  }.bind(this), false);
+//   this.button.addEventListener("click", function(e) {
+//     e.stopPropagation();
+//       this.scroll();
+//   }.bind(this), false);
   
-};
-
-scrollToTop.prototype.hide = function() {
-  this.button.classList.add("hide-scroll");
-};
-
-scrollToTop.prototype.show = function() {
-  this.button.classList.remove("hide-scroll");
-};
-
-scrollToTop.prototype.checkPosition = function() {
-  window.addEventListener("scroll", function(e) {
-    if (this.scrollTop() > this.options.showButtonAfter) {
-      this.show();
-    } else {
-      this.hide();
-    }
-  }.bind(this), false);
-};
-
-scrollToTop.prototype.stopListener = function() {
+//   this.button.addEventListener("dblclick", function(e) {
+//     e.stopPropagation();
+//       this.scrollNoAnimate();
+//   }.bind(this), false);
   
-  // stop animation on slider drag
-  var position = this.scrollTop();
-  window.addEventListener("scroll", function(e) {
-    if (this.scrollTop() > position) {
-      this.stopTimeout(200);
-    } else {
-      //...
-    }
-    position = this.scrollTop();
-  }.bind(this, position), false);
+// };
 
-  // stop animation on wheel scroll down
-  window.addEventListener("wheel", function(e) {
-    if(e.deltaY > 0) this.stopTimeout(200);
-  }.bind(this), false);
-};
+// scrollToTop.prototype.hide = function() {
+//   this.button.classList.add("hide-scroll");
+// };
 
-scrollToTop.prototype.stopTimeout = function(ms){
-   this.stop = true;
-         // console.log(this.stop); //
-   setTimeout(function() {
-     this.stop = false;
-           // console.log(this.stop); //
-   }.bind(this), ms);
-};
+// scrollToTop.prototype.show = function() {
+//   this.button.classList.remove("hide-scroll");
+// };
 
-scrollToTop.prototype.scrollTop = function(){
-   var curentScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-  return curentScrollTop;
-};
+// scrollToTop.prototype.checkPosition = function() {
+//   window.addEventListener("scroll", function(e) {
+//     if (this.scrollTop() > this.options.showButtonAfter) {
+//       this.show();
+//     } else {
+//       this.hide();
+//     }
+//   }.bind(this), false);
+// };
+
+// scrollToTop.prototype.stopListener = function() {
+  
+//   // stop animation on slider drag
+//   var position = this.scrollTop();
+//   window.addEventListener("scroll", function(e) {
+//     if (this.scrollTop() > position) {
+//       this.stopTimeout(200);
+//     } else {
+//       //...
+//     }
+//     position = this.scrollTop();
+//   }.bind(this, position), false);
+
+//   // stop animation on wheel scroll down
+//   window.addEventListener("wheel", function(e) {
+//     if(e.deltaY > 0) this.stopTimeout(200);
+//   }.bind(this), false);
+// };
+
+// scrollToTop.prototype.stopTimeout = function(ms){
+//    this.stop = true;
+//          // console.log(this.stop); //
+//    setTimeout(function() {
+//      this.stop = false;
+//            // console.log(this.stop); //
+//    }.bind(this), ms);
+// };
+
+// scrollToTop.prototype.scrollTop = function(){
+//    var curentScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+//   return curentScrollTop;
+// };
 
 
 
-// ------------------- USE EXAMPLE ---------------------
-// *Set options
-var options = {
-  'showButtonAfter': 200, // show button after scroling down this amount of px
-  'animate': "normal", // [false|normal|linear] - for false no aditional settings are needed
-  // easy out effect
-  'normal': { // applys only if [animate: normal] - set scroll loop "distanceLeft"/"steps"|"ms"
-    'steps': 15, // more "steps" per loop => slower animation
-    'ms': 1000/60 // less "ms" => quicker animation, more "ms" => snapy
-  },
-  // linear effect
-  'linear': { // applys only if [animate: linear] - set scroll "px"|"ms"
-    'px': 80, // more "px" => quicker your animation gets
-    'ms': 1000/60 // Less "ms" => quicker your animation gets, More "ms" =>
-  }, 
-};
-// *Create new scrollToTop and run it.
-var scroll = new scrollToTop(options);
-scroll.init();
+// // ------------------- USE EXAMPLE ---------------------
+// // *Set options
+// var options = {
+//   'showButtonAfter': 200, // show button after scroling down this amount of px
+//   'animate': "normal", // [false|normal|linear] - for false no aditional settings are needed
+//   // easy out effect
+//   'normal': { // applys only if [animate: normal] - set scroll loop "distanceLeft"/"steps"|"ms"
+//     'steps': 15, // more "steps" per loop => slower animation
+//     'ms': 1000/60 // less "ms" => quicker animation, more "ms" => snapy
+//   },
+//   // linear effect
+//   'linear': { // applys only if [animate: linear] - set scroll "px"|"ms"
+//     'px': 80, // more "px" => quicker your animation gets
+//     'ms': 1000/60 // Less "ms" => quicker your animation gets, More "ms" =>
+//   }, 
+// };
+// // *Create new scrollToTop and run it.
+// var scroll = new scrollToTop(options);
+// scroll.init();
 // function stickyFooter() {
 //     // header, footer, and content element declaration
 //     var footerElement = document.querySelector('.site-footer'),

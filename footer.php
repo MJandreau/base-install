@@ -24,5 +24,7 @@
 
 <?php wp_footer(); ?>
 
+<a class="scroll-to-top" href="#toc"></a>
+
 </body>
 </html>
