@@ -1,149 +1,148 @@
-// // Plain JavaScript scroll-to-top button, no jQuery required
+// Plain JavaScript internal anchor and top-of-page scrolling, no jQuery required
 
-// function scrollToTop(options) {
-//   this.options = options;
-//   this.button = null;
-//   this.stop = false;
-// }
 
-// scrollToTop.prototype.constructor = scrollToTop;
+// shows the scroll-to-top button after scrolling down 200px
+window.onscroll = function () {
+  if (window.pageYOffset >= 200) {
+    document.getElementById('scroll-to-top').style.opacity = "0.5";
+  } else {
+    document.getElementById('scroll-to-top').style.opacity = "0";
+  }
+};
 
-// scrollToTop.prototype.createButton = function() {
-//   this.button = document.createElement('a');
-//   this.button.classList.add('scroll-to-top');
-//   this.button.classList.add('hide-scroll');
-//   // this.button.textContent = "Top"; // uncomment if text is preferred to the chevron
-//   document.body.appendChild(this.button);
-// };
+
+// handles scrolling to internal anchors and top of page
+initSmoothScrolling();
+
+function initSmoothScrolling() {
   
-// scrollToTop.prototype.init = function() {
-//   this.createButton();
-//   this.checkPosition();
-//   this.click();
-//   this.stopListener();
-// };
+  if (isCssSmoothSCrollSupported()) {
+    document.getElementById('css-support-msg').className = 'supported';
+    return;
+  }
 
-// scrollToTop.prototype.scroll = function() {
-//   if (this.options.animate === false || this.options.animate === "false") {
-//     this.scrollNoAnimate();
-//     return;
-//   }
-//   if (this.options.animate == "normal") {
-//     this.scrollAnimate();
-//     return;
-//   }
-//   if (this.options.animate == "linear") {
-//     this.scrollAnimateLinear();
-//     return;
-//   }
-// };
+  var duration = 1000; // Speed of scrolling in milliseconds
 
-// scrollToTop.prototype.scrollNoAnimate = function() {
-//   document.body.scrollTop = 0;
-//   document.documentElement.scrollTop = 0;
-// };
+  var pageUrl = location.hash ?
+    stripHash(location.href) :
+    location.href;
 
-// scrollToTop.prototype.scrollAnimate = function() {
-//   if (this.scrollTop() > 0 && this.stop === false) {
-//     setTimeout(function() {
-//       this.scrollAnimate();
-//       window.scrollBy(0, (-Math.abs(this.scrollTop())/this.options.normal.steps));
-//     }.bind(this), (this.options.normal.ms));
-//   }
-// };
+  delegatedLinkHijacking();
+  //directLinkHijacking();
 
-// scrollToTop.prototype.scrollAnimateLinear = function() {
-//   if (this.scrollTop() > 0 && this.stop === false) {
-//     setTimeout(function() {
-//       this.scrollAnimateLinear();
-//       window.scrollBy(0, -Math.abs(this.options.linear.px));
-//     }.bind(this), this.options.linear.ms);
-//   }
-// };
+  function delegatedLinkHijacking() {
+    document.body.addEventListener('click', onClick, false);
 
-// scrollToTop.prototype.click = function() {
-  
-//   this.button.addEventListener("click", function(e) {
-//     e.stopPropagation();
-//       this.scroll();
-//   }.bind(this), false);
-  
-//   this.button.addEventListener("dblclick", function(e) {
-//     e.stopPropagation();
-//       this.scrollNoAnimate();
-//   }.bind(this), false);
-  
-// };
+    function onClick(e) {
+      if (!isInPageLink(e.target))
+        return;
 
-// scrollToTop.prototype.hide = function() {
-//   this.button.classList.add("hide-scroll");
-// };
+      e.stopPropagation();
+      e.preventDefault();
 
-// scrollToTop.prototype.show = function() {
-//   this.button.classList.remove("hide-scroll");
-// };
+      jump(e.target.hash, {
+        duration: duration,
+        callback: function() {
+          setFocus(e.target.hash);
+        }
+      });
+    }
+  }
 
-// scrollToTop.prototype.checkPosition = function() {
-//   window.addEventListener("scroll", function(e) {
-//     if (this.scrollTop() > this.options.showButtonAfter) {
-//       this.show();
-//     } else {
-//       this.hide();
-//     }
-//   }.bind(this), false);
-// };
+  function directLinkHijacking() {
+    [].slice.call(document.querySelectorAll('a'))
+      .filter(isInPageLink)
+      .forEach(function(a) {
+        a.addEventListener('click', onClick, false);
+      });
 
-// scrollToTop.prototype.stopListener = function() {
-  
-//   // stop animation on slider drag
-//   var position = this.scrollTop();
-//   window.addEventListener("scroll", function(e) {
-//     if (this.scrollTop() > position) {
-//       this.stopTimeout(200);
-//     } else {
-//       //...
-//     }
-//     position = this.scrollTop();
-//   }.bind(this, position), false);
+    function onClick(e) {
+      e.stopPropagation();
+      e.preventDefault();
 
-//   // stop animation on wheel scroll down
-//   window.addEventListener("wheel", function(e) {
-//     if(e.deltaY > 0) this.stopTimeout(200);
-//   }.bind(this), false);
-// };
+      jump(e.target.hash, {
+        duration: duration,
+      });
+    }
 
-// scrollToTop.prototype.stopTimeout = function(ms){
-//    this.stop = true;
-//          // console.log(this.stop); //
-//    setTimeout(function() {
-//      this.stop = false;
-//            // console.log(this.stop); //
-//    }.bind(this), ms);
-// };
+  }
 
-// scrollToTop.prototype.scrollTop = function(){
-//    var curentScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-//   return curentScrollTop;
-// };
+  function isInPageLink(n) {
+    return n.tagName.toLowerCase() === 'a' &&
+      n.hash.length > 0 &&
+      stripHash(n.href) === pageUrl;
+  }
 
+  function stripHash(url) {
+    return url.slice(0, url.lastIndexOf('#'));
+  }
 
+  function isCssSmoothSCrollSupported() {
+    return 'scrollBehavior' in document.documentElement.style;
+  }
 
-// // ------------------- USE EXAMPLE ---------------------
-// // *Set options
-// var options = {
-//   'showButtonAfter': 200, // show button after scroling down this amount of px
-//   'animate': "normal", // [false|normal|linear] - for false no aditional settings are needed
-//   // easy out effect
-//   'normal': { // applys only if [animate: normal] - set scroll loop "distanceLeft"/"steps"|"ms"
-//     'steps': 15, // more "steps" per loop => slower animation
-//     'ms': 1000/60 // less "ms" => quicker animation, more "ms" => snapy
-//   },
-//   // linear effect
-//   'linear': { // applys only if [animate: linear] - set scroll "px"|"ms"
-//     'px': 80, // more "px" => quicker your animation gets
-//     'ms': 1000/60 // Less "ms" => quicker your animation gets, More "ms" =>
-//   }, 
-// };
-// // *Create new scrollToTop and run it.
-// var scroll = new scrollToTop(options);
-// scroll.init();
+  // Adapted from:
+  // https://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
+  function setFocus(hash) {
+    var element = document.getElementById(hash.substring(1));
+
+    if (element) {
+      if (!/^(?:a|select|input|button|textarea)$/i.test(element.tagName)) {
+        element.tabIndex = -1;
+      }
+
+      element.focus();
+    }
+  }
+
+}
+
+function jump(target, options) {
+  var
+    start = window.pageYOffset,
+    opt = {
+      duration: options.duration,
+      offset: options.offset || 0,
+      callback: options.callback,
+      easing: options.easing || easeInOutQuad
+    },
+    distance = typeof target === 'string' ?
+    opt.offset + document.querySelector(target).getBoundingClientRect().top :
+    target,
+    duration = typeof opt.duration === 'function' ?
+    opt.duration(distance) :
+    opt.duration,
+    timeStart, timeElapsed;
+
+  requestAnimationFrame(function(time) {
+    timeStart = time;
+    loop(time);
+  });
+
+  function loop(time) {
+    timeElapsed = time - timeStart;
+
+    window.scrollTo(0, opt.easing(timeElapsed, start, distance, duration));
+
+    if (timeElapsed < duration)
+      requestAnimationFrame(loop);
+    else
+      end();
+  }
+
+  function end() {
+    window.scrollTo(0, start + distance);
+
+    if (typeof opt.callback === 'function')
+      opt.callback();
+  }
+
+  // Robert Penner's easeInOutQuad - http://robertpenner.com/easing/
+  function easeInOutQuad(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t + b;
+    t--;
+    return -c / 2 * (t * (t - 2) - 1) + b;
+  }
+
+}

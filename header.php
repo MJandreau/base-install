@@ -19,7 +19,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body id="toc" <?php body_class('sideNavBody'); ?>>
+<body <?php body_class('sideNavBody'); ?>>
 
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'baseinstall' ); ?></a>
