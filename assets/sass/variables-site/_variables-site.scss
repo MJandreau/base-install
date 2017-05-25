@@ -1,3 +1,96 @@
-@import "colors";
-@import "typography";
-@import "structure";
+// SITEWIDE VARIABLES
+// *************************
+
+// Brand colors
+$brand_primary: blue;
+$brand_secondary: tan;
+$brand_neutral: #777;
+$brand_accent: green;
+
+// Generic colors
+$color_white: #fff;
+$color_ltgray: #f4f4f4;
+$color_mdgray: #efefef;
+$color_dkgray: #333;
+$color_black: #111;
+
+// Social media colors
+$color_facebook: #365397;
+$color_twitter: #00a9f1;
+$color_google_plus: #e0452c;
+$color_linkedin: #006db3;
+$color_skype: #12A5F4;
+$color_sharethis: #01BF01;
+
+// Background colors
+$color__background-body: #fff;
+$color__background-header: #fff;
+$color__background-footer: #fff;
+$color__background-lightgray: #f4f4f4;
+$color__background-darkgray: #333;
+$color__background-screen: #f1f1f1;
+$color__background-hr: #ccc;
+$color__background-button: #e6e6e6;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
+
+// Text colors
+$color__text-main: #404040;
+$color__text-screen: #21759b;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+$color__link: royalblue;
+$color__link-visited: purple;
+$color__link-hover: midnightblue;
+
+// Button background/border colors
+$color__border-button: #ccc #ccc #bbb;
+$color__border-button-hover: #ccc #bbb #aaa;
+$color__border-button-focus: #aaa #bbb #bbb;
+$color__border-input: #ccc;
+$color__border-abbr: #666;
+
+
+
+// Fonts
+$font__main: sans-serif;
+$font__headings: sans-serif;
+$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", Courier, monospace;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;
+
+
+
+// Site main/sidebar structure
+$size__site-main: 100%;
+$size__site-sidebar: 28%;
+
+// Responsive breakpoints for mixins found in _functions.scss
+$width_mobile: 480px;
+$width_phablet: 640px;
+$width_tablet: 800px;
+$width_laptop: 1000px;
+$width_desktop: 1200px;
+$width_hdtv: 1600px;
+$hidden_mobile: $width_phablet - 1px;
+
+
+
+
+
+
+// Transition duration for hover/toggle effects
+$transistion_duration: 0.3s;
+
+// Border radius for buttons and other elements
+$border_radius: 3px;
+
+
+
+// Scroll-to-top button, size is calculated using the formula d = a * √2
+$chevronWidth: 10px; // width of chevron, can be whatever
+$borderWidth: $chevronWidth / 4; // width of borders based on chevron size
+$squareRoot: 1.41421356237; // square root of 2 used for getting chevron diagonal width
+$scrollUpButtonSize: $chevronWidth * $squareRoot; // calculates diagonal of chevron
+
