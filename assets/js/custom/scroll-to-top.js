@@ -4,7 +4,7 @@
 // shows the scroll-to-top button after scrolling down 200px
 window.onscroll = function () {
   if (window.pageYOffset >= 200) {
-    document.getElementById('scroll-to-top').style.opacity = "0.5";
+    document.getElementById('scroll-to-top').style.opacity = "1";
   } else {
     document.getElementById('scroll-to-top').style.opacity = "0";
   }

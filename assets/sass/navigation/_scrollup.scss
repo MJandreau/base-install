@@ -1,7 +1,4 @@
 
-
-
-
 html {
 	scroll-behavior: smooth;
 }
@@ -23,9 +20,6 @@ section:focus {
 }
 
 
-
-
-
 // scrollup button 
 #scroll-to-top{
 	display: block;
@@ -44,11 +38,6 @@ section:focus {
 	border-radius: 50%; // change to 0 to make the button square
 	padding: 0;
 	opacity: 0;
-	// visibility: hidden;
-
-
-    opacity: 0;
-    transition: opacity .5s;
 
 	// solid button
 	background: $color__link; 
@@ -66,13 +55,8 @@ section:focus {
 
 	&:hover, 
 	&:active {
-		opacity: 1 !important; // added !important to override JS controlling button opacity
+		background: darken($color__link, 10%); 
 	}
-
-	// &.hidden{
-	// 	// opacity: 0;
-	// 	// visibility: hidden;
-	// }
 
 	&:before {
 		display: inline-block;
