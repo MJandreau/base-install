@@ -1,39 +1,35 @@
 
-// Scroll-to-top button size
-
-
 // scrollup button 
+
+
 a.scroll-to-top{
 	display: block;
 	text-align: center;
 	text-transform: uppercase;
 	box-sizing: border-box;
 	position: fixed;
-	right: $scrollUpButtonSize * 1.333333333;
-	bottom: $scrollUpButtonSize * 1.333333333;
-	font-size: $scrollUpButtonSize;
-	line-height: $scrollUpButtonSize * 4;
-	width: $scrollUpButtonSize * 4;
-	height: $scrollUpButtonSize * 4;
+	right: $chevronWidth;
+	bottom: $chevronWidth;
+	font-size: $chevronWidth;
+	line-height: $scrollUpButtonSize * ($squareRoot * 2);
+	width: $scrollUpButtonSize * ($squareRoot * 2);
+	height: $scrollUpButtonSize * ($squareRoot * 2);
 	transition: all $transistion_duration;
+	border-radius: 50%; // change to 0 to make the button square
 	opacity: 0.5;
 	padding: 0;
-	border-radius: 50%; // change to 0 to make the button square
 	cursor: pointer;
+	visibility: visible;
 
 	// solid button
 	background: $color__link; 
-	border: ($scrollUpButtonSize / 4) solid transparent;
+	border: $borderWidth solid rgba(0,0,0,0);
 	color: $color_white;
 
 	// button with outline only 
 	// background: none; 
-	// border: ($scrollUpButtonSize / 4) solid $color__link;
+	// border: $borderWidth solid $color__link;
 	// color: $color__link;
-	
-	visibility: visible;
-	// filter: alpha(opacity=50); 
-	// filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); 
 
 	&:focus {
 		outline: none;
@@ -41,28 +37,25 @@ a.scroll-to-top{
 
 	&:hover, 
 	&:active {
-		// filter: alpha(opacity=100); 
-		// filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); 
 		opacity: 1;
 	}
 
 	&.hide-scroll{
-		// filter: alpha(opacity=0); 
-		// filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); 
 		opacity: 0;
 		visibility: hidden;
 	}
 
 	&:before {
 		display: inline-block;
+		box-sizing: border-box;
 		border-style: solid;
-		border-width: ($scrollUpButtonSize / 4) ($scrollUpButtonSize / 4) 0 0;
-		height: $scrollUpButtonSize;
-		width: $scrollUpButtonSize;
-		top: $scrollUpButtonSize * 1.46666667;
-		left: $scrollUpButtonSize * 1.25;
+		border-width: $borderWidth $borderWidth 0 0;
+		height: $chevronWidth;
+		width: $chevronWidth;
+		top: $scrollUpButtonSize;
+		// left: 0;
 		content: '';
-		position: absolute;
+		position: relative;
 		transform: rotate(-45deg);
 		vertical-align: top;
 	}

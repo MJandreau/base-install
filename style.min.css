@@ -156,11 +156,11 @@ a:hover,a:active{outline:0}
 .site-main .comment-navigation,.site-main .posts-navigation,.site-main .post-navigation{margin:0 0 1.5em;overflow:hidden}
 .comment-navigation .nav-previous,.posts-navigation .nav-previous,.post-navigation .nav-previous{float:left;width:50%;background-color:red}
 .comment-navigation .nav-next,.posts-navigation .nav-next,.post-navigation .nav-next{float:right;text-align:right;width:50%;background-color:orange}
-a.scroll-to-top{display:block;text-align:center;text-transform:uppercase;box-sizing:border-box;position:fixed;right:13.33333333px;bottom:13.33333333px;font-size:10px;line-height:40px;width:40px;height:40px;-webkit-transition:all .3s;transition:all .3s;opacity:.5;padding:0;border-radius:50%;cursor:pointer;background:royalblue;border:2.5px solid transparent;color:#fff;visibility:visible}
+a.scroll-to-top{display:block;text-align:center;text-transform:uppercase;box-sizing:border-box;position:fixed;right:12px;bottom:12px;font-size:12px;line-height:47.9999999998px;width:47.9999999998px;height:47.9999999998px;-webkit-transition:all .3s;transition:all .3s;border-radius:50%;opacity:.5;padding:0;cursor:pointer;visibility:visible;background:royalblue;border:3px solid transparent;color:#fff}
 a.scroll-to-top:focus{outline:0}
 a.scroll-to-top:hover,a.scroll-to-top:active{opacity:1}
 a.scroll-to-top.hide-scroll{opacity:0;visibility:hidden}
-a.scroll-to-top:before{display:inline-block;border-style:solid;border-width:2.5px 2.5px 0 0;height:10px;width:10px;top:14.6666667px;left:12.5px;content:'';position:absolute;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);vertical-align:top}
+a.scroll-to-top:before{display:inline-block;box-sizing:border-box;border-style:solid;border-width:3px 3px 0 0;height:12px;width:12px;top:16.9705627484px;content:'';position:relative;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);vertical-align:top}
 .screen-reader-text{clip:rect(1px,1px,1px,1px);position:absolute !important;height:1px;width:1px;overflow:hidden}
 .screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;box-shadow:0 0 2px 2px rgba(0,0,0,0.6);clip:auto !important;color:#21759b;display:block;font-size:14px;font-size:.875rem;font-weight:bold;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
 #content[tabindex="-1"]:focus{outline:0}

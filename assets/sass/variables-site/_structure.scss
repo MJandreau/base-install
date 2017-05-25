@@ -27,10 +27,11 @@ $border_radius: 3px;
 
 
 
-// Scroll-to-top button size
-$scrollUpButtonSize: 10px;
-
-
+// Scroll-to-top button, size is calculated using the formula d = a * √2
+$chevronWidth: 12px; // width of chevron, can be whatever
+$borderWidth: $chevronWidth / 4; // width of borders based on chevron size
+$squareRoot: 1.41421356237; // square root of 2 used for getting chevron diagonal width
+$scrollUpButtonSize: $chevronWidth * $squareRoot; // calculates diagonal of chevron
 
 // Transition duration for links
 $transistion_duration: 0.3s;
