@@ -6,12 +6,68 @@
 	margin: 0 auto;
 }
 
+/* Sass we write */
+.sticky-header {
+
+}
 
 // header styles
 .site-header { // full header with branding, title, description, and nav
 	background-color: rgba(255,255,0,0.5);
-	margin-bottom: 1.5em;
+	// margin-bottom: 1.5em;
+	margin-bottom: 20px;
 }
+
+// WP admin bar bix
+.site {
+	.admin-bar & {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding-top: 46px;
+
+		@include wpadmin {
+			padding-top: 32px;
+		}
+	}
+}
+
+
+// // fixed header styles
+// // full header with branding, title, description, and nav
+// $headerHeight: 82px;
+// .site-header { 
+// 	margin-bottom: 0;
+// 	position: fixed;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+
+// 	.admin-bar & {
+// 		top: 46px;
+
+// 		@include wpadmin {
+// 			top: 32px;
+// 		}
+// 	}
+// }
+// .site {
+// 	border: 1px solid red;
+// 	padding-top: $headerHeight;
+
+// 	.admin-bar & {
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		width: 100%;
+// 		padding-top: $headerHeight + 46px;
+
+// 		@include wpadmin {
+// 			padding-top: $headerHeight + 32px;
+// 		}
+// 	}
+// }
 
 .site-branding { // site title and description
 	display: inline-block;

@@ -175,7 +175,8 @@ div:focus,section:focus{outline:0}
 .widget{margin:0 0 1.5em}
 .widget select{max-width:100%}
 .container,.site-content,.site-info{width:100%;max-width:960px;padding:0 20px;margin:0 auto}
-.site-header{background-color:rgba(255,255,0,0.5);margin-bottom:1.5em}
+.site-header{background-color:rgba(255,255,0,0.5);margin-bottom:20px}
+.admin-bar .site{position:absolute;top:0;left:0;width:100%;padding-top:46px}
 .site-branding{display:inline-block;border:1px solid red}
 .site-title{background-color:rgba(0,255,0,0.5);margin-bottom:0;font-size:24px}
 .site-description{background-color:rgba(0,0,255,0.5);margin:0}
@@ -217,7 +218,8 @@ embed,iframe,object{max-width:100%}
 .gallery-columns-8 .gallery-item{max-width:12.5%}
 .gallery-columns-9 .gallery-item{max-width:11.11%}
 .gallery-caption{display:block}
-@media(min-width:1000px){.menu-toggle{display:none}
+@media(min-width:783px){.admin-bar .site{padding-top:32px}
+}@media(min-width:1000px){.menu-toggle{display:none}
 .main-navigation{display:inline-block;float:right;width:auto}
 .main-navigation ul{display:block}
 .main-navigation li{display:inline-block}

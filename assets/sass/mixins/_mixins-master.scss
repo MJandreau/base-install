@@ -17,6 +17,8 @@
 @mixin desktop  { @media (min-width: #{$width_desktop}) { @content; } }
 @mixin hdtv     { @media (min-width: #{$width_hdtv})    { @content; } }
 @mixin nomobile { @media (max-width: #{$hidden_mobile}) { @content; } }
+@mixin wpadmin	{ @media (min-width: #{$wordpress_admin}) { @content; } }
+
 
 // Aspect ratio mixin - @include aspectRatio(16, 9);
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -76,3 +78,9 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+
+
+
+
+
