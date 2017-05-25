@@ -64,9 +64,9 @@ var scriptJSWatchFiles      = ['./assets/js/vendor/*.js', './assets/js/custom/*.
 var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files.
 
 // Browsers you care about for autoprefixing.
-// Browserlist https        ://github.com/ai/browserslist
+// Browserlist https://github.com/ai/browserslist
 const AUTOPREFIXER_BROWSERS = [
-    'last 2 version',
+    'last 2 versions',
     '> 1%',
     'ie >= 9',
     'ie_mob >= 10',
