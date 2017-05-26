@@ -53,6 +53,97 @@
 
 
 
+// Set fixed header - @include fixedHeader;
+@mixin fixedHeader() {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	.admin-bar & {
+		top: $wp_adminbar_sm;
+
+		@include wpadmin {
+			top: $wp_adminbar_lg;
+		}
+	}
+}
+
+
+
+// Adjust body for admin bar - @include wpAdminBodyAdjustment;
+@mixin wpAdminBodyAdjustment() {
+	padding: 0;
+
+	.admin-bar & {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding-top: $wp_adminbar_sm;
+
+		@include wpadmin {
+			padding-top: $wp_adminbar_lg;
+		}
+	}
+}
+
+// Adjust body for fixed header - @include fixedHeaderBodyAdjustment;
+@mixin fixedHeaderBodyAdjustment() {
+	padding-top: $headerHeight + $headerMargin;
+
+	.admin-bar & {
+		padding-top: $headerHeight + $headerMargin + $wp_adminbar_sm;
+
+		@include wpadmin {
+			padding-top: $headerHeight + $headerMargin + $wp_adminbar_lg;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+// Offset internal anchor links - @include anchorOffset;
+@mixin anchorOffset() {
+	margin-top: -$headerMargin;
+	height: $headerMargin;
+
+	.admin-bar & {
+		margin-top: -$headerMargin - $wp_adminbar_sm;
+		height: $headerMargin + $wp_adminbar_sm;
+
+		@include wpadmin {
+			margin-top: -$headerMargin - $wp_adminbar_lg;
+			height: $headerMargin + $wp_adminbar_lg;
+		}
+	}
+}
+
+// Offset internal anchor links with fixed header - @include fixedHeaderAnchorOffset;
+@mixin fixedHeaderAnchorOffset() {
+	margin-top: -$anchorOffset; 
+	height: $anchorOffset; 
+
+	.admin-bar & {
+		margin-top: -$anchorOffset - $wp_adminbar_sm;
+		height: $anchorOffset + $wp_adminbar_sm;
+
+		@include wpadmin {
+			margin-top: -$anchorOffset - $wp_adminbar_lg;
+			height: $anchorOffset + $wp_adminbar_lg;
+		}
+	}
+}
+
+
+
+
+
 
 // Rem output with px fallback
 @mixin font-size($sizeValue: 1) {
