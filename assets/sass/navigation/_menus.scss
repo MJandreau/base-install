@@ -105,7 +105,9 @@
 
 .main-navigation.toggled ul {
 	display: block;
-	// max-height: 1000px; // css transition added on lines 14-18
+	
+	// css transition added on lines 14-18
+	// max-height: 1000px; 
 
 	// @include laptop {
 	// 	max-height: auto;
