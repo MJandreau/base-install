@@ -180,10 +180,9 @@ div:focus,section:focus{outline:0}
 .admin-bar .site{position:absolute;top:0;left:0;width:100%;padding-top:46px}
 .scroll-anchor:before{display:block;content:"";visibility:hidden;margin-top:-20px;height:20px}
 .admin-bar .scroll-anchor:before{margin-top:-66px;height:66px}
-.site-branding{display:inline-block;border:1px solid red}
+.site-branding{display:inline-block}
 .site-title{background-color:rgba(0,255,0,0.5);margin-bottom:0;font-size:24px}
 .site-description{background-color:rgba(0,0,255,0.5);margin:0}
-.main-navigation{background-color:rgba(255,0,0,0.5);border:1px solid blue}
 .content-area{background-color:rgba(255,0,0,0.2)}
 .site-main{background-color:rgba(0,255,0,0.2)}
 .widget-area{background-color:rgba(0,0,255,0.2)}
