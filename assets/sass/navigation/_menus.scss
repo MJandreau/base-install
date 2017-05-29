@@ -1,60 +1,80 @@
 .main-navigation {
-	// clear: both;
+	clear: both;
 	display: block;
 	float: none;
 	width: 100%;
-	// position: relative;
+	position: relative;
+
+	@include laptop {
+		display: inline-block;
+		float: right;
+		width: auto;
+	}
 
 	ul {
-		display: none;	
+		// display: block;	
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
+		position: relative;
+		z-index: 100;
 
 		// // css transition for menu toggle
-		// display: block; 
-		// transition: $transistion_duration * 2;
-		// max-height: 0;
-		// overflow: hidden;
+		display: block; 
+		max-height: 0;
+		overflow: hidden;
+
+
+		&.nav-menu {
+			transition: max-height ($transistion_duration * 2);
+		}
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 1.5em;
-			left: -999em;
-			z-index: 99999;
+			background-color: #fff;
+		}
+
+		@include laptop {
+			max-height: 500px;
+			overflow: visible;
 
 			ul {
+				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+				float: left;
+				position: absolute;
+				top: 1.5em;
 				left: -999em;
-				top: 0;
-				background: red;
-			}
+				z-index: 99999;
 
-			li {
-				&:hover > ul,
-				&.focus > ul {
-					left: 100%;
+				ul {
+					left: -999em;
+					top: 0;
 				}
-			}
 
-			a {
-				width: 200px;
-			}
+				li {
+					&:hover > ul,
+					&.focus > ul {
+						left: 100%;
+					}
+				}
 
-			:hover > a,
-			.focus > a {
-			}
+				a {
+					width: 200px;
+				}
 
-			a:hover,
-			a.focus {
+				// :hover > a,
+				// .focus > a {
+				// }
+
+				// a:hover,
+				// a.focus {
+				// }
 			}
 		}
+
 
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
-			background-color: red;
 		}
 	}
 
@@ -62,10 +82,31 @@
 		// float: left;
 		display: block;
 		position: relative;
-		background-color: teal;
 
 		&:hover > a,
 		&.focus > a {
+	        background-color: #ffffff;
+	        color: red;
+		}
+
+		&:first-of-type {
+			margin-top: 20px;
+
+			@include laptop {
+				margin-top: 0;
+			}
+		}
+
+		&:last-of-type {
+			margin-bottom: 20px;
+
+			@include laptop {
+				margin-bottom: 0;
+			}
+		}
+
+		@include laptop {
+			display: inline-block;
 		}
 	}
 
@@ -73,25 +114,116 @@
 		display: block;
 		text-decoration: none;
 	}
-
+	
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+        background-color: #ffffff;
+        color: red;
 	}
 }
 
 
+
+
+
+
+
+
+
+
+
+.sub-nav-toggle {
+	height: $font__line-height-nav;
+	width: $font__line-height-nav;
+	display: block;
+	text-align: center;
+	z-index: 200;
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+	// color: $color_white;
+	// background-color: $brand_primary;
+	// transition: background-color $transistion_duration;
+    text-indent: 100%;
+    overflow: hidden;
+
+
+    &:after{
+		content: '';
+		position: absolute;
+		top: $font__subnav-toggle-size * 2;
+		left: $font__subnav-toggle-size * 1.4;
+		width: 0;
+		height: 0;
+		border: $font__subnav-toggle-size solid transparent;
+		border-top-color: $color__link;
+    }
+
+	&.active {
+		transform: rotate(-180deg);
+
+		@include laptop {
+			transform: rotate(0deg);
+		}
+	}
+
+	@include laptop {
+		.children & {
+			transform: rotate(-90deg);
+		}
+	}
+}
+
+.page_item_has_children > a {
+	padding-right: $font__line-height-nav;
+}
+
+.children {
+	max-height: 0;
+	transition: max-height $transistion_duration;
+	overflow: hidden;
+
+	&.active {
+		max-height: 1000px;
+	}
+
+	li {
+		&:first-of-type {
+			margin-top: 0;
+		}
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // testing subnav layout
-.main-navigation li a {
-	background-color: red;
-}
-.main-navigation li ul li a {
-	background-color: teal;
-}
-.main-navigation li ul li ul li a {
-	background-color: green;
-}
+// .main-navigation li a {
+// 	background-color: red;
+// }
+// .main-navigation li ul li a {
+// 	background-color: teal;
+// }
+// .main-navigation li ul li ul li a {
+// 	background-color: green;
+// }
 
 
 /* Small menu. */
@@ -101,37 +233,31 @@
 	// top: 0;
 	// right: 0;
 	float: right;
-}
 
-.main-navigation.toggled ul {
-	display: block;
-	
-	// css transition added on lines 14-18
-	// max-height: 1000px; 
-
-	// @include laptop {
-	// 	max-height: auto;
-	// }
-}
-
-
-
-@include laptop {
-	.menu-toggle {
+	@include laptop {
 		display: none;
 	}
-	.main-navigation {
-		display: inline-block;
-		float: right;
-		width: auto;
-	}
-	.main-navigation ul {
-		display: block;
-	}
-	.main-navigation li {
-		display: inline-block;
+}
+
+.main-navigation.toggled ul.nav-menu {
+	// display: block;
+	
+	// css transition added on lines 14-18
+	max-height: 1000px; 
+
+	@include laptop {
+		overflow: visible;
 	}
 }
+
+
+
+
+
+
+
+
+
 
 .comment-navigation,
 .posts-navigation,

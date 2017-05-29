@@ -139,20 +139,27 @@ a:visited{color:purple}
 a:hover,a:focus,a:active{color:midnightblue}
 a:focus{outline:thin dotted}
 a:hover,a:active{outline:0}
-.main-navigation{display:block;float:none;width:100%}
-.main-navigation ul{display:none;list-style:none;margin:0;padding-left:0}
-.main-navigation ul ul{box-shadow:0 3px 3px rgba(0,0,0,0.2);float:left;position:absolute;top:1.5em;left:-999em;z-index:99999}
-.main-navigation ul ul ul{left:-999em;top:0;background:red}
-.main-navigation ul ul li:hover>ul,.main-navigation ul ul li.focus>ul{left:100%}
-.main-navigation ul ul a{width:200px}
-.main-navigation ul li:hover>ul,.main-navigation ul li.focus>ul{left:auto;background-color:red}
-.main-navigation li{display:block;position:relative;background-color:teal}
+.main-navigation{clear:both;display:block;float:none;width:100%;position:relative}
+.main-navigation ul{list-style:none;margin:0;padding-left:0;position:relative;z-index:100;display:block;max-height:0;overflow:hidden}
+.main-navigation ul.nav-menu{-webkit-transition:max-height .6s;transition:max-height .6s}
+.main-navigation ul ul{background-color:#fff}
+.main-navigation ul li:hover>ul,.main-navigation ul li.focus>ul{left:auto}
+.main-navigation li{display:block;position:relative}
+.main-navigation li:hover>a,.main-navigation li.focus>a{background-color:#fff;color:red}
+.main-navigation li:first-of-type{margin-top:20px}
+.main-navigation li:last-of-type{margin-bottom:20px}
 .main-navigation a{display:block;text-decoration:none}
-.main-navigation li a{background-color:red}
-.main-navigation li ul li a{background-color:teal}
-.main-navigation li ul li ul li a{background-color:green}
+.main-navigation .current_page_item>a,.main-navigation .current-menu-item>a,.main-navigation .current_page_ancestor>a,.main-navigation .current-menu-ancestor>a{background-color:#fff;color:red}
+.sub-nav-toggle{height:24px;width:24px;display:block;text-align:center;z-index:200;position:absolute;right:0;top:0;cursor:pointer;text-indent:100%;overflow:hidden}
+.sub-nav-toggle:after{content:'';position:absolute;top:10px;left:7px;width:0;height:0;border:5px solid transparent;border-top-color:royalblue}
+.sub-nav-toggle.active{-webkit-transform:rotate(-180deg);-ms-transform:rotate(-180deg);transform:rotate(-180deg)}
+.page_item_has_children>a{padding-right:24px}
+.children{max-height:0;-webkit-transition:max-height .3s;transition:max-height .3s;overflow:hidden}
+.children.active{max-height:1000px}
+.children li:first-of-type{margin-top:0}
+.children li:last-of-type{margin-bottom:0}
 .menu-toggle{float:right}
-.main-navigation.toggled ul{display:block}
+.main-navigation.toggled ul.nav-menu{max-height:1000px}
 .site-main .comment-navigation,.site-main .posts-navigation,.site-main .post-navigation{margin:0 0 1.5em;overflow:hidden}
 .comment-navigation .nav-previous,.posts-navigation .nav-previous,.post-navigation .nav-previous{float:left;width:50%;background-color:red}
 .comment-navigation .nav-next,.posts-navigation .nav-next,.post-navigation .nav-next{float:right;text-align:right;width:50%;background-color:orange}
@@ -222,10 +229,19 @@ embed,iframe,object{max-width:100%}
 .gallery-caption{display:block}
 @media(min-width:783px){.admin-bar .site{padding-top:32px}
 .admin-bar .scroll-anchor:before{margin-top:-52px;height:52px}
-}@media(min-width:1000px){.menu-toggle{display:none}
-.main-navigation{display:inline-block;float:right;width:auto}
-.main-navigation ul{display:block}
+}@media(min-width:1000px){.main-navigation{display:inline-block;float:right;width:auto}
+.main-navigation ul{max-height:500px;overflow:visible}
+.main-navigation ul ul{box-shadow:0 3px 3px rgba(0,0,0,0.2);float:left;position:absolute;top:1.5em;left:-999em;z-index:99999}
+.main-navigation ul ul ul{left:-999em;top:0}
+.main-navigation ul ul li:hover>ul,.main-navigation ul ul li.focus>ul{left:100%}
+.main-navigation ul ul a{width:200px}
+.main-navigation li:first-of-type{margin-top:0}
+.main-navigation li:last-of-type{margin-bottom:0}
 .main-navigation li{display:inline-block}
+.sub-nav-toggle.active{-webkit-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0)}
+.children .sub-nav-toggle{-webkit-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg)}
+.menu-toggle{display:none}
+.main-navigation.toggled ul.nav-menu{overflow:visible}
 .content-area{float:left;margin:0 -28% 0 0;width:100%}
 .site-main{margin:0 28% 0 0;padding-right:20px}
 .site-content .widget-area{float:right;overflow:hidden;width:28%}
