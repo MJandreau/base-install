@@ -76,37 +76,70 @@
 		}
 	}
 
-	/**
-	 * Toggles `focus` class to allow submenu access on tablets.
-	 */
-	( function( container ) {
-		var touchStartFn, i,
-			parentLink = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
+	// /**
+	//  * Toggles `focus` class to allow submenu access on tablets.
+	//  */
+	// ( function( container ) {
+	// 	var touchStartFn, i,
+	// 		parentLink = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
 
-		if ( 'ontouchstart' in window ) {
-			touchStartFn = function( e ) {
-				var menuItem = this.parentNode, i;
+	// 	if ( 'ontouchstart' in window ) {
+	// 		touchStartFn = function( e ) {
+	// 			var menuItem = this.parentNode, i;
 
-				if ( ! menuItem.classList.contains( 'focus' ) ) {
-					e.preventDefault();
-					for ( i = 0; i < menuItem.parentNode.children.length; ++i ) {
-						if ( menuItem === menuItem.parentNode.children[i] ) {
-							continue;
-						}
-						menuItem.parentNode.children[i].classList.remove( 'focus' );
-					}
-					menuItem.classList.add( 'focus' );
-				} else {
-					menuItem.classList.remove( 'focus' );
-				}
-			};
+	// 			if ( ! menuItem.classList.contains( 'focus' ) ) {
+	// 				e.preventDefault();
+	// 				for ( i = 0; i < menuItem.parentNode.children.length; ++i ) {
+	// 					if ( menuItem === menuItem.parentNode.children[i] ) {
+	// 						continue;
+	// 					}
+	// 					menuItem.parentNode.children[i].classList.remove( 'focus' );
+	// 				}
+	// 				menuItem.classList.add( 'focus' );
+	// 			} else {
+	// 				menuItem.classList.remove( 'focus' );
+	// 			}
+	// 		};
 
-			for ( i = 0; i < parentLink.length; ++i ) {
-				parentLink[i].addEventListener( 'touchstart', touchStartFn, false );
-			}
-		}
-	}( container ) );
+	// 		for ( i = 0; i < parentLink.length; ++i ) {
+	// 			parentLink[i].addEventListener( 'touchstart', touchStartFn, false );
+	// 		}
+	// 	}
+	// }( container ) );
+
 } )();
+
+
+
+
+
+
+
+
+
+/**
+* Add toggles to menu items that have submenus and bind to click event
+*/
+var x = document.body.querySelectorAll('.page_item_has_children > a');
+var index = 0;
+for (index = 0; index < x.length; index++) {
+	var navArrow = document.createElement('span');
+	navArrow.className = 'sub-nav-toggle';
+	navArrow.innerHTML = 'More';
+	x[index].parentNode.insertBefore(navArrow, x[index].nextSibling);
+}
+
+var elements = document.querySelectorAll('.sub-nav-toggle');
+
+for(var i in elements) {
+	if(elements.hasOwnProperty(i)) {
+		elements[i].onclick = function() {
+			this.parentElement.querySelector('.children').classList.toggle("active");
+			this.parentElement.querySelector('.sub-nav-toggle').classList.toggle("active");
+		};
+	}
+}
+
 
 /**
  * File skip-link-focus-fix.js.
