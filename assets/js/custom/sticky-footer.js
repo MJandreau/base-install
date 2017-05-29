@@ -6,7 +6,7 @@
 //         windowHeight = window.innerHeight;
 
 //     var elementSize = function (el) {
-//         // console.log(el); // this prints the header, contetn, and footer elements in the console
+//         // console.log(el); // this prints the header, content, and footer elements in the console
 //         return el.scrollHeight;
 //     };
 

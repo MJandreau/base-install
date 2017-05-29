@@ -46,6 +46,7 @@ var styleDestination        = './'; // Path to place the compiled CSS file at th
 // var scriptSRC             = './assets/js/vendor/*.js'; // Path to JS folder if you don't care about concat order
 var scriptSRC             = [
                               // './assets/js/vendor/jquery-2.2.4.js', // jQuery is optional
+                              './assets/js/vendor/class-helpers.js', // Pure JS class toggling
                               './assets/js/vendor/navigation.js', // WP navigation mobile and dropdown
                               './assets/js/vendor/skip-link-focus-fix.js', // WP skip link
                               './assets/js/vendor/prism.js', // syntax highlighter for code blocks (has associated SASS file for styles/themes)

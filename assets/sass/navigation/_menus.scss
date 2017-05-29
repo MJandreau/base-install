@@ -58,7 +58,8 @@
 				}
 
 				a {
-					width: 200px;
+					min-width: 100px;
+					// width: 200px;
 				}
 
 				// :hover > a,
@@ -228,16 +229,16 @@
 
 /* Small menu. */
 // .menu-toggle,
-.menu-toggle {
-	// position: absolute;
-	// top: 0;
-	// right: 0;
-	float: right;
+// .menu-toggle {
+// 	// position: absolute;
+// 	// top: 0;
+// 	// right: 0;
+// 	float: right;
 
-	@include laptop {
-		display: none;
-	}
-}
+// 	@include laptop {
+// 		display: none;
+// 	}
+// }
 
 .main-navigation.toggled ul.nav-menu {
 	// display: block;

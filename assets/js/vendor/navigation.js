@@ -109,34 +109,3 @@
 
 } )();
 
-
-
-
-
-
-
-
-
-/**
-* Add toggles to menu items that have submenus and bind to click event
-*/
-var x = document.body.querySelectorAll('.page_item_has_children > a');
-var index = 0;
-for (index = 0; index < x.length; index++) {
-	var navArrow = document.createElement('span');
-	navArrow.className = 'sub-nav-toggle';
-	navArrow.innerHTML = 'More';
-	x[index].parentNode.insertBefore(navArrow, x[index].nextSibling);
-}
-
-var elements = document.querySelectorAll('.sub-nav-toggle');
-
-for(var i in elements) {
-	if(elements.hasOwnProperty(i)) {
-		elements[i].onclick = function() {
-			this.parentElement.querySelector('.children').classList.toggle("active");
-			this.parentElement.querySelector('.sub-nav-toggle').classList.toggle("active");
-		};
-	}
-}
-
