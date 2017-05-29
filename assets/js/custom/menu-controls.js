@@ -31,6 +31,7 @@ var outsideOfMenu = document.querySelector('.site-main');
 var menuContainer = document.querySelector('.main-navigation ');
 outsideOfMenu.onclick = function() {
     removeClass(menuContainer, 'toggled');
+    removeClass(menuToggle, 'is-active');
 };
 
 
@@ -57,6 +58,7 @@ var menuToggle = document.querySelector('.menu-toggle');
 // Example of toggleClass usage
 menuToggle.onclick = function() {
     toggleClass(menuToggle, 'is-active');
+    toggleClass(menuContainer, 'toggled');
 };
 
 
