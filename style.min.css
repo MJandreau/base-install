@@ -170,10 +170,10 @@ div:focus,section:focus{outline:0}
 #scroll-to-top:focus{outline:0}
 #scroll-to-top:hover,#scroll-to-top:active{background:#214cce}
 #scroll-to-top:before{display:inline-block;box-sizing:border-box;border-style:solid;border-width:2.5px 2.5px 0 0;height:10px;width:10px;top:14.1421356237px;content:'';position:relative;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);vertical-align:top}
-button.menu-toggle{display:block;z-index:9000;overflow:hidden;margin:0;padding:0;width:4rem;height:4rem;font-size:0;text-indent:-9999px;-webkit-appearance:none;-moz-appearance:none;appearance:none;box-shadow:none;border-radius:0;border:0;cursor:pointer;float:right;position:absolute;right:1rem;top:1rem;background-color:orange;-webkit-transition:background-color .3s;transition:background-color .3s;-webkit-transition-delay:.3s;transition-delay:.3s}
+button.menu-toggle{display:block;z-index:9000;overflow:hidden;margin:0;padding:0;width:4rem;height:4rem;font-size:0;text-indent:-9999px;-webkit-appearance:none;-moz-appearance:none;appearance:none;box-shadow:none;border-radius:0;border:0;cursor:pointer;float:right;position:relative;background-color:orange;-webkit-transition:background-color .3s;transition:background-color .3s;-webkit-transition-delay:.3s;transition-delay:.3s}
 button.menu-toggle:focus{outline:0}
 button.menu-toggle:hover,button.menu-toggle:focus{background-color:transparent;border-color:transparent;box-shadow:none}
-button.menu-toggle.is-active{background-color:red;box-shadow:0 0 10px 0 rgba(0,0,0,0.2),0 0 10px 0 rgba(0,0,0,0.2)}
+button.menu-toggle.is-active{background-color:red}
 button.menu-toggle.is-active span{background-color:teal;-webkit-transform:rotate(-225deg);-ms-transform:rotate(-225deg);transform:rotate(-225deg)}
 button.menu-toggle.is-active span::before{background-color:teal;top:0;-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg)}
 button.menu-toggle.is-active span::after{background-color:transparent;bottom:0;-webkit-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0)}

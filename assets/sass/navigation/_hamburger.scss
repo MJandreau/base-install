@@ -25,9 +25,9 @@ button.menu-toggle {
   border: none;
   cursor: pointer;
   float: right;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
+  position: relative;
+  // right: 1rem;
+  // top: 1rem;
   background-color: orange;
   transition: background-color $transistion_duration;
   transition-delay: $transistion_duration;
@@ -52,7 +52,7 @@ button.menu-toggle {
     // background-color: $menu-color;
     background-color: red;
     // border-radius: $global-radius;
-    @include dropShadow;
+    // @include dropShadow;
   }
 
   &.is-active span {
