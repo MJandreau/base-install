@@ -34,7 +34,7 @@
 		}
 
 		@include laptop {
-			max-height: 500px;
+			max-height: inherit;
 			overflow: visible;
 
 			ul {

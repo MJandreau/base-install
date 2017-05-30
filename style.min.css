@@ -241,7 +241,7 @@ embed,iframe,object{max-width:100%}
 @media(min-width:783px){.admin-bar .site{padding-top:32px}
 .admin-bar .scroll-anchor:before{margin-top:-52px;height:52px}
 }@media(min-width:1000px){.main-navigation{display:inline-block;float:right;width:auto}
-.main-navigation ul{max-height:500px;overflow:visible}
+.main-navigation ul{max-height:inherit;overflow:visible}
 .main-navigation ul ul{box-shadow:0 3px 3px rgba(0,0,0,0.2);float:left;position:absolute;top:1.5em;left:-999em;z-index:99999}
 .main-navigation ul ul ul{left:-999em;top:0}
 .main-navigation ul ul li:hover>ul,.main-navigation ul ul li.focus>ul{left:100%}
