@@ -35,7 +35,7 @@
 				<?php
 				endif; ?>
 			</div><!-- .site-branding -->
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'baseinstall' ); ?><span>toggle menu</span></button>
+				<button class="menu-toggle" tabindex="0" aria-label="Menu" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'baseinstall' ); ?><span>toggle menu</span></button>
 			<nav id="site-navigation" class="main-navigation">
 				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 			</nav><!-- #site-navigation -->

@@ -1,10 +1,9 @@
-$menu-height: 6rem !default;
 
-$menu-toggle-width: 4rem;       // width of button area
-$menu-toggle-height: 4rem;      // height of button area
-$menu-toggle-bar: .2rem;        // thickness of button bars
-$menu-toggle-pad: 1rem;       // left/right padding between button area and bars.
-$menu-toggle-bar_space: .5rem;     // spacing between button bars
+$menu-toggle-width: 30px;       // width of button area
+$menu-toggle-height: 60px;      // height of button area
+$menu-toggle-bar: 2px;        // thickness of button bars
+$menu-toggle-pad: 0;       // left/right padding between button area and bars.
+$menu-toggle-bar_space: 8px;     // spacing between button bars
 
 
 // menu-toggle
@@ -50,7 +49,7 @@ button.menu-toggle {
   /* active state, i.e. menu open */
   &.is-active {
     // background-color: $menu-color;
-    background-color: red;
+    // background-color: red;
     // border-radius: $global-radius;
     // @include dropShadow;
   }
@@ -77,7 +76,7 @@ button.menu-toggle {
   &.is-active span::before,
   &.is-active span::after {
     transition: $transistion_duration;
-    // transition-delay: $transistion_duration;
+    transition-delay: $transistion_duration;
   }
 
   span {
@@ -87,9 +86,9 @@ button.menu-toggle {
     left: $menu-toggle-pad;
     right: $menu-toggle-pad;
     height: $menu-toggle-bar;
-    background-color: pink;
+    background-color: #000;
     transition-duration: $transistion_duration;
-    // transition-delay: $transistion_duration;
+    transition-delay: $transistion_duration;
 
     &::before, 
     &::after {
@@ -98,10 +97,10 @@ button.menu-toggle {
       left: 0;
       width: 100%;
       height: $menu-toggle-bar;
-      background-color: pink;
+      background-color: #000;
       content: "";
       transition-duration: $transistion_duration;
-      // transition-delay: $transistion_duration;
+      transition-delay: $transistion_duration;
     }
     
     &::before {
@@ -115,4 +114,8 @@ button.menu-toggle {
     }
   }
 }
+
+
+
+
 

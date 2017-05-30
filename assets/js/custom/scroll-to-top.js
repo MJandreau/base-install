@@ -1,5 +1,7 @@
-// Plain JavaScript internal anchor and top-of-page scrolling, no jQuery required
-
+/**
+* PAGE SCROLLING
+* Plain JavaScript internal anchor and top-of-page scrolling, no jQuery required
+*/
 
 // shows the scroll-to-top button after scrolling down 200px
 window.onscroll = function () {
@@ -81,8 +83,7 @@ function initSmoothScrolling() {
     return 'scrollBehavior' in document.documentElement.style;
   }
 
-  // Adapted from:
-  // https://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
+  // Adapted from https://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
   function setFocus(hash) {
     var element = document.getElementById(hash.substring(1));
 
@@ -146,3 +147,4 @@ function jump(target, options) {
   }
 
 }
+

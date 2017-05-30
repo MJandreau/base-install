@@ -1,17 +1,12 @@
-// Plain JavaScript functions to add, remove, toggle, and check for classes
+/**
+* CLASS HELPERS
+* Plain JavaScript functions to add, remove, toggle, and check for classes, no jQuery required
+*/
 
 // hasClass
 function hasClass(elem, className) {
     return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
 }
-
-// Example of hasClass usage
-// document.getElementById('button').onclick = function() {
-//     if (hasClass(document.getElementById('button'), 'superman')) {
-//         this.innerHTML = 'Mission success: \'superman\' class exists.';
-//     }
-// }
-
 
 // addClass
 function addClass(elem, className) {
@@ -19,13 +14,6 @@ function addClass(elem, className) {
         elem.className += ' ' + className;
     }
 }
-
-// Example of addClass usage
-// document.getElementById('button').onclick = function() {
-//     addClass(this, 'active');
-//     this.innerHTML = 'Woo! Nice work.';
-// }
-
 
 // removeClass
 function removeClass(elem, className) {
@@ -37,13 +25,6 @@ function removeClass(elem, className) {
         elem.className = newClass.replace(/^\s+|\s+$/g, '');
     }
 }
-
-// Example of removeClass usage
-// document.getElementById('button').onclick = function() {
-//     removeClass(this, 'active');
-//     this.innerHTML = 'Yellow is much nicer.';
-// }
-
 
 // toggleClass
 function toggleClass(elem, className) {
@@ -57,6 +38,29 @@ function toggleClass(elem, className) {
         elem.className += ' ' + className;
     }
 }
+
+
+
+// EXAMPLES 
+
+// Example of hasClass usage
+// document.getElementById('button').onclick = function() {
+//     if (hasClass(document.getElementById('button'), 'superman')) {
+//         this.innerHTML = 'Mission success: \'superman\' class exists.';
+//     }
+// }
+
+// Example of addClass usage
+// document.getElementById('button').onclick = function() {
+//     addClass(this, 'active');
+//     this.innerHTML = 'Woo! Nice work.';
+// }
+
+// Example of removeClass usage
+// document.getElementById('button').onclick = function() {
+//     removeClass(this, 'active');
+//     this.innerHTML = 'Yellow is much nicer.';
+// }
 
 // Example of toggleClass usage
 // document.getElementById('button').onclick = function() {
@@ -1439,9 +1443,11 @@ Prism.hooks.add('complete', function (env) {
 
 }());
 /**
-* Mobile navigation scripts
+* MOBILE NAVIGATION
+* Plain JavaScript functions to toggle the mobile navigation, no jQuery required
+*
 * navigation.js still handles aria roles and accessibility,
-* but toggling the visibility of the main/sub menus is controlled here.
+* but user-triggered events are controlled here.
 */
 
 // Add toggles to menu items that have submenus and bind to click event
@@ -1470,7 +1476,7 @@ for(var i in elements) {
 // Mobile navigation controls, uses class-helpers.js 
 // to enable jQuery-like controls over class manipulation
 var menuToggle = document.querySelector('.menu-toggle');
-    outsideMenu = document.querySelector('.site-main');
+    outsideMenu = document.querySelector('.site-content');
     menuContainer = document.querySelector('.main-navigation');
 
 // Toggle main menu with hamburger button
@@ -1494,8 +1500,57 @@ function disableMobileNav() {
   }
 }
 
-// Plain JavaScript internal anchor and top-of-page scrolling, no jQuery required
 
+
+
+  /**
+   * forEach implementation for Objects/NodeLists/Arrays, automatic type loops and context options
+   *
+   * @private
+   * @author Todd Motto
+   * @link https://github.com/toddmotto/foreach
+   * @param {Array|Object|NodeList} collection - Collection of items to iterate, could be an Array, Object or NodeList
+   * @callback requestCallback      callback   - Callback function for each iteration.
+   * @param {Array|Object|NodeList} scope=null - Object/NodeList/Array that forEach is iterating over, to use as the this value when executing callback.
+   * @returns {}
+   */
+// var forEach = function forEach(t, o, r) {
+//   if ("[object Object]" === Object.prototype.toString.call(t)) for (var c in t) {
+//     Object.prototype.hasOwnProperty.call(t, c) && o.call(r, t[c], c, t);
+//   } else for (var e = 0, l = t.length; l > e; e++) {
+//     o.call(r, t[e], e, t);
+//   }
+// };
+
+
+// var forEach = function forEach(collection, callback, scope) {
+//   if (Object.prototype.toString.call(collection) === '[object Object]') {
+//     for (var prop in collection) {
+//       if (Object.prototype.hasOwnProperty.call(collection, prop)) {
+//         callback.call(scope, collection[prop], prop, collection);
+//       }
+//     }
+//   } else {
+//     for (var i = 0, len = collection.length; i < len; i++) {
+//       callback.call(scope, collection[i], i, collection);
+//     }
+//   }
+// };
+
+// var hamburgers = document.querySelectorAll(".hamburger");
+// if (hamburgers.length > 0) {
+//   forEach(hamburgers, function (hamburger) {
+//     hamburger.addEventListener("click", function () {
+//       this.classList.toggle("is-active");
+//     }, false);
+//   });
+// }
+
+
+/**
+* PAGE SCROLLING
+* Plain JavaScript internal anchor and top-of-page scrolling, no jQuery required
+*/
 
 // shows the scroll-to-top button after scrolling down 200px
 window.onscroll = function () {
@@ -1577,8 +1632,7 @@ function initSmoothScrolling() {
     return 'scrollBehavior' in document.documentElement.style;
   }
 
-  // Adapted from:
-  // https://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
+  // Adapted from https://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
   function setFocus(hash) {
     var element = document.getElementById(hash.substring(1));
 
@@ -1642,6 +1696,8 @@ function jump(target, options) {
   }
 
 }
+
+
 // function stickyFooter() {
 //     // header, footer, and content element declaration
 //     var footerElement = document.querySelector('.site-footer'),

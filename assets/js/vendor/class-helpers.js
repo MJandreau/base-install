@@ -1,17 +1,12 @@
-// Plain JavaScript functions to add, remove, toggle, and check for classes
+/**
+* CLASS HELPERS
+* Plain JavaScript functions to add, remove, toggle, and check for classes, no jQuery required
+*/
 
 // hasClass
 function hasClass(elem, className) {
     return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
 }
-
-// Example of hasClass usage
-// document.getElementById('button').onclick = function() {
-//     if (hasClass(document.getElementById('button'), 'superman')) {
-//         this.innerHTML = 'Mission success: \'superman\' class exists.';
-//     }
-// }
-
 
 // addClass
 function addClass(elem, className) {
@@ -19,13 +14,6 @@ function addClass(elem, className) {
         elem.className += ' ' + className;
     }
 }
-
-// Example of addClass usage
-// document.getElementById('button').onclick = function() {
-//     addClass(this, 'active');
-//     this.innerHTML = 'Woo! Nice work.';
-// }
-
 
 // removeClass
 function removeClass(elem, className) {
@@ -37,13 +25,6 @@ function removeClass(elem, className) {
         elem.className = newClass.replace(/^\s+|\s+$/g, '');
     }
 }
-
-// Example of removeClass usage
-// document.getElementById('button').onclick = function() {
-//     removeClass(this, 'active');
-//     this.innerHTML = 'Yellow is much nicer.';
-// }
-
 
 // toggleClass
 function toggleClass(elem, className) {
@@ -57,6 +38,29 @@ function toggleClass(elem, className) {
         elem.className += ' ' + className;
     }
 }
+
+
+
+// EXAMPLES 
+
+// Example of hasClass usage
+// document.getElementById('button').onclick = function() {
+//     if (hasClass(document.getElementById('button'), 'superman')) {
+//         this.innerHTML = 'Mission success: \'superman\' class exists.';
+//     }
+// }
+
+// Example of addClass usage
+// document.getElementById('button').onclick = function() {
+//     addClass(this, 'active');
+//     this.innerHTML = 'Woo! Nice work.';
+// }
+
+// Example of removeClass usage
+// document.getElementById('button').onclick = function() {
+//     removeClass(this, 'active');
+//     this.innerHTML = 'Yellow is much nicer.';
+// }
 
 // Example of toggleClass usage
 // document.getElementById('button').onclick = function() {
