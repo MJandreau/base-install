@@ -28,8 +28,8 @@ button.menu-toggle {
   // right: 1rem;
   // top: 1rem;
   background-color: transparent;
-  transition: background-color $transistion_duration;
-  transition-delay: $transistion_duration;
+  // transition: background-color $transistion_duration;
+  // transition-delay: $transistion_duration;
 
   @include laptop {
     display: none;

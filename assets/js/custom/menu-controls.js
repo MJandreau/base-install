@@ -1,9 +1,7 @@
 /**
 * MOBILE NAVIGATION
 * Plain JavaScript functions to toggle the mobile navigation, no jQuery required
-*
-* navigation.js still handles aria roles and accessibility,
-* but user-triggered events are controlled here.
+* WAI-ARIA values are also added for accessibility 
 */
 
 // Add toggles to menu items that have submenus and bind to click event
@@ -34,25 +32,43 @@ for(var i in elements) {
 var menuToggle = document.querySelector('.menu-toggle');
     outsideMenu = document.querySelector('.site-content');
     menuContainer = document.querySelector('.main-navigation');
+    navMenu = document.querySelector('.nav-menu');
 
-// Toggle main menu with hamburger button
+// set WAI-ARIA values for nav and toggle button
+menuToggle.setAttribute( 'aria-expanded', 'false' );
+navMenu.setAttribute( 'aria-expanded', 'false' );
+
+// Toggle main menu and set WAI-ARIA values when menu button is clicked
 menuToggle.onclick = function() {
-  toggleClass(menuToggle, 'is-active');
-  toggleClass(menuContainer, 'toggled');
+  if (hasClass(menuContainer, 'toggled')) {
+    removeClass(menuToggle, 'is-active');
+    removeClass(menuContainer, 'toggled');
+    menuToggle.setAttribute( 'aria-expanded', 'false' );
+    navMenu.setAttribute( 'aria-expanded', 'false' );
+  } else {
+    addClass(menuToggle, 'is-active');
+    addClass(menuContainer, 'toggled');
+    menuToggle.setAttribute( 'aria-expanded', 'true' );
+    navMenu.setAttribute( 'aria-expanded', 'true' );
+  }
 };
 
-// Close menu when area outside of menu is clicked
+// Close menu and reset WAI-ARIA values when area outside of menu is clicked
 outsideMenu.onclick = function() {
-  removeClass(menuContainer, 'toggled');
   removeClass(menuToggle, 'is-active');
+  removeClass(menuContainer, 'toggled');
+  menuToggle.setAttribute( 'aria-expanded', 'false' );
+  navMenu.setAttribute( 'aria-expanded', 'false' );
 };
 
 // Reset mobile nav for laptop and desktop
 window.addEventListener('resize', disableMobileNav);
 function disableMobileNav() {
   if (window.innerWidth > 999) {
-    removeClass(menuContainer, 'toggled');
     removeClass(menuToggle, 'is-active');
+    removeClass(menuContainer, 'toggled');
+    menuToggle.setAttribute( 'aria-expanded', 'false' );
+    navMenu.setAttribute( 'aria-expanded', 'false' );
   }
 }
 
@@ -79,6 +95,8 @@ function disableMobileNav() {
 // };
 
 
+
+// https://github.com/toddmotto/foreach
 // var forEach = function forEach(collection, callback, scope) {
 //   if (Object.prototype.toString.call(collection) === '[object Object]') {
 //     for (var prop in collection) {
