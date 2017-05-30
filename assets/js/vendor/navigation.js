@@ -33,17 +33,18 @@
 		menu.className += ' nav-menu';
 	}
 
-	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			container.className = container.className.replace( ' toggled', '' );
-			button.setAttribute( 'aria-expanded', 'false' );
-			menu.setAttribute( 'aria-expanded', 'false' );
-		} else {
-			container.className += ' toggled';
-			button.setAttribute( 'aria-expanded', 'true' );
-			menu.setAttribute( 'aria-expanded', 'true' );
-		}
-	};
+	// Navigation toggle is now handled in menu-controls.js
+	// button.onclick = function() {
+	// 	if ( -1 !== container.className.indexOf( 'toggled' ) ) {
+	// 		container.className = container.className.replace( ' toggled', '' );
+	// 		button.setAttribute( 'aria-expanded', 'false' );
+	// 		menu.setAttribute( 'aria-expanded', 'false' );
+	// 	} else {
+	// 		container.className += ' toggled';
+	// 		button.setAttribute( 'aria-expanded', 'true' );
+	// 		menu.setAttribute( 'aria-expanded', 'true' );
+	// 	}
+	// };
 
 	// Get all the link elements within the menu.
 	links    = menu.getElementsByTagName( 'a' );
@@ -77,7 +78,7 @@
 	}
 
 	// /**
-	//  * Toggles `focus` class to allow submenu access on tablets.
+	//  * Toggles `focus` class to allow submenu access on tablets. (now handled in menu-controls.js)
 	//  */
 	// ( function( container ) {
 	// 	var touchStartFn, i,

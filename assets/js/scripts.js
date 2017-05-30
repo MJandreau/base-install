@@ -100,17 +100,18 @@ function toggleClass(elem, className) {
 		menu.className += ' nav-menu';
 	}
 
-	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			container.className = container.className.replace( ' toggled', '' );
-			button.setAttribute( 'aria-expanded', 'false' );
-			menu.setAttribute( 'aria-expanded', 'false' );
-		} else {
-			container.className += ' toggled';
-			button.setAttribute( 'aria-expanded', 'true' );
-			menu.setAttribute( 'aria-expanded', 'true' );
-		}
-	};
+	// Navigation toggle is now handled in menu-controls.js
+	// button.onclick = function() {
+	// 	if ( -1 !== container.className.indexOf( 'toggled' ) ) {
+	// 		container.className = container.className.replace( ' toggled', '' );
+	// 		button.setAttribute( 'aria-expanded', 'false' );
+	// 		menu.setAttribute( 'aria-expanded', 'false' );
+	// 	} else {
+	// 		container.className += ' toggled';
+	// 		button.setAttribute( 'aria-expanded', 'true' );
+	// 		menu.setAttribute( 'aria-expanded', 'true' );
+	// 	}
+	// };
 
 	// Get all the link elements within the menu.
 	links    = menu.getElementsByTagName( 'a' );
@@ -144,7 +145,7 @@ function toggleClass(elem, className) {
 	}
 
 	// /**
-	//  * Toggles `focus` class to allow submenu access on tablets.
+	//  * Toggles `focus` class to allow submenu access on tablets. (now handled in menu-controls.js)
 	//  */
 	// ( function( container ) {
 	// 	var touchStartFn, i,
@@ -1438,19 +1439,23 @@ Prism.hooks.add('complete', function (env) {
 
 }());
 /**
-* Add toggles to menu items that have submenus and bind to click event
+* Mobile navigation scripts
+* navigation.js still handles aria roles and accessibility,
+* but toggling the visibility of the main/sub menus is controlled here.
 */
-var x = document.body.querySelectorAll('.page_item_has_children > a');
+
+// Add toggles to menu items that have submenus and bind to click event
+var subMenuItems = document.body.querySelectorAll('.page_item_has_children > a');
 var index = 0;
-for (index = 0; index < x.length; index++) {
-  var navArrow = document.createElement('span');
-  navArrow.className = 'sub-nav-toggle';
-  navArrow.innerHTML = 'More';
-  x[index].parentNode.insertBefore(navArrow, x[index].nextSibling);
+for (index = 0; index < subMenuItems.length; index++) {
+  var dropdownArrow = document.createElement('span');
+  dropdownArrow.className = 'sub-nav-toggle';
+  dropdownArrow.innerHTML = 'More';
+  subMenuItems[index].parentNode.insertBefore(dropdownArrow, subMenuItems[index].nextSibling);
 }
 
+// Enables toggling all submenus rather than just one
 var elements = document.querySelectorAll('.sub-nav-toggle');
-
 for(var i in elements) {
   if(elements.hasOwnProperty(i)) {
     elements[i].onclick = function() {
@@ -1462,81 +1467,32 @@ for(var i in elements) {
 
 
 
+// Mobile navigation controls, uses class-helpers.js 
+// to enable jQuery-like controls over class manipulation
+var menuToggle = document.querySelector('.menu-toggle');
+    outsideMenu = document.querySelector('.site-main');
+    menuContainer = document.querySelector('.main-navigation');
 
-/**
-* Close menu when clicked outside of navigation
-*/
-var outsideOfMenu = document.querySelector('.site-main');
-var menuContainer = document.querySelector('.main-navigation ');
-outsideOfMenu.onclick = function() {
+// Toggle main menu with hamburger button
+menuToggle.onclick = function() {
+  toggleClass(menuToggle, 'is-active');
+  toggleClass(menuContainer, 'toggled');
+};
+
+// Close menu when area outside of menu is clicked
+outsideMenu.onclick = function() {
+  removeClass(menuContainer, 'toggled');
+  removeClass(menuToggle, 'is-active');
+};
+
+// Reset mobile nav for laptop and desktop
+window.addEventListener('resize', disableMobileNav);
+function disableMobileNav() {
+  if (window.innerWidth > 999) {
     removeClass(menuContainer, 'toggled');
     removeClass(menuToggle, 'is-active');
-};
-
-
-
-
-
-// Example of toggleClass usage
-// document.getElementById('button').onclick = function() {
-//     toggleClass(this, 'active');
-// }
-
-// Example of removeClass usage
-// document.getElementById('button').onclick = function() {
-//     removeClass(this, 'active');
-//     this.innerHTML = 'Yellow is much nicer.';
-// }
-
-
-
-
-
-var menuToggle = document.querySelector('.menu-toggle');
-
-// Example of toggleClass usage
-menuToggle.onclick = function() {
-    toggleClass(menuToggle, 'is-active');
-    toggleClass(menuContainer, 'toggled');
-};
-
-
-  // // toggle the hamburger open and closed states
-  // var removeClass = true;
-  // $(".menu-toggle").click(function () {
-  //   $(".menu-toggle").toggleClass('is-active');
-  //   $(".menu-menu").toggleClass('active-menu');
-  //   removeClass = false;
-  // });
-
-  // $(".menu-menu").click(function() {
-  //   removeClass = false;
-  // });
-
-  // $("html").click(function () {
-  //   if (removeClass) {
-  //     $(".menu-toggle").removeClass('is-active');
-  //     $(".menu-menu").removeClass('active-menu');
-  //   }
-  //   removeClass = true;
-  // });
-
-  // $(".menu-link").click(function () {
-  //   if (removeClass) {
-  //     $(".menu-toggle").removeClass('is-active');
-  //     $(".menu-menu").removeClass('active-menu');
-  //   }
-  //   removeClass = true;
-  // });
-
-  // // disable side nav for laptop and desktop
-  // $(window).resize(function() {
-  //   if( $(this).width() > 1000 ) {
-  //     $(".menu-toggle").removeClass('is-active');
-  //     $(".menu-menu").removeClass('active-menu');
-  //   }
-  // });
-
+  }
+}
 
 // Plain JavaScript internal anchor and top-of-page scrolling, no jQuery required
 
