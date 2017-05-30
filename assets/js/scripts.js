@@ -70,119 +70,6 @@ function toggleClass(elem, className) {
 
 
 /**
- * File navigation
- *
- * Handles toggling the navigation menu for small screens and enables TAB key
- * navigation support for dropdown menus.
- */
-( function() {
-	var container, button, menu, links, i, len;
-
-	container = document.getElementById( 'site-navigation' );
-	if ( ! container ) {
-		return;
-	}
-
-	
-	button = document.querySelector('.menu-toggle');
-	if ( 'undefined' === typeof button ) {
-		return;
-	}
-
-
-
-	menu = container.getElementsByTagName( 'ul' )[0];
-
-	// Hide menu toggle button if menu is empty and return early.
-	if ( 'undefined' === typeof menu ) {
-		button.style.display = 'none';
-		return;
-	}
-
-	menu.setAttribute( 'aria-expanded', 'false' );
-	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
-		menu.className += ' nav-menu';
-	}
-
-	// Navigation toggle is now handled in menu-controls.js
-	// button.onclick = function() {
-	// 	if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-	// 		container.className = container.className.replace( ' toggled', '' );
-	// 		button.setAttribute( 'aria-expanded', 'false' );
-	// 		menu.setAttribute( 'aria-expanded', 'false' );
-	// 	} else {
-	// 		container.className += ' toggled';
-	// 		button.setAttribute( 'aria-expanded', 'true' );
-	// 		menu.setAttribute( 'aria-expanded', 'true' );
-	// 	}
-	// };
-
-	// Get all the link elements within the menu.
-	links    = menu.getElementsByTagName( 'a' );
-
-	// Each time a menu link is focused or blurred, toggle focus.
-	for ( i = 0, len = links.length; i < len; i++ ) {
-		links[i].addEventListener( 'focus', toggleFocus, true );
-		links[i].addEventListener( 'blur', toggleFocus, true );
-	}
-
-	/**
-	 * Sets or removes .focus class on an element.
-	 */
-	function toggleFocus() {
-		var self = this;
-
-		// Move up through the ancestors of the current link until we hit .nav-menu.
-		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
-
-			// On li elements toggle the class .focus.
-			if ( 'li' === self.tagName.toLowerCase() ) {
-				if ( -1 !== self.className.indexOf( 'focus' ) ) {
-					self.className = self.className.replace( ' focus', '' );
-				} else {
-					self.className += ' focus';
-				}
-			}
-
-			self = self.parentElement;
-		}
-	}
-
-	// /**
-	//  * Toggles `focus` class to allow submenu access on tablets. (now handled in menu-controls.js)
-	//  */
-	// ( function( container ) {
-	// 	var touchStartFn, i,
-	// 		parentLink = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
-
-	// 	if ( 'ontouchstart' in window ) {
-	// 		touchStartFn = function( e ) {
-	// 			var menuItem = this.parentNode, i;
-
-	// 			if ( ! menuItem.classList.contains( 'focus' ) ) {
-	// 				e.preventDefault();
-	// 				for ( i = 0; i < menuItem.parentNode.children.length; ++i ) {
-	// 					if ( menuItem === menuItem.parentNode.children[i] ) {
-	// 						continue;
-	// 					}
-	// 					menuItem.parentNode.children[i].classList.remove( 'focus' );
-	// 				}
-	// 				menuItem.classList.add( 'focus' );
-	// 			} else {
-	// 				menuItem.classList.remove( 'focus' );
-	// 			}
-	// 		};
-
-	// 		for ( i = 0; i < parentLink.length; ++i ) {
-	// 			parentLink[i].addEventListener( 'touchstart', touchStartFn, false );
-	// 		}
-	// 	}
-	// }( container ) );
-
-} )();
-
-
-/**
  * File skip-link-focus-fix.js.
  *
  * Helps with accessibility for keyboard only users.
@@ -1445,9 +1332,7 @@ Prism.hooks.add('complete', function (env) {
 /**
 * MOBILE NAVIGATION
 * Plain JavaScript functions to toggle the mobile navigation, no jQuery required
-*
-* navigation.js still handles aria roles and accessibility,
-* but user-triggered events are controlled here.
+* WAI-ARIA values are also added for accessibility 
 */
 
 // Add toggles to menu items that have submenus and bind to click event
@@ -1478,25 +1363,43 @@ for(var i in elements) {
 var menuToggle = document.querySelector('.menu-toggle');
     outsideMenu = document.querySelector('.site-content');
     menuContainer = document.querySelector('.main-navigation');
+    navMenu = document.querySelector('.nav-menu');
 
-// Toggle main menu with hamburger button
+// set WAI-ARIA values for nav and toggle button
+menuToggle.setAttribute( 'aria-expanded', 'false' );
+navMenu.setAttribute( 'aria-expanded', 'false' );
+
+// Toggle main menu and set WAI-ARIA values when menu button is clicked
 menuToggle.onclick = function() {
-  toggleClass(menuToggle, 'is-active');
-  toggleClass(menuContainer, 'toggled');
+  if (hasClass(menuContainer, 'toggled')) {
+    removeClass(menuToggle, 'is-active');
+    removeClass(menuContainer, 'toggled');
+    menuToggle.setAttribute( 'aria-expanded', 'false' );
+    navMenu.setAttribute( 'aria-expanded', 'false' );
+  } else {
+    addClass(menuToggle, 'is-active');
+    addClass(menuContainer, 'toggled');
+    menuToggle.setAttribute( 'aria-expanded', 'true' );
+    navMenu.setAttribute( 'aria-expanded', 'true' );
+  }
 };
 
-// Close menu when area outside of menu is clicked
+// Close menu and reset WAI-ARIA values when area outside of menu is clicked
 outsideMenu.onclick = function() {
-  removeClass(menuContainer, 'toggled');
   removeClass(menuToggle, 'is-active');
+  removeClass(menuContainer, 'toggled');
+  menuToggle.setAttribute( 'aria-expanded', 'false' );
+  navMenu.setAttribute( 'aria-expanded', 'false' );
 };
 
 // Reset mobile nav for laptop and desktop
 window.addEventListener('resize', disableMobileNav);
 function disableMobileNav() {
   if (window.innerWidth > 999) {
-    removeClass(menuContainer, 'toggled');
     removeClass(menuToggle, 'is-active');
+    removeClass(menuContainer, 'toggled');
+    menuToggle.setAttribute( 'aria-expanded', 'false' );
+    navMenu.setAttribute( 'aria-expanded', 'false' );
   }
 }
 
@@ -1523,6 +1426,8 @@ function disableMobileNav() {
 // };
 
 
+
+// https://github.com/toddmotto/foreach
 // var forEach = function forEach(collection, callback, scope) {
 //   if (Object.prototype.toString.call(collection) === '[object Object]') {
 //     for (var prop in collection) {
