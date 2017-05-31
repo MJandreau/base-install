@@ -1,3 +1,25 @@
+
+
+
+// // testing subnav layout
+// .main-navigation li a {
+// 	background-color: red;
+// }
+// .main-navigation li ul li a {
+// 	background-color: teal;
+// }
+// .main-navigation li ul li ul li a {
+// 	background-color: green;
+// }
+
+
+
+
+
+
+
+
+
 .main-navigation {
 	clear: both;
 	display: block;
@@ -26,7 +48,8 @@
 
 
 		&.nav-menu {
-			transition: max-height ($transistion_duration * 2);
+			// transition: max-height $transistion_duration;
+			transition: max-height $transistion_duration 0s ease-in-out;
 		}
 
 		ul {
@@ -51,6 +74,8 @@
 				}
 
 				li {
+					display: block; // makes li span full width of ul
+
 					&:hover > ul,
 					&.focus > ul {
 						left: 100%;
@@ -150,6 +175,7 @@
 	// transition: background-color $transistion_duration;
     text-indent: 100%;
     overflow: hidden;
+	transition: $transistion_duration;
 
 
     &:after{
@@ -178,13 +204,26 @@
 	}
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 .page_item_has_children > a {
 	padding-right: $font__line-height-nav;
 }
 
 .children {
 	max-height: 0;
-	transition: max-height $transistion_duration;
+	transition: max-height $transistion_duration 0s ease-in-out;
 	overflow: hidden;
 
 	&.active {
@@ -215,41 +254,17 @@
 
 
 
-// testing subnav layout
-// .main-navigation li a {
-// 	background-color: red;
-// }
-// .main-navigation li ul li a {
-// 	background-color: teal;
-// }
-// .main-navigation li ul li ul li a {
-// 	background-color: green;
-// }
-
-
-/* Small menu. */
-// .menu-toggle,
-// .menu-toggle {
-// 	// position: absolute;
-// 	// top: 0;
-// 	// right: 0;
-// 	float: right;
-
-// 	@include laptop {
-// 		display: none;
-// 	}
-// }
-
 .main-navigation.toggled ul.nav-menu {
-	// display: block;
-	
-	// css transition added on lines 14-18
-	max-height: 1000px; 
+	max-height: 1000px; // css transition added on lines 14-18
 
 	@include laptop {
 		overflow: visible;
 	}
 }
+
+
+
+
 
 
 

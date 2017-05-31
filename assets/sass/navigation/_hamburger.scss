@@ -76,7 +76,7 @@ button.menu-toggle {
   &.is-active span::before,
   &.is-active span::after {
     transition: $transistion_duration;
-    transition-delay: $transistion_duration;
+    // transition-delay: $transistion_duration;
   }
 
   span {
@@ -88,7 +88,7 @@ button.menu-toggle {
     height: $menu-toggle-bar;
     background-color: #000;
     transition-duration: $transistion_duration;
-    transition-delay: $transistion_duration;
+    // transition-delay: $transistion_duration;
 
     &::before, 
     &::after {
@@ -100,7 +100,7 @@ button.menu-toggle {
       background-color: #000;
       content: "";
       transition-duration: $transistion_duration;
-      transition-delay: $transistion_duration;
+      // transition-delay: $transistion_duration;
     }
     
     &::before {

@@ -68,6 +68,8 @@ function disableMobileNav() {
     removeClass(menuToggle, 'is-active');
     removeClass(menuContainer, 'toggled');
     menuToggle.setAttribute( 'aria-expanded', 'false' );
+    navMenu.setAttribute( 'aria-expanded', 'true' );
+  } else {
     navMenu.setAttribute( 'aria-expanded', 'false' );
   }
 }
