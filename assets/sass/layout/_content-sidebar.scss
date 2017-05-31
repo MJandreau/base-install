@@ -13,7 +13,7 @@
 // Header styles
 // full header with branding, title, description, and nav
 .site-header { 
-	background-color: rgba(255,255,0,0.5);
+	// background-color: rgba(255,255,0,0.5);
 	margin-bottom: $headerMargin;
 	// @include fixedHeader; // Set fixed header
 }
@@ -46,13 +46,13 @@
 }
 
 .site-title { // site title only
-	background-color: rgba(0,255,0,0.5);
+	// background-color: rgba(0,255,0,0.5);
 	margin-bottom: 0;
 	font-size: 24px;
 }
 
 .site-description { // site description only
-	background-color: rgba(0,0,255,0.5);
+	// background-color: rgba(0,0,255,0.5);
 	margin: 0;
 }
 
@@ -74,15 +74,15 @@
 .content-area {
 	// this is the full content section of the site
 	// including main content area and sidebar
-	background-color: rgba(255,0,0,0.2);
+	// background-color: rgba(255,0,0,0.2);
 }
 
 .site-main {
-	background-color: rgba(0,255,0,0.2);
+	// background-color: rgba(0,255,0,0.2);
 }
 
 .widget-area {
-	background-color: rgba(0,0,255,0.2);
+	// background-color: rgba(0,0,255,0.2);
 
 	// height: 50px; overflow: hidden; // testing sticy footer
 }
@@ -93,12 +93,12 @@
 
 // footer styles
 .site-footer {
-	background-color: rgba(255,0,0,0.3);
+	// background-color: rgba(255,0,0,0.3);
 	width: 100%;
 }
 
 .site-info {
-	background-color: rgba(0,255,255,0.3);
+	// background-color: rgba(0,255,255,0.3);
 	@extend .container; // keeps copyright info lined up with body content
 }
 

@@ -14,11 +14,8 @@
 
 
 
-
-
-
-
-
+$mainNavContainerHeight: 60px;
+$mainNavMenuHeight: 24px;
 
 .main-navigation {
 	clear: both;
@@ -31,26 +28,21 @@
 		display: inline-block;
 		float: right;
 		width: auto;
+		margin-top: ($mainNavContainerHeight - $mainNavMenuHeight) / 2;
 	}
 
 	ul {
-		// display: block;	
+		display: block; 
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
 		position: relative;
 		z-index: 100;
 
-		// // css transition for menu toggle
-		display: block; 
+		// css transition for menu toggle
 		max-height: 0;
 		overflow: hidden;
-
-
-		&.nav-menu {
-			// transition: max-height $transistion_duration;
-			transition: max-height $transistion_duration 0s ease-in-out;
-		}
+		transition: max-height $transistion_duration 0s ease-in-out;
 
 		ul {
 			background-color: #fff;
@@ -133,6 +125,10 @@
 
 		@include laptop {
 			display: inline-block;
+
+			& + li {
+				margin-left: 8px;
+			}
 		}
 	}
 
@@ -223,7 +219,7 @@
 
 .children {
 	max-height: 0;
-	transition: max-height $transistion_duration 0s ease-in-out;
+	// transition: max-height $transistion_duration 0s ease-in-out;
 	overflow: hidden;
 
 	&.active {
@@ -287,14 +283,14 @@
 	.nav-previous {
 		float: left;
 		width: 50%;
-		background-color: red;
+		// background-color: red;
 	}
 
 	.nav-next {
 		float: right;
 		text-align: right;
 		width: 50%;
-		background-color: orange;
+		// background-color: orange;
 	}
 }
 
