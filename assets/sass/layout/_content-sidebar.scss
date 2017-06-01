@@ -8,14 +8,24 @@
 
 
 
-
+.site-description {
+	display: none;
+}
 
 // Header styles
 // full header with branding, title, description, and nav
 .site-header { 
+	background-color: $color__background-header;
 	// background-color: rgba(255,255,0,0.5);
-	margin-bottom: $headerMargin;
+	margin-bottom: $headerBottomMargin;
 	// @include fixedHeader; // Set fixed header
+	border-bottom: 1px solid #ddd;
+	padding: $headerBottomMargin 0;
+
+	@include laptop {
+		padding: ($headerHeight / 3) 0;
+		margin-bottom: $headerBottomMargin * 2;
+	}
 }
 
 // WP admin bar bix
@@ -49,6 +59,7 @@
 	// background-color: rgba(0,255,0,0.5);
 	margin-bottom: 0;
 	font-size: 24px;
+	line-height: $headerHeight;
 }
 
 .site-description { // site description only
@@ -93,8 +104,15 @@
 
 // footer styles
 .site-footer {
+	background-color: $color__background-footer;
 	// background-color: rgba(255,0,0,0.3);
 	width: 100%;
+	border-top: 1px solid #ddd;
+	padding: ($headerHeight / 3) 0;
+
+	// @include laptop {
+	// 	padding: ($headerHeight / 2) 0;
+	// }
 }
 
 .site-info {
@@ -137,7 +155,7 @@
 
 	.site-main {
 		margin: 0 $size__site-sidebar 0 0;
-		padding-right: 20px;
+		padding-right: $headerBottomMargin * 2;
 	}
 
 	.site-content .widget-area {

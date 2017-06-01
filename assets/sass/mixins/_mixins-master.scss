@@ -1,12 +1,12 @@
 // Grid calculation
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-// @function grid-column-width($n) {
-//   @return $column-width * $n;
-// }
+@function grid-column-width($n) {
+  @return $column-width * $n;
+}
 
-// @function grid-offset-length($n) {
-//   @return grid-column-width($n);
-// }
+@function grid-offset-length($n) {
+  @return grid-column-width($n);
+}
 
 // Media queries - @include mobile { selector: style; }
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -28,10 +28,29 @@
 	&:after  { content:''; display: table; clear: both; } 
 }
 
+// Position element at center of parent - @include absoluteCenter;
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin absoluteCenter {
+	margin: auto;
+	position: absolute;
+	top: 0; 
+	left: 0; 
+	bottom: 0; 
+	right: 0;
+}
+
 // Code syntax so line numbers are not selectable
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 @mixin unselectable() {
 	user-select: none;
+}
+
+// Make background images fill div, marked !important to override WordPress featured image placement
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin bgImage() {
+	background-repeat: no-repeat !important; 
+	background-position: center !important;
+	background-size: cover !important;
 }
 
 @mixin opacity($opacity) {
@@ -42,7 +61,7 @@
 
 // Top and bottom inset box shadow - @include innerShadow;
 @mixin innerShadow() {
-    box-shadow: inset 0 6px 6px -6px rgba(0,0,0,0.5), inset 0 -6px 6px -6px rgba(0,0,0,0.5);
+    box-shadow: inset 0 $shadow-size $shadow-size (-$shadow-size) $shadow-inset, inset 0 (-$shadow-size) $shadow-size (-$shadow-size) $shadow-inset;
 }
 
 // Outer box shadow - @include dropShadow;
@@ -69,8 +88,6 @@
 	}
 }
 
-
-
 // Adjust body for admin bar - @include wpAdminBodyAdjustment;
 @mixin wpAdminBodyAdjustment() {
 	padding: 0;
@@ -90,13 +107,13 @@
 
 // Adjust body for fixed header - @include fixedHeaderBodyAdjustment;
 @mixin fixedHeaderBodyAdjustment() {
-	padding-top: $headerHeight + $headerMargin;
+	padding-top: $headerHeight + $headerBottomMargin;
 
 	.admin-bar & {
-		padding-top: $headerHeight + $headerMargin + $wp_adminbar_sm;
+		padding-top: $headerHeight + $headerBottomMargin + $wp_adminbar_sm;
 
 		@include wpadmin {
-			padding-top: $headerHeight + $headerMargin + $wp_adminbar_lg;
+			padding-top: $headerHeight + $headerBottomMargin + $wp_adminbar_lg;
 		}
 	}
 }
@@ -110,16 +127,16 @@
 
 // Offset internal anchor links - @include anchorOffset;
 @mixin anchorOffset() {
-	margin-top: -$headerMargin;
-	height: $headerMargin;
+	margin-top: -$headerBottomMargin;
+	height: $headerBottomMargin;
 
 	.admin-bar & {
-		margin-top: -$headerMargin - $wp_adminbar_sm;
-		height: $headerMargin + $wp_adminbar_sm;
+		margin-top: -$headerBottomMargin - $wp_adminbar_sm;
+		height: $headerBottomMargin + $wp_adminbar_sm;
 
 		@include wpadmin {
-			margin-top: -$headerMargin - $wp_adminbar_lg;
-			height: $headerMargin + $wp_adminbar_lg;
+			margin-top: -$headerBottomMargin - $wp_adminbar_lg;
+			height: $headerBottomMargin + $wp_adminbar_lg;
 		}
 	}
 }

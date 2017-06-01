@@ -14,8 +14,6 @@
 
 
 
-$mainNavContainerHeight: 60px;
-$mainNavMenuHeight: 24px;
 
 .main-navigation {
 	clear: both;
@@ -28,7 +26,7 @@ $mainNavMenuHeight: 24px;
 		display: inline-block;
 		float: right;
 		width: auto;
-		margin-top: ($mainNavContainerHeight - $mainNavMenuHeight) / 2;
+		line-height: $headerHeight;
 	}
 
 	ul {
@@ -56,7 +54,7 @@ $mainNavMenuHeight: 24px;
 				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 				float: left;
 				position: absolute;
-				top: 1.5em;
+				top: $headerHeight / 1.5;
 				left: -999em;
 				z-index: 99999;
 
@@ -67,6 +65,7 @@ $mainNavMenuHeight: 24px;
 
 				li {
 					display: block; // makes li span full width of ul
+					margin: 0;
 
 					&:hover > ul,
 					&.focus > ul {
@@ -100,6 +99,7 @@ $mainNavMenuHeight: 24px;
 		// float: left;
 		display: block;
 		position: relative;
+		border-top: 1px solid #f4f4f4;
 
 		&:hover > a,
 		&.focus > a {
@@ -108,23 +108,24 @@ $mainNavMenuHeight: 24px;
 		}
 
 		&:first-of-type {
-			margin-top: 20px;
+			margin-top: $headerBottomMargin;
 
 			@include laptop {
 				margin-top: 0;
 			}
 		}
 
-		&:last-of-type {
-			margin-bottom: 20px;
+		// &:last-of-type {
+		// 	margin-bottom: $headerBottomMargin;
 
-			@include laptop {
-				margin-bottom: 0;
-			}
-		}
+		// 	@include laptop {
+		// 		margin-bottom: 0;
+		// 	}
+		// }
 
 		@include laptop {
 			display: inline-block;
+			border: none;
 
 			& + li {
 				margin-left: 8px;
@@ -135,6 +136,7 @@ $mainNavMenuHeight: 24px;
 	a {
 		display: block;
 		text-decoration: none;
+		line-height: $font__line-height-nav;
 	}
 	
 	.current_page_item > a,
@@ -167,25 +169,41 @@ $mainNavMenuHeight: 24px;
 	top: 0;
 	cursor: pointer;
 	// color: $color_white;
-	// background-color: $brand_primary;
-	// transition: background-color $transistion_duration;
     text-indent: 100%;
     overflow: hidden;
+	// background-color: $brand_primary;
+	// transition: background-color $transistion_duration;
 	transition: $transistion_duration;
 
+	@include laptop {
+		top: $font__line-height-nav / 3;
+		height: $font__line-height-nav / 2;
+		width: $font__line-height-nav / 2;
+	}
 
     &:after{
 		content: '';
 		position: absolute;
-		top: $font__subnav-toggle-size * 2;
-		left: $font__subnav-toggle-size * 1.4;
+		top: $font__subnav-toggle-size * 2.5;
+		left: $font__subnav-toggle-size * 2;
 		width: 0;
 		height: 0;
 		border: $font__subnav-toggle-size solid transparent;
 		border-top-color: $color__link;
+		// border-top-color: $color_white;
+
+		@include laptop {
+			top: $font__subnav-toggle-size / 2;
+			left: $font__subnav-toggle-size / 2;
+
+			.children & {
+				top: $font__subnav-toggle-size / 4;
+			}
+		}
     }
 
 	&.active {
+		// background-color: darken($brand_primary, 10%);
 		transform: rotate(-180deg);
 
 		@include laptop {
@@ -196,6 +214,7 @@ $mainNavMenuHeight: 24px;
 	@include laptop {
 		.children & {
 			transform: rotate(-90deg);
+			top: $font__line-height-nav / 4;
 		}
 	}
 }
@@ -215,6 +234,10 @@ $mainNavMenuHeight: 24px;
 
 .page_item_has_children > a {
 	padding-right: $font__line-height-nav;
+
+	@include laptop {
+		padding-right: $font__line-height-nav / 2;
+	}
 }
 
 .children {
@@ -234,6 +257,10 @@ $mainNavMenuHeight: 24px;
 		&:last-of-type {
 			margin-bottom: 0;
 		}
+	}
+
+	a {
+		white-space: nowrap;
 	}
 }
 

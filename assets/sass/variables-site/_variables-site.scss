@@ -24,8 +24,8 @@ $color_sharethis: #01BF01;
 
 // Background colors
 $color__background-body: #fff;
-$color__background-header: #fff;
-$color__background-footer: #fff;
+$color__background-header: #f4f4f4;
+$color__background-footer: #f4f4f4;
 $color__background-lightgray: #f4f4f4;
 $color__background-darkgray: #333;
 $color__background-screen: #f1f1f1;
@@ -60,8 +60,6 @@ $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
 
-$font__line-height-nav: 24px;
-$font__subnav-toggle-size: 5px;
 
 
 
@@ -91,7 +89,6 @@ $transistion_duration: 0.3s;
 $border_radius: 3px;
 
 
-
 // Scroll-to-top button, size is calculated using the formula d = a * √2
 $chevronWidth: 10px; // width of chevron, can be whatever
 $borderWidth: $chevronWidth / 4; // width of borders based on chevron size
@@ -99,22 +96,40 @@ $squareRoot: 1.41421356237; // square root of 2 used for getting chevron diagona
 $scrollUpButtonSize: $chevronWidth * $squareRoot; // calculates diagonal of chevron
 
 
-
-
-
-
-
 // header variables - height, margin, WP admin offset, and internal anchor link offset
-$headerHeight: 62px;
-$headerMargin: 20px;
+
+
+
+$headerHeight: 60px;
+$headerBottomMargin: 20px;
 $wp_adminbar_sm: 46px;
 $wp_adminbar_lg: 32px;
 
-$anchorOffset: $headerHeight + $headerMargin;
-$anchorOffsetAdmin: $headerHeight + ($headerMargin * 3);
+// offset internal page anchors to account for top nav
+$anchorOffset: $headerHeight + $headerBottomMargin;
+$anchorOffsetAdmin: $headerHeight + ($headerBottomMargin * 3);
+
+// line height and nav toggle sizes for submenus
+$font__line-height-nav: 40px;
+$font__subnav-toggle-size: $font__line-height-nav / 6;
 
 
 
+
+
+
+
+//Grid and layout variables
+$container-width: 1170px !default;
+$container-width-mobile: 85% !default;
+$container-width-phablet: 80% !default;
+$total-columns: 12 !default;
+$column-width: 100% / $total-columns !default; // calculates individual column width based off of # of columns
+$column-margin: 20px !default; // space between columns calculated in grid, was 2.0rem !default
+
+
+$navbar-height: 8rem !default;
+$navbar-tall: 12rem !default;
 
 
 
