@@ -5,6 +5,4 @@ Base Install Four
 
 Basic starter theme for WordPress development, based on Underscores.
 
-Currently under active development, so each component of the site has a deliberately horrible background color to keep the boundaries visible.
-
-The demo can be viewed here: [Base Install Demo](http://losaidos.com/dev/baseinstall)
+Currently under active development, but the demo can be viewed here: [Base Install Demo](http://losaidos.com/dev/baseinstall)
