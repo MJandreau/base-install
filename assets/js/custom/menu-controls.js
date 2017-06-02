@@ -14,7 +14,7 @@ for (index = 0; index < subMenuItems.length; index++) {
   subMenuItems[index].parentNode.insertBefore(dropdownArrow, subMenuItems[index].nextSibling);
 }
 
-// Enables toggling all submenus rather than just one
+// Enables toggling all submenus individually
 var subMenuToggle = document.querySelectorAll('.sub-nav-toggle');    
 for(var i in subMenuToggle) {
   if(subMenuToggle.hasOwnProperty(i)) {
@@ -27,8 +27,8 @@ for(var i in subMenuToggle) {
 
 
 
-// Mobile navigation controls, uses class-helpers.js 
-// to enable jQuery-like controls over class manipulation
+// Mobile navigation controls
+// uses class-helpers.js to enable jQuery-like controls over class manipulation
 var menuToggle = document.querySelector('.menu-toggle');
     outsideMenu = document.querySelector('.site-content');
     menuContainer = document.querySelector('.main-navigation');
