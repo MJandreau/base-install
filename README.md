@@ -7,3 +7,4 @@ Base Install is a starter theme for WordPress development using Underscores as a
 
 This theme is currently under active development and will see some changes, but the demo as it is now can be viewed here: [Base Install Demo](http://losaidos.com/dev/baseinstall).
 
+Base Install is licensed under the [GPL](https://en.wikipedia.org/wiki/GNU_General_Public_License). Use it to make something cool, have fun, and share what you've learned with others.
