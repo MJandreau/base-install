@@ -68,13 +68,6 @@ abbr,acronym{border-bottom:1px dotted #666;cursor:help}
 mark,ins{background:#fff9c0;text-decoration:none}
 big{font-size:125%}
 code[class*="language-"],pre[class*="language-"]{color:#c5c8c6;text-shadow:none;font-family:Inconsolata,Monaco,Consolas,'Courier New',Courier,monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.6;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}
-pre[class*="language-"]{padding:0 0 16px;margin:0 0 1.5em;overflow:auto;border-radius:0}
-pre[class*="language-"]:before{display:block;content:'';color:#666;height:16px;line-height:16px;font-size:16px;text-align:right;margin:12px 12px -12px 0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
-pre[class*="language-"][class*="-html"]:before{content:'HTML'}
-pre[class*="language-"][class*="-css"]:before{content:'CSS'}
-pre[class*="language-"][class*="-javascript"]:before{content:'JavaScript'}
-pre[class*="language-"][class*="-scss"]:before{content:'SCSS'}
-pre[class*="language-"][class*="-php"]:before{content:'PHP'}
 :not(pre)>code[class*="language-"],pre[class*="language-"]{background:#1d1f21}
 :not(pre)>code[class*="language-"]{padding:.1em;border-radius:.3em}
 .token.comment,.token.prolog,.token.doctype,.token.cdata{color:#7c7c7c}
@@ -98,11 +91,16 @@ pre[class*="language-"][class*="-php"]:before{content:'PHP'}
 .token.important,.token.bold{font-weight:bold}
 .token.italic{font-style:italic}
 .token.entity{cursor:help}
-pre.line-numbers{position:relative;padding-left:3.3333325em;counter-reset:linenumber}
-pre.line-numbers>code{position:relative}
-.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.3333325em;width:2.5em;letter-spacing:-1px;border-right:1px solid #666;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
-.line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}
-.line-numbers-rows>span:before{content:counter(linenumber);color:#666;display:block;padding-right:.8333333333em;text-align:right}
+pre{position:relative}
+pre[rel]{padding:28px 0 0}
+pre[rel]::before{font-size:.75rem;content:attr(rel);color:white;position:absolute;top:0;left:0;width:100%;background:#999;padding:0;text-indent:15px}
+pre[rel="CSS"]::before{background:#ff9800}
+pre[rel="HTML"]::before{background:#4caf50}
+pre[rel="jQuery"]::before,pre[rel="JavaScript"]::before,pre[rel="JSX"]::before{background:#9c27b0}
+pre code{font-family:"Operator Mono SSm A","Operator Mono SSm B",'Source Code Pro',Menlo,Consolas,Monaco,monospace;font-size:16px;line-height:1.75;background:0;padding:16px;white-space:pre;-webkit-overflow-scrolling:touch;display:block;overflow:auto}
+pre code::-webkit-scrollbar{width:.5em;height:.5em}
+pre code::-webkit-scrollbar-thumb{background:#666}
+pre code::-webkit-scrollbar-track{background:0}
 html{box-sizing:border-box}
 *,*:before,*:after{box-sizing:inherit}
 body{background:#fff}
