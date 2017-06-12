@@ -29,34 +29,84 @@ big {
 	font-size: 125%;
 }
 
-
-
-
-
-
-
-
+code, kbd, tt, var {
+	font-family: $font__code;
+	@include font-size(.9);
+}
 
 
 
 pre {
 	background: $color__background-pre;
 	font-family: $font__pre;
-	@include font-size(0.9375);
+	@include font-size(.9);
 	line-height: $font__line-height-pre;
 	margin-top: 0;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
+	position: relative;
+	tab-size: 4;
+
+	&[rel] {
+		padding: 2.4em 0 0;
+	}
+
+	&[rel]::before {
+		line-height: 2.4em;
+		content: attr(rel);
+		color: white;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background: #999;
+		padding: 0;
+		text-indent: 1.6em;
+	}
+
+	// &[rel="JavaScript"]::before {
+	// 	content: "JS";
+	// }
+
+	&[rel="CSS"]::before {
+		background: #FF9800;
+	}
+
+	&[rel="HTML"]::before {
+		background: #4CAF50;
+	}
+
+	&[rel="jQuery"]::before, 
+	&[rel="JavaScript"]::before, 
+	&[rel="JSX"]::before {
+		background: #9C27B0;
+	}
+
+	code {
+		background: none;
+		padding: 1.6em;
+		white-space: pre;
+		-webkit-overflow-scrolling: touch;
+		display: block;
+		overflow: auto;
+		color: #c5c8c6;
+
+		&::-webkit-scrollbar {
+			width: .5em;
+			height: .5em;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: #666;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: none;
+		}
+	}
 }
-
-code, kbd, tt, var {
-	font-family: $font__code;
-	@include font-size(0.9375);
-}
-
-
 
 
 
@@ -209,75 +259,6 @@ pre[class*="language-"] {
 
 
 
-
-
-pre {
-	position: relative;
-
-	&[rel] {
-		padding: 28px 0 0;
-
-	
-	}
-
-	&[rel]::before {
-		font-size: 0.75rem;
-		content: attr(rel);
-		color: white;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		background: #999;
-		padding: 0;
-		text-indent: 15px;
-	}
-
-	// &[rel="JavaScript"]::before {
-	// 	content: "JS";
-	// }
-
-	&[rel="CSS"]::before {
-		background: #FF9800;
-	}
-
-	&[rel="HTML"]::before {
-		background: #4CAF50;
-	}
-
-	&[rel="jQuery"]::before, 
-	&[rel="JavaScript"]::before, 
-	&[rel="JSX"]::before {
-		background: #9C27B0;
-	}
-
-
-	code {
-		font-family: "Operator Mono SSm A", "Operator Mono SSm B", 'Source Code Pro', Menlo, Consolas, Monaco, monospace;
-		font-size: 16px;
-		line-height: 1.75;
-		background: none;
-		padding: 16px;
-		white-space: pre;
-		-webkit-overflow-scrolling: touch;
-		display: block;
-		overflow: auto;
-		color: #c5c8c6;
-
-		&::-webkit-scrollbar {
-			width: .5em;
-			height: .5em;
-		}
-
-		&::-webkit-scrollbar-thumb {
-			background: #666;
-		}
-
-		&::-webkit-scrollbar-track {
-			background: none;
-		}
-	}
-}
 
 
 

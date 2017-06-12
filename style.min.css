@@ -54,7 +54,7 @@ textarea{overflow:auto}
 optgroup{font-weight:bold}
 table{border-collapse:collapse;border-spacing:0}
 td,th{padding:0}
-body,button,input,select,textarea{color:#404040;font-family:sans-serif;font-size:16px;font-size:1rem;line-height:1.5}
+body,button,input,select,textarea{color:#404040;font-family:sans-serif;font-size:16px;font-size:1rem;line-height:1.618}
 h1,h2,h3,h4,h5,h6{margin-top:0;clear:both;margin-bottom:20px;font-weight:300}
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{text-decoration:none}
 .entry-header h1,.entry-header h2,.entry-header h3,.entry-header h4,.entry-header h5,.entry-header h6{margin-bottom:.5rem}
@@ -65,8 +65,17 @@ address{margin:0 0 1.5em}
 abbr,acronym{border-bottom:1px dotted #666;cursor:help}
 mark,ins{background:#fff9c0;text-decoration:none}
 big{font-size:125%}
-pre{background:#eee;font-family:"Courier 10 Pitch",Courier,monospace;font-size:15px;font-size:.9375rem;line-height:1.6;margin-top:0;margin-bottom:1.6em;max-width:100%;overflow:auto;padding:1.6em}
-code,kbd,tt,var{font-family:Monaco,Consolas,"Andale Mono","DejaVu Sans Mono",monospace;font-size:15px;font-size:.9375rem}
+code,kbd,tt,var{font-family:"Source Code Pro",Monaco,Consolas,"Andale Mono","DejaVu Sans Mono",monospace;font-size:14.4px;font-size:.9rem}
+pre{background:#eee;font-family:"Courier 10 Pitch",Courier,monospace;font-size:14.4px;font-size:.9rem;line-height:1.6;margin-top:0;margin-bottom:1.6em;max-width:100%;overflow:auto;padding:1.6em;position:relative;-moz-tab-size:4;-o-tab-size:4;tab-size:4}
+pre[rel]{padding:2.4em 0 0}
+pre[rel]::before{line-height:2.4em;content:attr(rel);color:white;position:absolute;top:0;left:0;width:100%;background:#999;padding:0;text-indent:1.6em}
+pre[rel="CSS"]::before{background:#ff9800}
+pre[rel="HTML"]::before{background:#4caf50}
+pre[rel="jQuery"]::before,pre[rel="JavaScript"]::before,pre[rel="JSX"]::before{background:#9c27b0}
+pre code{background:0;padding:1.6em;white-space:pre;-webkit-overflow-scrolling:touch;display:block;overflow:auto;color:#c5c8c6}
+pre code::-webkit-scrollbar{width:.5em;height:.5em}
+pre code::-webkit-scrollbar-thumb{background:#666}
+pre code::-webkit-scrollbar-track{background:0}
 :not(pre)>code[class*="language-"],pre[class*="language-"]{background:#1d1f21}
 :not(pre)>code[class*="language-"]{padding:.1em;border-radius:.3em}
 .token.comment,.token.prolog,.token.doctype,.token.cdata{color:#7c7c7c}
@@ -90,16 +99,6 @@ code,kbd,tt,var{font-family:Monaco,Consolas,"Andale Mono","DejaVu Sans Mono",mon
 .token.important,.token.bold{font-weight:bold}
 .token.italic{font-style:italic}
 .token.entity{cursor:help}
-pre{position:relative}
-pre[rel]{padding:28px 0 0}
-pre[rel]::before{font-size:.75rem;content:attr(rel);color:white;position:absolute;top:0;left:0;width:100%;background:#999;padding:0;text-indent:15px}
-pre[rel="CSS"]::before{background:#ff9800}
-pre[rel="HTML"]::before{background:#4caf50}
-pre[rel="jQuery"]::before,pre[rel="JavaScript"]::before,pre[rel="JSX"]::before{background:#9c27b0}
-pre code{font-family:"Operator Mono SSm A","Operator Mono SSm B",'Source Code Pro',Menlo,Consolas,Monaco,monospace;font-size:16px;line-height:1.75;background:0;padding:16px;white-space:pre;-webkit-overflow-scrolling:touch;display:block;overflow:auto;color:#c5c8c6}
-pre code::-webkit-scrollbar{width:.5em;height:.5em}
-pre code::-webkit-scrollbar-thumb{background:#666}
-pre code::-webkit-scrollbar-track{background:0}
 html{box-sizing:border-box}
 *,*:before,*:after{box-sizing:inherit}
 body{background:#fff}
