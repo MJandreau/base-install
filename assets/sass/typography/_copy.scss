@@ -49,71 +49,80 @@ big {
 
 
 
+
+
 // prism code styles
-code[class*="language-"],
-pre[class*="language-"] {
-	color: #c5c8c6;
-	// text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	text-shadow: none;
-    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	line-height: 1.6;
+// code[class*="language-"],
+// pre[class*="language-"] {
+// 	color: #c5c8c6;
+// 	// text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+// 	text-shadow: none;
+//     font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+// 	direction: ltr;
+// 	text-align: left;
+// 	white-space: pre;
+// 	word-spacing: normal;
+// 	word-break: normal;
+// 	line-height: 1.6;
 
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
+// 	-moz-tab-size: 4;
+// 	-o-tab-size: 4;
+// 	tab-size: 4;
 
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
+// 	-webkit-hyphens: none;
+// 	-moz-hyphens: none;
+// 	-ms-hyphens: none;
+// 	hyphens: none;
+// }
 
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 0 0 16px;
-	margin: 0 0 1.5em;
-	overflow: auto;
-	border-radius: 0;
+// /* Code blocks */
+// pre[class*="language-"] {
+// 	padding: 16px 0;
+// 	margin: 0 0 1.5em;
+// 	overflow: auto;
+// 	border-radius: 0;
+// 	position: relative;
 
-	&:before {
-		display: block;
-		content: '';
-		color: #666;
-		height: 16px;
-		line-height: 16px;
-		font-size: 16px;
-		text-align: right;
-		margin: 12px 12px -12px 0;
-		user-select: none;
-		// background: red;
-	}
+// 	// &:before {
+// 	// 	display: block;
+// 	// 	width: 100%;
+// 	// 	position: absolute;
+// 	// 	top: 0;
+// 	// 	left: 0;
 
-	&[class*="-html"]:before {
-		content: 'HTML';
-	}
+// 	// 	content: '';
+// 	// 	color: #666;
 
-	&[class*="-css"]:before {
-		content: 'CSS';
-	}
+// 	// 	height: 16px;
+// 	// 	line-height: 16px;
+// 	// 	font-size: 16px;
+// 	// 	// text-align: right;
+// 	// 	margin: 0;
+// 	// 	user-select: none;
+// 	// 	background: red;
+// 	// }
 
-	&[class*="-javascript"]:before {
-		content: 'JavaScript';
-	}
+// 	// &[class*="-html"]:before {
+// 	// 	content: 'HTML';
+// 	// }
 
-	&[class*="-scss"]:before {
-		content: 'SCSS';
-	}
+// 	// &[class*="-css"]:before {
+// 	// 	content: 'CSS';
+// 	// }
 
-	&[class*="-php"]:before {
-		content: 'PHP';
-	}
+// 	// &[class*="-javascript"]:before {
+// 	// 	content: 'JavaScript';
+// 	// }
 
-}
+// 	// &[class*="-scss"]:before {
+// 	// 	content: 'SCSS';
+// 	// }
+
+// 	// &[class*="-php"]:before {
+// 	// 	content: 'PHP';
+// 	// }
+
+// }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
@@ -228,50 +237,144 @@ pre[class*="language-"] {
 
 
 
-$lineWidth: 2.5em;
-$linePadLeft: $lineWidth * 1.333333;
-$linePadRight: $lineWidth / 3;
 
-// line numbers
-pre.line-numbers {
+
+
+
+
+
+
+
+// $lineWidth: 3em;
+// $linePadLeft: $lineWidth * 1.333333;
+// $linePadRight: $lineWidth / 3;
+
+// // line numbers
+// pre.line-numbers {
+// 	position: relative;
+// 	padding-left: $linePadLeft;
+// 	counter-reset: linenumber;
+// 	border: 1px solid red;
+// }
+
+// pre.line-numbers > code {
+// 	position: relative;
+// 	border: 1px solid pink;
+// 	display: inline-block;
+// }
+
+// .line-numbers .line-numbers-rows {
+// 	position: absolute;
+// 	pointer-events: none;
+// 	top: 0;
+// 	font-size: 100%;
+// 	left: -$linePadLeft;
+// 	width: $lineWidth; // works for line-numbers below 1000 lines
+// 	letter-spacing: -1px;
+// 	border-right: 1px solid #666;
+
+// 	-webkit-user-select: none;
+// 	-moz-user-select: none;
+// 	-ms-user-select: none;
+// 	user-select: none;
+// }
+
+// .line-numbers-rows > span {
+// 	pointer-events: none;
+// 	display: block;
+// 	counter-increment: linenumber;
+// }
+
+// .line-numbers-rows > span:before {
+// 	content: counter(linenumber);
+// 	color: #666;
+// 	display: block;
+// 	padding-right: $linePadRight;
+// 	text-align: right;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pre {
 	position: relative;
-	padding-left: $linePadLeft;
-	counter-reset: linenumber;
+
+	&[rel] {
+		padding: 28px 0 0;
+	}
+
+	&[rel]::before {
+		font-size: 0.75rem;
+		content: attr(rel);
+		color: white;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background: #999;
+		padding: 0;
+		text-indent: 15px;
+	}
+
+	// &[rel="JavaScript"]::before {
+	// 	content: "JS";
+	// }
+
+	&[rel="CSS"]::before {
+		background: #FF9800;
+	}
+
+	&[rel="HTML"]::before {
+		background: #4CAF50;
+	}
+
+	&[rel="jQuery"]::before, 
+	&[rel="JavaScript"]::before, 
+	&[rel="JSX"]::before {
+		background: #9C27B0;
+	}
+
+	code {
+	    font-family: "Operator Mono SSm A", "Operator Mono SSm B", 'Source Code Pro', Menlo, Consolas, Monaco, monospace;
+	    font-size: 16px;
+	    line-height: 1.75;
+	    background: none;
+	    padding: 16px;
+	    white-space: pre;
+	    -webkit-overflow-scrolling: touch;
+	    display: block;
+	    overflow: auto;
+
+		&::-webkit-scrollbar {
+			width: .5em;
+			height: .5em;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: #666;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: none;
+		}
+	}
 }
 
-pre.line-numbers > code {
-	position: relative;
-}
 
-.line-numbers .line-numbers-rows {
-	position: absolute;
-	pointer-events: none;
-	top: 0;
-	font-size: 100%;
-	left: -$linePadLeft;
-	width: $lineWidth; /* works for line-numbers below 1000 lines */
-	letter-spacing: -1px;
-	border-right: 1px solid #666;
 
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
 
-.line-numbers-rows > span {
-	pointer-events: none;
-	display: block;
-	counter-increment: linenumber;
-}
-
-.line-numbers-rows > span:before {
-	content: counter(linenumber);
-	color: #666;
-	display: block;
-	padding-right: $linePadRight;
-	text-align: right;
-}
 
 
 
