@@ -184,11 +184,12 @@ button.menu-toggle span::after{bottom:-10px;-webkit-transition-property:bottom,-
 .widget{margin:0 0 1.5em}
 .widget select{max-width:100%}
 .container,.site-content,.site-info{width:100%;max-width:960px;padding:0 20px;margin:0 auto}
-.site-header{background-color:#f4f4f4;margin-bottom:20px;border-bottom:1px solid #e7e7e7}
+.site-header{background-color:#f4f4f4;border-bottom:1px solid #e7e7e7}
 .site{padding:0}
 .admin-bar .site{position:absolute;top:0;left:0;width:100%;padding-top:46px}
 .scroll-anchor:before{display:block;content:"";visibility:hidden;margin-top:-20px;height:20px}
 .admin-bar .scroll-anchor:before{margin-top:-66px;height:66px}
+.hero{background-color:#eee;padding:80px 0;margin-bottom:20px}
 .site-branding{display:inline-block}
 .site-title{margin-bottom:0;font-size:24px}
 .site-description{margin:0}
