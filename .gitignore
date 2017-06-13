@@ -10,12 +10,12 @@
 *.tar
 *.zip
 *.tgz
-*.map
 
 # Logs and databases #
 ######################
 *.log
 *.sql
+*.sqlite
 
 # OS generated files #
 ######################
@@ -30,38 +30,44 @@ Thumbs.db
 *.un~
 
 # SASS #
-##########
+########
 **/.sass-cache
 **/.sass-cache/*
 **/.map
 
 # Composer #
-##########
+############
 vendors/composer/
 !assets/js/vendor/
 wpcs/
 composer.lock
 
 # Bower #
-##########
+#########
 assets/bower_components/*
 
 # Codekit #
-##########
+###########
 /codekit-config.json
 *.codekit
 **.codekit-cache/*
 
 # NPM #
-##########
+#######
 node_modules
 
 # Compiled Files and Build Dirs #
-##########
+#################################
 /README.html
 /build/
 
+# Ignore CSS & Map File #
+#########################
+*.css
+*.map
+
 # PhpStrom Project Files #
+##########################
 .idea/
 library/vendors/composer
 assets/img/.DS_Store
