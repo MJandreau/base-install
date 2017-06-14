@@ -30,7 +30,7 @@
 
 			<div id="content" class="site-content-wrap">
 
-				<?php get_template_part('hero'); ?>
+				<?php get_template_part('template-parts/hero'); ?>
 
 				<?php if ( is_front_page() ) : ?>
 					<?php include baseinstall_template_path(); ?>
