@@ -228,9 +228,9 @@ function baseinstall_custom_header_image(){
 		$imgURL = $featuredImage[0]; //get url of image from array
 	    ?>
 		<style type="text/css">
-			/*.hero {
-				background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<?php // echo $imgURL ?>);
-			}*/
+			.hero {
+				background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<?php echo $imgURL ?>);
+			}
 		</style>
 	<?php
 	}

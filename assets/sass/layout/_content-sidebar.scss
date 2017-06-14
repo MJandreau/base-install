@@ -26,19 +26,27 @@
 
 
 
-.hero {
-	background-color: #ddd;
-	padding: ($headerBottomMargin * 4) 0;
-}
+
+
+
 
 .triple-feature {
-		padding: 40px 0;
+	padding: 20px 0 0;
 	background: #efefef;
+
+	@include laptop {
+		padding-top: 40px;
+	}
 }
 
 .featured {
 	background: #f4f4f4;
 	text-align: center;
+	margin-bottom: 20px;
+
+	@include laptop {
+		margin-bottom: 40px;
+	}
 
 	h3 {
 		margin: 0;
@@ -46,6 +54,7 @@
 		line-height: 60px;
 	}
 }
+
 
 
 .site-branding { // site title and description
