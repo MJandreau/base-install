@@ -30,7 +30,7 @@ for(var i in subMenuToggle) {
 // Mobile navigation controls
 // uses class-helpers.js to enable jQuery-like controls over class manipulation
 var menuToggle = document.querySelector('.menu-toggle');
-    outsideMenu = document.querySelector('.site-content');
+    outsideMenu = document.querySelector('.site-content-wrap');
     menuContainer = document.querySelector('.main-navigation');
     navMenu = document.querySelector('.nav-menu');
 
