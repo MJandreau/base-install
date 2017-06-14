@@ -1,10 +1,4 @@
-// main container wrap, should move to grid stylesheet later
-.container {
-	width: 100%;
-	max-width: 960px;
-	padding: 0 20px;
-	margin: 0 auto;
-}
+
 
 // Header styles
 // full header with branding, title, description, and nav
@@ -33,12 +27,25 @@
 
 
 .hero {
-	background-color: #eee;
+	background-color: #ddd;
 	padding: ($headerBottomMargin * 4) 0;
-	margin-bottom: $headerBottomMargin;
 }
 
+.triple-feature {
+		padding: 40px 0;
+	background: #efefef;
+}
 
+.featured {
+	background: #f4f4f4;
+	text-align: center;
+
+	h3 {
+		margin: 0;
+		padding: 40px 0;
+		line-height: 60px;
+	}
+}
 
 
 .site-branding { // site title and description
@@ -84,7 +91,9 @@
 
 .widget-area {
 	// background-color: rgba(0,0,255,0.2);
-
+	// background: red; 
+	// height: 300px;
+	// overflow: hidden;
 	// height: 50px; overflow: hidden; // testing sticy footer
 }
 
@@ -128,7 +137,7 @@
 .site-footer {
 	flex-shrink: 0; 
 }
-.site-content {
+.site-content-wrap {
 	flex: 1 0 auto; 
 }
 
@@ -136,7 +145,7 @@
 
 
 
-@include laptop {
+@include tablet {
 	.content-area {
 		float: left;
 		margin: 0 (-$size__site-sidebar) 0 0;
@@ -157,6 +166,21 @@
 	.site-footer {
 		clear: both;
 		width: $size__site-main;
+	}
+}
+
+
+@include desktop {
+	.content-area {
+		margin: 0 (-$size__site-sidebar-desktop) 0 0;
+	}
+
+	.site-main {
+		margin: 0 $size__site-sidebar-desktop 0 0;
+	}
+
+	.site-content .widget-area {
+		width: $size__site-sidebar-desktop;
 	}
 }
 

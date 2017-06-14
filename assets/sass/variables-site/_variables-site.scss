@@ -65,7 +65,12 @@ $font__line-height-pre: 1.6;
 
 // Site main/sidebar structure
 $size__site-main: 100%;
-$size__site-sidebar: 28%;
+$size__site-sidebar: 33.333333%;
+$size__site-sidebar-desktop: 25%;
+
+
+
+
 
 // Responsive breakpoints for mixins found in _functions.scss
 $width_mobile: 480px;
@@ -119,13 +124,12 @@ $font__subnav-toggle-size: $font__line-height-nav / 6;
 
 
 
-//Grid and layout variables
-$container-width: 1170px !default;
-$container-width-mobile: 85% !default;
-$container-width-phablet: 80% !default;
+// Grid and layout variables
+// $container-width: 1170px !default;
 $total-columns: 12 !default;
 $column-width: 100% / $total-columns !default; // calculates individual column width based off of # of columns
 $column-margin: 20px !default; // space between columns calculated in grid, was 2.0rem !default
+
 
 
 $navbar-height: 8rem !default;
