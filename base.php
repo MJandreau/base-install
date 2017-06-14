@@ -28,7 +28,7 @@
 
 			<?php get_header( baseinstall_template_base() ); ?>
 
-			<div id="content" class="site-content-wrap">
+			<div id="content-wrap" class="site-content-wrap">
 
 				<?php get_template_part('template-parts/hero'); ?>
 
