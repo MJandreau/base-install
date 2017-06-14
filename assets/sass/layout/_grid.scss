@@ -2,28 +2,31 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .container {
   position: relative;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
   box-sizing: border-box;
-
-  @include mobile {
-    // width: $container-width-mobile;
-    max-width: $width_mobile;
-  }
-
-  @include phablet {
-    // width: $container-width-phablet;
-    max-width: $width_phablet;
-  }
+  width: $size__site-main;
+  max-width: $size__site-main;
+  padding: 0 $column-margin;
+  margin: 0 auto;
 
   @include tablet {
-    // width: $container-width-phablet;
     max-width: $width_tablet;
   }
 
   @include laptop {
-    max-width: $container-width;
+    max-width: $width_laptop;
+  }
+
+  // @include desktop {
+  //   max-width: $width_desktop;
+  // }
+}
+
+.row {  
+  margin: 0;
+
+  @include phablet {
+    margin-left: -$column-margin;
+    margin-right: -$column-margin;
   }
 }
 
@@ -31,35 +34,30 @@
   width: 100%;
   float: left;
   box-sizing: border-box;
-}
+  padding: 0;
 
-
-
-.blog-sample {
-  background: #eee;
-  padding: $column-margin;
-  height: 360px;
-  margin-bottom: $column-margin * 2;
-}
-
-
-.five-xs    { width: grid-column-width(5);  }
-.six-xs     { width: grid-column-width(6);  }
-.seven-xs   { width: grid-column-width(7);  }
-
-
-@include phablet {
-
-  .column {
+  @include phablet {
     padding-left: $column-margin;
     padding-right: $column-margin;
   }
+}
 
-  .row {
-    margin-left: -$column-margin;
-    margin-right: -$column-margin;
-  }
+// Smallest devices
+.one-xs     { width: grid-column-width(1);  }
+.two-xs     { width: grid-column-width(2);  }
+.three-xs   { width: grid-column-width(3);  }
+.four-xs    { width: grid-column-width(4);  }
+.five-xs    { width: grid-column-width(5);  }
+.six-xs     { width: grid-column-width(6);  }
+.seven-xs   { width: grid-column-width(7);  }
+.eight-xs   { width: grid-column-width(8);  }
+.nine-xs    { width: grid-column-width(9);  }
+.ten-xs     { width: grid-column-width(10); }
+.eleven-xs  { width: grid-column-width(11); }
+.twelve-xs  { width: 100%; }
 
+// Larger smartphones and small tablets
+@include phablet {
   .one-sm     { width: grid-column-width(1);  }
   .two-sm     { width: grid-column-width(2);  }
   .three-sm   { width: grid-column-width(3);  }
@@ -72,23 +70,10 @@
   .ten-sm     { width: grid-column-width(10); }
   .eleven-sm  { width: grid-column-width(11); }
   .twelve-sm  { width: 100%; }
-
-  // Offsets
-  .offset-one-sm       { margin-left: grid-offset-length(1);  }
-  .offset-two-sm       { margin-left: grid-offset-length(2);  }
-  .offset-three-sm     { margin-left: grid-offset-length(3);  }
-  .offset-four-sm      { margin-left: grid-offset-length(4);  }
-  .offset-five-sm      { margin-left: grid-offset-length(5);  }
-  .offset-six-sm       { margin-left: grid-offset-length(6);  }
-  .offset-seven-sm     { margin-left: grid-offset-length(7);  }
-  .offset-eight-sm     { margin-left: grid-offset-length(8);  }
-  .offset-nine-sm      { margin-left: grid-offset-length(9);  }
-  .offset-ten-sm       { margin-left: grid-offset-length(10); }
-  .offset-eleven-sm    { margin-left: grid-offset-length(11); }
 }
 
-// For devices larger than 1000px
-@include laptop {
+// Tablets around iPad size
+@include tablet {
   .one-md     { width: grid-column-width(1);  }
   .two-md     { width: grid-column-width(2);  }
   .three-md   { width: grid-column-width(3);  }
@@ -101,23 +86,10 @@
   .ten-md     { width: grid-column-width(10); }
   .eleven-md  { width: grid-column-width(11); }
   .twelve-md  { width: 100%; }
-
-  // Offsets
-  .offset-one-md       { margin-left: grid-offset-length(1);  }
-  .offset-two-md       { margin-left: grid-offset-length(2);  }
-  .offset-three-md     { margin-left: grid-offset-length(3);  }
-  .offset-four-md      { margin-left: grid-offset-length(4);  }
-  .offset-five-md      { margin-left: grid-offset-length(5);  }
-  .offset-six-md       { margin-left: grid-offset-length(6);  }
-  .offset-seven-md     { margin-left: grid-offset-length(7);  }
-  .offset-eight-md     { margin-left: grid-offset-length(8);  }
-  .offset-nine-md      { margin-left: grid-offset-length(9);  }
-  .offset-ten-md       { margin-left: grid-offset-length(10); }
-  .offset-eleven-md    { margin-left: grid-offset-length(11); }
-  .reset-md       { margin-left: 0;  }
 }
 
-@include desktop {
+// Laptops and large tablets, also breakpoint for mobile nav
+@include laptop {
   .one-lg     { width: grid-column-width(1);  }
   .two-lg     { width: grid-column-width(2);  }
   .three-lg   { width: grid-column-width(3);  }
@@ -130,10 +102,60 @@
   .ten-lg     { width: grid-column-width(10); }
   .eleven-lg  { width: grid-column-width(11); }
   .twelve-lg  { width: 100%; }
-
-  // reset offets
-  .reset-lg       { margin-left: 0;  }
 }
+
+// Desktop size and larger
+@include desktop {
+  .one-xl     { width: grid-column-width(1);  }
+  .two-xl     { width: grid-column-width(2);  }
+  .three-xl   { width: grid-column-width(3);  }
+  .four-xl    { width: grid-column-width(4);  }
+  .five-xl    { width: grid-column-width(5);  }
+  .six-xl     { width: grid-column-width(6);  }
+  .seven-xl   { width: grid-column-width(7);  }
+  .eight-xl   { width: grid-column-width(8);  }
+  .nine-xl    { width: grid-column-width(9);  }
+  .ten-xl     { width: grid-column-width(10); }
+  .eleven-xl  { width: grid-column-width(11); }
+  .twelve-xl  { width: 100%; }
+}
+
+
+
+
+
+
+// move to blog styles
+.blog-sample {
+  background: #eee;
+  padding: $column-margin;
+  height: 360px;
+  margin-bottom: $column-margin * 2;
+}
+
+
+
+
+
+
+// // offests if you need them, just add to relevant breakpoint
+// @include desktop {
+//   .offset-one    { margin-left: grid-offset-length(1);  }
+//   .offset-two    { margin-left: grid-offset-length(2);  }
+//   .offset-three  { margin-left: grid-offset-length(3);  }
+//   .offset-four   { margin-left: grid-offset-length(4);  }
+//   .offset-five   { margin-left: grid-offset-length(5);  }
+//   .offset-six    { margin-left: grid-offset-length(6);  }
+//   .offset-seven  { margin-left: grid-offset-length(7);  }
+//   .offset-eight  { margin-left: grid-offset-length(8);  }
+//   .offset-nine   { margin-left: grid-offset-length(9);  }
+//   .offset-ten    { margin-left: grid-offset-length(10); }
+//   .offset-eleven { margin-left: grid-offset-length(11); }
+
+//   // reset offset
+//   .reset         { margin-left: 0;  }
+// }
+
 
 // Clearing
 //––––––––––––––––––––––––––––––––––––––––––––––––––
