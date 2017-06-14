@@ -11,16 +11,53 @@
  *
  * @package Base_Install
  */
+?>
 
-get_header( baseinstall_template_base() ); ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main">
-		<?php include baseinstall_template_path(); ?>
-	</main>
-</div>
+	<head>
+		<meta charset="<?php bloginfo( 'charset' ); ?>">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<?php wp_head(); ?>
+	</head>
 
-<?php get_sidebar( baseinstall_template_base() ); ?>
+	<body <?php body_class('sideNavBody'); ?>>
 
-<?php get_footer( baseinstall_template_base() ); ?>
+		<div id="page" class="site">
+			<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'baseinstall' ); ?></a>
+
+			<?php get_header( baseinstall_template_base() ); ?>
+
+			<div id="content" class="site-content-wrap">
+
+				<?php get_template_part('hero'); ?>
+
+				<?php if ( is_front_page() ) : ?>
+					<?php include baseinstall_template_path(); ?>
+				<?php else : ?>
+					<div id="content" class="site-content">
+						<div id="primary" class="content-area">
+							<main id="main" class="site-main">
+								<?php include baseinstall_template_path(); ?>
+							</main>
+						</div>
+						<?php get_sidebar( baseinstall_template_base() ); ?>
+					</div>
+				<?php endif; ?>
+
+			</div><?php // #content ?>
+
+			<?php get_footer( baseinstall_template_base() ); ?>
+
+		</div><?php // #page ?>
+
+		<?php wp_footer(); ?>
+
+		<a id="scroll-to-top" href="#page"></a>
+
+	</body>
+
+</html>
 
