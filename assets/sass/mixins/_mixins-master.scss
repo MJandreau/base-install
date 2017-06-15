@@ -120,13 +120,13 @@
 // @include fixedHeaderBodyAdjustment;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 @mixin fixedHeaderBodyAdjustment() {
-	padding-top: $headerHeight + $headerBottomMargin;
+	padding-top: $headerHeight + $column-margin;
 
 	.admin-bar & {
-		padding-top: $headerHeight + $headerBottomMargin + $wp_adminbar_sm;
+		padding-top: $headerHeight + $column-margin + $wp_adminbar_sm;
 
 		@include wpadmin {
-			padding-top: $headerHeight + $headerBottomMargin + $wp_adminbar_lg;
+			padding-top: $headerHeight + $column-margin + $wp_adminbar_lg;
 		}
 	}
 }
@@ -142,16 +142,16 @@
 // @include anchorOffset;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 @mixin anchorOffset() {
-	margin-top: -$headerBottomMargin;
-	height: $headerBottomMargin;
+	margin-top: -$column-margin;
+	height: $column-margin;
 
 	.admin-bar & {
-		margin-top: -$headerBottomMargin - $wp_adminbar_sm;
-		height: $headerBottomMargin + $wp_adminbar_sm;
+		margin-top: -$column-margin - $wp_adminbar_sm;
+		height: $column-margin + $wp_adminbar_sm;
 
 		@include wpadmin {
-			margin-top: -$headerBottomMargin - $wp_adminbar_lg;
-			height: $headerBottomMargin + $wp_adminbar_lg;
+			margin-top: -$column-margin - $wp_adminbar_lg;
+			height: $column-margin + $wp_adminbar_lg;
 		}
 	}
 }
