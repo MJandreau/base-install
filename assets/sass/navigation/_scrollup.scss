@@ -73,3 +73,39 @@ section:focus {
 	}
 }
 
+
+
+
+
+// scroll to content button 
+@keyframes scroll {
+	0% { transform: translateY(0); }
+	50% { transform: translateY(8px); }
+	100% { transform: translateY(0); }
+}
+
+.scroll-to-content {
+	display: block;
+	border: 2px solid $color_mdgray;
+	border-radius: 16px;
+	height: 44px;
+	width: 28px;
+	text-align: center;
+	position: absolute;
+	bottom: $column-margin * 2;
+	right: $column-margin * 2;
+
+	&:after {
+		display: inline-block;
+		background-color: $color_mdgray;
+		border-radius: 3px;
+		height: 8px;
+		width: 3px;
+		content: "";
+		animation: scroll ($transistion_duration * 5) ease-out infinite forwards;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
