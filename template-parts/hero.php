@@ -74,5 +74,10 @@
 			</div>
 		</div>
 	</div>
+
+	<?php if ( is_front_page() || is_single() ) : ?>
+		<a class="scroll-to-content" href="#content"></a>
+	<?php endif; ?>
+
 </div>
 
