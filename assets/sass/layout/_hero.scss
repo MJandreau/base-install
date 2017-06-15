@@ -24,12 +24,12 @@
 
   @include tablet {
     // padding: 16rem 0;
-    padding: 12rem 0;
+    padding: 10rem 0;
     // padding: ($navbar-height + 12rem) 0 12rem;
   }
 
   @include laptop {
-    padding: 16rem 0;
+    padding: 12rem 0;
     // padding: ($navbar-tall + 14rem) 0 14rem;
   }
 
