@@ -36,9 +36,7 @@
 	</div>
 </div>
 
-<div class="container">
-
-<h1>bloop</h1>
+<div class="container pad-top">
 
 	<?php
 	while ( have_posts() ) : the_post();
