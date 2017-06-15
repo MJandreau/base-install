@@ -1,34 +1,5 @@
 
 
-// Header styles
-// full header with branding, title, description, and nav
-.site-header { 
-	background-color: $color__background-header;
-	// margin-bottom: $headerBottomMargin;
-	border-bottom: 1px solid darken($color__background-header, 5%);
-	// @include fixedHeader; // uncomment to set fixed header, and also uncomment related fixedHeader  mixins below
-}
-
-// WP admin bar bix
-.site {
-	@include wpAdminBodyAdjustment; // Adjust body for admin bar
-	// @include fixedHeaderBodyAdjustment; // uncomment to adjust body for fixed header
-}
-
-// Offset internal anchor links to keep them on screen
-.scroll-anchor:before { 
-	display: block; 
-	content: ""; 
-	visibility: hidden; 
-	@include anchorOffset; // offset internal anchor links, comment out to use fixed header mixin below
-	// @include fixedHeaderAnchorOffset; // uncomment to offset internal anchor links with fixed header
-}
-
-
-
-
-
-
 
 .triple-feature {
 	padding: 20px 0 0;
@@ -57,99 +28,20 @@
 
 
 
-.site-branding { // site title and description
-	display: inline-block;
-}
-
-.site-title { // site title only
-	// background-color: rgba(0,255,0,0.5);
-	margin-bottom: 0;
-	font-size: 24px;
-	// line-height: $headerHeight;
-}
-
-.site-description { // site description only
-	// background-color: rgba(0,0,255,0.5);
-	margin: 0;
-}
-
-.main-navigation { // duh
-// 	background-color: rgba(255,0,0,0.5);
-// 	// border: 1px solid blue;
-}
-
-
 
 
 
 // body and content area styles
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 .site-content {
 	// wrap for content area
 	@extend .container; // keeps copyright info lined up with body content
 }
 
-.content-area {
-	// this is the full content section of the site
-	// including main content area and sidebar
-	// background-color: rgba(255,0,0,0.2);
+
+.pad-top {
+	padding-top: $column-margin * 2;
 }
-
-.site-main {
-	// background-color: rgba(0,255,0,0.2);
-}
-
-.widget-area {
-	// background-color: rgba(0,0,255,0.2);
-	// background: red; 
-	// height: 300px;
-	// overflow: hidden;
-	// height: 50px; overflow: hidden; // testing sticy footer
-}
-
-
-
-
-
-// footer styles
-.site-footer {
-	background-color: $color__background-footer;
-	// background-color: rgba(255,0,0,0.3);
-	width: 100%;
-	border-top: 1px solid darken($color__background-footer, 5%);
-	padding: ($headerHeight / 3) 0;
-
-	// @include laptop {
-	// 	padding: ($headerHeight / 2) 0;
-	// }
-}
-
-.site-info {
-	// background-color: rgba(0,255,255,0.3);
-	@extend .container; // keeps copyright info lined up with body content
-}
-
-
-
-
-
-
-
-// affix footer fix to bottom if content doesn't fill the page
-.site {
-	display: flex;
-	flex-direction: column;
-	height: 100vh; // Avoid the IE 10-11 `min-height` bug.
-}
-
-// Prevent Chrome, Opera, and Safari from letting these items shrink smaller than their content's default minimum size.
-.site-header,
-.site-footer {
-	flex-shrink: 0; 
-}
-.site-content-wrap {
-	flex: 1 0 auto; 
-}
-
 
 
 
@@ -163,7 +55,7 @@
 
 	.site-main {
 		margin: 0 $size__site-sidebar 0 0;
-		padding-right: $headerBottomMargin * 2;
+		padding-right: $column-margin * 2;
 	}
 
 	.site-content .widget-area {
