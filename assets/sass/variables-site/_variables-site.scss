@@ -101,26 +101,6 @@ $squareRoot: 1.41421356237; // square root of 2 used for getting chevron diagona
 $scrollUpButtonSize: $chevronWidth * $squareRoot; // calculates diagonal of chevron
 
 
-// header variables - height, margin, WP admin offset, and internal anchor link offset
-
-
-
-$headerHeight: 60px;
-$headerBottomMargin: 20px;
-$wp_adminbar_sm: 46px;
-$wp_adminbar_lg: 32px;
-
-// offset internal page anchors to account for top nav
-$anchorOffset: $headerHeight + $headerBottomMargin;
-$anchorOffsetAdmin: $headerHeight + ($headerBottomMargin * 3);
-
-// line height and nav toggle sizes for submenus
-$font__line-height-nav: 40px;
-$font__subnav-toggle-size: $font__line-height-nav / 6;
-
-
-
-
 
 
 
@@ -129,6 +109,28 @@ $font__subnav-toggle-size: $font__line-height-nav / 6;
 $total-columns: 12 !default;
 $column-width: 100% / $total-columns !default; // calculates individual column width based off of # of columns
 $column-margin: 20px !default; // space between columns calculated in grid, was 2.0rem !default
+
+
+
+
+
+// header variables - height, margin, WP admin offset, and internal anchor link offset
+$headerHeight: 60px;
+
+$wp_adminbar_sm: 46px;
+$wp_adminbar_lg: 32px;
+
+// offset internal page anchors to account for top nav
+$anchorOffset: $headerHeight + $column-margin;
+$anchorOffsetAdmin: $headerHeight + ($column-margin * 3);
+
+// line height and nav toggle sizes for submenus
+$font__line-height-nav: 40px;
+$font__subnav-toggle-size: $font__line-height-nav / 6;
+
+
+
+
 
 
 
