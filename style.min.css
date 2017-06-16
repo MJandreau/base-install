@@ -233,6 +233,7 @@ button.menu-toggle span::after{bottom:-8px;-webkit-transition-property:bottom,-w
 .single .byline,.group-blog .byline{display:inline}
 .page-content,.entry-content,.entry-summary{margin:0}
 .page-links{clear:both;margin:0 0 1.5em}
+.entry-meta{margin-bottom:1.5em}
 .post-navigation{margin:0 0 1.5em}
 .post-navigation a{display:block;text-align:center;border:0;text-decoration:none;margin-bottom:20px;padding:6rem 20px;color:#fff;-webkit-transition:background-color .3s;transition:background-color .3s}
 .post-navigation a:hover{background-color:rgba(0,0,0,0.5)}
