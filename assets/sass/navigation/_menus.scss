@@ -39,7 +39,8 @@
 				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 				float: left;
 				position: absolute;
-				top: $headerHeight / 1.5;
+				// top: $headerHeight / 1.5;
+				top: $font__line-height-nav;
 				left: -999em;
 				z-index: 99999;
 
@@ -155,9 +156,9 @@
 	transition: $transistion_duration;
 
 	@include laptop {
-		top: $font__line-height-nav / 3;
+		top: $font__line-height-nav / 4;
 		height: $font__line-height-nav / 2;
-		width: $font__line-height-nav / 2.4;
+		width: $font__line-height-nav / 2.222;
 	}
 
     &:after{
@@ -177,7 +178,9 @@
 			border-width: $font__subnav-toggle-size * 0.6;
 
 			.children & {
-				top: $font__subnav-toggle-size / 4;
+				left: $font__subnav-toggle-size;
+				top: $font__line-height-nav / 7;
+				transform: rotate(-90deg);
 			}
 		}
     }
@@ -191,12 +194,12 @@
 		}
 	}
 
-	@include laptop {
-		.children & {
-			transform: rotate(-90deg);
-			top: $font__line-height-nav / 4;
-		}
-	}
+	// @include laptop {
+	// 	.children & {
+	// 		transform: rotate(-90deg);
+	// 		top: $font__line-height-nav / 4;
+	// 	}
+	// }
 }
 
 
@@ -219,7 +222,7 @@
 	padding-right: $font__line-height-nav;
 
 	@include laptop {
-		padding-right: $font__line-height-nav / 2.4;
+		padding-right: $font__line-height-nav / 2.222;
 	}
 }
 

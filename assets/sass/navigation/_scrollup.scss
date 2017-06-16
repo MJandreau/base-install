@@ -158,16 +158,18 @@ section:focus {
 
     // position bouncing arrow in center of hero
     left: 50%;
-    margin-left: -($scrollUpButtonSize / 2);
+    margin-left: -($scrollUpButtonSize * ($squareRoot * 2)) / 2 !important;
 
-    &:visited {
-    	color: $color__link;
-    }
+
 
 	// solid button
 	// background: $color__link; 
 	// border: $borderWidth solid transparent;
 	// color: $color_white;
+
+	// &:visited {
+	// 	color: $color_white;
+	// }
 
 	// &:hover, 
 	// &:focus,
@@ -177,10 +179,16 @@ section:focus {
 	// 	outline: none;
 	// }
 
+
+
 	// button with outline only 
 	background: none; 
 	border: $borderWidth solid $color__link;
 	color: $color__link;
+
+	&:visited {
+		color: $color__link;
+	}
 
 	&:hover, 
 	&:active {
@@ -192,6 +200,9 @@ section:focus {
 		outline: none;
 	}
 
+
+
+	// chevron 
 	&:before {
 		display: inline-block;
 		box-sizing: border-box;

@@ -159,7 +159,7 @@ div:focus,section:focus{outline:0}
 #scroll-to-top:hover,#scroll-to-top:active{color:#214cce;border-color:#214cce}
 #scroll-to-top:focus{outline:0}
 #scroll-to-top:before{display:inline-block;box-sizing:border-box;border-style:solid;border-width:2.5px 2.5px 0 0;height:10px;width:10px;top:14.1421356237px;content:'';position:relative;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);vertical-align:top}
-.scroll-to-content{display:block;text-align:center;text-transform:uppercase;box-sizing:border-box;position:absolute;cursor:pointer;right:10px;bottom:15px;font-size:10px;line-height:39.9999999998px;width:39.9999999998px;height:39.9999999998px;-webkit-transition:all .3s;transition:all .3s;border-radius:50%;padding:0;-webkit-animation:bounce 1.5s ease-out infinite forwards;animation:bounce 1.5s ease-out infinite forwards;left:50%;margin-left:-7.0710678118px;background:0;border:2.5px solid royalblue;color:royalblue}
+.scroll-to-content{display:block;text-align:center;text-transform:uppercase;box-sizing:border-box;position:absolute;cursor:pointer;right:10px;bottom:15px;font-size:10px;line-height:39.9999999998px;width:39.9999999998px;height:39.9999999998px;-webkit-transition:all .3s;transition:all .3s;border-radius:50%;padding:0;-webkit-animation:bounce 1.5s ease-out infinite forwards;animation:bounce 1.5s ease-out infinite forwards;left:50%;margin-left:-19.9999999999px !important;background:0;border:2.5px solid royalblue;color:royalblue}
 .scroll-to-content:visited{color:royalblue}
 .scroll-to-content:hover,.scroll-to-content:active{color:#214cce;border-color:#214cce}
 .scroll-to-content:focus{outline:0}
@@ -213,7 +213,6 @@ button.menu-toggle span::after{bottom:-8px;-webkit-transition-property:bottom,-w
 .hero{position:relative;background-color:#ddd;background:-webkit-linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url("https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txtclr=dddddd&txt=Select%20Featured%20Image&w=1920&h=1080&fm=jpg");background:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url("https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txtclr=dddddd&txt=Select%20Featured%20Image&w=1920&h=1080&fm=jpg");border:0;background-repeat:no-repeat !important;background-position:center !important;background-size:cover !important;padding:4rem 0}
 .home .hero,.single .hero{padding:8rem 0}
 .hero h1,.hero h2{margin-bottom:0}
-.hero a{margin:0}
 .call-to-action{position:relative;max-width:560px;z-index:1000}
 .featured-image-container{margin-bottom:20px}
 .featured-image-container img{display:block;width:100%;max-width:100%;height:auto}
@@ -312,13 +311,12 @@ embed,iframe,object{max-width:100%}
 .main-navigation li:first-of-type{margin-top:0}
 .main-navigation li{display:inline-block;border:0}
 .main-navigation li+li{margin-left:8px}
-.sub-nav-toggle{top:13.3333333333px;height:20px;width:16.6666666667px}
+.sub-nav-toggle{top:10px;height:20px;width:18.00180018px}
 .sub-nav-toggle:after{top:6.6666666667px;left:5.1282051282px;border-width:4px}
-.children .sub-nav-toggle:after{top:1.6666666667px}
+.children .sub-nav-toggle:after{left:6.6666666667px;top:5.7142857143px;-webkit-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg)}
 .sub-nav-toggle.active{-webkit-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0)}
-.children .sub-nav-toggle{-webkit-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg);top:10px}
 .main-navigation.toggled ul.nav-menu{overflow:visible}
-.page_item_has_children>a{padding-right:16.6666666667px}
+.page_item_has_children>a{padding-right:18.00180018px}
 button.menu-toggle{display:none}
 .container,.site-info,.site-content{max-width:1000px}
 .one-lg{width:8.3333333333%}
