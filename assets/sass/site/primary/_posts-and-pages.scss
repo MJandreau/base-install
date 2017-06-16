@@ -1,3 +1,5 @@
+// Post and page spacing
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 .sticky {
 	display: block;
 }
@@ -27,3 +29,64 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+
+
+
+
+// Previous/Next links on single posts
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+.post-navigation {
+	margin: 0 0 1.5em;
+
+	a {
+		display: block;
+		text-align: center;
+		border:none;
+		text-decoration: none;
+		margin-bottom: $column-margin;
+		padding: 6rem $column-margin;
+		color: #fff;
+		transition: background-color $transistion_duration;
+
+		&:hover {
+			background-color:rgba(0,0,0,0.5);
+		}
+
+		@include phablet {
+			height: 240px;
+		}
+	}
+
+	h5 {
+		@include bgImage;
+	}
+}
+
+
+
+// Comment and post navigation
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+.comment-navigation,
+.posts-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+		// background-color: red;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+		// background-color: orange;
+	}
+}
+
+
