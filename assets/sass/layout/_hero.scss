@@ -31,11 +31,15 @@
     padding: 8rem 0;
 
     @include tablet {
-      padding: 12rem 0;
+      padding: 10rem 0;
     }
 
     @include desktop {
-      padding: 16rem 0;
+      padding: 14rem 0;
+    }
+
+    @include hdtv {
+      padding: 18rem 0;
     }
   }
 

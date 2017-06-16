@@ -8,7 +8,8 @@
   @return grid-column-width($n);
 }
 
-// Media queries - @include mobile { selector: style; }
+// Media queries
+// @include mobile { selector: style; }
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 @mixin mobile   { @media (min-width: #{$width_mobile})  { @content; } }
 @mixin phablet  { @media (min-width: #{$width_phablet}) { @content; } }
@@ -42,6 +43,7 @@
 }
 
 // Code syntax so line numbers are not selectable
+// @include unselectable;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 @mixin unselectable() {
 	user-select: none;
@@ -75,6 +77,39 @@
 @mixin dropShadow() {
     box-shadow: 0 0 $shadow-size 0 $shadow-outer, 0 0 $shadow-size 0 $shadow-outer;
 }
+
+// Rem output with px fallback
+// @include font-size(.9);
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// Center block
+// @include center-block;
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+// @include clearfix;
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this)
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin clearfix-after() {
+	clear: both;
+}
+
 
 
 
@@ -133,11 +168,6 @@
 
 
 
-
-
-
-
-
 // Offset internal anchor links
 // @include anchorOffset;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -173,42 +203,6 @@
 		}
 	}
 }
-
-
-
-
-
-
-// Rem output with px fallback
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-@mixin font-size($sizeValue: 1) {
-	font-size: ($sizeValue * 16) * 1px;
-	font-size: $sizeValue * 1rem;
-}
-
-// Center block
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-@mixin center-block {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-// Clearfix
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-@mixin clearfix() {
-	content: "";
-	display: table;
-	table-layout: fixed;
-}
-
-// Clear after (not all clearfix need this also)
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-@mixin clearfix-after() {
-	clear: both;
-}
-
-
 
 
 

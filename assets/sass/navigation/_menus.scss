@@ -1,20 +1,5 @@
-
-
-
-// // testing subnav layout
-// .main-navigation li a {
-// 	background-color: red;
-// }
-// .main-navigation li ul li a {
-// 	background-color: teal;
-// }
-// .main-navigation li ul li ul li a {
-// 	background-color: green;
-// }
-
-
-
-
+// Main navigation styles
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 .main-navigation {
 	clear: both;
 	display: block;
@@ -103,7 +88,7 @@
 
 		&:hover > a,
 		&.focus > a {
-	        background-color: #ffffff;
+	        background-color: tan;
 	        color: red;
 		}
 
@@ -143,21 +128,15 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
-        background-color: #ffffff;
+        background-color: blue;
         color: red;
 	}
 }
 
 
 
-
-
-
-
-
-
-
-
+// Toggle button for sub-menu items
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 .sub-nav-toggle {
 	height: $font__line-height-nav;
 	width: $font__line-height-nav;
@@ -222,17 +201,20 @@
 
 
 
+// Expanded mobile nav
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+.main-navigation.toggled ul.nav-menu {
+	max-height: 1000px; // css transition added on lines 14-18
+
+	@include laptop {
+		overflow: visible;
+	}
+}
 
 
 
-
-
-
-
-
-
-
-
+// Menu item with sub-menu
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 .page_item_has_children > a {
 	padding-right: $font__line-height-nav;
 
@@ -241,6 +223,10 @@
 	}
 }
 
+
+
+// Mobile nav sub-menu
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 .children {
 	max-height: 0;
 	// transition: max-height $transistion_duration 0s ease-in-out;
@@ -262,63 +248,6 @@
 
 	a {
 		white-space: nowrap;
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.main-navigation.toggled ul.nav-menu {
-	max-height: 1000px; // css transition added on lines 14-18
-
-	@include laptop {
-		overflow: visible;
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
-
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
-	}
-
-	.nav-previous {
-		float: left;
-		width: 50%;
-		// background-color: red;
-	}
-
-	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
-		// background-color: orange;
 	}
 }
 
