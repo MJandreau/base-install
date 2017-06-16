@@ -31,7 +31,7 @@
 						setup_postdata($post);
 					?>
 						<div class="six-sm column">
-						<a class="previous" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<?php echo $prevThumbnail[0]; ?>')" href="<?php the_permalink(); ?>"><h5>Previous Post:<br><?php the_title(); ?></h5></a>
+						<h5 style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<?php echo $prevThumbnail[0]; ?>')"><a class="previous" href="<?php the_permalink(); ?>">Previous Post:<br><?php the_title(); ?></a></h5>
 						</div>
 					<?php
 						wp_reset_postdata();
@@ -50,7 +50,7 @@
 						setup_postdata($post);
 					?>
 						<div class="six-sm column">
-						<a class="next" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<?php echo $nextThumbnail[0]; ?>')" href="<?php the_permalink(); ?>"><h5>Next Post:<br><?php the_title(); ?></h5></a>
+						<h5 style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<?php echo $nextThumbnail[0]; ?>')"><a class="next" href="<?php the_permalink(); ?>">Next Post:<br><?php the_title(); ?></a></h5>
 						</div>
 					<?php
 						wp_reset_postdata();
