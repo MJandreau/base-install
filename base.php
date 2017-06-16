@@ -32,10 +32,23 @@
 
 				<?php get_template_part('template-parts/hero'); ?>
 
-				<?php if ( is_front_page() ) : ?>
-					<div id="content" >
+				<?php if ( is_home() && is_front_page() ) : ?>
+					<?php get_template_part('template-parts/featured'); ?>
+					<div id="content" class="site-content pad-top">
+						<div id="primary" class="content-area">
+							<main id="main" class="site-main">
+								<?php include baseinstall_template_path(); ?>
+							</main>
+						</div>
+						<?php get_sidebar( baseinstall_template_base() ); ?>
+					</div>
+
+				<?php elseif ( is_front_page() ) : ?>
+					<?php get_template_part('template-parts/featured'); ?>
+					<div id="content">
 						<?php include baseinstall_template_path(); ?>
 					</div>
+
 				<?php else : ?>
 					<div id="content" class="site-content pad-top">
 						<div id="primary" class="content-area">
