@@ -20,7 +20,7 @@
 				<?php if ( is_front_page() ) : ?>
 					<div class="call-to-action">
 						<h2>homepage</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est provident nisi doloribus dolorem sit tempore modi asperiores ad totam eius, excepturi rem ullam soluta sunt aspernatur nam itaque dolor atque.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est provident nisi doloribus dolorem sit tempore modi asperiores ad totam eius.</p>
 						<a href="#">Call to Action</a>
 					</div>
 					
@@ -56,6 +56,9 @@
 
 				<?php elseif ( is_month() ) : ?>
 					<?php the_archive_title( '<h2 class="entry-title">', '</h2>' ); ?>
+
+				<?php elseif ( is_search() ) : ?>
+					<?php echo '<h2 class="entry-title">Search results for: ' . get_search_query() .  '</h2>'; ?>
 
 				<?php elseif ( is_home() ) : ?>
 					<h2>Blog</h2>
