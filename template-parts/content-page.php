@@ -16,6 +16,17 @@
 		<?php // the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	<!-- </header> -->
 
+	<?php if ( !is_single() && is_home() ) : ?>
+		<header class="entry-header">
+			<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+			<?php if ( 'post' === get_post_type() ) : ?>
+				<div class="entry-meta">
+					<?php baseinstall_posted_on(); ?>
+				</div><!-- .entry-meta -->
+			<?php endif; ?>
+		</header><!-- .entry-header -->
+	<?php endif; ?>
+
 	<div class="entry-content">
 		<?php
 			the_content();
