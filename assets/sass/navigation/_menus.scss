@@ -28,7 +28,7 @@
 		transition: max-height $transistion_duration 0s ease-in-out;
 
 		ul {
-			background-color: #fff;
+			background-color: tan;
 		}
 
 		@include laptop {
@@ -122,14 +122,14 @@
 		display: block;
 		text-decoration: none;
 		line-height: $font__line-height-nav;
+		// padding: 0 5px;
 	}
 	
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
-        background-color: blue;
-        color: red;
+		color: red;
 	}
 }
 
@@ -204,7 +204,7 @@
 // Expanded mobile nav
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .main-navigation.toggled ul.nav-menu {
-	max-height: 1000px; // css transition added on lines 14-18
+	max-height: 1000px; // css transition added on lines 26-28 of this file
 
 	@include laptop {
 		overflow: visible;
