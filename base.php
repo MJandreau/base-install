@@ -21,19 +21,15 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class('sideNavBody'); ?>>
-
 		<div id="page" class="site">
-
 			<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'baseinstall' ); ?></a>
-
 			<?php get_header( baseinstall_template_base() ); ?>
 
 			<div id="content-wrap" class="site-content-wrap">
 			
 				<?php get_template_part('template-parts/hero'); ?>
 
-				<?php if ( is_home() && is_front_page() ) : ?>
-					<?php get_template_part('template-parts/featured'); ?>
+				<?php if ( is_home() && is_front_page() ) : // if front page is set to show latest posts, show this content ?>
 					<div id="content" class="site-content pad-top">
 						<div id="primary" class="content-area">
 							<main id="main" class="site-main">
@@ -43,13 +39,12 @@
 						<?php get_sidebar( baseinstall_template_base() ); ?>
 					</div>
 
-				<?php elseif ( is_front_page() ) : ?>
-					<?php get_template_part('template-parts/featured'); ?>
+				<?php elseif ( is_front_page() ) : // if front page is set to show static page, get front-page.php markup ?>
 					<div id="content">
 						<?php include baseinstall_template_path(); ?>
 					</div>
 
-				<?php else : ?>
+				<?php else : // all other pages ?>
 					<div id="content" class="site-content pad-top">
 						<div id="primary" class="content-area">
 							<main id="main" class="site-main">
@@ -65,9 +60,7 @@
 			<?php get_footer( baseinstall_template_base() ); ?>
 
 		</div>
-
 		<?php wp_footer(); ?>
-
 		<a id="scroll-to-top" href="#page"></a>
 	</body>
 </html>
