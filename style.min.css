@@ -226,7 +226,7 @@ button.menu-toggle span::after{bottom:-8px;-webkit-transition-property:bottom,-w
 .triple-feature{padding:20px 0 0;background:#efefef}
 .featured{background:#f4f4f4;text-align:center;margin-bottom:20px}
 .featured h3{margin:0;padding:40px 0;line-height:60px}
-.pad-top{padding-top:40px}
+.pad-top{padding-top:20px}
 .sticky{display:block}
 .hentry{margin:0 0 1.5em}
 .byline,.updated:not(.published){display:none}
@@ -333,6 +333,7 @@ button.menu-toggle{display:none}
 .twelve-lg{width:100%}
 .triple-feature{padding-top:40px}
 .featured{margin-bottom:40px}
+.pad-top{padding-top:40px}
 }@media(min-width:1200px){.one-xl{width:8.3333333333%}
 .two-xl{width:16.6666666667%}
 .three-xl{width:25%}
