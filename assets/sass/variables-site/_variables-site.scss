@@ -24,7 +24,7 @@ $color_sharethis: #01BF01;
 
 // Background colors
 $color__background-body: #fff;
-$color__background-header: transparent;
+$color__background-header: #f4f4f4;
 $color__background-footer: #f4f4f4;
 $color__background-lightgray: #f4f4f4;
 $color__background-darkgray: #333;
@@ -116,7 +116,7 @@ $column-margin: 20px !default; // space between columns calculated in grid, was 
 
 
 // header variables - height, margin, WP admin offset, and internal anchor link offset
-$headerHeight: 40px;
+$headerHeight: 60px;
 $wp_adminbar_sm: 46px;
 $wp_adminbar_lg: 32px;
 
@@ -125,7 +125,9 @@ $anchorOffset: $headerHeight + $column-margin;
 $anchorOffsetAdmin: $headerHeight + ($column-margin * 3);
 
 // line height and nav toggle sizes for submenus
-$font__line-height-nav: $headerHeight;
+$font__line-height-topnav: $headerHeight;
+$font__line-height-nav: 40px;
+
 $font__subnav-toggle-size: $font__line-height-nav / 6;
 
 
