@@ -30,7 +30,7 @@
 				<?php get_template_part('template-parts/hero'); ?>
 
 				<?php if ( is_home() && is_front_page() ) : // if front page is set to show latest posts, show this content ?>
-					<div id="content" class="site-content pad-top">
+					<div id="content" class="site-content">
 						<div id="primary" class="content-area">
 							<main id="main" class="site-main">
 								<?php include baseinstall_template_path(); ?>
@@ -45,7 +45,7 @@
 					</div>
 
 				<?php else : // all other pages ?>
-					<div id="content" class="site-content pad-top">
+					<div id="content" class="site-content">
 						<div id="primary" class="content-area">
 							<main id="main" class="site-main">
 								<?php include baseinstall_template_path(); ?>
