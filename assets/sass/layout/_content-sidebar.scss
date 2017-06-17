@@ -39,16 +39,6 @@
 }
 
 
-.pad-top {
-	padding-top: $column-margin;
-
-	@include laptop {
-		padding-top: $column-margin * 2;
-	}
-}
-
-
-
 
 @include tablet {
 	.content-area {
