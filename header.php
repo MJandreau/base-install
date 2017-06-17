@@ -12,10 +12,10 @@
 
 <header id="masthead" class="site-header">
 
-	<div class="container">
+	<div class="site-navbar">
 
 		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
 
 <?php // site description, delete later ?>
 <?php
