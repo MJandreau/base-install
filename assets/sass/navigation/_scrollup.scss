@@ -33,6 +33,7 @@ section:focus {
 	text-transform: uppercase;
 	box-sizing: border-box;
 	position: fixed;
+	z-index: 5;
 	cursor: pointer;
 	right: $chevronWidth;
 	bottom: $chevronWidth;
@@ -103,6 +104,7 @@ section:focus {
 // }
 
 // .scroll-to-content {
+// 	z-index: 5;
 // 	display: block;
 // 	border: 2px solid $color_mdgray;
 // 	border-radius: 16px;
@@ -134,11 +136,12 @@ section:focus {
 // --------------------------------------------------
 @keyframes bounce {
 	0% { transform: translateY(0); }
-	50% { transform: translateY(8px); }
+	50% { transform: translateY(-10px); }
 	100% { transform: translateY(0); }
 }
 
 .scroll-to-content {
+	z-index: 5;
 	display: block;
 	text-align: center;
 	text-transform: uppercase;
@@ -183,7 +186,7 @@ section:focus {
 
 	// button with outline only 
 	background: none; 
-	border: $borderWidth solid $color__link;
+	// border: $borderWidth solid $color__link; // chevron inside circle, comment out for plain chevron
 	color: $color__link;
 
 	&:visited {
@@ -208,9 +211,15 @@ section:focus {
 		box-sizing: border-box;
 		border-style: solid;
 		border-width: $borderWidth $borderWidth 0 0;
-		height: $chevronWidth;
-		width: $chevronWidth;
-		top: $chevronWidth * 1.1;
+
+		// height: $chevronWidth; // chevron inside circle, comment out for plain chevron
+		// width: $chevronWidth; // chevron inside circle, comment out for plain chevron
+		// top: $chevronWidth * 1.1; // chevron inside circle, comment out for plain chevron
+
+		height: $chevronWidth * 1.8; // plain chevron, comment out for circle
+		width: $chevronWidth * 1.8; // plain chevron, comment out for circle
+		top: $chevronWidth * .6; // plain chevron, comment out for circle
+
 		content: '';
 		position: relative;
 		transform: rotate(135deg);
