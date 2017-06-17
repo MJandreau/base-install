@@ -24,7 +24,7 @@ $color_sharethis: #01BF01;
 
 // Background colors
 $color__background-body: #fff;
-$color__background-header: #f4f4f4;
+$color__background-header: transparent;
 $color__background-footer: #f4f4f4;
 $color__background-lightgray: #f4f4f4;
 $color__background-darkgray: #333;
@@ -59,6 +59,7 @@ $font__code: 'Source Code Pro', Monaco, Consolas, "Andale Mono", "DejaVu Sans Mo
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.618;
 $font__line-height-pre: 1.6;
+$font__size-default: 16px;
 
 
 
@@ -115,7 +116,7 @@ $column-margin: 20px !default; // space between columns calculated in grid, was 
 
 
 // header variables - height, margin, WP admin offset, and internal anchor link offset
-$headerHeight: 60px;
+$headerHeight: 40px;
 $wp_adminbar_sm: 46px;
 $wp_adminbar_lg: 32px;
 
@@ -124,7 +125,7 @@ $anchorOffset: $headerHeight + $column-margin;
 $anchorOffsetAdmin: $headerHeight + ($column-margin * 3);
 
 // line height and nav toggle sizes for submenus
-$font__line-height-nav: 40px;
+$font__line-height-nav: $headerHeight;
 $font__subnav-toggle-size: $font__line-height-nav / 6;
 
 
