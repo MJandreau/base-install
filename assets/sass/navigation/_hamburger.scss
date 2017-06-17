@@ -1,9 +1,9 @@
 
-$menu-toggle-width: 30px;       // width of button area
-$menu-toggle-height: $font__line-height-nav;      // height of button area
-$menu-toggle-bar: 2px;        // thickness of button bars
-$menu-toggle-pad: 0;       // left/right padding between button area and bars.
-$menu-toggle-bar_space: 6px;     // spacing between button bars
+$menu-toggle-width: $headerHeight / 2; // width of button area
+$menu-toggle-height: $headerHeight;       // height of button area
+$menu-toggle-bar: 2px;                    // thickness of button bars
+$menu-toggle-pad: 0;   // left/right padding between button area and bars.
+$menu-toggle-bar_space: 7px;              // spacing between button bars
 
 
 // menu-toggle
