@@ -149,7 +149,7 @@ section:focus {
 	position: absolute;
 	cursor: pointer;
 	right: $chevronWidth;
-	bottom: $chevronWidth * 1.5;
+	bottom: $chevronWidth * 4;
 	font-size: $chevronWidth;
 	line-height: $scrollUpButtonSize * ($squareRoot * 2);
 	width: $scrollUpButtonSize * ($squareRoot * 2);
@@ -158,6 +158,10 @@ section:focus {
 	border-radius: 50%; // change to 0 to make the button square
 	padding: 0;
 	animation: bounce ($transistion_duration * 5) ease-out infinite forwards;
+
+	@include laptop {
+		bottom: $chevronWidth * 1.5;
+	}
 
     // position bouncing arrow in center of hero
     left: 50%;
