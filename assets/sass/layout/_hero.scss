@@ -1,10 +1,5 @@
 
 
-
-
-
-
-
 // Hero
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .hero {
@@ -19,28 +14,12 @@
   // text-align: center;
   @include bgImage;
   // @include innerShadow;
-  padding: 4rem 0;
 
-  @include tablet {
-    padding: 8rem 0;
+  height:40vh;
 
-  }
-
-  .home &,
-  .single & {
-    padding: 8rem 0;
-
-    @include tablet {
-      padding: 10rem 0;
-    }
-
-    @include desktop {
-      padding: 14rem 0;
-    }
-
-    @include hdtv {
-      padding: 18rem 0;
-    }
+  // .single &,
+  .home & {
+    height:100vh;
   }
 
   h1, h2 {
@@ -56,13 +35,22 @@
   // }
 }
 
+.heading {
+  position:absolute;
+  top:50%;
+  width:100%;
+    transform: translate(0,-20%); 
 
+  .home & {
+    transform: translate(0,-50%); 
+  }
+}
 
 .call-to-action {
   // padding: 50px;
   position: relative;
   max-width: 560px;
-  z-index: 1000;
+  z-index: 1;
 }
 
 // .about-img {
