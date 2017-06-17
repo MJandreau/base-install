@@ -113,6 +113,24 @@
 
 
 
+// Set absolute header
+// @include absoluteHeader;
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin absoluteHeader() {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+
+	.admin-bar & {
+		top: $wp_adminbar_sm;
+
+		@include wpadmin {
+			top: $wp_adminbar_lg;
+		}
+	}
+}
 
 // Set fixed header
 // @include fixedHeader;
@@ -122,6 +140,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
+	z-index: 10;
 
 	.admin-bar & {
 		top: $wp_adminbar_sm;
@@ -155,13 +174,13 @@
 // @include fixedHeaderBodyAdjustment;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 @mixin fixedHeaderBodyAdjustment() {
-	padding-top: $headerHeight + $column-margin;
+	padding-top: $headerHeight;
 
 	.admin-bar & {
-		padding-top: $headerHeight + $column-margin + $wp_adminbar_sm;
+		padding-top: $headerHeight + $wp_adminbar_sm;
 
 		@include wpadmin {
-			padding-top: $headerHeight + $column-margin + $wp_adminbar_lg;
+			padding-top: $headerHeight + $wp_adminbar_lg;
 		}
 	}
 }

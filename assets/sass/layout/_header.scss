@@ -4,13 +4,15 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .site-header { 
 	background-color: $color__background-header;
-	// margin-bottom: $column-margin;
-	// border-bottom: 1px solid darken($color__background-header, 5%);
-	// @include fixedHeader; // uncomment to set fixed header, and also uncomment related fixedHeader  mixins below
 
-	// @include laptop {
+	// border-bottom: 1px solid darken($color__background-header, 5%);
+	@include absoluteHeader; // uncomment to set absolute header
+
+	// @include fixedHeader; // uncomment to set fixed header, and also uncomment related fixedHeader mixins below
+
+	@include laptop {
 		padding: ($column-margin / 2) 0;
-	// }
+	}
 }
 
 // site title and description
@@ -30,10 +32,10 @@
 
 // site description only (optional)
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-.site-description { 
-	background-color: rgba(0,0,255,0.5);
-	margin: 0;
-}
+// .site-description { 
+// 	background-color: rgba(0,0,255,0.5);
+// 	margin: 0;
+// }
 
 
 
@@ -50,12 +52,24 @@
 
 // Offset internal anchor links to keep them on screen
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-.scroll-anchor:before { 
+.scroll-anchor:before,
+#content:before { 
 	display: block; 
 	content: ""; 
 	visibility: hidden; 
-	@include anchorOffset; // offset internal anchor links, comment out to use fixed header mixin below
+	// @include anchorOffset; // offset internal anchor links, comment out to use fixed header mixin below
 	// @include fixedHeaderAnchorOffset; // uncomment to offset internal anchor links with fixed header
 }
 
 
+// Pad the top of the content area below the header/hero
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+.pad-top,
+.content-area,
+.widget-area {
+	padding-top: $column-margin;
+
+	@include laptop {
+		padding-top: $column-margin * 2;
+	}
+}
