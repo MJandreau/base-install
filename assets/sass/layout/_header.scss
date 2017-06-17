@@ -4,15 +4,36 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .site-header { 
 	background-color: $color__background-header;
-
-	// border-bottom: 1px solid darken($color__background-header, 5%);
+	border-bottom: 1px solid darken($color__background-header, 5%);
 	@include absoluteHeader; // uncomment to set absolute header
 
 	// @include fixedHeader; // uncomment to set fixed header, and also uncomment related fixedHeader mixins below
 
-	@include laptop {
-		padding: ($column-margin / 2) 0;
-	}
+	// @include laptop {
+		// padding: ($column-margin / 2) 0;
+	// }
+}
+
+.site-navbar {
+  position: relative;
+  box-sizing: border-box;
+  width: $size__site-main;
+  max-width: $size__site-main;
+  padding: 0 $column-margin;
+  margin: 0 auto;
+
+  @include tablet {
+    max-width: $width_tablet;
+  }
+
+  @include laptop {
+    max-width: $width_laptop;
+    // padding: 0;
+  }
+
+  // @include desktop {
+  //   max-width: $width_desktop;
+  // }
 }
 
 // site title and description
@@ -25,9 +46,18 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .site-title { 
 	// background-color: rgba(0,255,0,0.5);
-	margin-bottom: 0;
-	font-size: 22px;
-	line-height: $font__line-height-nav;
+	// margin: 0 0 0 ($column-margin / 1.5);
+	font-size: 20px;
+	line-height: $headerHeight;
+	font-weight: 300;
+
+	// @include laptop {
+	// 	margin-left: 0;
+	// }
+
+	a {
+		text-decoration: none;
+	}
 }
 
 // site description only (optional)
