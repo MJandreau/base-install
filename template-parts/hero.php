@@ -13,9 +13,11 @@
 ?>
 
 <div class="hero">
+	<div class="heading">
+		
 	<div class="container">
-		<div class="row">
-			<div class="twelve-md column">
+		<!-- <div class="row"> -->
+			<!-- <div class="twelve-md column"> -->
 
 				<?php if ( is_front_page() ) : ?>
 					<div class="call-to-action">
@@ -25,7 +27,7 @@
 					</div>
 					
 				<?php elseif ( is_single() ) : ?>
-					<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+					<?php the_title( '<h2 class="entry-title"><span class="screen-reader-text">Article Title: </span>', '</h2>' ); ?>
 					<div class="blog-author-date">
 						<span class="blog-date">Posted on <?php echo get_the_date('M j, Y'); ?></span>
 						<?php 
@@ -70,15 +72,17 @@
 					<h2>Get in Touch</h2>
 
 				<?php else : ?>
-					<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+					<?php the_title( '<h2 class="entry-title"><span class="screen-reader-text">Article Title: </span>', '</h2>' ); ?>
 
 				<?php endif; ?>
 
-			</div>
-		</div>
+			<!-- </div> -->
+		<!-- </div> -->
 	</div>
 
-	<?php if ( is_front_page() || is_single() ) : ?>
+	</div>
+	<?php if ( is_front_page() ) : ?>
+	<?php // if ( is_front_page() || is_single() ) : ?>
 		<a class="scroll-to-content" href="#content"></a>
 	<?php endif; ?>
 

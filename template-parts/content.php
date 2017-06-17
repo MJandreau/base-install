@@ -11,6 +11,8 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+	<h2 class="screen-reader-text">Article Content</h2>
+
 	<?php // delete commented stuff below to clean up headers ?>
 	<!-- <header class="entry-header"> -->
 		<?php

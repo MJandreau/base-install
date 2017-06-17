@@ -13,5 +13,6 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <aside id="secondary" class="widget-area">
+	<h2 class="screen-reader-text">Sidebar</h2>
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside>
