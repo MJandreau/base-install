@@ -13,11 +13,36 @@
 ?>
 
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+
+		<?php if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false): ?>
+			<!-- Replace with your own Google Analytics code -->
+			<script>
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+				ga('create', 'UA-XXXXX-Y', 'auto');
+				ga('send', 'pageview');
+			</script>
+		<?php endif; ?>
+
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv-printshiv.min.js"></script>
+		<![endif]-->
+
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class('sideNavBody'); ?>>
@@ -37,12 +62,10 @@
 							</main>
 						</div>
 						<?php get_sidebar( baseinstall_template_base() ); ?>
-					</div>
 
 				<?php elseif ( is_front_page() ) : // if front page is set to show static page, get front-page.php markup ?>
 					<div id="content">
 						<?php include baseinstall_template_path(); ?>
-					</div>
 
 				<?php else : // all other pages ?>
 					<div id="content" class="site-content">
@@ -52,14 +75,15 @@
 							</main>
 						</div>
 						<?php get_sidebar( baseinstall_template_base() ); ?>
-					</div>
 				<?php endif; ?>
 
-			</div>
+					</div><?php // close #content ?>
+
+			</div><?php // close #content-wrap ?>
 
 			<?php get_footer( baseinstall_template_base() ); ?>
 
-		</div>
+		</div><?php // close #page ?>
 		<?php wp_footer(); ?>
 		<a id="scroll-to-top" href="#page"></a>
 	</body>
