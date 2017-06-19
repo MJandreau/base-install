@@ -11,20 +11,12 @@
  *
  * @package Base_Install
  */
-
 ?>
 
+<?php if ( is_home() && is_front_page() ) : // If front page is set to show latest posts, get this markup ?>
+	<div class="container"><!-- open content area .container -->
 
-
-
-<?php if ( is_home() && is_front_page() ) : 
-// If front page is set to show latest posts, get this markup 
-?>
-	<div class="container">
-
-<?php else : 
-// If front page is set to show a static page, get this markup  
-?>
+<?php else : // If front page is set to show a static page, show this markup before content area ?>
 	<div class="triple-feature">
 		<div class="container">
 			<div class="row">
@@ -46,32 +38,23 @@
 			</div>
 		</div>
 	</div>
-	<div class="container pad-top">
+	<div class="container pad-top"><!-- open content area .container -->
 
 <?php endif; ?>
 
-	<?php
-		// get page content
+		<?php // get page content
 		while ( have_posts() ) : the_post();
-
 			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			// if ( comments_open() || get_comments_number() ) :
-			// 	comments_template();
-			// endif;
-
+			/* // If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif; */
 		endwhile; // End of the loop.
-
 		the_posts_navigation(); // If front page is set to show latest posts, get the post navigation
-	?>
+		?>
+	</div><!-- close content area .container -->
 
-	</div>
-
-
-<?php if ( !is_home() && is_front_page() ) : 
-// If front page is set to show a static page, get this markup 
-?>
+<?php if ( !is_home() && is_front_page() ) : // If front page is set to show a static page, show this markup after content area ?>
 	<div class="feature">
 		<div class="container">
 			<div class="row">
