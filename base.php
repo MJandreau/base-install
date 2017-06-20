@@ -37,12 +37,7 @@
 				ga('send', 'pageview');
 			</script>
 		<?php endif; ?>
-
-		<!--[if lt IE 9]>
-		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
-		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv-printshiv.min.js"></script>
-		<![endif]-->
-
+		
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class('sideNavBody'); ?>>
