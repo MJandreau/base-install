@@ -15,7 +15,7 @@ for (index = 0; index < subMenuItems.length; index++) {
 }
 
 // Enables toggling all submenus individually
-var subMenuToggle = document.querySelectorAll('.sub-nav-toggle');    
+var subMenuToggle = document.querySelectorAll('.sub-nav-toggle'); 
 for(var i in subMenuToggle) {
   if(subMenuToggle.hasOwnProperty(i)) {
     subMenuToggle[i].onclick = function() {
