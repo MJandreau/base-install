@@ -1352,10 +1352,10 @@ for(var i in subMenuToggle) {
     subMenuToggle[i].onclick = function() {
       this.parentElement.querySelector('.children').classList.toggle("active");
       this.parentElement.querySelector('.sub-nav-toggle').classList.toggle("active");
+      this.parentElement.classList.toggle("active");
     };
   }
 }
-
 
 
 // Mobile navigation controls
@@ -1364,7 +1364,7 @@ var menuToggle = document.querySelector('.menu-toggle');
     outsideMenu = document.querySelector('.site-content-wrap');
     menuContainer = document.querySelector('.main-navigation');
     navMenu = document.querySelector('.nav-menu');
-
+    
 // set WAI-ARIA values for nav and toggle button
 menuToggle.setAttribute( 'aria-expanded', 'false' );
 navMenu.setAttribute( 'aria-expanded', 'false' );
