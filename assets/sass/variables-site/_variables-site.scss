@@ -63,17 +63,16 @@ $font__size-default: 16px;
 
 
 
-
-// Site main/sidebar structure
-$size__site-main: 100%;
-$size__site-sidebar: 33.333333%;
-$size__site-sidebar-desktop: 25%;
-
-
-
+// Grid and layout variables for site structure
+$size__site-main: 100%; 
+$size__site-sidebar: 33.333333%; 
+$size__site-sidebar-desktop: 25%; 
+$total-columns: 12; // number of columns in grid
+$column-margin: 20px; // gutter between columns calculated in grid
 
 
-// Responsive breakpoints for mixins found in _functions.scss
+
+// Responsive breakpoints for mixins
 $width_mobile: 480px;
 $width_phablet: 640px;
 $width_tablet: 800px;
@@ -85,9 +84,6 @@ $wordpress_admin: 783px;
 
 
 
-
-
-
 // Transition duration for hover/toggle effects
 $transistion_duration: 0.3s;
 
@@ -95,23 +91,12 @@ $transistion_duration: 0.3s;
 $border_radius: 3px;
 
 
+
 // Scroll-to-top button, size is calculated using the formula d = a * √2
 $chevronWidth: 10px; // width of chevron, can be whatever
 $borderWidth: $chevronWidth / 4; // width of borders based on chevron size
 $squareRoot: 1.41421356237; // square root of 2 used for getting chevron diagonal width
 $scrollUpButtonSize: $chevronWidth * $squareRoot; // calculates diagonal of chevron
-
-
-
-
-
-// Grid and layout variables
-// $container-width: 1170px !default;
-$total-columns: 12 !default;
-$column-width: 100% / $total-columns !default; // calculates individual column width based off of # of columns
-$column-margin: 20px !default; // space between columns calculated in grid, was 2.0rem !default
-
-
 
 
 
