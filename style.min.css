@@ -210,7 +210,8 @@ button.menu-toggle span::after{bottom:-9px;-webkit-transition-property:bottom,-w
 .site-title a{text-decoration:none}
 .site{padding:0}
 .admin-bar .site{position:absolute;top:0;left:0;width:100%;padding-top:46px}
-.scroll-anchor:before,#content:before{display:block;content:"";visibility:hidden}
+.scroll-anchor:before{display:block;content:"";visibility:hidden;margin-top:-20px;height:20px}
+.admin-bar .scroll-anchor:before{margin-top:-66px;height:66px}
 .pad-top,.content-area,.widget-area{padding-top:20px}
 .hero{position:relative;background-color:#ddd;background:-webkit-linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url("https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txtclr=dddddd&txt=Select%20Featured%20Image&w=1920&h=1080&fm=jpg");background:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url("https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txtclr=dddddd&txt=Select%20Featured%20Image&w=1920&h=1080&fm=jpg");border:0;background-repeat:no-repeat !important;background-position:center !important;background-size:cover !important;height:40vh}
 .home .hero{height:100vh}
@@ -285,6 +286,7 @@ embed,iframe,object{max-width:100%}
 .post-navigation a{height:240px}
 }@media(min-width:783px){.admin-bar .site-header{top:32px}
 .admin-bar .site{padding-top:32px}
+.admin-bar .scroll-anchor:before{margin-top:-52px;height:52px}
 }@media(min-width:800px){.container,.site-content,.site-info{max-width:800px}
 .md-1{width:8.3333333333%}
 .md-2{width:16.6666666667%}

@@ -83,13 +83,13 @@
 }
 
 // Offset internal anchor links to keep them on screen
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-.scroll-anchor:before,
-#content:before { 
+//––––––––––––––––––––––––––––––––––––––––––––––––––,
+// #content:before, // maybe remove this later
+.scroll-anchor:before { 
 	display: block; 
 	content: ""; 
 	visibility: hidden; 
-	// @include anchorOffset; // offset internal anchor links, comment out to use fixed header mixin below
+	@include anchorOffset; // offset internal anchor links, comment out to use fixed header mixin below
 	// @include fixedHeaderAnchorOffset; // uncomment to offset internal anchor links with fixed header
 }
 
