@@ -163,7 +163,7 @@ section:focus {
 		bottom: $chevronWidth * 2;
 	}
 
-    // position bouncing arrow in center of hero
+    // position bouncing arrow in center of hero, calculates negative left margin based on width
     left: 50%;
     margin-left: -($scrollUpButtonSize * ($squareRoot * 2)) / 2 !important;
 
