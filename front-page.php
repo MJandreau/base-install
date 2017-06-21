@@ -20,17 +20,17 @@
 	<div class="triple-feature">
 		<div class="container">
 			<div class="row">
-				<div class="column four-md">
+				<div class="column sm-4">
 					<div class="featured">
 						<h3>bloop</h3>
 					</div>
 				</div>
-				<div class="column four-md">
+				<div class="column sm-4">
 					<div class="featured">
 						<h3>bloop</h3>
 					</div>
 				</div>
-				<div class="column four-md">
+				<div class="column sm-4">
 					<div class="featured">
 						<h3>bloop</h3>
 					</div>
@@ -58,17 +58,17 @@
 	<div class="feature">
 		<div class="container">
 			<div class="row">
-				<div class="column four-md">
+				<div class="column sm-4">
 					<div class="featured">
 						<h3>bloop</h3>
 					</div>
 				</div>
-				<div class="column four-md">
+				<div class="column sm-4">
 					<div class="featured">
 						<h3>bloop</h3>
 					</div>
 				</div>
-				<div class="column four-md">
+				<div class="column sm-4">
 					<div class="featured">
 						<h3>bloop</h3>
 					</div>
@@ -80,17 +80,17 @@
 	<div class="triple-feature">
 		<div class="container">
 			<div class="row">
-				<div class="column four-md">
+				<div class="column sm-4">
 					<div class="featured">
 						<h3>bloop</h3>
 					</div>
 				</div>
-				<div class="column four-md">
+				<div class="column sm-4">
 					<div class="featured">
 						<h3>bloop</h3>
 					</div>
 				</div>
-				<div class="column four-md">
+				<div class="column sm-4">
 					<div class="featured">
 						<h3>bloop</h3>
 					</div>
