@@ -1,3 +1,4 @@
+
 // Grid
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .container {
@@ -30,137 +31,82 @@
   }
 }
 
+// default column width before responsive layout kicks in
 .column {
   width: 100%;
   float: left;
   box-sizing: border-box;
-  padding: 0;
-
-  @include phablet {
-    padding-left: $column-margin;
-    padding-right: $column-margin;
-  }
+  padding-left: $column-margin;
+  padding-right: $column-margin;
 }
 
 
-// [class*="one-"]     { width: grid-column-width(1);  }
-// [class*="two-"]     { width: grid-column-width(2);  }
-// [class*="three-"]   { width: grid-column-width(3);  }
-// [class*="four-"]    { width: grid-column-width(4);  }
-// [class*="five-"]    { width: grid-column-width(5);  }
-// [class*="six-"]     { width: grid-column-width(6);  }
-// [class*="seven-"]   { width: grid-column-width(7);  }
-// [class*="eight-"]   { width: grid-column-width(8);  }
-// [class*="nine-"]    { width: grid-column-width(9);  }
-// [class*="ten-"]     { width: grid-column-width(10); }
-// [class*="eleven-"]  { width: grid-column-width(11); }
-// [class*="twelve-"]  { width: 100%; }
-
+// Grid calculations 
+// divide $size__site-main by $total-columns & loop through breakpoints to create responsive grid
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // Smallest devices
-.one-xs     { width: grid-column-width(1);  }
-.two-xs     { width: grid-column-width(2);  }
-.three-xs   { width: grid-column-width(3);  }
-.four-xs    { width: grid-column-width(4);  }
-.five-xs    { width: grid-column-width(5);  }
-.six-xs     { width: grid-column-width(6);  }
-.seven-xs   { width: grid-column-width(7);  }
-.eight-xs   { width: grid-column-width(8);  }
-.nine-xs    { width: grid-column-width(9);  }
-.ten-xs     { width: grid-column-width(10); }
-.eleven-xs  { width: grid-column-width(11); }
-.twelve-xs  { width: 100%; }
+@for $column-width from 1 through $total-columns {
+  .xs-#{$column-width} { 
+    width: $size__site-main / $total-columns * $column-width;
+  }
+}
 
 // Larger smartphones and small tablets
 @include phablet {
-  .one-sm     { width: grid-column-width(1);  }
-  .two-sm     { width: grid-column-width(2);  }
-  .three-sm   { width: grid-column-width(3);  }
-  .four-sm    { width: grid-column-width(4);  }
-  .five-sm    { width: grid-column-width(5);  }
-  .six-sm     { width: grid-column-width(6);  }
-  .seven-sm   { width: grid-column-width(7);  }
-  .eight-sm   { width: grid-column-width(8);  }
-  .nine-sm    { width: grid-column-width(9);  }
-  .ten-sm     { width: grid-column-width(10); }
-  .eleven-sm  { width: grid-column-width(11); }
-  .twelve-sm  { width: 100%; }
+  @for $column-width from 1 through $total-columns {
+    .sm-#{$column-width} { 
+      width: $size__site-main / $total-columns * $column-width;
+    }
+  }
 }
 
 // Tablets around iPad size
 @include tablet {
-  .one-md     { width: grid-column-width(1);  }
-  .two-md     { width: grid-column-width(2);  }
-  .three-md   { width: grid-column-width(3);  }
-  .four-md    { width: grid-column-width(4);  }
-  .five-md    { width: grid-column-width(5);  }
-  .six-md     { width: grid-column-width(6);  }
-  .seven-md   { width: grid-column-width(7);  }
-  .eight-md   { width: grid-column-width(8);  }
-  .nine-md    { width: grid-column-width(9);  }
-  .ten-md     { width: grid-column-width(10); }
-  .eleven-md  { width: grid-column-width(11); }
-  .twelve-md  { width: 100%; }
+  @for $column-width from 1 through $total-columns {
+    .md-#{$column-width} { 
+      width: $size__site-main / $total-columns * $column-width;
+    }
+  }
 }
 
 // Laptops and large tablets, also breakpoint for mobile nav
 @include laptop {
-  .one-lg     { width: grid-column-width(1);  }
-  .two-lg     { width: grid-column-width(2);  }
-  .three-lg   { width: grid-column-width(3);  }
-  .four-lg    { width: grid-column-width(4);  }
-  .five-lg    { width: grid-column-width(5);  }
-  .six-lg     { width: grid-column-width(6);  }
-  .seven-lg   { width: grid-column-width(7);  }
-  .eight-lg   { width: grid-column-width(8);  }
-  .nine-lg    { width: grid-column-width(9);  }
-  .ten-lg     { width: grid-column-width(10); }
-  .eleven-lg  { width: grid-column-width(11); }
-  .twelve-lg  { width: 100%; }
+  @for $column-width from 1 through $total-columns {
+    .lg-#{$column-width} { 
+      width: $size__site-main / $total-columns * $column-width;
+    }
+  }
 }
 
-// Desktop size and larger
-@include desktop {
-  .one-xl     { width: grid-column-width(1);  }
-  .two-xl     { width: grid-column-width(2);  }
-  .three-xl   { width: grid-column-width(3);  }
-  .four-xl    { width: grid-column-width(4);  }
-  .five-xl    { width: grid-column-width(5);  }
-  .six-xl     { width: grid-column-width(6);  }
-  .seven-xl   { width: grid-column-width(7);  }
-  .eight-xl   { width: grid-column-width(8);  }
-  .nine-xl    { width: grid-column-width(9);  }
-  .ten-xl     { width: grid-column-width(10); }
-  .eleven-xl  { width: grid-column-width(11); }
-  .twelve-xl  { width: 100%; }
-}
-
-
-// // offests if you need them, just add to relevant breakpoint
+// Desktop size and larger, uncomment if needed
 // @include desktop {
-//   .offset-one    { margin-left: grid-offset-length(1);  }
-//   .offset-two    { margin-left: grid-offset-length(2);  }
-//   .offset-three  { margin-left: grid-offset-length(3);  }
-//   .offset-four   { margin-left: grid-offset-length(4);  }
-//   .offset-five   { margin-left: grid-offset-length(5);  }
-//   .offset-six    { margin-left: grid-offset-length(6);  }
-//   .offset-seven  { margin-left: grid-offset-length(7);  }
-//   .offset-eight  { margin-left: grid-offset-length(8);  }
-//   .offset-nine   { margin-left: grid-offset-length(9);  }
-//   .offset-ten    { margin-left: grid-offset-length(10); }
-//   .offset-eleven { margin-left: grid-offset-length(11); }
-
-//   // reset offset
-//   .reset         { margin-left: 0;  }
+//   @for $column-width from 1 through $total-columns {
+//     .xl-#{$column-width} { 
+//       width: $size__site-main / $total-columns * $column-width;
+//     }
+//   }
 // }
 
+// offests if you need them, just add relevant breakpoint
+// @include desktop {
+//   @for $column-width from 1 through $total-columns {
+//     .offset-#{$column-width} { 
+//       margin-left: $size__site-main / $total-columns * $column-width;
+//     }
+//   }
+// }
+
+// reset offset, add relevant breakpoint
+// .reset { 
+//   margin-left: 0;
+// }
 
 // makes wrap for main content area same width as grid columns
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .site-content {
   @extend .container;
 }
-
 
 // Clearing
 //––––––––––––––––––––––––––––––––––––––––––––––––––
