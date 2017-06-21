@@ -1,4 +1,4 @@
-Base Install Four
+Base Install
 ===
 
 [![WPGulp](https://img.shields.io/badge/Built%20For%20WordPress-%E2%93%A6-lightgrey.svg?style=flat-square)](https://github.com/mikejandreau/Base-Install-Four) 
