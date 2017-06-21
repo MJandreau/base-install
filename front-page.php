@@ -38,7 +38,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container pad-top"><!-- open content area .container -->
+	<div class="container pad-top"><?php // open content area .container ?>
 
 <?php endif; ?>
 
@@ -52,7 +52,7 @@
 		endwhile; // End of the loop.
 		the_posts_navigation(); // If front page is set to show latest posts, get the post navigation
 		?>
-	</div><!-- close content area .container -->
+	</div><?php // close content area .container ?>
 
 <?php if ( !is_home() && is_front_page() ) : // If front page is set to show a static page, show this markup after content area ?>
 	<div class="feature">
