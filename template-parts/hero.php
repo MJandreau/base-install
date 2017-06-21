@@ -20,7 +20,7 @@
 				<div class="call-to-action">
 					<h2>Base Install Four</h2>
 					<p>Base Install is a starter theme for WordPress development based on <a href="http://underscores.me/" target="_blank">Underscores</a>. It features a <a href="http://scribu.net/wordpress/theme-wrappers.html">theme wrapper</a>, a <a href="http://getskeleton.com/">responsive grid</a>, and a powerful <a href="https://labs.ahmadawais.com/WPGulp/">Gulp</a> workflow.</p>
-					<a href="https://github.com/mikejandreau/Base-Install-Four#" target="_blank">View on GitHub</a>
+					<a href="https://github.com/mikejandreau/Base-Install" target="_blank">View on GitHub</a>
 				</div>
 				
 			<?php elseif ( is_single() ) : ?>
