@@ -6,10 +6,16 @@
 
 @import "../layout/header";
 @import "../layout/hero";
+@import "../layout/feature";
 @import "../layout/footer";
 
-@import "../layout/content-sidebar";
-// @import "../layout/sidebar-content";
+
+
+/*--------------------------------------------------------------
+## Sidebar Position - for full width layout, comment both out
+--------------------------------------------------------------*/
+@import "../layout/content-sidebar"; // content left, sidebar right
+// @import "../layout/sidebar-content"; // content right, sidebar left
 
 
 /*--------------------------------------------------------------

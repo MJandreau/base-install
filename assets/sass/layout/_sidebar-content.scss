@@ -1,4 +1,8 @@
-@include laptop {
+
+// content right, sidebar left
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include tablet {
 	.content-area {
 		float: right;
 		margin: 0 0 0 (-$size__site-sidebar);
@@ -7,6 +11,7 @@
 
 	.site-main {
 		margin: 0 0 0 $size__site-sidebar;
+		padding-left: $column-margin * 2;
 	}
 
 	.site-content .widget-area {
@@ -18,5 +23,21 @@
 	.site-footer {
 		clear: both;
 		width: $size__site-main;
+	}
+}
+
+
+
+@include desktop {
+	.content-area {
+		margin: 0 0 0 (-$size__site-sidebar-desktop);
+	}
+
+	.site-main {
+		margin: 0 0 0 $size__site-sidebar-desktop;
+	}
+
+	.site-content .widget-area {
+		width: $size__site-sidebar-desktop;
 	}
 }

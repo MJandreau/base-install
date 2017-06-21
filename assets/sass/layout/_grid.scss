@@ -42,6 +42,21 @@
   }
 }
 
+
+// [class*="one-"]     { width: grid-column-width(1);  }
+// [class*="two-"]     { width: grid-column-width(2);  }
+// [class*="three-"]   { width: grid-column-width(3);  }
+// [class*="four-"]    { width: grid-column-width(4);  }
+// [class*="five-"]    { width: grid-column-width(5);  }
+// [class*="six-"]     { width: grid-column-width(6);  }
+// [class*="seven-"]   { width: grid-column-width(7);  }
+// [class*="eight-"]   { width: grid-column-width(8);  }
+// [class*="nine-"]    { width: grid-column-width(9);  }
+// [class*="ten-"]     { width: grid-column-width(10); }
+// [class*="eleven-"]  { width: grid-column-width(11); }
+// [class*="twelve-"]  { width: 100%; }
+
+
 // Smallest devices
 .one-xs     { width: grid-column-width(1);  }
 .two-xs     { width: grid-column-width(2);  }
@@ -121,23 +136,6 @@
 }
 
 
-
-
-
-
-// move to blog styles
-.blog-sample {
-  background: #eee;
-  padding: $column-margin;
-  height: 360px;
-  margin-bottom: $column-margin * 2;
-}
-
-
-
-
-
-
 // // offests if you need them, just add to relevant breakpoint
 // @include desktop {
 //   .offset-one    { margin-left: grid-offset-length(1);  }
@@ -155,6 +153,13 @@
 //   // reset offset
 //   .reset         { margin-left: 0;  }
 // }
+
+
+// makes wrap for main content area same width as grid columns
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+.site-content {
+  @extend .container;
+}
 
 
 // Clearing
