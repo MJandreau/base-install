@@ -47,27 +47,27 @@ section:focus {
 	opacity: 0;
 
 	// solid button
-	// background: $color__link; 
+	// background: $color_link; 
 	// border: $borderWidth solid transparent;
 	// color: $color_white;
 
 	// &:hover, 
 	// &:focus,
 	// &:active {
-	// 	background: darken($color__link, 10%); 
+	// 	background: darken($color_link, 10%); 
 	// 	color: $color_white;
 	// 	outline: none;
 	// }
 
 	// button with outline only 
 	background: none; 
-	border: $borderWidth solid $color__link;
-	color: $color__link;
+	border: $borderWidth solid $color_link;
+	color: $color_link;
 
 	&:hover, 
 	&:active {
-		color: darken($color__link, 10%); 
-		border-color: darken($color__link, 10%);  
+		color: darken($color_link, 10%); 
+		border-color: darken($color_link, 10%);  
 	}
 
 	&:focus {
@@ -170,7 +170,7 @@ section:focus {
 
 
 	// solid button
-	// background: $color__link; 
+	// background: $color_link; 
 	// border: $borderWidth solid transparent;
 	// color: $color_white;
 
@@ -181,7 +181,7 @@ section:focus {
 	// &:hover, 
 	// &:focus,
 	// &:active {
-	// 	background: darken($color__link, 10%); 
+	// 	background: darken($color_link, 10%); 
 	// 	color: $color_white;
 	// 	outline: none;
 	// }
@@ -190,17 +190,17 @@ section:focus {
 
 	// button with outline only 
 	background: none; 
-	// border: $borderWidth solid $color__link; // chevron inside circle, comment out for plain chevron
-	color: $color__link;
+	// border: $borderWidth solid $color_link; // chevron inside circle, comment out for plain chevron
+	color: $color_link;
 
 	&:visited {
-		color: $color__link;
+		color: $color_link;
 	}
 
 	&:hover, 
 	&:active {
-		color: darken($color__link, 10%); 
-		border-color: darken($color__link, 10%);  
+		color: darken($color_link, 10%); 
+		border-color: darken($color_link, 10%);  
 	}
 
 	&:focus {

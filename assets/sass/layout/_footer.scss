@@ -3,9 +3,9 @@
 // footer styles
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .site-footer {
-	background-color: $color__background-footer;
+	background-color: $color_background_footer;
 	width: 100%;
-	border-top: 1px solid darken($color__background-footer, 5%);
+	border-top: 1px solid darken($color_background_footer, 5%);
 	padding: ($headerHeight / 3) 0;
 
 	// @include laptop {

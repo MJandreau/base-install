@@ -1,10 +1,12 @@
 ul, ol {
 	margin: 0 0 1.5em 0;
-	padding: 0 0 0 1.2em;
+	padding: 0 0 0 1.5em;
 }
 
 ul {
 	list-style: disc;
+	// list-style: square;
+	// list-style: circle;
 }
 
 ol {
@@ -25,10 +27,53 @@ dd {
 	margin: 0 1.5em 1.5em;
 }
 
-// li {
-// 	margin-bottom: .5em;
+li {
+	margin-bottom: .5em;
 
-// 	&:last-of-type {
-// 		margin-bottom: 0;
-// 	}
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+
+
+
+// Lists
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// ul {
+//   list-style: circle;
+//   padding-left: 0;
+
+//   // &.fee-list {
+//   //   list-style: none;
+//   // }
 // }
+
+// ol {
+//   list-style: decimal;
+//   padding-left: 0;
+//   margin-top: 0;
+// }
+
+// ul {
+//   padding-left: 0;
+//   margin-top: 0;
+  
+//   ul, ol {
+//     margin: 1.5rem 0 1.5rem 3rem;
+//     font-size: 90%;
+//   }
+// }
+
+// ol {
+//   ol, ul {
+//     margin: 1.5rem 0 1.5rem 3rem;
+//     font-size: 90%;
+//   }
+// }
+
+// li {
+//   margin-bottom: 1rem;
+// }
+

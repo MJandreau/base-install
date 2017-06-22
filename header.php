@@ -17,7 +17,7 @@
 		</div>
 		<button class="menu-toggle" tabindex="0" aria-label="Menu" aria-controls="primary-menu"><?php esc_html_e( 'Menu', 'baseinstall' ); ?><span>toggle menu</span></button>
 		<nav id="site-navigation" class="main-navigation">
-			<h2 class="screen-reader-text">Main Navigation</h2>
+			<h3 class="screen-reader-text">Main Navigation</h3>
 			<?php wp_nav_menu( array(
 				'theme_location' => 'menu-1', 
 				'container' => 'ul',

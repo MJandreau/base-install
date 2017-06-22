@@ -1,23 +1,20 @@
-
-
 // Hero
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .hero {
-	position: relative;
-	// overflow: hidden;
-	background-color: #ddd;
+  position: relative;
+  background-color: $color_background_hero;
   background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txtclr=dddddd&txt=Select%20Featured%20Image&w=1920&h=1080&fm=jpg');
-  // background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./assets/img/hero-home.jpg');
-  // background: url('./assets/img/hero-home.jpg');
-  border:none;
-  // padding: ($navbar-height + 12rem) 0 12rem;
-  // text-align: center;
+
   @include bgImage;
+
   // @include innerShadow;
 
+  border:none;
+  min-height: 22rem;
   height:40vh;
+  // text-align: center;
 
-  // .single &,
+  // .single &, // single blog posts
   .home & {
     height:100vh;
   }
@@ -27,29 +24,21 @@
       margin-bottom: 0;
     }
   }
-
-  // a {
-  //   margin: 0;
-  // }
-
-  // .blog-author-date {
-  //   color: #fff;
-  // }
 }
 
 .heading {
   position:absolute;
   top:50%;
   width:100%;
-    // transform: translate(0,-50%); 
+  // transform: translate(0,-50%); // vertically center hero text
 
+  // .single &, // single blog posts
   .home & {
-    transform: translate(0,-50%); 
+    transform: translate(0,-50%); // vertically center hero text
   }
 }
 
 .call-to-action {
-  // padding: 50px;
   position: relative;
   max-width: 560px;
   z-index: 1;

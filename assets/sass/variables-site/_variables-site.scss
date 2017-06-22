@@ -2,7 +2,7 @@
 // *************************
 
 // Brand colors
-$brand_primary: blue;
+$brand_primary: teal;
 $brand_secondary: tan;
 $brand_neutral: #777;
 $brand_accent: green;
@@ -23,44 +23,56 @@ $color_skype: #12A5F4;
 $color_sharethis: #01BF01;
 
 // Background colors
-$color__background-body: #fff;
-$color__background-header: #f4f4f4;
-$color__background-footer: #f4f4f4;
-$color__background-lightgray: #f4f4f4;
-$color__background-darkgray: #333;
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
+$color_background_body: #fff;
+$color_background_header: #f4f4f4;
+$color_background_hero: #ddd;
+$color_background_footer: #f4f4f4;
+$color_background_lightgray: #f4f4f4;
+$color_background_darkgray: #333;
+$color_background_screen: #f1f1f1;
+$color_background_hr: #ccc;
+$color_background_pre: #eee;
+$color_background_ins: #fff9c0;
 
 // Text colors
-$color__text-main: #404040;
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
+$color_text_main: #404040;
+$color_text_screen: #21759b;
+$color_text_input: #666;
+$color_text_input-focus: #111;
+$color_link: royalblue;
+$color_link_visited: purple;
+$color_link_hover: midnightblue;
 
-// Button background/border colors
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
-$color__border-abbr: #666;
+// Button colors
+$color_background_button: #e6e6e6;
+$color_text_button: #404040;
+$color_border_button: #ccc;
+$color_border_button_hover: #ccc #bbb #aaa;
+$color_border_button_focus: #aaa #bbb #bbb;
+$color_border_input: #ccc;
+$color_border_abbr: #666;
 
 
 
 // Fonts
-$font__main: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font__headings: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font__main: sans-serif;
+$font__headings: sans-serif;
 $font__code: 'Source Code Pro', Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
-$font__line-height-body: 1.618;
+$font_weight_main: 400;
+$font_weight_headings: 300;
+$font_weight_pre: 400;
+$font__line-height-body: 1.8;
+$font__line-height-headings: 1.4;
+$font__line-height-forms: 40px;
 $font__line-height-pre: 1.6;
-// $font__size-default: 16px;
-$font__size-default: 1.6;
+
+
+
+// Global font size base from which all type sizes are calculated
+// HTML set to 62.5% so REM measurements based on 10px - basically 1.5rem = 15px
+$font__size-base: 16;
+$font__size-rem: 1.6rem;
 
 
 
@@ -89,7 +101,7 @@ $wordpress_admin: 783px;
 $transistion_duration: 0.3s;
 
 // Border radius for buttons and other elements
-$border_radius: 3px;
+$border_radius: 4px;
 
 
 
@@ -135,18 +147,3 @@ $shadow-size: 10px;
 
 
 
-
-
-
-$light-grey: #e1e1e1 !default;
-$dark-grey: #333 !default;
-$primary-color: #29526D !default;
-$secondary-color: lighten($dark-grey, 13.5%) !default;
-$border-color: #bbb !default;
-$link-color: $primary-color !default;
-$navbar-color: $primary-color !default;
-$font-color: #5a5a5a !default;
-$navbar-border: lighten($navbar-color, 13.5%) !default;
-$navbar-font-color: #fff !default;
-$hero-bg-color: lighten($navbar-color, 7%) !default;
-$trans-white: rgba(255,255,255,0.5);

@@ -3,32 +3,61 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: $color__border-button;
-	border-radius: 3px;
-	background: $color__background-button;
-	color: rgba(0, 0, 0, .8);
-	@include font-size(0.75);
-	line-height: 1;
-	padding: .6em 1em .4em;
+	cursor: pointer;
+	text-align: center;
+	display: inline-block;
+	background-color: transparent;
+	text-transform: uppercase;
+	text-decoration: none;
+	white-space: nowrap;
+	letter-spacing: .1rem;
+	line-height: $font__line-height-forms;
+	height: $font__line-height-forms;
+	padding: 0 30px;
+	font-weight: 400;
+	margin-bottom: 1rem;
+	@include font-size(.8);
+	color: $color_text_button;
+	border-radius: $border_radius;
+	border: 1px solid $color_border_button;
+	transition: $transistion_duration;
 
 	&:hover {
-		border-color: $color__border-button-hover;
+		color: darken($color_text_button, 10%);
+		border-color: darken($color_border_button, 20%);
 	}
 
 	&:active,
 	&:focus {
-		border-color: $color__border-button-focus;
+		border-color: darken($color_border_button, 40%);
+	}
+
+	&.button-primary {
+		color: $color_white;
+		background-color: $brand_primary;
+		border-color: $brand_primary;
+
+		&:hover {
+			color: $color_white;
+			background: darken($brand_primary, 10%);
+			border-color: darken($brand_primary, 10%);
+		}
+
+		&:active,
+		&:focus {
+			color: $color_white;
+			background: darken($brand_primary, 20%);
+			border-color: darken($brand_primary, 20%);
+		}
 	}
 }
 
 
-
-// .more-link {
-//   @extend .button;
-//   // @extend .button-primary;
-//   display: block;
-//   max-width: 135px;
-//   margin-top: 2rem;
-//   margin-bottom: 3.5rem;
-// }
+.more-link {
+	@extend .button;
+	// @extend .button-primary;
+	display: block;
+	max-width: 135px;
+	margin-top: 2rem;
+	margin-bottom: 3.5rem;
+}

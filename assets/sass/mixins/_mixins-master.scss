@@ -70,11 +70,12 @@
 }
 
 // Rem output with px fallback
+// HTML set to 62.5% so REM measurements based on 10px sizing - basically 1.5rem = 15px
 // @include font-size(.9);
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 @mixin font-size($sizeValue: 1) {
-	font-size: ($sizeValue * 16) * 1px;
-	font-size: $sizeValue * 1rem;
+	font-size: ($sizeValue * $font__size-base) * 1px;
+	font-size: $sizeValue * $font__size-rem;
 }
 
 // Center block

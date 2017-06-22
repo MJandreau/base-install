@@ -3,9 +3,11 @@
 // full header with branding, title, description, and nav
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .site-header { 
-	background-color: $color__background-header;
-	border-bottom: 1px solid darken($color__background-header, 5%);
+	background-color: $color_background_header;
+	border-bottom: 1px solid darken($color_background_header, 5%);
 	@include absoluteHeader; // uncomment to set absolute header
+
+	// @include dropShadow;
 
 	// @include fixedHeader; // uncomment to set fixed header, and also uncomment related fixedHeader mixins below
 
@@ -15,25 +17,7 @@
 }
 
 .site-navbar {
-  position: relative;
-  box-sizing: border-box;
-  width: $size__site-main;
-  max-width: $size__site-main;
-  padding: 0 $column-margin;
-  margin: 0 auto;
-
-  @include tablet {
-    max-width: $width_tablet;
-  }
-
-  @include laptop {
-    max-width: $width_laptop;
-    // padding: 0;
-  }
-
-  // @include desktop {
-  //   max-width: $width_desktop;
-  // }
+	@extend .container; // keeps navbar content lined up with body content
 }
 
 // site title and description
@@ -47,13 +31,7 @@
 .site-title { 
 	// background-color: rgba(0,255,0,0.5);
 	// margin: 0 0 0 ($column-margin / 1.5);
-	font-size: 20px;
 	line-height: $headerHeight;
-	font-weight: 300;
-
-	// @include laptop {
-	// 	margin-left: 0;
-	// }
 
 	a {
 		text-decoration: none;
