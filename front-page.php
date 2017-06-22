@@ -14,7 +14,7 @@
 ?>
 
 <?php if ( is_home() && is_front_page() ) : // If front page is set to show latest posts, get this markup ?>
-	<div class="container"><!-- open content area .container -->
+	<div class="latest-posts"><!-- open content area .container -->
 
 <?php else : // If front page is set to show a static page, show this markup before content area ?>
 	<div class="triple-feature">
@@ -52,7 +52,8 @@
 		endwhile; // End of the loop.
 		the_posts_navigation(); // If front page is set to show latest posts, get the post navigation
 		?>
-	</div><?php // close content area .container ?>
+
+	</div><?php // close homepage posts container ?>
 
 <?php if ( !is_home() && is_front_page() ) : // If front page is set to show a static page, show this markup after content area ?>
 	<div class="feature">
