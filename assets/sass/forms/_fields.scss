@@ -43,6 +43,11 @@ input {
 	&[type="password"] {
 		appearance: none; // Removes awkward default styles on some inputs for iOS
 	}
+
+	&[type="checkbox"],
+	&[type="radio"] {
+		display: inline;
+	}
 }
 
 select {
@@ -73,16 +78,16 @@ fieldset {
 	border-width: 0;
 }
 
-input {
-	&[type="checkbox"],
-	&[type="radio"] {
-		display: inline;
-	}
-}
-
 label > .label-body {
 	display: inline-block;
 	margin-left: 1rem;
 	font-weight: normal;
 	line-height: $font__line-height-forms;
 }
+
+form {
+	p {
+		margin-bottom: 0;
+	}
+}
+

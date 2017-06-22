@@ -5,7 +5,7 @@
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0 0 $column-margin * 2;
 }
 
 .byline,
@@ -36,6 +36,12 @@
 
 
 
+// Post spacing for lists of posts
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+article + article {
+	border-top: 1px solid $color_background_hr;
+	padding-top: $column-margin * 2;
+}
 
 
 

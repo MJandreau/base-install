@@ -111,7 +111,7 @@ html{box-sizing:border-box;font-size:62.5%}
 body{background:#fff}
 blockquote,q{quotes:"" ""}
 blockquote:before,blockquote:after,q:before,q:after{content:""}
-hr{background-color:#ccc;border:0;height:1px;margin-bottom:1.5em}
+hr{background-color:#eee;border:0;height:1px;margin-bottom:1.5em}
 img{height:auto;max-width:100%}
 figure{margin:1em 0}
 ul,ol{margin:0 0 1.5em 0;padding:0 0 0 1.5em}
@@ -129,22 +129,24 @@ th{font-weight:bold}
 td{font-weight:normal}
 th:first-child,td:first-child{padding-left:0}
 th:last-child,td:last-child{padding-right:0}
-.button,.more-link,button,input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;text-align:center;display:inline-block;background-color:transparent;text-transform:uppercase;text-decoration:none;white-space:nowrap;letter-spacing:.1rem;line-height:40px;height:40px;padding:0 30px;font-weight:400;margin-bottom:1rem;font-size:12.8px;font-size:1.28rem;color:#404040;border-radius:4px;border:1px solid #ccc;-webkit-transition:.3s;transition:.3s}
+.button,.more-link,button,input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;text-align:center;display:inline-block;background-color:transparent;text-transform:uppercase;text-decoration:none;white-space:nowrap;letter-spacing:.1rem;line-height:40px;height:40px;padding:0 20px;font-weight:300;margin-bottom:1rem;font-size:12.8px;font-size:1.28rem;color:#404040;border-radius:4px;border:1px solid #ccc;-webkit-transition:.3s;transition:.3s}
+.button.lg,.lg.more-link,button.lg,input[type="button"].lg,input[type="reset"].lg,input[type="submit"].lg{padding:0 24px;line-height:48px;height:48px}
 .button:hover,.more-link:hover,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover{color:#272727;border-color:#999}
 .button:active,.more-link:active,.button:focus,.more-link:focus,button:active,button:focus,input[type="button"]:active,input[type="button"]:focus,input[type="reset"]:active,input[type="reset"]:focus,input[type="submit"]:active,input[type="submit"]:focus{border-color:#666}
 .button.button-primary,.button-primary.more-link,button.button-primary,input[type="button"].button-primary,input[type="reset"].button-primary,input[type="submit"].button-primary{color:#fff;background-color:teal;border-color:teal}
 .button.button-primary:hover,.button-primary.more-link:hover,button.button-primary:hover,input[type="button"].button-primary:hover,input[type="reset"].button-primary:hover,input[type="submit"].button-primary:hover{color:#fff;background:#004d4d;border-color:#004d4d}
 .button.button-primary:active,.button-primary.more-link:active,.button.button-primary:focus,.button-primary.more-link:focus,button.button-primary:active,button.button-primary:focus,input[type="button"].button-primary:active,input[type="button"].button-primary:focus,input[type="reset"].button-primary:active,input[type="reset"].button-primary:focus,input[type="submit"].button-primary:active,input[type="submit"].button-primary:focus{color:#fff;background:#001a1a;border-color:#001a1a}
-.more-link{display:block;max-width:135px;margin-top:2rem;margin-bottom:3.5rem}
+.more-link:visited{color:#404040}
 input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="number"],input[type="tel"],input[type="range"],input[type="date"],input[type="month"],input[type="week"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="color"],select,textarea{width:100%;height:40px;padding:6px 12px;background-color:#fff;border:1px solid #d9d9d9;border-radius:4px;margin-bottom:2rem;box-shadow:none;color:#404040}
 input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="number"]:focus,input[type="tel"]:focus,input[type="range"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,input[type="color"]:focus,select:focus,textarea:focus{border:1px solid teal;outline:0}
 input[type="email"],input[type="number"],input[type="search"],input[type="text"],input[type="tel"],input[type="url"],input[type="password"]{-webkit-appearance:none;-moz-appearance:none;appearance:none}
+input[type="checkbox"],input[type="radio"]{display:inline}
 select{-webkit-appearance:none;-moz-appearance:none;appearance:none;line-height:20px;background:url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='$color_text_button' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");background-position:99% 50%;background-repeat:no-repeat}
 textarea{display:block;-webkit-appearance:none;-moz-appearance:none;appearance:none;min-height:10rem;height:auto;max-width:100%}
 label,legend{display:block;margin-bottom:.5rem;font-weight:600}
 fieldset{padding:0;border-width:0}
-input[type="checkbox"],input[type="radio"]{display:inline}
 label>.label-body{display:inline-block;margin-left:1rem;font-weight:normal;line-height:40px}
+form p{margin-bottom:0}
 a{color:royalblue}
 a:visited{color:purple}
 a:hover,a:focus,a:active{color:midnightblue}
@@ -252,12 +254,13 @@ button.menu-toggle span::after{bottom:-9px;-webkit-transition-property:bottom,-w
 .site-header,.site-footer{-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0}
 .site-content-wrap{-webkit-box-flex:1;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto}
 .sticky{display:block}
-.hentry{margin:0 0 1.5em}
+.hentry{margin:0 0 40px}
 .byline,.updated:not(.published){display:none}
 .single .byline,.group-blog .byline{display:inline}
 .page-content,.entry-content,.entry-summary{margin:0}
 .page-links{clear:both;margin:0 0 1.5em}
 .entry-meta{margin-bottom:1.5em}
+article+article{border-top:1px solid #eee;padding-top:40px}
 .post-navigation{margin:0 0 1.5em}
 .post-navigation a{display:block;text-align:center;border:0;text-decoration:none;margin-bottom:20px;padding:6rem 20px;color:#fff;-webkit-transition:background-color .3s;transition:background-color .3s}
 .post-navigation a:hover{background-color:rgba(0,0,0,0.5)}

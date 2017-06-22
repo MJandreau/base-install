@@ -13,14 +13,20 @@ input[type="submit"] {
 	letter-spacing: .1rem;
 	line-height: $font__line-height-forms;
 	height: $font__line-height-forms;
-	padding: 0 30px;
-	font-weight: 400;
+	padding: 0 $button_padding;
+	font-weight: 300;
 	margin-bottom: 1rem;
 	@include font-size(.8);
 	color: $color_text_button;
 	border-radius: $border_radius;
 	border: 1px solid $color_border_button;
 	transition: $transistion_duration;
+
+	&.lg {
+		padding: 0 ($button_padding * 1.2);
+		line-height: $font__line-height-forms * 1.2;
+		height: $font__line-height-forms * 1.2;
+	}
 
 	&:hover {
 		color: darken($color_text_button, 10%);
@@ -52,12 +58,12 @@ input[type="submit"] {
 	}
 }
 
-
 .more-link {
 	@extend .button;
-	// @extend .button-primary;
-	display: block;
-	max-width: 135px;
-	margin-top: 2rem;
-	margin-bottom: 3.5rem;
+	// @extend .button-primary; // uncomment to look like .button-primary
+
+	&:visited {
+		color: $color_text_button;
+		// color: $color_white; // uncomment to look like .button-primary
+	}
 }
