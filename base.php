@@ -42,6 +42,11 @@
 	</head>
 	<body <?php body_class('sideNavBody'); ?>>
 		<div id="page" class="site">
+
+		<h2 class="screen-reader-text"><?php bloginfo( 'name' ); ?></h2>
+
+
+
 			<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'baseinstall' ); ?></a>
 			<?php get_header( baseinstall_template_base() ); ?>
 
