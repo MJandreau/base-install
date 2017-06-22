@@ -53,13 +53,14 @@ $color__border-abbr: #666;
 
 
 // Fonts
-$font__main: sans-serif;
-$font__headings: sans-serif;
+$font__main: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font__headings: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font__code: 'Source Code Pro', Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.618;
 $font__line-height-pre: 1.6;
-$font__size-default: 16px;
+// $font__size-default: 16px;
+$font__size-default: 1.6;
 
 
 
@@ -110,9 +111,8 @@ $anchorOffset: $headerHeight + $column-margin;
 $anchorOffsetAdmin: $headerHeight + ($column-margin * 3);
 
 // line height and nav toggle sizes for submenus
-$font__line-height-topnav: $headerHeight;
 $font__line-height-nav: 40px;
-
+$font__line-height-topnav: $headerHeight;
 $font__subnav-toggle-size: $font__line-height-nav / 6;
 
 
@@ -133,3 +133,20 @@ $shadow-size: 10px;
 
 
 
+
+
+
+
+
+$light-grey: #e1e1e1 !default;
+$dark-grey: #333 !default;
+$primary-color: #29526D !default;
+$secondary-color: lighten($dark-grey, 13.5%) !default;
+$border-color: #bbb !default;
+$link-color: $primary-color !default;
+$navbar-color: $primary-color !default;
+$font-color: #5a5a5a !default;
+$navbar-border: lighten($navbar-color, 13.5%) !default;
+$navbar-font-color: #fff !default;
+$hero-bg-color: lighten($navbar-color, 7%) !default;
+$trans-white: rgba(255,255,255,0.5);
