@@ -30,7 +30,7 @@
 					foreach ($prevPost as $post) {
 						setup_postdata($post);
 					?>
-						<div class="six-sm column">
+						<div class="sm-6 column">
 						<h5 style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<?php echo $prevThumbnail[0]; ?>')"><a class="previous" href="<?php the_permalink(); ?>">Previous Post:<br><?php the_title(); ?></a></h5>
 						</div>
 					<?php
@@ -49,7 +49,7 @@
 					foreach ($nextPost as $post) {
 						setup_postdata($post);
 					?>
-						<div class="six-sm column">
+						<div class="sm-6 column">
 						<h5 style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<?php echo $nextThumbnail[0]; ?>')"><a class="next" href="<?php the_permalink(); ?>">Next Post:<br><?php the_title(); ?></a></h5>
 						</div>
 					<?php
