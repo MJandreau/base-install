@@ -1,3 +1,4 @@
+.button,
 button,
 input[type="button"],
 input[type="reset"],
@@ -20,3 +21,14 @@ input[type="submit"] {
 		border-color: $color__border-button-focus;
 	}
 }
+
+
+
+// .more-link {
+//   @extend .button;
+//   // @extend .button-primary;
+//   display: block;
+//   max-width: 135px;
+//   margin-top: 2rem;
+//   margin-bottom: 3.5rem;
+// }

@@ -101,7 +101,7 @@
 .widget-area {
 	padding-top: $column-margin;
 
-	@include laptop {
+	@include tablet {
 		padding-top: $column-margin * 2;
 	}
 }

@@ -4,14 +4,22 @@
 
 
 .triple-feature {
-  padding: ($column-margin * 2) 0 0;
+  padding: $column-margin 0 0;
   background: #efefef;
+
+  @include tablet {
+    padding-top: $column-margin * 2;
+  }
 }
 
 .featured {
   background: #f4f4f4;
   text-align: center;
-  margin-bottom: $column-margin * 2;
+  margin-bottom: $column-margin;
+
+  @include tablet {
+    margin-bottom: $column-margin * 2;
+  }
   
   h3 {
     margin: 0;

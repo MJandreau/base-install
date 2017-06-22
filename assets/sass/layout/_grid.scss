@@ -23,12 +23,8 @@
 }
 
 .row {  
-  margin: 0;
-
-  @include phablet {
-    margin-left: -$column-margin;
-    margin-right: -$column-margin;
-  }
+  margin-left: -$column-margin;
+  margin-right: -$column-margin;
 }
 
 // default column width before responsive layout kicks in
