@@ -5,7 +5,7 @@
 }
 
 .hentry {
-	margin: 0 0 $column-margin * 2;
+	margin: 0 0 ($column_margin * 2);
 }
 
 .byline,
@@ -34,16 +34,12 @@
 	margin-bottom: 1.5em;
 }
 
-
-
 // Post spacing for lists of posts
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 article + article {
 	border-top: 1px solid $color_background_hr;
-	padding-top: $column-margin * 2;
+	padding-top: $column_margin * 2;
 }
-
-
 
 // Previous/Next links on single posts
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -55,8 +51,8 @@ article + article {
 		text-align: center;
 		border:none;
 		text-decoration: none;
-		margin-bottom: $column-margin;
-		padding: 6rem $column-margin;
+		margin-bottom: $column_margin;
+		padding: 6rem $column_margin;
 		color: #fff;
 		transition: background-color $transistion_duration;
 
@@ -65,7 +61,7 @@ article + article {
 		}
 
 		@include phablet {
-			height: 240px;
+			height: 20rem;
 		}
 	}
 
@@ -73,8 +69,6 @@ article + article {
 		@include bgImage;
 	}
 }
-
-
 
 // Comment and post navigation
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -89,15 +83,11 @@ article + article {
 	.nav-previous {
 		float: left;
 		width: 50%;
-		// background-color: red;
 	}
 
 	.nav-next {
 		float: right;
 		text-align: right;
 		width: 50%;
-		// background-color: orange;
 	}
 }
-
-

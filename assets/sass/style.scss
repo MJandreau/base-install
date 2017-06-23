@@ -8,96 +8,65 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: baseinstall
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-Base Install is forked from Underscores http://underscores.me/ by Automattic, Inc.
-Responsive grid based on Skeleton by Dave Gamache: http://getskeleton.com/
-Gulp workflow forked from WPGulp by Ahmad Awais: https://labs.ahmadawais.com/WPGulp/
 */
 
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-	## Posts and pages
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
---------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// TABLE OF CONTENTS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-@import "normalize";
+// BASE COMPONENTS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@import "base/variables";
+@import "base/mixins";
+@import "base/normalize";
+@import "base/elements";
+@import "base/lists";
+@import "base/tables";
 
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
+// TYPOGRAPHY, HEADINGS, COPY, CODE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 @import "typography/typography";
+@import "typography/headings";
+@import "typography/copy";
+@import "typography/prism"; // code highlighter, optional
 
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-@import "elements/elements";
-
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
+// FORMS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 @import "forms/forms";
+@import "forms/buttons";
 
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
+// NAVIGATION MENU, SCROLLUP, LINKS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 @import "navigation/navigation";
+@import "navigation/hamburger";
+@import "navigation/scrollup";
+@import "navigation/links";
 
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
+// MODULES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 @import "modules/accessibility";
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
 @import "modules/alignments";
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
 @import "modules/clearings";
-
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-@import "site/secondary/widgets";
-
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-@import "site/site";
-
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
 @import "modules/infinite-scroll";
 
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
+// SITE CONTENT, WIDGETS, POSTS/PAGES, COMMENTS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@import "site/widgets";
+@import "site/posts-and-pages";
+@import "site/comments";
+
+// GRID, HEADER, FOOTER, CONTENT/SIDEBAR LAYOUT
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@import "layout/grid";
+@import "layout/header";
+@import "layout/hero";
+@import "layout/featured";
+@import "layout/content-sidebar"; // content left, sidebar right
+// @import "layout/sidebar-content"; // content right, sidebar left
+@import "layout/footer";
+
+// MEDIA
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 @import "media/media";
+@import "media/captions";
+@import "media/galleries";

@@ -74,8 +74,8 @@
 // @include font-size(.9);
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 @mixin font-size($sizeValue: 1) {
-	font-size: ($sizeValue * $font__size-base) * 1px;
-	font-size: $sizeValue * $font__size-rem;
+	font-size: ($sizeValue * $font_size_base) * 1px;
+	font-size: $sizeValue * $font_size_rem;
 }
 
 // Center block
@@ -166,13 +166,13 @@
 // @include fixedHeaderBodyAdjustment;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 @mixin fixedHeaderBodyAdjustment() {
-	padding-top: $headerHeight;
+	padding-top: $header_height;
 
 	.admin-bar & {
-		padding-top: $headerHeight + $wp_adminbar_sm;
+		padding-top: $header_height + $wp_adminbar_sm;
 
 		@include wpadmin {
-			padding-top: $headerHeight + $wp_adminbar_lg;
+			padding-top: $header_height + $wp_adminbar_lg;
 		}
 	}
 }
@@ -180,37 +180,37 @@
 
 
 // Offset internal anchor links
-// @include anchorOffset;
+// @include anchor_offset;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-@mixin anchorOffset() {
-	margin-top: -$column-margin;
-	height: $column-margin;
+@mixin anchor_offset() {
+	margin-top: -$column_margin;
+	height: $column_margin;
 
 	.admin-bar & {
-		margin-top: -$column-margin - $wp_adminbar_sm;
-		height: $column-margin + $wp_adminbar_sm;
+		margin-top: -$column_margin - $wp_adminbar_sm;
+		height: $column_margin + $wp_adminbar_sm;
 
 		@include wpadmin {
-			margin-top: -$column-margin - $wp_adminbar_lg;
-			height: $column-margin + $wp_adminbar_lg;
+			margin-top: -$column_margin - $wp_adminbar_lg;
+			height: $column_margin + $wp_adminbar_lg;
 		}
 	}
 }
 
 // Offset internal anchor links with fixed header
-// @include fixedHeaderAnchorOffset;
+// @include fixedHeaderanchor_offset;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-@mixin fixedHeaderAnchorOffset() {
-	margin-top: -$anchorOffset; 
-	height: $anchorOffset; 
+@mixin fixedHeaderanchor_offset() {
+	margin-top: -$anchor_offset; 
+	height: $anchor_offset; 
 
 	.admin-bar & {
-		margin-top: -$anchorOffset - $wp_adminbar_sm;
-		height: $anchorOffset + $wp_adminbar_sm;
+		margin-top: -$anchor_offset - $wp_adminbar_sm;
+		height: $anchor_offset + $wp_adminbar_sm;
 
 		@include wpadmin {
-			margin-top: -$anchorOffset - $wp_adminbar_lg;
-			height: $anchorOffset + $wp_adminbar_lg;
+			margin-top: -$anchor_offset - $wp_adminbar_lg;
+			height: $anchor_offset + $wp_adminbar_lg;
 		}
 	}
 }

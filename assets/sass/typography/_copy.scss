@@ -16,7 +16,7 @@ address {
 }
 
 abbr, acronym {
-	border-bottom: 1px dotted $color_border_abbr;
+	border-bottom: 1px dotted $button_color_border;
 	cursor: help;
 }
 
@@ -30,15 +30,15 @@ big {
 }
 
 code, kbd, tt, var {
-	font-family: $font__code;
+	font-family: $font_code;
 	@include font-size(.9);
 }
 
 pre {
 	background: $color_background_pre;
-	font-family: $font__pre;
+	font-family: $font_pre;
 	font-weight: $font_weight_pre;
-	line-height: $font__line-height-pre;
+	line-height: $font_line_height_pre;
 	@include font-size(.9);
 	position: relative;
 	overflow: auto;

@@ -1,49 +1,41 @@
 // Hero
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .hero {
-  position: relative;
-  background-color: $color_background_hero;
-  background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txtclr=dddddd&txt=Select%20Featured%20Image&w=1920&h=1080&fm=jpg');
+    position: relative;
+    background-color: $color_background_hero;
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txtclr=dddddd&txt=Select%20Featured%20Image&w=1920&h=1080&fm=jpg');
+    min-height: 22rem;
+    height: 40vh;
+    border: none;
+    text-align: left;
+    
+    @include bgImage;
+    // @include innerShadow;
 
-  @include bgImage;
-
-  // @include innerShadow;
-
-  border:none;
-  min-height: 22rem;
-  height:40vh;
-  // text-align: center;
-
-  // .single &, // single blog posts
-  .home & {
-    height:100vh;
-  }
-
-  .single & {
-    h1, h2 {
-      margin-bottom: 0;
+    @include tablet {
+        height:50vh;
     }
-  }
+
+    // .single &, // single blog posts
+    .home & {
+        height:100vh;
+    }
 }
 
 .heading {
-  position:absolute;
-  top:50%;
-  width:100%;
-  // transform: translate(0,-50%); // vertically center hero text
+    position:absolute;
+    top:50%;
+    width:100%;
+    // transform: translate(0,-50%); // vertically center hero text
 
-  // .single &, // single blog posts
-  .home & {
-    transform: translate(0,-50%); // vertically center hero text
-  }
+    // .single &, // single blog posts
+    .home & {
+        transform: translate(0,-50%); // vertically center hero text
+    }
 }
 
 .call-to-action {
-  position: relative;
-  max-width: 560px;
-  z-index: 1;
+    position: relative;
+    max-width: 560px;
+    z-index: 1;
 }
-
-
-
-

@@ -4,26 +4,26 @@
 
 
 .triple-feature {
-  padding: $column-margin 0 0;
+  padding: $column_margin 0 0;
   background: #efefef;
 
   @include tablet {
-    padding-top: $column-margin * 2;
+    padding-top: $column_margin * 2;
   }
 }
 
 .featured {
   background: #f4f4f4;
   text-align: center;
-  margin-bottom: $column-margin;
+  margin-bottom: $column_margin;
 
   @include tablet {
-    margin-bottom: $column-margin * 2;
+    margin-bottom: $column_margin * 2;
   }
   
   h3 {
     margin: 0;
-    padding: ($column-margin * 2) 0;
+    padding: ($column_margin * 2) 0;
     line-height: 60px;
   }
 }
@@ -32,7 +32,7 @@
 
 
 .featured-image-container {
-    margin-bottom: $column-margin * 2;
+    margin-bottom: $column_margin * 2;
 
     img {
       display: block;
@@ -50,9 +50,9 @@
 // move to blog styles
 .blog-sample {
   background: #eee;
-  padding: $column-margin;
+  padding: $column_margin;
   height: 360px;
-  margin-bottom: $column-margin * 2;
+  margin-bottom: $column_margin * 2;
 }
 
 

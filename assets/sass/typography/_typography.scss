@@ -4,14 +4,8 @@ input,
 select,
 textarea {
 	color: $color_text_main;
-	font-family: $font__main;
+	font-family: $font_main;
 	font-weight: $font_weight_main;
-	line-height: $font__line-height-body;
+	line-height: $font_line_height_body;
 	@include font-size(1);
 }
-
-@import "headings";
-
-@import "copy";
-
-@import "prism";

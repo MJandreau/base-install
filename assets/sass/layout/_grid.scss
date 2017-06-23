@@ -1,12 +1,11 @@
-
 // Grid
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .container {
   position: relative;
   // box-sizing: border-box;
-  width: $size__site-main;
-  max-width: $size__site-main;
-  padding: 0 $column-margin;
+  width: $size_site_main;
+  max-width: $size_site_main;
+  padding: 0 $column_margin;
   margin: 0 auto;
 
   @include tablet {
@@ -23,8 +22,8 @@
 }
 
 .row {  
-  margin-left: -$column-margin;
-  margin-right: -$column-margin;
+  margin-left: -$column_margin;
+  margin-right: -$column_margin;
 }
 
 // default column width before responsive layout kicks in
@@ -32,63 +31,63 @@
   width: 100%;
   float: left;
   box-sizing: border-box;
-  padding-left: $column-margin;
-  padding-right: $column-margin;
+  padding-left: $column_margin;
+  padding-right: $column_margin;
 }
 
 
 // Grid calculations 
-// divide $size__site-main by $total-columns & loop through breakpoints to create responsive grid
+// divide $size_site_main by $total_columns & loop through breakpoints to create responsive grid
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // Smallest devices
-@for $column-width from 1 through $total-columns {
-  .xs-#{$column-width} { 
-    width: $size__site-main / $total-columns * $column-width;
+@for $column_width from 1 through $total_columns {
+  .xs-#{$column_width} { 
+    width: $size_site_main / $total_columns * $column_width;
   }
 }
 
 // Larger smartphones and small tablets
 @include phablet {
-  @for $column-width from 1 through $total-columns {
-    .sm-#{$column-width} { 
-      width: $size__site-main / $total-columns * $column-width;
+  @for $column_width from 1 through $total_columns {
+    .sm-#{$column_width} { 
+      width: $size_site_main / $total_columns * $column_width;
     }
   }
 }
 
 // Tablets around iPad size
 @include tablet {
-  @for $column-width from 1 through $total-columns {
-    .md-#{$column-width} { 
-      width: $size__site-main / $total-columns * $column-width;
+  @for $column_width from 1 through $total_columns {
+    .md-#{$column_width} { 
+      width: $size_site_main / $total_columns * $column_width;
     }
   }
 }
 
 // Laptops and large tablets, also breakpoint for mobile nav
 @include laptop {
-  @for $column-width from 1 through $total-columns {
-    .lg-#{$column-width} { 
-      width: $size__site-main / $total-columns * $column-width;
+  @for $column_width from 1 through $total_columns {
+    .lg-#{$column_width} { 
+      width: $size_site_main / $total_columns * $column_width;
     }
   }
 }
 
 // Desktop size and larger, uncomment if needed
 // @include desktop {
-//   @for $column-width from 1 through $total-columns {
-//     .xl-#{$column-width} { 
-//       width: $size__site-main / $total-columns * $column-width;
+//   @for $column_width from 1 through $total_columns {
+//     .xl-#{$column_width} { 
+//       width: $size_site_main / $total_columns * $column_width;
 //     }
 //   }
 // }
 
 // offests if you need them, just add relevant breakpoint
 // @include desktop {
-//   @for $column-width from 1 through $total-columns {
-//     .offset-#{$column-width} { 
-//       margin-left: $size__site-main / $total-columns * $column-width;
+//   @for $column_width from 1 through $total_columns {
+//     .offset-#{$column_width} { 
+//       margin-left: $size_site_main / $total_columns * $column_width;
 //     }
 //   }
 // }

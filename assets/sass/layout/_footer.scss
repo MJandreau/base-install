@@ -1,15 +1,13 @@
-
-
 // footer styles
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .site-footer {
 	background-color: $color_background_footer;
 	width: 100%;
 	border-top: 1px solid darken($color_background_footer, 5%);
-	padding: ($headerHeight / 3) 0;
+	padding: ($header_height / 3) 0;
 
 	// @include laptop {
-	// 	padding: ($headerHeight / 2) 0;
+	// 	padding: ($header_height / 2) 0;
 	// }
 }
 
@@ -41,7 +39,6 @@
 
 
 
-
 // affix footer fix to bottom if content doesn't fill the page
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .site {
@@ -61,4 +58,3 @@
 .site-content-wrap {
 	flex: 1 0 auto; 
 }
-

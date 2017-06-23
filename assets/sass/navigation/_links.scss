@@ -2,16 +2,19 @@ a {
 	color: $color_link;
 
 	&:visited {
-		color: $color_link_visited;
+		color: darken($color_link, 5%);
 	}
+
 	&:hover,
 	&:focus,
 	&:active {
-		color: $color_link_hover;
+		color: darken($color_link, 20%);
 	}
+
 	&:focus {
 		outline: thin dotted;
 	}
+
 	&:hover,
 	&:active {
 		outline: 0;

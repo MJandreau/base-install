@@ -1,4 +1,3 @@
-
 // Header styles
 // full header with branding, title, description, and nav
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -12,7 +11,7 @@
 	// @include fixedHeader; // uncomment to set fixed header, and also uncomment related fixedHeader mixins below
 
 	// @include laptop {
-		// padding: ($column-margin / 2) 0;
+		// padding: ($column_margin / 2) 0;
 	// }
 }
 
@@ -30,8 +29,8 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .site-title { 
 	// background-color: rgba(0,255,0,0.5);
-	// margin: 0 0 0 ($column-margin / 1.5);
-	line-height: $headerHeight;
+	// margin: 0 0 0 ($column_margin / 1.5);
+	line-height: $header_height;
 
 	a {
 		text-decoration: none;
@@ -44,12 +43,6 @@
 // 	background-color: rgba(0,0,255,0.5);
 // 	margin: 0;
 // }
-
-
-
-
-
-
 
 
 
@@ -67,8 +60,8 @@
 	display: block; 
 	content: ""; 
 	visibility: hidden; 
-	@include anchorOffset; // offset internal anchor links, comment out to use fixed header mixin below
-	// @include fixedHeaderAnchorOffset; // uncomment to offset internal anchor links with fixed header
+	@include anchor_offset; // offset internal anchor links, comment out to use fixed header mixin below
+	// @include fixedHeaderanchor_offset; // uncomment to offset internal anchor links with fixed header
 }
 
 
@@ -77,9 +70,9 @@
 .pad-top,
 .content-area,
 .widget-area {
-	padding-top: $column-margin;
+	padding-top: $column_margin;
 
 	@include tablet {
-		padding-top: $column-margin * 2;
+		padding-top: $column_margin * 2;
 	}
 }
