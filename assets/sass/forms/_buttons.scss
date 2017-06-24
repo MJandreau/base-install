@@ -30,6 +30,10 @@ input[type="submit"] {
 		height: $font_line_height_forms * 1.2;
 	}
 
+	&:visited {
+		color: $button_color_text;
+	}
+
 	&:hover {
 		color: darken($button_color_text, 10%);
 		border-color: darken($button_color_border, 20%);
