@@ -51,7 +51,7 @@ article + article {
 		text-align: center;
 		border:none;
 		text-decoration: none;
-		margin-bottom: $column_margin;
+		margin-bottom: $column_margin * 2;
 		padding: 6rem $column_margin;
 		color: #fff;
 		transition: background-color $transistion_duration;
@@ -69,6 +69,18 @@ article + article {
 		@include bgImage;
 	}
 }
+
+
+// Related posts links on single posts (optional)
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+.related-posts {
+	@extend .post-navigation;
+
+	h3 {
+		margin-bottom: 1.5rem;
+	}
+}
+
 
 // Comment and post navigation
 //––––––––––––––––––––––––––––––––––––––––––––––––––
