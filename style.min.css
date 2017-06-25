@@ -209,10 +209,11 @@ a:hover,a:active{outline:0}
 .page-links{clear:both;margin:0 0 1.5em}
 .entry-meta{margin-bottom:1.5em}
 article+article{border-top:1px solid #eee;padding-top:40px}
-.post-navigation{margin:0 0 1.5em}
-.post-navigation a{display:block;text-align:center;border:0;text-decoration:none;margin-bottom:20px;padding:6rem 20px;color:#fff;-webkit-transition:background-color .3s;transition:background-color .3s}
-.post-navigation a:hover{background-color:rgba(0,0,0,0.5)}
-.post-navigation h5{background-repeat:no-repeat !important;background-position:center !important;background-size:cover !important}
+.post-navigation,.related-posts{margin:0 0 1.5em}
+.post-navigation a,.related-posts a{display:block;text-align:center;border:0;text-decoration:none;margin-bottom:40px;padding:6rem 20px;color:#fff;-webkit-transition:background-color .3s;transition:background-color .3s}
+.post-navigation a:hover,.related-posts a:hover{background-color:rgba(0,0,0,0.5)}
+.post-navigation h5,.related-posts h5{background-repeat:no-repeat !important;background-position:center !important;background-size:cover !important}
+.related-posts h3{margin-bottom:1.5rem}
 .site-main .comment-navigation,.site-main .posts-navigation{margin:0 0 1.5em;overflow:hidden}
 .comment-navigation .nav-previous,.posts-navigation .nav-previous{float:left;width:50%}
 .comment-navigation .nav-next,.posts-navigation .nav-next{float:right;text-align:right;width:50%}
@@ -282,7 +283,7 @@ embed,iframe,object{max-width:100%}
 .gallery-columns-9 .gallery-item{max-width:11.11%}
 .gallery-caption{display:block}
 @media(min-width:640px){.single h1,.single h2,.single h3,.single h4,.single h5,.single h6{line-height:1.4}
-.post-navigation a{height:20rem}
+.post-navigation a,.related-posts a{height:20rem}
 .sm-1{width:8.3333333333%}
 .sm-2{width:16.6666666667%}
 .sm-3{width:25%}
@@ -362,7 +363,6 @@ button.menu-toggle{display:none}
 }@media(min-width:1200px){.content-area{margin:0 -25% 0 0}
 .site-main{margin:0 25% 0 0}
 .site-content .widget-area{width:25%}
-}@media(max-width:799px){.hidden-mobile{display:none}
 }@-webkit-keyframes bounce{0%{-webkit-transform:translateY(0);transform:translateY(0)}
 50%{-webkit-transform:translateY(-10px);transform:translateY(-10px)}
 100%{-webkit-transform:translateY(0);transform:translateY(0)}
