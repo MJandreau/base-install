@@ -104,11 +104,11 @@
 }
 
 // Clearing
+// The .container and .row classes are part of this grid layout, 
+// so they have been put here rather than in clearings.scss.
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .container:after,
-.row:after,
-.u-cf {
-  content: "";
-  display: table;
-  clear: both;
+.row:after {
+  @include clearfix;
+  @include clearfix-after;
 }
