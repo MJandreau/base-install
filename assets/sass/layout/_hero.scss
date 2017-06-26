@@ -3,14 +3,14 @@
 .hero {
     position: relative;
     background-color: $color_background_hero;
-    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txtclr=dddddd&txt=Select%20Featured%20Image&w=1920&h=1080&fm=jpg');
+    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('./assets/img/heroBI-02.jpg');
     min-height: 22rem;
     height: 40vh;
     border: none;
     text-align: left;
     
     @include bgImage;
-    // @include innerShadow;
+    @include innerShadow;
 
     @include tablet {
         height:50vh;
@@ -37,5 +37,10 @@
 .call-to-action {
     position: relative;
     max-width: 560px;
-    z-index: 1;
+    // z-index: 1;
+
+    // background-color: $color_background-callout;
+    // padding: 4rem 5rem;
+    // border-radius: $border_radius;
+    // @include dropShadow;
 }
