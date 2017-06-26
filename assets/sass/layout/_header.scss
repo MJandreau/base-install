@@ -3,10 +3,10 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .site-header { 
 	background-color: $color_background_header;
-	border-bottom: 1px solid darken($color_background_header, 5%);
+	// border-bottom: 1px solid darken($color_background_header, 5%);
 	@include absoluteHeader; // uncomment to set absolute header
 
-	// @include dropShadow;
+	@include dropShadow;
 
 	// @include fixedHeader; // uncomment to set fixed header, and also uncomment related fixedHeader mixins below
 
