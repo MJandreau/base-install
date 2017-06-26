@@ -229,7 +229,7 @@ function baseinstall_custom_header_image(){
 	    ?>
 		<style type="text/css">
 			.hero {
-				background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<?php echo $imgURL ?>);
+				background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(<?php echo $imgURL ?>);
 			}
 		</style>
 	<?php
@@ -249,15 +249,19 @@ function baseinstall_login_logo() { ?>
 		    background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png);
 		    padding-bottom: 0;
 			margin: 0 auto 30px;
-			width: 260px;
-			height: 244px;
-			-webkit-background-size: 260px 244px;
-			background-size: 260px 244px;
+			width: 140px;
+			height: 140px;
+			-webkit-background-size: 140px 140px;
+			background-size: 140px 140px;
+			opacity: 0.9;
+		}
+		.login h1 a:hover {
+			opacity: 1;
 		}
 		.login  {
 			background-color: #e1e1e1;
-			background: -webkit-linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bg-city.jpg);
-			background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bg-city.jpg);
+			background: -webkit-linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/heroBI-02.jpg);
+			background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/heroBI-02.jpg);
 			background-repeat: no-repeat !important;
 			background-position: center !important;
 			background-size: cover !important;
@@ -276,23 +280,23 @@ function baseinstall_login_logo() { ?>
 			width: 280px; 
 		}
 		.wp-core-ui .button-primary {
-			background: #0066ae;
-			border-color: #0066ae;
+			background: #4169e1;
+			border-color: #4169e1;
 			text-shadow: none;
 		}
 		.wp-core-ui .button-primary:focus, 
 		.wp-core-ui .button-primary:hover {
-			background: #198f8b;
-			border-color: #198f8b;
+			background: #214cce;
+			border-color: #214cce;
 		}
 		.login #backtoblog a, 
 		.login #nav a {
 			text-decoration: none;
-			color: #0066ae;
+			color: #4169e1;
 		}
 		.login #backtoblog a:hover, 
 		.login #nav a:hover {
-			color: #198f8b;
+			color: #214cce;
 		}
 
 		@media screen and (min-width: 550px) {
