@@ -25,7 +25,9 @@
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-		<?php /* if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false): ?>
+		<?php 
+		/*
+		if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false): ?>
 			<!-- Replace with your own Google Analytics code -->
 			<script>
 				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -36,7 +38,23 @@
 				ga('create', 'UA-XXXXX-Y', 'auto');
 				ga('send', 'pageview');
 			</script>
-		<?php endif; */ ?>
+		<?php endif; 
+		*/
+		?>
+
+		<?php 
+		/*
+		<!-- Custom favicons -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+		<link rel="manifest" href="/assets/favicons/manifest.json">
+		<link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+		<meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff"> 
+		*/
+		?>		
 
 		<?php wp_head(); ?>
 	</head>
