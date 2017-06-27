@@ -232,7 +232,7 @@ function baseinstall_custom_header_image(){
 				background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(<?php echo $imgURL ?>);
 			}
 		</style>
-	<?php
+		<?php
 	}
 }
 add_action( 'wp_head', 'baseinstall_custom_header_image' );
@@ -340,19 +340,26 @@ add_filter( 'login_headertitle', 'baseinstall_login_logo_url_title' );
  * Add custom favicons to admin dashboard and front end of site
  */
 function baseinstall_admin_favicon() {
-  	$admin_favicon_url = get_stylesheet_directory_uri() . '/assets/favicons/admin-favicon.ico';
-	echo '<link rel="shortcut icon" href="' . $admin_favicon_url . '" />';
+  	$admin_favicon_url = get_stylesheet_directory_uri() . '/assets/favicons';
+	echo '<link rel="shortcut icon" href="' . $admin_favicon_url . '/admin-favicon.ico" />';
 }
 add_action('login_head', 'baseinstall_admin_favicon');
 add_action('admin_head', 'baseinstall_admin_favicon');
 
 function baseinstall_main_favicon() {
-  	$main_favicon_url = get_stylesheet_directory_uri() . '/assets/favicons/favicon.ico';
-	echo '<link rel="shortcut icon" href="' . $main_favicon_url . '" />';
+  	$main_favicon_url = get_stylesheet_directory_uri() . '/assets/favicons';
+	echo '
+	<link rel="shortcut icon" href="' . $main_favicon_url . '/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="' . $main_favicon_url . '/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="' . $main_favicon_url . '/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="' . $main_favicon_url . '/favicon-16x16.png">
+	<meta name="msapplication-config" content="' . $main_favicon_url . '/browserconfig.xml">
+	<link rel="mask-icon" href="' . $main_favicon_url . '/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="manifest" href="' . $main_favicon_url . '/manifest.json">
+	<meta name="theme-color" content="#ffffff">
+	';
 }
 add_action('wp_head', 'baseinstall_main_favicon');
-
-
 
 
 
