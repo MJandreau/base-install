@@ -340,14 +340,14 @@ add_filter( 'login_headertitle', 'baseinstall_login_logo_url_title' );
  * Add custom favicons to admin dashboard and front end of site
  */
 function baseinstall_admin_favicon() {
-  	$admin_favicon_url = get_stylesheet_directory_uri() . '/assets/img/icons/admin-favicon.ico';
+  	$admin_favicon_url = get_stylesheet_directory_uri() . '/assets/icons/admin-favicon.ico';
 	echo '<link rel="shortcut icon" href="' . $admin_favicon_url . '" />';
 }
 add_action('login_head', 'baseinstall_admin_favicon');
 add_action('admin_head', 'baseinstall_admin_favicon');
 
 function baseinstall_main_favicon() {
-  	$main_favicon_url = get_stylesheet_directory_uri() . '/assets/img/icons/favicon.ico';
+  	$main_favicon_url = get_stylesheet_directory_uri() . '/assets/icons/favicon.ico';
 	echo '<link rel="shortcut icon" href="' . $main_favicon_url . '" />';
 }
 add_action('wp_head', 'baseinstall_main_favicon');
