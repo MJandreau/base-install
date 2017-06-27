@@ -3,20 +3,18 @@
  *
  * Gulp with WordPress.
  *
- * Implements:
- *      1. Live reloads browser with BrowserSync.
- *      2. CSS: Sass to CSS conversion, error catching, Autoprefixing, Sourcemaps,
- *         CSS minification, and Merge Media Queries.
- *      3. JS: Concatenates & uglifies Vendor and Custom JS files.
- *      4. Images: Minifies PNG, JPEG, GIF and SVG images.
- *      5. Watches files for changes in CSS or JS.
- *      6. Watches files for changes in PHP.
- *      7. Corrects the line endings.
- *      8. InjectCSS instead of browser page reload.
- *      9. Generates .pot file for i18n and l10n.
+ * 1. Live reloads browser with BrowserSync.
+ * 2. CSS: Sass to CSS conversion, error catching, Autoprefixing, Sourcemaps,
+ *    CSS minification, and Merge Media Queries.
+ * 3. JS: Concatenates & uglifies Vendor and Custom JS files.
+ * 4. Images: Minifies PNG, JPEG, GIF and SVG images.
+ * 5. Watches files for changes in CSS or JS.
+ * 6. Watches files for changes in PHP.
+ * 7. Corrects the line endings.
+ * 8. InjectCSS instead of browser page reload.
+ * 9. Generates .pot file for i18n and l10n.
  *
  * Based on Ahmad Awais excellent Gulp workflow
- * @version 1.0.3
  */
 
 /**
@@ -30,9 +28,9 @@ var projectURL              = 'baseinstall'; // Project URL. Could be something 
 var productURL              = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Translation related.
-var text_domain             = 'WPGULP'; // Your textdomain here.
-var destFile                = 'WPGULP.pot'; // Name of the transalation file.
-var packageName             = 'WPGULP'; // Package name.
+var text_domain             = 'baseinstall'; // Your textdomain here.
+var destFile                = 'baseinstall.pot'; // Name of the transalation file.
+var packageName             = 'baseinstall'; // Package name.
 var bugReport               = 'https://www.mikejandreau.net/contact/'; // Where can users report bugs.
 var lastTranslator          = 'First Last <your_email@email.com>'; // Last translator Email ID.
 var team                    = 'WPTie <your_email@email.com>'; // Team's Email ID.
@@ -63,8 +61,7 @@ var styleWatchFiles         = './assets/sass/**/*.scss'; // Path to all *.scss f
 var scriptJSWatchFiles      = ['./assets/js/vendor/*.js', './assets/js/custom/*.js']; // Path to all JS files.
 var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files.
 
-// Browsers you care about for autoprefixing.
-// Browserlist https://github.com/ai/browserslist
+// Browsers you care about for autoprefixing - Browserlist: https://github.com/ai/browserslist
 const AUTOPREFIXER_BROWSERS = [
     'last 2 versions',
     '> 1%',
@@ -82,7 +79,7 @@ const AUTOPREFIXER_BROWSERS = [
 // STOP Editing Project Variables.
 
 /**
- * Load gulp plugins and assign them semantic names.
+ * Load gulp plugins and assign semantic names.
  */
 var gulp         = require('gulp'); // Gulp of-course
 
