@@ -1405,7 +1405,6 @@ function disableMobileNav() {
   }
 }
 
-
 /**
 * PAGE SCROLLING
 * Plain JavaScript internal anchor and top-of-page scrolling, no jQuery required
@@ -1425,7 +1424,7 @@ window.onscroll = function () {
 initSmoothScrolling();
 
 function initSmoothScrolling() {
-  
+
   if (isCssSmoothSCrollSupported()) {
     document.getElementById('css-support-msg').className = 'supported';
     return;
@@ -1434,8 +1433,8 @@ function initSmoothScrolling() {
   var duration = 1000; // Speed of scrolling in milliseconds
 
   var pageUrl = location.hash ?
-    stripHash(location.href) :
-    location.href;
+  stripHash(location.href) :
+  location.href;
 
   delegatedLinkHijacking();
   //directLinkHijacking();
@@ -1461,10 +1460,10 @@ function initSmoothScrolling() {
 
   function directLinkHijacking() {
     [].slice.call(document.querySelectorAll('a'))
-      .filter(isInPageLink)
-      .forEach(function(a) {
-        a.addEventListener('click', onClick, false);
-      });
+    .filter(isInPageLink)
+    .forEach(function(a) {
+      a.addEventListener('click', onClick, false);
+    });
 
     function onClick(e) {
       e.stopPropagation();
@@ -1479,8 +1478,8 @@ function initSmoothScrolling() {
 
   function isInPageLink(n) {
     return n.tagName.toLowerCase() === 'a' &&
-      n.hash.length > 0 &&
-      stripHash(n.href) === pageUrl;
+    n.hash.length > 0 &&
+    stripHash(n.href) === pageUrl;
   }
 
   function stripHash(url) {
@@ -1508,20 +1507,20 @@ function initSmoothScrolling() {
 
 function jump(target, options) {
   var
-    start = window.pageYOffset,
-    opt = {
-      duration: options.duration,
-      offset: options.offset || 0,
-      callback: options.callback,
-      easing: options.easing || easeInOutQuad
-    },
-    distance = typeof target === 'string' ?
-    opt.offset + document.querySelector(target).getBoundingClientRect().top :
-    target,
-    duration = typeof opt.duration === 'function' ?
-    opt.duration(distance) :
-    opt.duration,
-    timeStart, timeElapsed;
+  start = window.pageYOffset,
+  opt = {
+    duration: options.duration,
+    offset: options.offset || 0,
+    callback: options.callback,
+    easing: options.easing || easeInOutQuad
+  },
+  distance = typeof target === 'string' ?
+  opt.offset + document.querySelector(target).getBoundingClientRect().top :
+  target,
+  duration = typeof opt.duration === 'function' ?
+  opt.duration(distance) :
+  opt.duration,
+  timeStart, timeElapsed;
 
   requestAnimationFrame(function(time) {
     timeStart = time;
@@ -1555,4 +1554,3 @@ function jump(target, options) {
   }
 
 }
-
