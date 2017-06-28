@@ -18,7 +18,7 @@
 
 // START Editing Project Variables
 var project                 = 'Base_Install'; // Project Name.
-var projectURL              = 'dev8'; // Project URL. Could be something like localhost:8888.
+var projectURL              = 'baseinstall'; // Project URL. Could be something like localhost:8888.
 var productURL              = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Translation related
@@ -43,7 +43,7 @@ var scriptSRC             = [
                               './assets/js/vendor/prism.js', // syntax highlighter for code blocks (optional, has associated SASS file for styles/themes)
                               './assets/js/custom/*.js' // menu-controls.js, scroll-to-top.js, etc.
                             ]; // Path to JS vendor and custom files in order.
-var scriptDestination     = './assets/js/'; // Path to place the compiled JS vendors file.
+var scriptDestination     = './assets/js/'; // Path to save the compiled JS file.
 var scriptFile            = 'scripts'; // Compiled JS file name.
 
 // Images
@@ -164,7 +164,7 @@ gulp.task( 'scripts', function() {
 });
 
 // IMAGES TASK
-// Optimizes images in assets/img/raw and saves to assets/img - runs once, run 'gulp images' to do it again
+// Optimize images in assets/img/raw and save to assets/img - runs once, run 'gulp images' to do it again
 gulp.task( 'images', function() {
   gulp.src( imagesSRC )
   .pipe( imagemin( {
