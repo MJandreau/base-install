@@ -73,4 +73,3 @@ function disableMobileNav() {
     navMenu.setAttribute( 'aria-expanded', 'false' );
   }
 }
-
