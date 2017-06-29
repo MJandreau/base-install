@@ -103,3 +103,72 @@ article + article {
 		width: 50%;
 	}
 }
+
+
+
+
+
+
+.blog-feature {
+  background-color: #fff;
+  margin-bottom: 4rem;
+  @include dropShadow;
+}
+
+.blog-image {
+  margin: 0 0 2rem;
+
+  a {
+    @include aspectRatio(16,9);
+    background-color: #efefef;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: block;
+    margin: 0;
+  }
+}
+
+.blog-text {
+  padding: 0 2rem 2rem;
+  text-align: left;
+
+  h3 {
+    font-size: 2.0rem;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  
+  p {
+    overflow: hidden;
+    margin: 0 0 1rem;
+    position: relative;
+
+    @include laptop {
+      height: 120px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 0;
+      z-index: 3;
+      width: 100%;
+      height: 120px;
+      background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+    }
+  }
+
+  .blog-author-date {
+    margin-bottom: 1rem;
+  }
+
+  .button {
+    display: block;
+    margin-bottom: 0;
+  }
+}

@@ -217,6 +217,18 @@ article+article{border-top:1px solid #eee;padding-top:40px}
 .site-main .comment-navigation,.site-main .posts-navigation{margin:0 0 1.5em;overflow:hidden}
 .comment-navigation .nav-previous,.posts-navigation .nav-previous{float:left;width:50%}
 .comment-navigation .nav-next,.posts-navigation .nav-next{float:right;text-align:right;width:50%}
+.blog-feature{background-color:#fff;margin-bottom:4rem;box-shadow:0 0 10px 0 rgba(0,0,0,0.1),0 0 10px 0 rgba(0,0,0,0.1)}
+.blog-image{margin:0 0 2rem}
+.blog-image a{background-color:#efefef;background-repeat:no-repeat;background-position:center;background-size:cover;display:block;margin:0}
+.blog-image a:before{content:'';float:left;padding-bottom:56.25%}
+.blog-image a:after{content:'';display:table;clear:both}
+.blog-text{padding:0 2rem 2rem;text-align:left}
+.blog-text h3{font-size:2rem;margin-bottom:1rem}
+.blog-text a{text-decoration:none}
+.blog-text p{overflow:hidden;margin:0 0 1rem;position:relative}
+.blog-text p::after{content:'';position:absolute;top:3px;left:0;z-index:3;width:100%;height:120px;background:-webkit-linear-gradient(rgba(255,255,255,0),white);background:linear-gradient(rgba(255,255,255,0),white)}
+.blog-text .blog-author-date{margin-bottom:1rem}
+.blog-text .button,.blog-text .more-link{display:block;margin-bottom:0}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .container,.site-content,.site-navbar,.site-info{position:relative;width:100%;max-width:100%;padding:0 20px;margin:0 auto}
@@ -347,6 +359,7 @@ h6{font-size:12.8px;font-size:1.28rem}
 .page_item_has_children>a{padding-right:18.00180018px}
 button.menu-toggle{display:none}
 .scroll-to-content{bottom:20px}
+.blog-text p{height:120px}
 .container,.site-content,.site-navbar,.site-info{max-width:1000px}
 .lg-1{width:8.3333333333%}
 .lg-2{width:16.6666666667%}
