@@ -315,6 +315,15 @@ function baseinstall_login_logo() { ?>
 <?php }
 add_action( 'login_head', 'baseinstall_login_logo' );
 
+
+/*
+// TO DO - move custom login styles above to separate stylesheet and enqueue it here
+function baseinstall_login_stylesheet() {
+	wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/assets/css/style-login.css' );
+}
+add_action( 'login_enqueue_scripts', 'baseinstall_login_stylesheet' );
+*/
+
 /**
  * CUSTOM LOGIN SCREEN LOGO LINK
  * Redirect custom login logo link to homepage
