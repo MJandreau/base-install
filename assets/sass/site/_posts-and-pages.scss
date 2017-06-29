@@ -116,26 +116,28 @@ article + article {
 }
 
 .blog-image {
-  margin: 0 0 2rem;
+  margin: 0 0 $column_margin;
 
   a {
     @include aspectRatio(16,9);
+    @include bgImage;
     background-color: #efefef;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
     display: block;
     margin: 0;
   }
 }
 
 .blog-text {
-  padding: 0 2rem 2rem;
+  padding: 0 $column_margin $column_margin;
   text-align: left;
 
   h3 {
     font-size: 2.0rem;
     margin-bottom: 1rem;
+
+    @include tablet {
+    	height: 56px;
+    }
   }
 
   a {
@@ -147,20 +149,20 @@ article + article {
     margin: 0 0 1rem;
     position: relative;
 
-    @include laptop {
+    @include tablet {
       height: 120px;
     }
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: 3px;
-      left: 0;
-      z-index: 3;
-      width: 100%;
-      height: 120px;
-      background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
-    }
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0px;
+		left: 0;
+		z-index: 3;
+		width: 100%;
+		height: 120px;
+		background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+	}
   }
 
   .blog-author-date {
