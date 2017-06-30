@@ -11,6 +11,19 @@
 
 ?>
 
+<div class="footer-callout">
+	<div class="container">
+		<div class="row">
+			<div class="md-8 column">
+				<p>Lorem ipsum dolor sit amet</p>
+			</div>
+			<div class="md-4 column">
+				<a class="button" href="#">View Schedule</a>
+			</div>
+		</div>
+	</div><!-- container -->
+</div>
+
 <footer id="colophon" class="site-footer">
 	<div class="site-info">
 		<span class="copyright">Copyright &copy; <?php echo date("Y"); ?> <?php bloginfo( 'name' ); ?></span>

@@ -272,6 +272,9 @@ article+article{border-top:1px solid #eee;padding-top:40px}
 .site-info{font-size:14.4px;font-size:1.44rem}
 .copyright{display:block;text-align:center}
 .designer{display:block;text-align:center}
+.footer-callout{background-color:#333;padding:3rem 0}
+.footer-callout p{font-size:2rem;color:#fff;margin-bottom:1rem}
+.footer-callout .button,.footer-callout .more-link{margin-bottom:0;border-color:#fff;color:#fff}
 .site{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:100vh}
 .site-header,.site-footer{-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0}
 .site-content-wrap{-webkit-box-flex:1;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto}
@@ -342,6 +345,8 @@ h6{font-size:12.8px;font-size:1.28rem}
 .site-main{margin:0 33.333333% 0 0;padding-right:40px}
 .site-content .widget-area{float:right;overflow:hidden;width:33.333333%}
 .site-footer{clear:both;width:100%}
+.footer-callout p{margin-bottom:0;line-height:38px}
+.footer-callout .button,.footer-callout .more-link{display:block}
 }@media(min-width:1000px){.main-navigation{display:inline-block;float:right;width:auto}
 .main-navigation ul{max-height:inherit;overflow:visible}
 .main-navigation ul ul{box-shadow:0 3px 3px rgba(0,0,0,0.2);float:left;position:absolute;top:60px;left:-999em;z-index:99999}
@@ -374,6 +379,8 @@ button.menu-toggle{display:none}
 .lg-10{width:83.3333333333%}
 .lg-11{width:91.6666666667%}
 .lg-12{width:100%}
+.footer-callout{padding:5rem 0}
+.footer-callout p{font-size:2.8rem}
 }@media(min-width:1200px){.content-area{margin:0 -25% 0 0}
 .site-main{margin:0 25% 0 0}
 .site-content .widget-area{width:25%}

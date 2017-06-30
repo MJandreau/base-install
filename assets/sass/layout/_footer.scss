@@ -39,6 +39,62 @@
 
 
 
+
+
+.footer-callout {
+  background-color: $color_background_darkgray;
+  padding: 3rem 0;
+
+  @include laptop {
+    padding: 5rem 0;
+  }
+
+  p {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+
+    @include tablet {
+        margin-bottom: 0;
+        line-height: 38px;
+    }
+
+    @include laptop {
+        font-size: 2.8rem;
+    }
+  }
+
+  .button {
+    margin-bottom: 0;
+    border-color: #fff;
+    color: #fff;
+
+    @include tablet {
+        // padding: 0 70px;
+        display: block;
+    }
+
+    // &:hover, 
+    // &:focus {
+    //   background-color: $trans-white;
+    //   border-color: $trans-white;
+    //   color: $brand_primary;
+    // }
+  }
+
+  // @include phablet {
+  //   padding: 6rem 0;
+  // }
+
+  // @include laptop {
+  //   padding: (8rem + $menu-height) 0 8rem;
+  // }
+}
+
+
+
+
+
 // affix footer fix to bottom if content doesn't fill the page
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .site {
