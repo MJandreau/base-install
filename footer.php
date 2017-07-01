@@ -18,7 +18,7 @@
 				<p>Lorem ipsum dolor sit amet</p>
 			</div>
 			<div class="md-4 column">
-				<a class="button" href="#">View Schedule</a>
+				<a class="button button-primary" href="#">View Schedule</a>
 			</div>
 		</div>
 	</div><!-- container -->

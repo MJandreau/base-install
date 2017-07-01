@@ -6,9 +6,9 @@
 	border-top: 1px solid darken($color_background_footer, 5%);
 	padding: ($header_height / 3) 0;
 
-	// @include laptop {
-	// 	padding: ($header_height / 2) 0;
-	// }
+	@include laptop {
+		padding: ($header_height / 2) 0;
+	}
 }
 
 .site-info {
@@ -39,59 +39,34 @@
 
 
 
-
-
 .footer-callout {
-  background-color: $color_background_darkgray;
-  padding: 3rem 0;
+	background-color: $color_background_prefooter;
+	padding: ($column_margin * 1.5) 0;
 
-  @include laptop {
-    padding: 5rem 0;
-  }
+	@include laptop {
+		padding: ($column_margin * 2) 0;
+	}
 
-  p {
-    font-size: 2rem;
-    color: #fff;
-    margin-bottom: 1rem;
+	p {
+		line-height: 1.2;
+		margin-bottom: $column_margin;
+		@include font-size(1.2);
 
-    @include tablet {
-        margin-bottom: 0;
-        line-height: 38px;
-    }
+		@include tablet {
+			margin-bottom: 0;
+			line-height: $font_line_height_forms;
+			@include font-size(1.5);
+		}
+	}
 
-    @include laptop {
-        font-size: 2.8rem;
-    }
-  }
+	.button {
+		margin-bottom: 0;
 
-  .button {
-    margin-bottom: 0;
-    border-color: #fff;
-    color: #fff;
-
-    @include tablet {
-        // padding: 0 70px;
-        display: block;
-    }
-
-    // &:hover, 
-    // &:focus {
-    //   background-color: $trans-white;
-    //   border-color: $trans-white;
-    //   color: $brand_primary;
-    // }
-  }
-
-  // @include phablet {
-  //   padding: 6rem 0;
-  // }
-
-  // @include laptop {
-  //   padding: (8rem + $menu-height) 0 8rem;
-  // }
+		@include tablet {
+			display: block;
+		}
+	}
 }
-
-
 
 
 
