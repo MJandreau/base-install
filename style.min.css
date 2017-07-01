@@ -152,12 +152,12 @@ form p{margin-bottom:0}
 .sub-nav-toggle:after{content:'';position:absolute;top:16.6666666667px;left:13.3333333333px;width:0;height:0;border:6.6666666667px solid transparent;border-top-color:royalblue}
 .sub-nav-toggle.active{-webkit-transform:rotate(-180deg);-ms-transform:rotate(-180deg);transform:rotate(-180deg)}
 .main-navigation.toggled ul.nav-menu{max-height:1000px}
-.page_item_has_children>a{padding-right:40px}
-.children{max-height:0;overflow:hidden}
-.children.active{max-height:1000px}
-.children li:first-of-type{margin-top:0}
-.children li:last-of-type{margin-bottom:0}
-.children a{white-space:nowrap}
+.menu-item-has-children>a{padding-right:40px}
+.sub-menu{max-height:0;overflow:hidden}
+.sub-menu.active{max-height:1000px}
+.sub-menu li:first-of-type{margin-top:0}
+.sub-menu li:last-of-type{margin-bottom:0}
+.sub-menu a{white-space:nowrap}
 button.menu-toggle{display:block;z-index:9000;overflow:hidden;margin:0;padding:0;width:30px;height:60px;font-size:0;text-indent:-9999px;-webkit-appearance:none;-moz-appearance:none;appearance:none;box-shadow:none;border-radius:0;border:0;cursor:pointer;float:right;position:relative;background-color:transparent}
 button.menu-toggle:focus{outline:0}
 button.menu-toggle:hover,button.menu-toggle:focus{background-color:transparent;border-color:transparent;box-shadow:none}
@@ -359,10 +359,10 @@ h6{font-size:12.8px;font-size:1.28rem}
 .main-navigation a{line-height:60px;padding:0 10px}
 .sub-nav-toggle{top:50%;margin-top:-10px;height:20px;width:18.00180018px}
 .sub-nav-toggle:after{top:8.6666666667px;left:5.1282051282px;border-width:4px}
-.children .sub-nav-toggle:after{left:8.3333333333px;top:6.25px;-webkit-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg)}
+.sub-menu .sub-nav-toggle:after{left:8.3333333333px;top:6.25px;-webkit-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg)}
 .sub-nav-toggle.active{-webkit-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0)}
 .main-navigation.toggled ul.nav-menu{overflow:visible}
-.page_item_has_children>a{padding-right:18.00180018px}
+.menu-item-has-children>a{padding-right:18.00180018px}
 button.menu-toggle{display:none}
 .scroll-to-content{bottom:20px}
 .container,.site-content,.site-navbar,.site-info{max-width:1000px}
