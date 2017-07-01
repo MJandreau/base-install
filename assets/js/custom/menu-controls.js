@@ -5,7 +5,7 @@
 */
 
 // Add toggles to menu items that have submenus and bind to click event
-var subMenuItems = document.body.querySelectorAll('.page_item_has_children > a');
+var subMenuItems = document.body.querySelectorAll('.menu-item-has-children > a');
 var index = 0;
 for (index = 0; index < subMenuItems.length; index++) {
   var dropdownArrow = document.createElement('span');
@@ -19,7 +19,7 @@ var subMenuToggle = document.querySelectorAll('.sub-nav-toggle');
 for(var i in subMenuToggle) {
   if(subMenuToggle.hasOwnProperty(i)) {
     subMenuToggle[i].onclick = function() {
-      this.parentElement.querySelector('.children').classList.toggle("active");
+      this.parentElement.querySelector('.sub-menu').classList.toggle("active");
       this.parentElement.querySelector('.sub-nav-toggle').classList.toggle("active");
       this.parentElement.classList.toggle("active");
     };
