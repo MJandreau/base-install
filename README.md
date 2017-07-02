@@ -9,11 +9,20 @@ This theme is currently under active development and will see some changes, but 
 
 
 
+Quick Start Guide
+==
 
+This quick-start guide assumes you already have a local development environment with WordPress already installed and running. More detailed documentation is in the works, but this theme is geared toward those who already have some development experience.
+
+First, either download the files from this repo on GitHub or run the following commands in your terminal:
+
+```shell
+$ cd your-wp-directory/wp-content/themes
+$ git clone https://github.com/mikejandreau/Base-Install
+```
 
 ```javascript
-// Project URL. Could be something like localhost:8888.
-var projectURL              = 'dev8'; 
+var projectURL              = 'dev8'; // Project URL. Could be something like localhost:8888.
 ```
 
 
