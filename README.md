@@ -1,5 +1,4 @@
-Base Install
-===
+#Base Install
 
 [![WPGulp](https://img.shields.io/badge/Built%20For%20WordPress-%E2%93%A6-lightgrey.svg?style=flat-square)](https://github.com/mikejandreau/Base-Install-Four) 
 
@@ -9,8 +8,7 @@ This theme is currently under active development and will see some changes, but 
 
 
 
-Quick Start Guide
-==
+##Quick Start Guide
 
 This quick-start guide assumes you already have a local development environment with WordPress already installed and running. More detailed documentation is in the works, but this theme is geared toward those who already have some development experience.
 
