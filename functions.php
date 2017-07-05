@@ -279,6 +279,7 @@ function baseinstall_login_logo() { ?>
 		#login { 
 			width: 280px; 
 		}
+		/*
 		.wp-core-ui .button-primary {
 			background: #4169e1;
 			border-color: #4169e1;
@@ -297,7 +298,7 @@ function baseinstall_login_logo() { ?>
 		.login #backtoblog a:hover, 
 		.login #nav a:hover {
 			color: #214cce;
-		}
+		}*/
 
 		@media screen and (min-width: 550px) {
 			.login form {
@@ -316,13 +317,17 @@ function baseinstall_login_logo() { ?>
 add_action( 'login_head', 'baseinstall_login_logo' );
 
 
-/*
-// TO DO - move custom login styles above to separate stylesheet and enqueue it here
+
+// TO DO - move custom login styles above to separate stylesheet
+/**
+ * CUSTOM LOGIN SCREEN
+ * overrides default WP logo, background image/color, and form styles
+ */
 function baseinstall_login_stylesheet() {
-	wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/assets/css/style-login.css' );
+	wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/assets/css/login-style.css' );
 }
 add_action( 'login_enqueue_scripts', 'baseinstall_login_stylesheet' );
-*/
+
 
 /**
  * CUSTOM LOGIN SCREEN LOGO LINK

@@ -18,7 +18,7 @@
 
 // START Editing Project Variables
 var project                 = 'Base_Install'; // Project Name.
-var projectURL              = 'dev8'; // Project URL. Could be something like localhost:8888.
+var projectURL              = 'baseinstall'; // Project URL. Could be something like localhost:8888.
 var productURL              = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Translation related
@@ -33,6 +33,10 @@ var translatePath           = './languages' // Where to save the translation fil
 // Style related
 var styleSRC                = './assets/sass/style.scss'; // Path to main .scss file.
 var styleDestination        = './'; // Path to place the compiled CSS file at the root folder
+
+// Admin Style related
+var styleAdminSRC           = './assets/sass/login-style.scss'; // Path to main .scss file.
+var styleAdminDestination   = './assets/css/'; // Path to place compiled admin CSS file
 
 // JavaScript related
 // var scriptSRC             = './assets/js/vendor/*.js'; // Path to JS folder if you don't care about concat order
@@ -51,7 +55,8 @@ var imagesSRC               = './assets/img/raw/**/*.{png,jpg,gif,svg}'; // Sour
 var imagesDestination       = './assets/img/'; // Destination folder of optimized images
 
 // Watch file paths
-var styleWatchFiles         = './assets/sass/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
+var styleWatchFiles         = './assets/sass/**/*.scss'; // Path to all *.scss files inside css folder and inside them
+var styleAdminWatchFiles    = ['./assets/sass/base/*.scss', './assets/sass/login-style.scss'] ; // Path to admin SCSS file
 var scriptJSWatchFiles      = ['./assets/js/vendor/*.js', './assets/js/custom/*.js']; // Path to all JS files.
 var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files.
 
@@ -144,6 +149,36 @@ gulp.task('styles', function () {
   .pipe( notify( { message: 'TASK: "styles" Completed! 💯', onLast: true } ) )
 });
 
+// LOGIN SCREEN STYLE TASK
+// Compile SCSS, add vendor prefixes, minify, save to root directory
+gulp.task('login-styles', function () {
+  gulp.src( styleAdminSRC )
+  .pipe( sass( {
+    errLogToConsole: true,
+      // outputStyle: 'compact',
+      // outputStyle: 'compressed',
+      // outputStyle: 'nested',
+      outputStyle: 'expanded',
+      precision: 10
+    } ) )
+  .on('error', console.error.bind(console))
+  .pipe( autoprefixer( AUTOPREFIXER_BROWSERS ) )
+  .pipe( lineec() ) // Consistent Line Endings for non UNIX systems
+  .pipe( gulp.dest( styleAdminDestination ) )
+  .pipe( filter( '**/*.css' ) ) // Filtering stream to only css files
+  .pipe( mmq( { log: true } ) ) // Merge Media Queries only for .min.css version
+  .pipe( browserSync.stream() ) // Reloads style.css if that is enqueued
+  .pipe( rename( { suffix: '.min' } ) )
+  .pipe( minifycss( {
+    maxLineLen: 10
+  }))
+  .pipe( lineec() ) // Consistent Line Endings for non UNIX systems
+  .pipe( gulp.dest( styleAdminDestination ) )
+  .pipe( filter( '**/*.css' ) ) // Filtering stream to only css files
+  .pipe( browserSync.stream() ) // Reloads style.min.css if that is enqueued
+  .pipe( notify( { message: 'TASK: "login-styles" Completed! 💯', onLast: true } ) )
+});
+
 // SCRIPTS TASK
 // Get JS source files, error check, concat, rename, minify, save to JS folder
 gulp.task( 'scripts', function() {
@@ -196,8 +231,9 @@ gulp.task( 'translate', function () {
 
 // WATCH TASK
 // Watch files for changes and reload
-gulp.task( 'default', ['styles', 'scripts', 'images', 'browser-sync'], function () {
+gulp.task( 'default', ['styles', 'login-styles', 'scripts', 'images', 'browser-sync'], function () {
   gulp.watch( projectPHPWatchFiles, reload ); // Reload on PHP file changes.
   gulp.watch( styleWatchFiles, [ 'styles' ] ); // Reload on SCSS file changes.
+  gulp.watch( styleAdminWatchFiles, [ 'login-styles' ] ); // Reload on SCSS file changes.
   gulp.watch( scriptJSWatchFiles, [ 'scripts', reload ] ); // Reload on scripts file changes.
 });

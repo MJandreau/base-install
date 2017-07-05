@@ -1,0 +1,82 @@
+// ADMIN STYLE BASE COMPONENTS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// We'll use the same variables and mixins for consistency
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@import "base/variables";
+@import "base/mixins";
+
+// admin styles go here
+// .class {
+// 	display:block;
+// 	width: 100%;
+// }
+
+
+		// .login h1 a {
+		//     background-image: url(./assets/img/logo.png);
+		//     padding-bottom: 0;
+		// 	margin: 0 auto 30px;
+		// 	width: 140px;
+		// 	height: 140px;
+		// 	-webkit-background-size: 140px 140px;
+		// 	background-size: 140px 140px;
+		// 	opacity: 0.9;
+		// }
+		// .login h1 a:hover {
+		// 	opacity: 1;
+		// }
+		// .login  {
+		// 	background-color: #e1e1e1;
+		// 	background: -webkit-linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/heroBI-02.jpg);
+		// 	background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/heroBI-02.jpg);
+		// 	background-repeat: no-repeat !important;
+		// 	background-position: center !important;
+		// 	background-size: cover !important;
+		// }
+		// .login form {
+		// 	padding: 10px 20px 15px;
+		// 	background: #fff;
+		// 	box-shadow: 0 0 12px 0px rgba(0, 0, 0, 0.2);
+		// 	border-radius: 4px;
+		// }
+		// .mobile #login {
+		// 	padding: 20px 0 0;
+		// 	width: 280px;
+		// }
+		// #login { 
+		// 	width: 280px; 
+		// }
+		.wp-core-ui .button-primary {
+			background: orange;
+			border-color: orange;
+			text-shadow: none;
+			box-shadow: none;
+		}
+		.wp-core-ui .button-primary:focus, 
+		.wp-core-ui .button-primary:hover {
+			background: red;
+			border-color: red;
+		}
+		.login #backtoblog a, 
+		.login #nav a {
+			text-decoration: none;
+			color: orange;
+		}
+		.login #backtoblog a:hover, 
+		.login #nav a:hover {
+			color: red;
+		}
+
+		// @media screen and (min-width: 550px) {
+		// 	.login form {
+		// 		padding: 20px 24px 30px;
+		// 	}
+		// 	#login {
+		// 		width: 320px;
+		// 	}
+		// 	.login {
+		// 	    background-position: center bottom;
+		// 		background-size: contain;
+		// 	}
+		// }
