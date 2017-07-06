@@ -24,6 +24,7 @@ input[type="submit"] {
 	border: 1px solid $button_color_border;
 	transition: $transistion_duration;
 
+	// form &, // add style to submit buttons in forms
 	&.lg {
 		padding: 0 ($button_padding * 1.2);
 		line-height: $font_line_height_forms * 1.2;
@@ -44,6 +45,7 @@ input[type="submit"] {
 		border-color: darken($button_color_border, 40%);
 	}
 
+	form &, // add style to submit buttons in forms
 	&.button-primary {
 		color: $color_white;
 		background-color: $brand_primary;
