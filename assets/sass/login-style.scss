@@ -1,82 +1,90 @@
-// ADMIN STYLE BASE COMPONENTS
+// LOGIN PAGE STYLES
+// Login uses the same variables and mixins for consistency
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// We'll use the same variables and mixins for consistency
-//––––––––––––––––––––––––––––––––––––––––––––––––––
 @import "base/variables";
 @import "base/mixins";
 
-// admin styles go here
-// .class {
-// 	display:block;
-// 	width: 100%;
-// }
+// Body class for the login page
+.login  {
+	background-color: $color_background_hero;
+	background: linear-gradient($color_hero_overlay, $color_hero_overlay), url('../../assets/img/heroBI-02.jpg');
+	@include bgImage;
 
+	// Container of the login form
+	#login { 
+		width: 90%; 
+		max-width: 320px;
+	}
 
-		// .login h1 a {
-		//     background-image: url(./assets/img/logo.png);
-		//     padding-bottom: 0;
-		// 	margin: 0 auto 30px;
-		// 	width: 140px;
-		// 	height: 140px;
-		// 	-webkit-background-size: 140px 140px;
-		// 	background-size: 140px 140px;
-		// 	opacity: 0.9;
-		// }
-		// .login h1 a:hover {
-		// 	opacity: 1;
-		// }
-		// .login  {
-		// 	background-color: #e1e1e1;
-		// 	background: -webkit-linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/heroBI-02.jpg);
-		// 	background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/heroBI-02.jpg);
-		// 	background-repeat: no-repeat !important;
-		// 	background-position: center !important;
-		// 	background-size: cover !important;
-		// }
-		// .login form {
-		// 	padding: 10px 20px 15px;
-		// 	background: #fff;
-		// 	box-shadow: 0 0 12px 0px rgba(0, 0, 0, 0.2);
-		// 	border-radius: 4px;
-		// }
-		// .mobile #login {
-		// 	padding: 20px 0 0;
-		// 	width: 280px;
-		// }
-		// #login { 
-		// 	width: 280px; 
-		// }
-		.wp-core-ui .button-primary {
-			background: orange;
-			border-color: orange;
-			text-shadow: none;
-			box-shadow: none;
+	// Login page logo
+	h1 a {
+		background-image: url('../../assets/img/logo.png');
+		// background-image: none, url('../../assets/img/logo.svg');
+		background-position: center top;
+		background-repeat: no-repeat;
+		background-size: $loginLogoWidth $loginLogoHeight;
+		width: $loginLogoWidth;
+		height: $loginLogoHeight;
+		margin: 0 auto ($column_margin * 1.5);
+		padding: 0;
+		color: #999;
+		font-size: 20px;
+		line-height: 1.3em;
+		text-indent: -9999px;
+		text-decoration: none;
+		font-weight: normal;
+		overflow: hidden;
+		outline: none;
+		display: block;
+	}
+
+	// Login form
+	form {
+		padding: $column_margin;
+		background: $color_background_body;
+		box-shadow: 0 0 $border_radius 0px rgba(0, 0, 0, 0.2);
+		border-radius: $border_radius;
+
+		// Login form text areas
+		#user_login,
+		#user_pass {
+			border: 1px solid lighten($button_color_border, 5%);
+
+			&:focus {
+				border-color: $brand_primary;
+				box-shadow: none;
+				outline: 0;
+			}
 		}
-		.wp-core-ui .button-primary:focus, 
-		.wp-core-ui .button-primary:hover {
-			background: red;
-			border-color: red;
+	}
+
+	// Login button
+	#wp-submit {
+		text-shadow: none;
+		box-shadow: none;
+		color: $color_white;
+		background: $brand_primary;
+		border-color: $brand_primary;
+
+		&:focus,
+		&:hover {
+			color: $color_white;
+			background: darken($brand_primary, 10%);
+			border-color: darken($brand_primary, 10%);
 		}
-		.login #backtoblog a, 
-		.login #nav a {
+	}
+
+	// Password reset and home links below form
+	#nav,
+	#backtoblog {
+		a {
 			text-decoration: none;
-			color: orange;
-		}
-		.login #backtoblog a:hover, 
-		.login #nav a:hover {
-			color: red;
-		}
+			color: $brand_primary;
 
-		// @media screen and (min-width: 550px) {
-		// 	.login form {
-		// 		padding: 20px 24px 30px;
-		// 	}
-		// 	#login {
-		// 		width: 320px;
-		// 	}
-		// 	.login {
-		// 	    background-position: center bottom;
-		// 		background-size: contain;
-		// 	}
-		// }
+			&:hover {
+				color: darken($brand_primary, 10%);
+			}
+		}
+	}
+}
