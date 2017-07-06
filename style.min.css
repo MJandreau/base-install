@@ -203,6 +203,7 @@ a:hover,a:active{outline:0}
 .widget{margin:0 0 1.5em}
 .widget select{max-width:100%}
 .sticky{display:block}
+.cat-links,.tags-links{display:block}
 .hentry{margin:0 0 40px}
 .byline,.updated:not(.published){display:none}
 .single .byline,.group-blog .byline{display:inline}
