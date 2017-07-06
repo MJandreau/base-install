@@ -122,3 +122,16 @@ form {
 		}
 	}
 }
+
+// Overrides Chrome/Safari autofill background and fill colors
+@-webkit-keyframes autofill {
+	to {
+		color: $color_text_main;
+		background: transparent;
+	}
+}
+
+input:-webkit-autofill {
+	-webkit-animation-name: autofill;
+	-webkit-animation-fill-mode: both;
+}
