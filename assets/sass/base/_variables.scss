@@ -39,6 +39,7 @@ $color_background_hr: #eee;
 $color_background_pre: #eee;
 $color_background_ins: #fff9c0;
 $color_background-callout: rgba(244,244,244,0.9);
+$color_hero_overlay: rgba(255,255,255,0.9);
 
 // Text colors
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -129,3 +130,8 @@ $font_subnav_toggle_size: $font_line_height_nav / 6;
 $shadow-inset: rgba(0,0,0,0.2);
 $shadow-outer: rgba(0,0,0,0.1);
 $shadow-size: 10px;
+
+// Custom logo size for login screen
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+$loginLogoHeight: 100px;
+$loginLogoWidth: 100px;
