@@ -150,7 +150,7 @@ gulp.task('styles', function () {
 });
 
 // LOGIN SCREEN STYLE TASK
-// Compile SCSS, add vendor prefixes, minify, save to root directory
+// Compile SCSS, add vendor prefixes, minify, save to assets/css directory
 gulp.task('login-styles', function () {
   gulp.src( styleAdminSRC )
   .pipe( sass( {
