@@ -28,7 +28,7 @@ textarea  {
 	color: $color_text_main;
 
 	&:focus {
-		border: 1px solid $brand_primary;
+		border-color: $brand_primary;
 		outline: 0;
 	}
 }
