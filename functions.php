@@ -157,7 +157,10 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-
+/**
+ * Custom nav walker to add consistent class/ID for CSS/JS targeting.
+ */
+require get_template_directory() . '/inc/nav-walker.php';
 
 
 
@@ -169,8 +172,6 @@ require get_template_directory() . '/inc/jetpack.php';
 
 
 
-
-
 /**
  * RESPONSIVE VIDEO EMBED
  * Filter for adding wrappers around embedded objects
@@ -179,9 +180,7 @@ function baseinstall_responsive_embeds( $content ) {
 	$content = preg_replace( "/<object/Si", '<div class="video-container"><object', $content );
 	$content = preg_replace( "/<\/object>/Si", '</object></div>', $content );
 	
-	/**
-	 * Added iframe filtering for embedded YouTube/Vimeo videos.
-	 */
+	// Added iframe filtering for embedded YouTube/Vimeo videos.
 	$content = preg_replace( "/<iframe.+?src=\"(.+?)\"/Si", '<div class="video-container"><iframe src="\1" frameborder="0" allowfullscreen>', $content );
 	$content = preg_replace( "/<\/iframe>/Si", '</iframe></div>', $content );
 	return $content;
@@ -203,30 +202,16 @@ add_filter( 'the_content_more_link', 'baseinstall_remove_more_link_scroll' );
 
 
 /**
- * EXCERPT LENGTH
- * limit blog post excerpt to 30 words
- */
-// function baseinstall_custom_excerpt_length( $length ) {
-// 	return 30;
-// }
-// add_filter( 'excerpt_length', 'baseinstall_custom_excerpt_length', 999 );
-
-
-
-
-
-/**
  * ADD FEATURED IMAGE TO HERO
- * Enable featured image to be background of hero block
- * Theme has default hero image in hero.scss
+ * Enable featured image to be background of hero block (default hero image in hero.scss)
  * If featured image has been set, this function gets ID/URL of image and overrides default CSS 
  */
 function baseinstall_custom_header_image(){
-	if (has_post_thumbnail()) { //if a thumbnail has been set
-		$imgID = get_post_thumbnail_id($post->ID); //get id of featured image
-		$featuredImage = wp_get_attachment_image_src($imgID, 'full' ); //get url of featured image (returns array)
-		$imgURL = $featuredImage[0]; //get url of image from array
-	    ?>
+	if (has_post_thumbnail()) { // if a thumbnail has been set
+		$imgID = get_post_thumbnail_id($post->ID); // get id of featured image
+		$featuredImage = wp_get_attachment_image_src($imgID, 'full' ); // get url of featured image (returns array)
+		$imgURL = $featuredImage[0]; // get url of image from array
+		?>
 		<style type="text/css">
 			.hero {
 				background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(<?php echo $imgURL ?>);
@@ -243,91 +228,10 @@ add_action( 'wp_head', 'baseinstall_custom_header_image' );
  * CUSTOM LOGIN SCREEN
  * overrides default WP logo, background image/color, and form styles
  */
-function baseinstall_login_logo() { ?>
-    <style type="text/css">
-		.login h1 a {
-		    background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png);
-		    padding-bottom: 0;
-			margin: 0 auto 30px;
-			width: 140px;
-			height: 140px;
-			-webkit-background-size: 140px 140px;
-			background-size: 140px 140px;
-			opacity: 0.9;
-		}
-		.login h1 a:hover {
-			opacity: 1;
-		}
-		.login  {
-			background-color: #e1e1e1;
-			background: -webkit-linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/heroBI-02.jpg);
-			background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/heroBI-02.jpg);
-			background-repeat: no-repeat !important;
-			background-position: center !important;
-			background-size: cover !important;
-		}
-		.login form {
-			padding: 10px 20px 15px;
-			background: #fff;
-			box-shadow: 0 0 12px 0px rgba(0, 0, 0, 0.2);
-			border-radius: 4px;
-		}
-		.mobile #login {
-			padding: 20px 0 0;
-			width: 280px;
-		}
-		#login { 
-			width: 280px; 
-		}
-		/*
-		.wp-core-ui .button-primary {
-			background: #4169e1;
-			border-color: #4169e1;
-			text-shadow: none;
-		}
-		.wp-core-ui .button-primary:focus, 
-		.wp-core-ui .button-primary:hover {
-			background: #214cce;
-			border-color: #214cce;
-		}
-		.login #backtoblog a, 
-		.login #nav a {
-			text-decoration: none;
-			color: #4169e1;
-		}
-		.login #backtoblog a:hover, 
-		.login #nav a:hover {
-			color: #214cce;
-		}*/
-
-		@media screen and (min-width: 550px) {
-			.login form {
-				padding: 20px 24px 30px;
-			}
-			#login {
-				width: 320px;
-			}
-			.login {
-			    background-position: center bottom;
-				background-size: contain;
-			}
-		}
-    </style>
-<?php }
-add_action( 'login_head', 'baseinstall_login_logo' );
-
-
-
-// TO DO - move custom login styles above to separate stylesheet
-/**
- * CUSTOM LOGIN SCREEN
- * overrides default WP logo, background image/color, and form styles
- */
 function baseinstall_login_stylesheet() {
 	wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/assets/css/login-style.css' );
 }
 add_action( 'login_enqueue_scripts', 'baseinstall_login_stylesheet' );
-
 
 /**
  * CUSTOM LOGIN SCREEN LOGO LINK
@@ -354,14 +258,14 @@ add_filter( 'login_headertitle', 'baseinstall_login_logo_url_title' );
  * Add custom favicons to admin dashboard and front end of site
  */
 function baseinstall_admin_favicon() {
-  	$admin_favicon_url = get_stylesheet_directory_uri() . '/assets/favicons';
+	$admin_favicon_url = get_stylesheet_directory_uri() . '/assets/favicons';
 	echo '<link rel="shortcut icon" href="' . $admin_favicon_url . '/admin-favicon.ico" />';
 }
 add_action('login_head', 'baseinstall_admin_favicon');
 add_action('admin_head', 'baseinstall_admin_favicon');
 
 function baseinstall_main_favicon() {
-  	$main_favicon_url = get_stylesheet_directory_uri() . '/assets/favicons';
+	$main_favicon_url = get_stylesheet_directory_uri() . '/assets/favicons';
 	echo '
 	<link rel="shortcut icon" href="' . $main_favicon_url . '/favicon.ico" />
 	<link rel="apple-touch-icon" sizes="180x180" href="' . $main_favicon_url . '/apple-touch-icon.png">
@@ -374,161 +278,6 @@ function baseinstall_main_favicon() {
 	';
 }
 add_action('wp_head', 'baseinstall_main_favicon');
-
-
-
-/**
- * HIDE ADMIN BAR
- * Removes admin bar from front end - optional, but nice for development
- */
-// function hide_admin_front_end(){
-// 	if (is_blog_admin()) {
-// 		return true;
-// 	}
-// 	return false;
-// }
-// add_filter( 'show_admin_bar', 'hide_admin_front_end' );
-
-
-
-
-
-
-
-
-
-
-
-
-// Modify WooCommerce orderby dropdown
-// This overrides the default WooCommerce sorting dropdown text
-// Options: renaming popularity, rating, newness, and price
-// 
-// function mj_translation_sort_change( $translated_text, $text, $domain ) {
-// 	if ( is_woocommerce() ) {
-// 		switch ( $translated_text ) {
-			
-// 			case 'Sort by popularity' : 
-// 				$translated_text = __( 'Ordenar por popularidad', 'mj_text_domain' ); 
-// 				break;
-			
-// 			case 'Sort by average rating' : 
-// 				$translated_text = __( 'Ordenar por calificación', 'mj_text_domain' ); 
-// 				break;
-			
-// 			case 'Sort by newness' : 
-// 				$translated_text = __( 'Ordenar por más reciente', 'mj_text_domain' ); 
-// 				break;
-			
-// 			case 'Sort by price: low to high' : 
-// 				$translated_text = __( 'Ordenar por precio: menor a mayor', 'mj_text_domain' ); 
-// 				break;
-			
-// 			case 'Sort by price: high to low' : 
-// 				$translated_text = __( 'Ordenar por precio: mayor a menor', 'mj_text_domain' ); 
-// 				break;
-// 		}
-// 	}
-// 	return $translated_text;
-// }
-// add_filter( 'gettext', 'mj_translation_sort_change', 20, 3 );
-
-
-
-
-
-
-
-
-
-
-
-
-/**
- * CUSTOM FONTS
- * Enable custom Google font and Font Awesome
- */
-// function prefix_fonts() {
-// 	// Montserrat
-// 	wp_enqueue_style( 'prefix_google_fonts', '//fonts.googleapis.com/css?family=Montserrat:100,200,300,400', array(), null, 'screen' );
-
-// 	// Font Awesome
-// 	wp_enqueue_style( 'prefix_font_awesome', '//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '4.0.3' );
-// }
-// add_action( 'wp_enqueue_scripts', 'prefix_fonts' );
-
-
-
-
-
-
-/**
- * NAV WALKER
- * Custom nav walker to add consistent classes/IDs for easier CSS/JS targeting
- */
-class baseinstall_walker_nav_menu extends Walker_Nav_Menu {
-
-	// add classes to ul sub-menus
-	function start_lvl( &$output, $depth ) {
-	    // depth dependent classes
-	    $indent = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
-	    $display_depth = ( $depth + 1); // because it counts the first submenu as 0
-	    $classes = array(
-	        'sub-menu',
-	        ( $display_depth % 2  ? 'menu-odd' : 'menu-even' ),
-	        ( $display_depth >=2 ? 'sub-sub-menu' : '' ),
-	        'menu-depth-' . $display_depth
-	        );
-	    $class_names = implode( ' ', $classes );
-	  
-	    // build html
-	    $output .= "\n" . $indent . '<ul class="' . $class_names . '">' . "\n";
-	}
-	
-	// add main/sub classes to li and links
-	function start_el( &$output, $item, $depth, $args ) {
-	    global $wp_query;
-	    $indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
-	  
-	    // depth dependent classes
-	    $depth_classes = array(
-	        ( $depth == 0 ? 'main-menu-item' : 'sub-menu-item' ),
-	        ( $depth >=2 ? 'sub-sub-menu-item' : '' ),
-	        ( $depth % 2 ? 'menu-item-odd' : 'menu-item-even' ),
-	        'menu-item-depth-' . $depth
-	    );
-	    $depth_class_names = esc_attr( implode( ' ', $depth_classes ) );
-	  
-	    // passed classes
-	    $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-	    $class_names = esc_attr( implode( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) ) );
-	  
-	    // build html
-	    $output .= $indent . '<li id="nav-menu-item-'. $item->ID . '" class="' . $depth_class_names . ' ' . $class_names . '">';
-	  
-	    // link attributes
-	    $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-	    $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-	    $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-	    $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-	    $attributes .= ' class="menu-link ' . ( $depth > 0 ? 'sub-menu-link' : 'main-menu-link' ) . '"';
-	  
-	    $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
-	        $args->before,
-	        $attributes,
-	        $args->link_before,
-	        apply_filters( 'the_title', $item->title, $item->ID ),
-	        $args->link_after,
-	        $args->after
-	    );
-	  
-	    // build html
-	    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-	}
-}
-
-
-
 
 
 
@@ -546,7 +295,7 @@ function baseinstall_template_base() {
 }
 class baseinstall_wrapper {
 
-	//Stores the full path to the main template file
+	// Stores the full path to the main template file
 	static $main_template;
 
 	// Stores the base name of the template file; e.g. 'page' for 'page.php' etc.
@@ -565,3 +314,15 @@ class baseinstall_wrapper {
 add_filter( 'template_include', array( 'baseinstall_wrapper', 'wrap' ), 99 );
 
 
+
+/**
+ * HIDE ADMIN BAR
+ * Removes admin bar from front end - optional, but nice for development
+ */
+// function hide_admin_front_end(){
+// 	if (is_blog_admin()) {
+// 		return true;
+// 	}
+// 	return false;
+// }
+// add_filter( 'show_admin_bar', 'hide_admin_front_end' );
