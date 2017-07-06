@@ -94,23 +94,39 @@ pre code{background:0;padding:1.6em;white-space:pre;-webkit-overflow-scrolling:t
 pre code::-webkit-scrollbar{width:.5em;height:.5em}
 pre code::-webkit-scrollbar-thumb{background:#666}
 pre code::-webkit-scrollbar-track{background:0}
-:not(pre)>code[class*="language-"],pre[class*="language-"]{background:#1d1f21}
+.base00{color:#2b303b}
+.base01{color:#343d46}
+.base02{color:#4f5b66}
+.base03{color:#65737e}
+.base04{color:#a7adba}
+.base05{color:#c0c5ce}
+.base06{color:#dfe1e8}
+.base07{color:#eff1f5}
+.base08{color:#bf616a}
+.base09{color:#d08770}
+.base0A{color:#ebcb8b}
+.base0B{color:#a3be8c}
+.base0C{color:#96b5b4}
+.base0D{color:#8fa1b3}
+.base0E{color:#b48ead}
+.base0F{color:#ab7967}
+:not(pre)>code[class*="language-"],pre[class*="language-"]{background:#2b303b}
 :not(pre)>code[class*="language-"]{padding:.1em;border-radius:.3em}
 .token.comment,.token.prolog,.token.doctype,.token.cdata{color:#7c7c7c}
 .token.punctuation{color:#c5c8c6}
 .namespace{opacity:.7}
-.token.property,.token.keyword,.token.tag{color:#96cbfe}
+.token.property,.token.keyword,.token.tag{color:#bf616a}
 .token.class-name{color:#ffffb6;text-decoration:underline}
 .token.boolean,.token.constant{color:#9c9}
 .token.symbol,.token.deleted{color:#f92672}
 .token.number{color:#ff73fd}
-.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#a8ff60}
+.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#d08770}
 .token.variable{color:#c6c5fe}
 .token.operator{color:#ededed}
 .token.entity{color:#ffffb6}
 .token.url{color:#96cbfe}
 .language-css .token.string,.style .token.string{color:#87c38a}
-.token.atrule,.token.attr-value{color:#f9ee98}
+.token.atrule,.token.attr-value{color:#a3be8c}
 .token.function{color:#dad085}
 .token.regex{color:#e9c062}
 .token.important{color:#fd971f}
