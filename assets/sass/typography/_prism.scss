@@ -1,51 +1,63 @@
 // Prism code styles
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 pre {
-	padding: 1.6em;
+	padding: $code_block_padding;
 
 	&[rel] {
-		padding: 2.4em 0 0;
+		padding: $code_block_title 0 0;
 	}
 
 	&[rel]::before {
-		line-height: 2.4em;
+		line-height: $code_block_title;
 		content: attr(rel);
 		color: white;
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100%;
-		background: #999;
 		padding: 0;
-		text-indent: 1.6em;
+		width: 100%;
+		background: $base02;
+		text-indent: $code_block_padding;
+		// @include font-size(1);
 	}
 
 	// &[rel="JavaScript"]::before {
 	// 	content: "JS";
 	// }
 
+	&[rel="JavaScript"]::before {
+		background: darken($base0A, 15%);
+	}
+
 	&[rel="CSS"]::before {
-		background: #FF9800;
+		background: darken($base0B, 10%);
+	}
+
+	&[rel="SCSS"]::before {
+		background: darken($base0C, 10%);
 	}
 
 	&[rel="HTML"]::before {
-		background: #4CAF50;
+		background: darken($base0D, 10%);
+	}
+
+	&[rel="PHP"]::before {
+		background: darken($base0E, 10%);
 	}
 
 	&[rel="jQuery"]::before, 
-	&[rel="JavaScript"]::before, 
 	&[rel="JSX"]::before {
-		background: #9C27B0;
+		background: darken($base0F, 5%);
 	}
 
 	code {
 		background: none;
-		padding: 1.6em;
+		padding: $column_margin $code_block_padding;
 		white-space: pre;
 		-webkit-overflow-scrolling: touch;
 		display: block;
 		overflow: auto;
-		color: #c5c8c6;
+		color: $base06;
 
 		&::-webkit-scrollbar {
 			width: .5em;
@@ -53,7 +65,7 @@ pre {
 		}
 
 		&::-webkit-scrollbar-thumb {
-			background: #666;
+			background: $base04;
 		}
 
 		&::-webkit-scrollbar-track {
@@ -68,7 +80,7 @@ pre {
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #1d1f21;
+	background: $base00;
 }
 
 // Inline code 
@@ -77,115 +89,104 @@ pre[class*="language-"] {
 	border-radius: .3em;
 }
 
+// Code colors
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #7C7C7C;
+    color: $base03;
 }
 
 .token.punctuation {
-	color: #c5c8c6;
+    color: $base05;
 }
 
-.namespace {
-	opacity: .7;
+.token.property {
+    color: $base05;
 }
 
-.token.property,
-.token.keyword,
 .token.tag {
-    color: #96CBFE;
+    color: $base08;
 }
 
-.token.class-name {
-	color: #FFFFB6;
-	text-decoration: underline;
+.token.selector {
+    color: $base09;
 }
 
+.token.attr-name {
+    color: $base09;
+}
+
+.token.operator,
 .token.boolean,
-.token.constant {
-    color: #99CC99;
-}
-
-.token.symbol,
-.token.deleted {
-	color: #f92672;
-}
-
 .token.number {
-	color: #FF73FD;
+    color: $base09;
 }
 
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	color: #A8FF60;
-}
-
+.token.placeholder,
 .token.variable {
-	color: #C6C5FE;
+    color: $base08;
 }
 
-.token.operator {
-    color: #EDEDED;
+.token.attr-value,
+.token.control,
+.token.directive,
+.token.unit {
+    color: $base0B;
 }
 
-.token.entity {
-    color: #FFFFB6;
-    // text-decoration: underline;
-}
-
-.token.url {
-    color: #96CBFE;
-}
-
+.token.entity,
+.token.url,
 .language-css .token.string,
 .style .token.string {
-	color: #87C38A;
+    color: $base0C;
 }
 
-.token.atrule,
-.token.attr-value {
-    color: #F9EE98;
+.token.string {
+    color: $base0C;
 }
 
-.token.function {
-	color: #DAD085;
+.token.statement,
+.token.regex,
+.token.atrule {
+    color: $base0C;
 }
 
-.token.regex {
-    color: #E9C062;
+.token.keyword {
+	color: $base0E;
 }
 
 .token.important {
-	color: #fd971f;
+    color: $base0F;
+}
+
+.token.namespace {
+    opacity: .7;
+}
+
+.token.deleted {
+    text-decoration: line-through;
+}
+
+.token.inserted {
+    border-bottom: 1px dotted $base07;
+    text-decoration: none;
+}
+
+.token.italic {
+    font-style: italic;
 }
 
 .token.important,
 .token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
+    font-weight: bold;
 }
 
 .token.entity {
-	cursor: help;
+    cursor: help
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+pre>code.highlight {
+    outline: 0.4em solid $base08;
+    outline-offset: .4em
+}

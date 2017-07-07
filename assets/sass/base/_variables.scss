@@ -59,7 +59,7 @@ $button_padding: 20px;
 $font_main: sans-serif;
 $font_headings: sans-serif;
 $font_code: 'Source Code Pro', Monaco, Consolas, monospace;
-$font_pre: "Courier 10 Pitch", Courier, monospace;
+$font_pre: 'Source Code Pro', Monaco, Consolas, monospace;
 $font_weight_main: 400;
 $font_weight_headings: 300;
 $font_weight_pre: 400;
@@ -135,3 +135,30 @@ $shadow-size: 10px;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 $loginLogoHeight: 100px;
 $loginLogoWidth: 100px;
+
+
+
+// Color scheme for code blocks
+// BASE16 THEMES: https://chriskempson.github.io/base16/
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+$base00: #2b303b; // black
+$base01: #343d46; // darkest gray
+$base02: #4f5b66; // darker gray
+$base03: #65737e; // dark gray
+$base04: #a7adba; // medium gray
+$base05: #c0c5ce; // light gray
+$base06: #dfe1e8; // lighter gray
+$base07: #eff1f5; // white
+$base08: #bf616a; // red
+$base09: #d08770; // orange
+$base0A: #ebcb8b; // yellow
+$base0B: #a3be8c; // green
+$base0C: #96b5b4; // blue
+$base0D: #8fa1b3; // indigo
+$base0E: #b48ead; // violet
+$base0F: #ab7967; // brown
+
+// Padding for code blocks
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+$code_block_title: $column_margin * 2.4;
+$code_block_padding: $column_margin * 1.2;
