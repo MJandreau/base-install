@@ -44,6 +44,7 @@ input[type="submit"] {
 		border-color: darken($button_color_border, 40%);
 	}
 	
+	.wpcf7-form &,
 	&.button-primary {
 		color: $color_white;
 		background-color: $brand_primary;
