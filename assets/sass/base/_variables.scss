@@ -140,7 +140,11 @@ $shadow-size: 10px;
 $loginLogoHeight: 100px;
 $loginLogoWidth: 100px;
 
-
+// Form icon parameters for select and search inputs
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+$color_input_icons: 404040; // Icon fill color, leave # out for proper URL encoding
+$size_input_icon_search: 18px; // Magnifying glass for search field
+$size_input_icon_select: 24px; // Chevron for select box
 
 // Color scheme for code blocks
 // BASE16 THEMES: https://chriskempson.github.io/base16/
