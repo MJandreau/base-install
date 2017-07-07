@@ -39,6 +39,7 @@ pre {
 	font-family: $font_pre;
 	font-weight: $font_weight_pre;
 	line-height: $font_line_height_pre;
+	border-radius: $border_radius;
 	@include font-size(.9);
 	position: relative;
 	overflow: auto;
