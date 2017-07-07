@@ -3,10 +3,10 @@
 
 // Brand colors
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-$brand_primary: royalblue;
+$brand_primary: #637b92;
 $brand_secondary: lighten($brand_primary, 10%);
-$brand_neutral: #777;
-$brand_accent: tan;
+$brand_neutral: #65737e;
+$brand_accent: #a3be8c;
 
 // Generic colors
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -41,17 +41,21 @@ $color_background_ins: #fff9c0;
 $color_background-callout: rgba(244,244,244,0.9);
 $color_hero_overlay: rgba(255,255,255,0.9);
 
+// Navigation colors
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+$color_text_nav: $brand_primary;
+
 // Text colors
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 $color_text_main: #404040;
 $color_text_screen: #21759b;
-$color_link: royalblue;
+$color_link: $brand_primary;
 
 // Button colors
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 $button_color_background: $brand_primary;
-$button_color_text: #404040;
-$button_color_border: #ccc;
+$button_color_text: $color_text_main;
+$button_color_border: #c0c5ce;
 $button_padding: 20px;
 
 // Fonts
