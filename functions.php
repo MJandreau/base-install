@@ -199,7 +199,14 @@ function baseinstall_remove_more_link_scroll( $link ) {
 }
 add_filter( 'the_content_more_link', 'baseinstall_remove_more_link_scroll' );
 
-
+/**
+ * EXCERPT LENGTH
+ * control length of excerpt on homepage blog section
+ */
+// function custom_excerpt_length( $length ) {
+// 	return 20;
+// }
+// add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 /**
  * ADD FEATURED IMAGE TO HERO
