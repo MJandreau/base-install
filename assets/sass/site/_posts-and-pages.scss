@@ -111,71 +111,87 @@ article + article {
 
 
 
+// Blog section on static front page
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+.blog-section {
+	// text-align: center;
+	padding: $column_margin 0;
+	background: $color_background_blog;
 
+	@include tablet {
+		padding: ($column_margin * 2) 0;
+	}
 
+	.button {
+		margin-bottom: 0;
+	}
+}
 
 .blog-feature {
-  background-color: #fff;
-  margin-bottom: 4rem;
-  @include dropShadow;
+	background-color: #fff;
+	margin-bottom: $column_margin * 2;
+	border: 1px solid $color_background_lightgray;
+	border-radius: $border_radius;
+	overflow: hidden;
+	// @include dropShadow;
 }
 
 .blog-image {
-  margin: 0 0 $column_margin;
+	margin: 0 0 $column_margin;
 
-  a {
-    @include aspectRatio(16,9);
-    @include bgImage;
-    background-color: #efefef;
-    display: block;
-    margin: 0;
-  }
+	a {
+		@include aspectRatio(16,9);
+		@include bgImage;
+		background-color: #efefef;
+		display: block;
+		margin: 0;
+	}
 }
 
 .blog-text {
-  padding: 0 $column_margin $column_margin;
-  text-align: left;
+	padding: 0 $column_margin $column_margin;
+	text-align: left;
 
-  h3 {
-    font-size: 2.0rem;
-    margin-bottom: 1rem;
+	h3 {
+		font-size: 2.0rem;
+		margin-bottom: 1rem;
 
-    @include tablet {
-    	height: 56px;
-    }
-  }
-
-  a {
-    text-decoration: none;
-  }
-  
-  p {
-    overflow: hidden;
-    margin: 0 0 1rem;
-    position: relative;
-
-    @include tablet {
-      height: 120px;
-    }
-
-	&::after {
-		content: '';
-		position: absolute;
-		bottom: 0px;
-		left: 0;
-		z-index: 3;
-		width: 100%;
-		height: 120px;
-		background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+		@include tablet {
+			height: 56px;
+			height: 5.6rem;
+		}
 	}
-  }
 
-  .blog-author-date {
-    margin-bottom: 1rem;
-  }
+	a {
+		text-decoration: none;
+	}
+
+	p {
+		overflow: hidden;
+		margin: 0 0 1rem;
+		position: relative;
+
+		@include tablet {
+			height: 120px;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0px;
+			left: 0;
+			z-index: 3;
+			width: 100%;
+			height: 120px;
+			background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+		}
+	}
+
+	.blog-author-date {
+		margin-bottom: 1rem;
+	}
 
   .button {
     display: block;
-    margin-bottom: 0;
   }
 }
