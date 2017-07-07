@@ -15,7 +15,7 @@ input[type="submit"] {
 	letter-spacing: .1rem;
 	line-height: $font_line_height_forms;
 	height: $font_line_height_forms;
-	padding: 0 $button_padding;
+	padding: 0 $column_margin;
 	font-weight: 300;
 	margin-bottom: 1rem;
 	@include font-size(.8);
@@ -25,7 +25,7 @@ input[type="submit"] {
 	transition: $transistion_duration;
 	
 	&.lg {
-		padding: 0 ($button_padding * 1.2);
+		padding: 0 ($column_margin * 1.2);
 		line-height: $font_line_height_forms * 1.2;
 		height: $font_line_height_forms * 1.2;
 	}
@@ -44,7 +44,7 @@ input[type="submit"] {
 		border-color: darken($button_color_border, 40%);
 	}
 	
-	.wpcf7-form &,
+	.wpcf7-form &, // adds primary style to Contact Form 7 submit button
 	&.button-primary {
 		color: $color_white;
 		background-color: $brand_primary;
@@ -61,6 +61,15 @@ input[type="submit"] {
 			color: $color_white;
 			background: darken($brand_primary, 20%);
 			border-color: darken($brand_primary, 20%);
+		}
+	}
+
+	.call-to-action & { // makes buttons in hero area larger
+		@extend .lg;
+		margin-right: $column_margin;
+
+		&:last-of-type {
+			margin-right: 0;
 		}
 	}
 }
