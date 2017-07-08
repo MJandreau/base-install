@@ -17,22 +17,22 @@
 	<div class="latest-posts"><!-- open content area .container -->
 
 <?php else : // If front page is set to show a static page, show this markup before content area ?>
-	<div class="triple-feature">
+	<div class="section strapline">
 		<div class="container">
 			<div class="row">
 				<div class="column sm-4">
-					<div class="featured">
-						<h3>bloop</h3>
+					<div class="subsection">
+						<p>bloop</p>
 					</div>
 				</div>
 				<div class="column sm-4">
-					<div class="featured">
-						<h3>bloop</h3>
+					<div class="subsection">
+						<p>bloop</p>
 					</div>
 				</div>
 				<div class="column sm-4">
-					<div class="featured">
-						<h3>bloop</h3>
+					<div class="subsection">
+						<p>bloop</p>
 					</div>
 				</div>
 			</div>
@@ -66,46 +66,116 @@
 	</div><?php // close homepage posts container ?>
 
 <?php if ( !is_home() && is_front_page() ) : // If front page is set to show a static page, show this markup after content area ?>
-	<div class="feature">
+	<div class="section">
 		<div class="container">
 			<div class="row">
+
+
+				<div class="column sm-6">
+					<div class="subsection">
+						<p>sm-6</p>
+					</div>
+				</div>
+				<div class="column sm-6">
+					<div class="subsection">
+						<p>sm-6</p>
+					</div>
+				</div>
+
 				<div class="column sm-4">
-					<div class="featured">
-						<h3>bloop</h3>
+					<div class="subsection">
+						<p>sm-4</p>
 					</div>
 				</div>
 				<div class="column sm-4">
-					<div class="featured">
-						<h3>bloop</h3>
+					<div class="subsection">
+						<p>sm-4</p>
 					</div>
 				</div>
 				<div class="column sm-4">
-					<div class="featured">
-						<h3>bloop</h3>
+					<div class="subsection">
+						<p>sm-4</p>
 					</div>
 				</div>
+
+				<div class="column sm-3">
+					<div class="subsection">
+						<p>sm-3</p>
+					</div>
+				</div>
+				<div class="column sm-3">
+					<div class="subsection">
+						<p>sm-3</p>
+					</div>
+				</div>
+				<div class="column sm-3">
+					<div class="subsection">
+						<p>sm-3</p>
+					</div>
+				</div>
+				<div class="column sm-3">
+					<div class="subsection">
+						<p>sm-3</p>
+					</div>
+				</div>
+
+
 			</div>
 		</div>
 	</div>
 
-	<div class="triple-feature">
+	<div class="section section-alt">
 		<div class="container">
 			<div class="row">
+
+				<div class="column sm-6">
+					<div class="subsection">
+						<p>sm-6</p>
+					</div>
+				</div>
+				<div class="column sm-6">
+					<div class="subsection">
+						<p>sm-6</p>
+					</div>
+				</div>
+
 				<div class="column sm-4">
-					<div class="featured">
-						<h3>bloop</h3>
+					<div class="subsection">
+						<p>sm-4</p>
 					</div>
 				</div>
 				<div class="column sm-4">
-					<div class="featured">
-						<h3>bloop</h3>
+					<div class="subsection">
+						<p>sm-4</p>
 					</div>
 				</div>
 				<div class="column sm-4">
-					<div class="featured">
-						<h3>bloop</h3>
+					<div class="subsection">
+						<p>sm-4</p>
 					</div>
 				</div>
+
+				<div class="column sm-3">
+					<div class="subsection">
+						<p>sm-3</p>
+					</div>
+				</div>
+				<div class="column sm-3">
+					<div class="subsection">
+						<p>sm-3</p>
+					</div>
+				</div>
+				<div class="column sm-3">
+					<div class="subsection">
+						<p>sm-3</p>
+					</div>
+				</div>
+				<div class="column sm-3">
+					<div class="subsection">
+						<p>sm-3</p>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>

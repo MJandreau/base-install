@@ -1,33 +1,53 @@
-
-// Featured items
+// Page sections and featured items
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-
-.triple-feature {
+// this is the base featured block, uses top padding and bottom margins
+// to give equal spacing between top/bottom of section and between divs
+.section { 
   padding: $column_margin 0 0;
-  background: #efefef;
 
   @include tablet {
     padding-top: $column_margin * 2;
   }
+
+  .column {
+    margin-bottom: $column_margin;
+
+    @include tablet {
+      margin-bottom: $column_margin * 2;
+    }
+  }
 }
 
-.featured {
-  background: #f4f4f4;
+// this is the subsection block
+.subsection {
+  background: $color_background_featured;
   text-align: center;
-  margin-bottom: $column_margin;
-
-  @include tablet {
-    margin-bottom: $column_margin * 2;
-  }
   
-  h3 {
+  p {
     margin: 0;
-    padding: ($column_margin * 2) 0;
-    line-height: 60px;
+    line-height: 6rem;
   }
 }
 
+// alternate background color for section/subsection
+.section-alt {
+  background-color: $color_background_featured;
+
+  .subsection {
+    background-color: #fff;
+  }
+}
+
+// styles for the section just below the hero
+.strapline {
+  background: $color_background_strapline;
+  border: 1px solid lighten($button_color_border, 15%);
+
+  p {
+    margin: 0;
+  }
+}
 
 
 
