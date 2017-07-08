@@ -16,9 +16,16 @@
         height:50vh;
     }
 
-    // .single &, // single blog posts
+    // full-height header for homepage and single blog posts
+    // .single &, 
     .home & {
         height:100vh;
+    }
+
+    // adjust for admin bar when logged in
+    // .home.single &,  
+    .home.admin-bar & {
+        height: calc(100vh - 32px);
     }
 }
 
