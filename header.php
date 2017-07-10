@@ -21,12 +21,12 @@
 			<?php 
 			wp_nav_menu( array(
 				'theme_location'	=> 'menu-1',
+				'echo'				=> true,
+				'depth'				=> 10, 
 				'container'			=> 'ul',
 				'menu_class'		=> 'nav-menu', 
 				'menu_id'			=> 'primary-menu',
-				'echo'				=> true,
-				// 'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>',
-				'depth'				=> 10, 
+				'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>',
 				'walker'			=> new baseinstall_walker_nav_menu
 			) ); 
 			?>
