@@ -132,6 +132,30 @@ function baseinstall_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'baseinstall_scripts' );
 
+
+
+/**
+ * Enqueue Bootstrap scripts and styles
+ * If Bootstrap is your thing, enqueue these styles and scripts 
+ */
+/*
+function baseinstall_enqueue_scripts() {
+// jQuery is stated as a dependancy of bootstrap-js - it will be loaded by WordPress before the BS scripts 
+	wp_enqueue_script( 'bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), true);
+}
+add_action('wp_enqueue_scripts', 'baseinstall_enqueue_scripts');
+
+function baseinstall_enqueue_styles() {
+	wp_enqueue_style( 'bootstrap-css', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
+
+// this will add the stylesheet from the default theme location
+	wp_enqueue_style( 'custom-css', get_template_directory_uri() . '/style.css');
+}
+add_action('wp_enqueue_scripts', 'baseinstall_enqueue_styles');
+*/
+
+
+
 /**
  * Implement the Custom Header feature.
  */
