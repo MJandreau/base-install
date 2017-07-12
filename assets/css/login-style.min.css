@@ -1,5 +1,5 @@
 html{box-sizing:border-box;font-size:62.5%}
-.login{background-color:#ddd;background:-webkit-linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9)),url("../../assets/img/heroBI-02.jpg");background:linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9)),url("../../assets/img/heroBI-02.jpg");font-size:16px;font-size:1.6rem;background-repeat:no-repeat !important;background-position:center !important;background-size:cover !important}
+.login{background-color:#ddd;background:-webkit-linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9)),url("../../assets/img/hero.jpg");background:linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9)),url("../../assets/img/hero.jpg");font-size:16px;font-size:1.6rem;background-repeat:no-repeat !important;background-position:center !important;background-size:cover !important}
 .login #login{width:90%;max-width:360px;max-width:36rem}
 .login h1 a{background-image:url("../../assets/img/logo.png");background-position:center top;background-repeat:no-repeat;background-size:100px 100px;width:100px;height:100px;margin:0 auto 30px;padding:0;color:#999;font-size:2rem;line-height:1.3em;text-indent:-9999px;text-decoration:none;font-weight:normal;overflow:hidden;outline:0;display:block}
 .login form{padding:20px;background:#fff;box-shadow:0 0 4px 0 rgba(0,0,0,0.2);border-radius:4px}

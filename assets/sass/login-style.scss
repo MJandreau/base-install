@@ -14,7 +14,7 @@ html {
 // Body class for the login page
 .login  {
 	background-color: $color_background_hero;
-	background: linear-gradient($color_hero_overlay, $color_hero_overlay), url('../../assets/img/heroBI-02.jpg');
+	background: linear-gradient($color_hero_overlay, $color_hero_overlay), url('../../assets/img/hero.jpg');
 	@include font-size(1);
 	@include bgImage;
 
