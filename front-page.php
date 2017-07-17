@@ -53,6 +53,18 @@
 				endwhile; // End of the loop.
 				the_posts_navigation(); // If front page is set to show latest posts, get the post navigation
 				?>
+
+				<?php
+					if($facebook = get_option('baseinstall_options'))
+					{ echo '<a class="button button-primary" target="_blank" href="' . $facebook['baseinstall-social-facebook'] . '">Facebook</a>'; }
+
+					if($twitter = get_option('baseinstall_options'))
+					{ echo '<a class="button button-primary" target="_blank" href="' . $twitter['baseinstall-social-twitter'] . '">Twitter</a>'; }
+
+					if($googleplus = get_option('baseinstall_options'))
+					{ echo '<a class="button button-primary" target="_blank" href="' . $googleplus['baseinstall-social-googleplus'] . '">Google&#43;</a>'; }
+				?>
+
 			</div>
 			
 			<div class="column sm-4">

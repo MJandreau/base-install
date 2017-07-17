@@ -186,6 +186,10 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 require get_template_directory() . '/inc/nav-walker.php';
 
+/*
+ * Load the theme options page.
+ */
+require get_template_directory() . '/inc/theme-options.php';
 
 
 /**
