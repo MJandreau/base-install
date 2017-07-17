@@ -32,7 +32,7 @@ var translatePath           = './languages' // Where to save the translation fil
 
 // Style related
 var styleSRC                = './assets/sass/style.scss'; // Path to main .scss file.
-var styleDestination        = './'; // Path to place the compiled CSS file at the root folder
+var styleDestination        = './'; // Places compiled CSS file in root folder, could also be './assets/css/' or some other folder, just remember to update file path in functions.php
 
 // Admin Style related
 var styleAdminSRC           = './assets/sass/login-style.scss'; // Path to main .scss file.
@@ -132,7 +132,7 @@ gulp.task('styles', function () {
   .pipe( sourcemaps.write( { includeContent: false } ) )
   .pipe( sourcemaps.init( { loadMaps: true } ) )
   .pipe( autoprefixer( AUTOPREFIXER_BROWSERS ) )
-  .pipe( sourcemaps.write ( styleDestination ) )
+  .pipe( sourcemaps.write ( './' ) ) // Write sourcemap to same folder
   .pipe( lineec() ) // Consistent Line Endings for non UNIX systems
   .pipe( gulp.dest( styleDestination ) )
   .pipe( filter( '**/*.css' ) ) // Filtering stream to only css files
@@ -153,6 +153,7 @@ gulp.task('styles', function () {
 // Compile SCSS, add vendor prefixes, minify, save to assets/css directory
 gulp.task('login-styles', function () {
   gulp.src( styleAdminSRC )
+  .pipe( sourcemaps.init() )
   .pipe( sass( {
     errLogToConsole: true,
       // outputStyle: 'compact',
@@ -162,7 +163,10 @@ gulp.task('login-styles', function () {
       precision: 10
     } ) )
   .on('error', console.error.bind(console))
+  .pipe( sourcemaps.write( { includeContent: false } ) )
+  .pipe( sourcemaps.init( { loadMaps: true } ) )
   .pipe( autoprefixer( AUTOPREFIXER_BROWSERS ) )
+  .pipe( sourcemaps.write ( './' ) ) // Write sourcemap to same folder
   .pipe( lineec() ) // Consistent Line Endings for non UNIX systems
   .pipe( gulp.dest( styleAdminDestination ) )
   .pipe( filter( '**/*.css' ) ) // Filtering stream to only css files
