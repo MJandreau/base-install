@@ -14,7 +14,7 @@ html {
 // Body class for the login page
 .login  {
 	background-color: $color_background_hero;
-	background: linear-gradient($color_hero_overlay, $color_hero_overlay), url('../../assets/img/hero.jpg');
+	background: linear-gradient($color_hero_overlay, $color_hero_overlay), url('../img/hero.jpg'); 
 	@include font-size(1);
 	@include bgImage;
 
@@ -27,7 +27,7 @@ html {
 
 	// Login page logo
 	h1 a {
-		background-image: url('../../assets/img/logo.png');
+		background-image: url('../img/logo.png'); 
 		// background-image: none, url('../../assets/img/logo.svg'); // if you have an SVG version, uncomment this
 		background-position: center top;
 		background-repeat: no-repeat;
