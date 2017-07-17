@@ -55,6 +55,11 @@
 				?>
 
 				<?php
+
+
+					if($logo = get_option('baseinstall_options'))
+					{ echo '<img src="' . $logo['baseinstall-logo'] . '" alt="">'; }
+
 					if($facebook = get_option('baseinstall_options'))
 					{ echo '<a class="button button-primary" target="_blank" href="' . $facebook['baseinstall-social-facebook'] . '">Facebook</a>'; }
 
