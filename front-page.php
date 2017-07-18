@@ -55,44 +55,43 @@
 				?>
 
 
-<?php 
+				<?php 
 
-	if ($logo = get_option('baseinstall_options')['baseinstall-logo']) { 
-		echo '<img src="' . $logo . '" alt="logo">';
-	} else { 
-		// do nothing; 
-	}
+					// These fields are controlled using the theme options located in Appearance -> Theme Options
 
-?>
+					if ($logo = get_option('baseinstall_options')['baseinstall-logo']) { 
+						echo '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home"><img src="' . $logo . '" alt="' . get_bloginfo( 'name' ) . ' Logo"></a>';
+					} else { 
+						// do nothing; 
+					}
 
-<br>
+				?>
 
-<?php 
+				<br>
 
-	if ($twitter = get_option('baseinstall_options')['baseinstall-social-twitter']) { 
-		echo '<a class="button button-primary" target="_blank" href="' . $twitter . '">Twitter</a>';
-	} else { 
-		// do nothing; 
-	}
+				<?php 
 
-	if ($facebook = get_option('baseinstall_options')['baseinstall-social-facebook']) { 
-		echo '<a class="button button-primary" target="_blank" href="' . $facebook . '">Facebook</a>';
-	} else { 
-		// do nothing; 
-	}
+					// These fields are controlled using the theme options located in Appearance -> Theme Options
 
-	if ($googleplus = get_option('baseinstall_options')['baseinstall-social-googleplus']) { 
-		echo '<a class="button button-primary" target="_blank" href="' . $googleplus . '">Google&#43;</a>';
-	} else { 
-		// do nothing; 
-	}
+					if ($twitter = get_option('baseinstall_options')['baseinstall-social-twitter']) { 
+						echo '<a class="button button-primary" target="_blank" href="' . $twitter . '">Twitter</a>';
+					} else { 
+						// do nothing; 
+					}
 
-?>
+					if ($facebook = get_option('baseinstall_options')['baseinstall-social-facebook']) { 
+						echo '<a class="button button-primary" target="_blank" href="' . $facebook . '">Facebook</a>';
+					} else { 
+						// do nothing; 
+					}
 
+					if ($googleplus = get_option('baseinstall_options')['baseinstall-social-googleplus']) { 
+						echo '<a class="button button-primary" target="_blank" href="' . $googleplus . '">Google&#43;</a>';
+					} else { 
+						// do nothing; 
+					}
 
-
-
-
+				?>
 
 			</div>
 			

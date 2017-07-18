@@ -1,5 +1,5 @@
 <?php 
-/******************************************************************************
+/*
  * theme-options.php
  * 
  * Table of contents:
@@ -10,16 +10,12 @@
  * 4. SANITIZE FUNCTIONS
  * 5. CUSTOM SCRIPTS
  * 6. OTHER FUNCTIONS
- *****************************************************************************/
+ */
 
 
 
-
-
-/******************************************************************************
- * 1. DEFINITIONS
- *****************************************************************************/
 /*
+ * 1. DEFINITIONS
  * Section information.
  */
 $baseinstall_sections = [
@@ -128,11 +124,9 @@ $baseinstall_fields = [
 
 
 
-
-
-/******************************************************************************
+/*
  * 2. HOOKS
- *****************************************************************************/
+ */
 add_action( 'after_setup_theme', 'baseinstall_init_option' );
 add_action( 'admin_menu', 'baseinstall_update_menu' );
 add_action( 'admin_init', 'baseinstall_init_settings' );
@@ -140,12 +134,8 @@ add_action( 'admin_enqueue_scripts', 'baseinstall_options_custom_scripts' );
 
 
 
-
-
-/******************************************************************************
- * 3. RENDER FUNCTIONS
- *****************************************************************************/
 /*
+ * 3. RENDER FUNCTIONS
  * Renders a section description.
  */
 function baseinstall_render_section( $args ) {
@@ -156,7 +146,7 @@ function baseinstall_render_section( $args ) {
 }
 
 /*
- * Renders a field.
+ * Renders input fields: can be text, textarea, checkbox, radio, select, or upload
  */
 function baseinstall_render_field( $id ) {
     global $baseinstall_fields;
@@ -230,7 +220,7 @@ function baseinstall_render_theme_options() {
     } ?>
 
     <div class="wrap">
-        <h1>Theme options</h1>
+        <h1>Theme Options</h1>
 
         <?php settings_errors(); ?>
 
@@ -247,12 +237,8 @@ function baseinstall_render_theme_options() {
 
 
 
-
-
-/******************************************************************************
- * 4. SANITIZE FUNCTIONS
- *****************************************************************************/
 /*
+ * 4. SANITIZE FUNCTIONS
  * Sanitizes the settings.
  */
 function baseinstall_options_validate( $input ) {
@@ -288,12 +274,8 @@ function baseinstall_options_validate( $input ) {
 
 
 
-
-
-/******************************************************************************
- * 5. CUSTOM SCRIPTS
- *****************************************************************************/
 /*
+ * 5. CUSTOM SCRIPTS
  * Registers and loads custom JavaScript and CSS.
  */
 function baseinstall_options_custom_scripts() {
@@ -306,7 +288,6 @@ function baseinstall_options_custom_scripts() {
     // Register custom styles.
     wp_register_style( 'baseinstall-custom-admin-styles', get_template_directory_uri() .'/assets/css/baseinstall-theme-options.css' );
     
-
     // Only load these scripts if we're on the theme options page.
     if ( 'appearance_page_baseinstall-theme-options' == $screen->id ) {
         // Enqueues all scripts, styles, settings, and templates necessary to use all media JavaScript APIs.
@@ -322,12 +303,8 @@ function baseinstall_options_custom_scripts() {
 
 
 
-
-
-/******************************************************************************
- * 6. OTHER FUNCTIONS
- *****************************************************************************/
 /*
+ * 6. OTHER FUNCTIONS
  * Returns the default value of a field.
  */
 function baseinstall_get_field_default( $id ) {
@@ -351,7 +328,7 @@ function baseinstall_init_option() {
  * Creates a sub-menu under Appearance.
  */
 function baseinstall_update_menu() {
-    add_theme_page( 'Theme options', 'Theme options', 'manage_options', 'baseinstall-theme-options', 'baseinstall_render_theme_options' );
+    add_theme_page( 'Theme Options', 'Theme Options', 'manage_options', 'baseinstall-theme-options', 'baseinstall_render_theme_options' );
 }
 
 /*
@@ -377,7 +354,7 @@ function baseinstall_init_settings() {
 }
 
 /*
- * Returns the sanitize value of a field.
+ * Returns the sanitized field value.
  */
 function baseinstall_get_field_sanitize( $id ) {
     global $baseinstall_fields;
