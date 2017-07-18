@@ -49,6 +49,14 @@ $baseinstall_fields = [
         'desc'     => 'Set your default logo. Upload or choose an existing one.',
         'sanitize' => ''
     ],
+    'baseinstall-logo-alt-text' => [
+        'title'    => 'Logo alt text',
+        'type'     => 'text',
+        'section'  => 'section-theme-settings',
+        'default'  => '',
+        'desc'     => 'Set your default logo alt text.',
+        'sanitize' => ''
+    ],
     'baseinstall-logo-alternate' => [
         'title'    => 'Alternate logo',
         'type'     => 'upload',

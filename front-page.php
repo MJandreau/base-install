@@ -54,21 +54,45 @@
 				the_posts_navigation(); // If front page is set to show latest posts, get the post navigation
 				?>
 
-				<?php
+
+<?php 
+
+	if (($logo = get_option('baseinstall_options')['baseinstall-logo']) && ($logo_alt = get_option('baseinstall_options')['baseinstall-logo-alt-text'])) { 
+		echo '<img src="' . $logo . '" alt="' . $logo_alt . '">';
+	} else { 
+		// do nothing; 
+	}
+
+?>
+
+<br>
+
+<?php 
+
+	if ($twitter = get_option('baseinstall_options')['baseinstall-social-twitter']) { 
+		echo '<a class="button button-primary" target="_blank" href="' . $twitter . '">Twitter</a>';
+	} else { 
+		// do nothing; 
+	}
+
+	if ($facebook = get_option('baseinstall_options')['baseinstall-social-facebook']) { 
+		echo '<a class="button button-primary" target="_blank" href="' . $facebook . '">Facebook</a>';
+	} else { 
+		// do nothing; 
+	}
+
+	if ($googleplus = get_option('baseinstall_options')['baseinstall-social-googleplus']) { 
+		echo '<a class="button button-primary" target="_blank" href="' . $googleplus . '">Google&#43;</a>';
+	} else { 
+		// do nothing; 
+	}
+
+?>
 
 
-					if($logo = get_option('baseinstall_options'))
-					{ echo '<img src="' . $logo['baseinstall-logo'] . '" alt="">'; }
 
-					if($facebook = get_option('baseinstall_options'))
-					{ echo '<a class="button button-primary" target="_blank" href="' . $facebook['baseinstall-social-facebook'] . '">Facebook</a>'; }
 
-					if($twitter = get_option('baseinstall_options'))
-					{ echo '<a class="button button-primary" target="_blank" href="' . $twitter['baseinstall-social-twitter'] . '">Twitter</a>'; }
 
-					if($googleplus = get_option('baseinstall_options'))
-					{ echo '<a class="button button-primary" target="_blank" href="' . $googleplus['baseinstall-social-googleplus'] . '">Google&#43;</a>'; }
-				?>
 
 			</div>
 			
