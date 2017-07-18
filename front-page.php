@@ -57,8 +57,8 @@
 
 <?php 
 
-	if (($logo = get_option('baseinstall_options')['baseinstall-logo']) && ($logo_alt = get_option('baseinstall_options')['baseinstall-logo-alt-text'])) { 
-		echo '<img src="' . $logo . '" alt="' . $logo_alt . '">';
+	if ($logo = get_option('baseinstall_options')['baseinstall-logo']) { 
+		echo '<img src="' . $logo . '" alt="logo">';
 	} else { 
 		// do nothing; 
 	}
