@@ -54,6 +54,11 @@ var scriptFile            = 'scripts'; // Compiled JS file name.
 var imagesSRC               = './assets/img/raw/**/*.{png,jpg,gif,svg}'; // Source folder of unoptimized images
 var imagesDestination       = './assets/img/'; // Destination folder of optimized images
 
+// Favicons
+var faviconSRC              = './assets/favicons/_favicon.svg'; // Source folder of favicons
+var faviconDestination      = './assets/favicons/'; // Destination folder of favicons
+var faviconDataFile         = './assets/favicons/faviconData.json'; // File where the favicon markups are stored
+
 // Watch file paths
 var styleWatchFiles         = './assets/sass/**/*.scss'; // Path to all *.scss files inside css folder and inside them
 var styleAdminWatchFiles    = ['./assets/sass/base/*.scss', './assets/sass/login-style.scss'] ; // Path to admin SCSS file
@@ -90,8 +95,11 @@ var jshint       = require('gulp-jshint'); // Checks JS for errors
 var concat       = require('gulp-concat'); // Concatenates JS files
 var uglify       = require('gulp-uglify'); // Minifies JS files
 
-// Image realted plugins
+// Image related plugins
 var imagemin     = require('gulp-imagemin'); // Minify PNG, JPEG, GIF and SVG images with imagemin.
+
+// Favicon related plugins
+var realFavicon  = require ('gulp-real-favicon');
 
 // Utility plugins
 var rename       = require('gulp-rename'); // Renames files E.g. style.css -> style.min.css
@@ -214,6 +222,71 @@ gulp.task( 'images', function() {
   } ) )
   .pipe(gulp.dest( imagesDestination ))
   .pipe( notify( { message: 'TASK: "images" Completed! 💯', onLast: true } ) );
+});
+
+// FAVICONS TASK
+// Run 'gulp generate-favicon' to create the icons - from http://realfavicongenerator.net/ 
+gulp.task('generate-favicon', function(done) {
+  realFavicon.generateFavicon({
+    masterPicture: ( faviconSRC ),
+    dest: ( faviconDestination ),
+    iconsPath: ( faviconDestination ),
+    design: {
+      ios: {
+        pictureAspect: 'backgroundAndMargin',
+        backgroundColor: '#ffffff',
+        margin: '0%',
+        assets: {
+          ios6AndPriorIcons: false,
+          ios7AndLaterIcons: false,
+          precomposedIcons: false,
+          declareOnlyDefaultIcon: true
+        }
+      },
+      desktopBrowser: {},
+      windows: {
+        pictureAspect: 'whiteSilhouette',
+        backgroundColor: '#00aba9',
+        onConflict: 'override',
+        assets: {
+          windows80Ie10Tile: false,
+          windows10Ie11EdgeTiles: {
+            small: false,
+            medium: true,
+            big: false,
+            rectangle: false
+          }
+        }
+      },
+      androidChrome: {
+        pictureAspect: 'backgroundAndMargin',
+        margin: '17%',
+        backgroundColor: '#ffffff',
+        themeColor: '#ffffff',
+        manifest: {
+          display: 'standalone',
+          orientation: 'notSet',
+          onConflict: 'override',
+          declared: true
+        },
+        assets: {
+          legacyIcon: false,
+          lowResolutionIcons: false
+        }
+      },
+      safariPinnedTab: {
+        pictureAspect: 'silhouette',
+        themeColor: '#43cea2'
+      }
+    },
+    settings: {
+      scalingAlgorithm: 'Mitchell',
+      errorOnImageTooSmall: false
+    },
+    markupFile: faviconDataFile
+  }, function() {
+    done();
+  });
 });
 
 // WP POT
