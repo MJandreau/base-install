@@ -351,6 +351,19 @@ add_filter( 'template_include', array( 'baseinstall_wrapper', 'wrap' ), 99 );
 
 
 /**
+ * CONTACT FORM 7 
+ * If you have a jQuery/plugin/theme conflict with CF7, de-register CF7 scripts
+ */
+/*
+function baseinstall_deregister_javascript() {
+    wp_deregister_script( 'contact-form-7' );
+}
+add_action( 'wp_print_scripts', 'baseinstall_deregister_javascript', 100 );
+*/
+
+
+
+/**
  * HIDE ADMIN BAR
  * Removes admin bar from front end - optional, but nice for development
  */
