@@ -48,7 +48,7 @@ input {
 	&[type="checkbox"],
 	&[type="radio"] {
 		display: inline;
-		margin-right: 10px;
+		// margin-right: 10px;
 	}
 }
 
@@ -64,11 +64,24 @@ select {
 }
 
 textarea {
-	display: block;
+	display: inline-block;
 	appearance: none;
 	min-height: 10rem;
 	height: auto;
+	width: 100%;
 	max-width: 100%;
+
+	// box-sizing: content-box;
+	// overflow: hidden;
+	// padding: 10px;
+	// width: 250px;
+	// font-size: 14px;
+	// margin: 50px auto;
+	// display: block;
+	// border-radius: 10px;
+	// border: 6px solid #556677;
+	// outline: none;
+	// resize: none;
 }
 
 label,
@@ -168,85 +181,83 @@ input:-webkit-autofill {
 
 
 
-/* Powered by: https://github.com/tonystar/float-label-css
- */
+// //  Powered by: https://github.com/tonystar/float-label-css
 
-/* Re-usable mixins
- * https://github.com/tonystar/float-label-css/blob/master/scss/_mixins.scss
- */
-@mixin float-label-container {
-  display: block;
-  position: relative;
-}
+// // Re-usable mixins
+// // https://github.com/tonystar/float-label-css/blob/master/scss/_mixins.scss
 
-@mixin float-label {
-  label, > span {
-    position: absolute;
-    left: 0;
-    top: 0;
-    cursor: text;
-    font-size: 75%;
-    opacity: 1;
-    transition: all .2s;
-    @content;
-  }
-}
+// @mixin float-label-container {
+//   display: block;
+//   position: relative;
+// }
 
-@mixin float-label-input {
-  &::placeholder {
-    opacity: 1;
-    transition: all .3s;
-  }
-  &:placeholder-shown:not(:focus)::placeholder {
-      opacity: 0;
-  }
-}
+// @mixin float-label {
+//   label, > span {
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     cursor: text;
+//     font-size: 75%;
+//     opacity: 1;
+//     transition: all .2s;
+//     @content;
+//   }
+// }
 
-@mixin float-label-scaled {
-  &:placeholder-shown:not(:focus) + * {
-      font-size: 100%;
-      opacity: .5;
-      @content;
-  }
-}
+// @mixin float-label-input {
+//   &::placeholder {
+//     opacity: 1;
+//     transition: all .3s;
+//   }
+//   &:placeholder-shown:not(:focus)::placeholder {
+//       opacity: 0;
+//   }
+// }
 
-/* Default styling
- * https://github.com/tonystar/float-label-css/blob/master/scss/float-label.scss
- */
-.has-float-label {
-  @include float-label-container;
+// @mixin float-label-scaled {
+//   &:placeholder-shown:not(:focus) + * {
+//       font-size: 100%;
+//       opacity: .5;
+//       @content;
+//   }
+// }
 
-  @include float-label;
+// // Default styling
+// // https://github.com/tonystar/float-label-css/blob/master/scss/float-label.scss 
+// .has-float-label {
+//   @include float-label-container;
 
-  select {
-  	appearance: none;
-  }
+//   @include float-label;
 
-  input, select, textarea {
-    @include float-label-input;
-    font-size: inherit;
-    padding-top: 1em;
-    padding-left: 0;
-    margin-bottom: 20px;
-    border: 0;
-    border-radius: 0;
-    border-bottom: 2px solid rgba(0,0,0,.1);
+//   select {
+//   	appearance: none;
+//   }
 
-    @include float-label-scaled {
-		// top: .25em;
-		top: 1em;
-    }
+//   input, select, textarea {
+//     @include float-label-input;
+//     font-size: inherit;
+//     padding-top: 1em;
+//     padding-left: 0;
+//     margin-bottom: 20px;
+//     border: 0;
+//     border-radius: 0;
+//     border-bottom: 2px solid rgba(0,0,0,.1);
 
-    &:focus {
-      outline: none;
-      border-color: rgba(0,0,0,.5);
-    }
-  }
+//     @include float-label-scaled {
+// 		// top: .25em;
+// 		top: 1em;
+//     }
 
-  // select {
-    // padding-right: 1em;
-    // background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .5em bottom .25em;
-    // background-size: 8px 10px;
-  // }
-}
+//     &:focus {
+//       outline: none;
+//       border-color: rgba(0,0,0,.5);
+//     }
+//   }
+
+//   // select {
+//     // padding-right: 1em;
+//     // background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .5em bottom .25em;
+//     // background-size: 8px 10px;
+//   // }
+// }
 

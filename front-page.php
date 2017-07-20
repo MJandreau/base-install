@@ -121,7 +121,7 @@
   </label>
 
   <label class="has-float-label">
-    <textarea type="textarea" placeholder="Your Message"/></textarea>
+    <textarea id="formTextArea" type="textarea" placeholder="Your Message"/></textarea>
     <span>Message</span>
   </label>
 
