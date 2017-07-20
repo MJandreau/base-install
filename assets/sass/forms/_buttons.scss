@@ -72,6 +72,14 @@ input[type="submit"] {
 			margin-right: 0;
 		}
 	}
+
+	.social-block & { // gives some spacing between social buttons
+		margin-right: $column_margin / 2;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
 }
 
 .more-link {

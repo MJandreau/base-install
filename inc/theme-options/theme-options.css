@@ -4,9 +4,13 @@
     margin-bottom: 18px;
     border: 1px solid #cccccc;
     display: block;
-    padding: 15px;
+    padding: 0;
 }
 
 .hide {
     display: none !important;
+}
+
+.btn-upload-img.button {
+	margin-right: 15px;
 }

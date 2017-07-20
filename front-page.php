@@ -69,7 +69,8 @@
 
 				<br>
 
-				<?php 
+				<div class="social-block">
+					<?php 
 
 					// These fields are controlled using the theme options located in Appearance -> Theme Options
 
@@ -92,6 +93,44 @@
 					}
 
 				?>
+				</div>
+
+
+
+
+<form>
+
+  <label class="has-float-label">
+    <input type="text" placeholder="Bob Jones"/>
+    <span>Name</span>
+  </label>
+
+  <label class="has-float-label">
+    <input type="email" placeholder="email@example.com"/>
+    <span>Email</span>
+  </label>
+
+  <label class="has-float-label">
+    <input type="password" placeholder="••••••••"/>
+    <span>Password</span>
+  </label>
+
+  <label class="has-float-label">
+	<select class="u-full-width" id="exampleRecipientInput"><option selected disabled>Choose One</option><option value="Option 1">Questions</option><option value="Option 2">Admiration</option><option value="Option 3">Can I get your number?</option></select>
+    <span>Password</span>
+  </label>
+
+  <label class="has-float-label">
+    <textarea type="textarea" placeholder="Your Message"/></textarea>
+    <span>Message</span>
+  </label>
+
+  <button>Sign up</button>
+</form>
+
+
+
+
 
 			</div>
 			

@@ -41,7 +41,7 @@ var styleAdminDestination   = './assets/css/'; // Path to place compiled admin C
 // JavaScript related
 // var scriptSRC             = './assets/js/vendor/*.js'; // Path to JS folder if you don't care about concat order
 var scriptSRC             = [
-                              // './assets/js/vendor/jquery-2.2.4.js', // jQuery is optional
+                              // './assets/js/vendor/jquery-2.2.4.js', // Include jQuery if you want
                               './assets/js/vendor/class-helpers.js', // Pure JS class toggling
                               './assets/js/vendor/skip-link-focus-fix.js', // WP skip link
                               './assets/js/vendor/prism.js', // syntax highlighter for code blocks (optional, has associated SASS file for styles/themes)

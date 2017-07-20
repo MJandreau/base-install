@@ -112,10 +112,10 @@ function baseinstall_scripts() {
 	// wp_enqueue_style( 'baseinstall-min-style', get_template_directory_uri() . '/style.min.css', array(), time() ); 
 
 	// theme styles
-	wp_enqueue_style( 'baseinstall-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'baseinstall-css', get_stylesheet_uri() );
 
 	// theme scripts
-	wp_enqueue_script( 'baseinstall-navigation', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '20151215', true ); 
+	wp_enqueue_script( 'baseinstall-js', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '20151215', true ); 
 
 	// responsive media queries for IE
 	wp_enqueue_script( 'baseinstall-respond', get_template_directory_uri().'/assets/vendor/js/respond.min.js' );
@@ -189,7 +189,7 @@ require get_template_directory() . '/inc/nav-walker.php';
 /*
  * Load the theme options page.
  */
-require get_template_directory() . '/inc/theme-options.php';
+require get_template_directory() . '/inc/theme-options/theme-options.php';
 
 
 /**

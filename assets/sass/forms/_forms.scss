@@ -48,6 +48,7 @@ input {
 	&[type="checkbox"],
 	&[type="radio"] {
 		display: inline;
+		margin-right: 10px;
 	}
 }
 
@@ -58,7 +59,7 @@ select {
 	// Down Arrow Icon - SVG color can be changed by upating the hex in the <path> below - currently set to #404040
 	// You have to URL encode the data URL contents, which means converting #  to %23 like so: <path fill='%23404040' ...
 	background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='#{$size_input_icon_select}' height='#{$size_input_icon_select}' viewBox='0 0 24 24'><path fill='%23#{$color_input_icons}' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");
-	background-position: 98% 60%;
+	background-position: 99% 60%;
 	background-repeat: no-repeat;
 }
 
@@ -121,6 +122,11 @@ form {
 			background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='#{$size_input_icon_search}' height='#{$size_input_icon_search}' viewBox='0 0 57 57'><path fill='%23#{$color_input_icons}' d='M55.146 51.887l-13.558-14.1c3.486-4.145 5.396-9.36 5.396-14.787 0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.76 0 9.298-1.436 13.177-4.162l13.662 14.208c.57.593 1.34.92 2.162.92.78 0 1.518-.297 2.08-.837 1.19-1.148 1.23-3.05.082-4.243zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z'></path></svg>");
 			background-position: 50% 50%;
 			background-repeat: no-repeat;
+
+			&:hover,
+			&:focus {
+				border-color: transparent;
+			}
 		}
 	}
 }
@@ -137,3 +143,110 @@ input:-webkit-autofill {
 	-webkit-animation-name: autofill;
 	-webkit-animation-fill-mode: both;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Powered by: https://github.com/tonystar/float-label-css
+ */
+
+/* Re-usable mixins
+ * https://github.com/tonystar/float-label-css/blob/master/scss/_mixins.scss
+ */
+@mixin float-label-container {
+  display: block;
+  position: relative;
+}
+
+@mixin float-label {
+  label, > span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: text;
+    font-size: 75%;
+    opacity: 1;
+    transition: all .2s;
+    @content;
+  }
+}
+
+@mixin float-label-input {
+  &::placeholder {
+    opacity: 1;
+    transition: all .3s;
+  }
+  &:placeholder-shown:not(:focus)::placeholder {
+      opacity: 0;
+  }
+}
+
+@mixin float-label-scaled {
+  &:placeholder-shown:not(:focus) + * {
+      font-size: 100%;
+      opacity: .5;
+      @content;
+  }
+}
+
+/* Default styling
+ * https://github.com/tonystar/float-label-css/blob/master/scss/float-label.scss
+ */
+.has-float-label {
+  @include float-label-container;
+
+  @include float-label;
+
+  select {
+  	appearance: none;
+  }
+
+  input, select, textarea {
+    @include float-label-input;
+    font-size: inherit;
+    padding-top: 1em;
+    padding-left: 0;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid rgba(0,0,0,.1);
+
+    @include float-label-scaled {
+		// top: .25em;
+		top: 1em;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: rgba(0,0,0,.5);
+    }
+  }
+
+  // select {
+    // padding-right: 1em;
+    // background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .5em bottom .25em;
+    // background-size: 8px 10px;
+  // }
+}
+
