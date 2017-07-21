@@ -31,8 +31,8 @@ var team                    = 'WPTie <your_email@email.com>'; // Team's Email ID
 var translatePath           = './languages' // Where to save the translation files.
 
 // Style related
-var styleSRC                = './assets/sass/style.scss'; // Path to main .scss file.
-var styleDestination        = './'; // Places compiled CSS file in root folder, could also be './assets/css/' or some other folder, just remember to update file path in functions.php
+var styleSRC                = './assets/sass/main.scss'; // Path to main .scss file.
+var styleDestination        = './assets/css/'; // Places compiled CSS file in root folder, could also be './assets/css/' or some other folder, just remember to update file path in functions.php
 
 // Admin Style related
 var styleAdminSRC           = './assets/sass/login-style.scss'; // Path to main .scss file.
@@ -45,10 +45,11 @@ var scriptSRC             = [
                               './assets/js/vendor/class-helpers.js', // Pure JS class toggling
                               './assets/js/vendor/skip-link-focus-fix.js', // WP skip link
                               './assets/js/vendor/prism.js', // syntax highlighter for code blocks (optional, has associated SASS file for styles/themes)
+                              './assets/js/vendor/autosize.js', // autosize text area in forms to fit content (optional)
                               './assets/js/custom/*.js' // menu-controls.js, scroll-to-top.js, etc.
                             ]; // Path to JS vendor and custom files in order.
 var scriptDestination     = './assets/js/'; // Path to save the compiled JS file.
-var scriptFile            = 'scripts'; // Compiled JS file name.
+var scriptFile            = 'main'; // Compiled JS file name.
 
 // Images
 var imagesSRC               = './assets/img/raw/**/*.{png,jpg,gif,svg}'; // Source folder of unoptimized images
