@@ -9,7 +9,8 @@
  * 6. Watches files for changes in PHP.
  * 7. Corrects the line endings.
  * 8. InjectCSS instead of browser page reload.
- * 9. Generates .pot file for i18n and l10n.
+ * 9. Generates favicons
+ * 10. Generates .pot file for i18n and l10n.
  *
  * Based on Ahmad Awais excellent Gulp workflow
  */
@@ -18,7 +19,7 @@
 
 // START Editing Project Variables
 var project                 = 'Base_Install'; // Project Name.
-var projectURL              = 'dev8'; // Project URL. Could be something like localhost:8888.
+var projectURL              = 'baseinstall'; // Project URL. Could be something like localhost:8888.
 var productURL              = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Translation related
@@ -57,6 +58,7 @@ var imagesDestination       = './assets/img/'; // Destination folder of optimize
 
 // Favicons
 var faviconSRC              = './assets/favicons/_favicon.svg'; // Source folder of favicons
+var faviconAdminSRC         = './assets/favicons/_admin-favicon.svg'; // Source admin favicon
 var faviconDestination      = './assets/favicons/'; // Destination folder of favicons
 var faviconDataFile         = './assets/favicons/faviconData.json'; // File where the favicon markups are stored
 
@@ -225,11 +227,12 @@ gulp.task( 'images', function() {
   .pipe( notify( { message: 'TASK: "images" Completed! 💯', onLast: true } ) );
 });
 
-// FAVICONS TASK
-// Run 'gulp generate-favicon' to create the icons - from http://realfavicongenerator.net/ 
+// FAVICONS TASK 
+// Run 'gulp generate-favicon' to create icons
 gulp.task('generate-favicon', function(done) {
   realFavicon.generateFavicon({
-    masterPicture: ( faviconSRC ),
+    // masterPicture: ( faviconAdminSRC ), // Uncomment this line and run 'gulp generate-favicon', then rename favicon.ico to admin-favicon.ico
+    masterPicture: ( faviconSRC ), // Run regular favicon task
     dest: ( faviconDestination ),
     iconsPath: ( faviconDestination ),
     design: {
