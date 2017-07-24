@@ -2119,62 +2119,7 @@ autosize(document.querySelectorAll('textarea'));
             }
             return;
         }
-
-
-
-
-
-
-
-
-
-
-// // Find our gallery container, and the list of image containers within it:
-// var baguetteBoxGetCaption = document.querySelector('.gallery');
-// var imageContainers = baguetteBoxGetCaption.getElementsByClassName('gallery-item');
-
-// // Loop through the image containers:
-// for (var i = 0; i < imageContainers.length; i++) {
-//     var image = imageContainers[i].getElementsByTagName('img')[0];
-    
-//     // Create a span element - we'll use this to house our caption:
-//     var caption = document.createElement('span');
-    
-//     // Stick the alt tag from the image we found above into the caption <span>:
-//     caption.innerHTML = image.alt;
-    
-//     // Insert the caption <span> into the image container:
-//     imageContainers[i].appendChild(caption);
-// }
-
-
-
-
-
-        // // Get element reference, optional caption and source path
-        // var imageElement = document.querySelector('.gallery');
-        // var thumbnailElement = imageElement[i].getElementsByTagName('img')[0];
-        // var imageCaption = typeof options.captions === 'function' ?
-        //                     options.captions.call(currentGallery, imageElement) :
-        //                     imageElement.getAttribute('data-caption') || imageElement.alt;
-        // var imageSrc = getImageSrc(imageElement);
-
-        // var figure = create('figure');
-        // figure.id = 'baguetteBox-figure-' + index;
-        // figure.innerHTML = '<div class="baguetteBox-spinner">' +
-        //     '<div class="baguetteBox-double-bounce1"></div>' +
-        //     '<div class="baguetteBox-double-bounce2"></div>' +
-        //     '</div>';
-        // // Insert caption if available
-        // if (options.captions && imageCaption) {
-        //     var figcaption = create('figcaption');
-        //     figcaption.id = 'baguetteBox-figcaption-' + index;
-        //     figcaption.innerHTML = imageCaption;
-        //     figure.appendChild(figcaption);
-        // }
-        // imageContainer.appendChild(figure);
-
-
+        
         // Get element reference, optional caption and source path
         var imageElement = galleryItem.imageElement;
         var thumbnailElement = imageElement.getElementsByTagName('img')[0];
