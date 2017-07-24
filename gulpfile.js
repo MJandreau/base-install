@@ -47,6 +47,7 @@ var scriptSRC             = [
                               './assets/js/vendor/skip-link-focus-fix.js', // WP skip link
                               './assets/js/vendor/prism.js', // syntax highlighter for code blocks (optional, has associated SASS file for styles/themes)
                               './assets/js/vendor/autosize.js', // autosize text area in forms to fit content (optional)
+                              './assets/js/vendor/baguetteBox.js', // pure js image lightbox & slideshow (optional)
                               './assets/js/custom/*.js' // menu-controls.js, scroll-to-top.js, etc.
                             ]; // Path to JS vendor and custom files in order.
 var scriptDestination     = './assets/js/'; // Path to save the compiled JS file.
@@ -228,7 +229,7 @@ gulp.task( 'images', function() {
 });
 
 // FAVICONS TASK 
-// Run 'gulp generate-favicon' to create icons
+// Run 'gulp generate-favicon' to create icons - see http://realfavicongenerator.net/ for configuration options
 gulp.task('generate-favicon', function(done) {
   realFavicon.generateFavicon({
     // masterPicture: ( faviconAdminSRC ), // Uncomment this line and run 'gulp generate-favicon', then rename favicon.ico to admin-favicon.ico

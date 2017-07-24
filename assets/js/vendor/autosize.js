@@ -295,5 +295,4 @@
 * FORM TEXTAREA RESIZE
 * Trigger JavaScript resizing of form textarea using autosize.js, no jQuery required
 */
-
 autosize(document.querySelectorAll('textarea'));

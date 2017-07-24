@@ -326,6 +326,36 @@ add_filter( 'template_include', array( 'baseinstall_wrapper', 'wrap' ), 99 );
 
 
 
+
+
+
+
+
+
+
+
+/*
+// add data attribute for image gallery
+function wpdocs_filter_gallery_img_atts( $atts, $attachment ) {
+
+    if ( $full_size = wp_get_attachment_image_src( $attachment->ID, 'full' ) ) {
+        if ( ! empty( $full_size[0] ) ) {
+            $atts['data-full-size'] = $full_size[0];
+        }
+    }
+
+    $atts['data-caption'] = $attachment->_wp_attachment_image_alt;
+
+    $atts['data-description'] = $attachment->post_content;
+
+    return $atts;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'wpdocs_filter_gallery_img_atts', 10, 2 );
+*/
+
+
+
+
 /**
  * CONTACT FORM 7 
  * If you have a jQuery/plugin/theme conflict with CF7, de-register CF7 scripts
