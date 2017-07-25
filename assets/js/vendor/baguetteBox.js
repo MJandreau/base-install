@@ -716,45 +716,18 @@
 
 
        
-/**
-* LIGHTBOX SLIDESHOW
-* Trigger JavaScript slideshow using baguetteBox.js, no jQuery required
-* If screen is smaller than 800px, hide left/right arrow buttons and use swipe
-*/ 
+// /**
+// * LIGHTBOX SLIDESHOW
+// * Trigger JavaScript slideshow using baguetteBox.js, no jQuery required
+// * If screen is smaller than 800px, hide left/right arrow buttons and use swipe
+// */ 
 
+// // Find .gallery and add .baguetteBox
+// var baguetteBoxGallery = document.querySelector('.gallery');
+// addClass(baguetteBoxGallery, 'baguetteBox');
 
-
-
-
-
-// Find our gallery container, and the list of image containers within it:
-// var baguetteBoxGetCaption = document.querySelector('.gallery');
-// var imageContainers = baguetteBoxGetCaption.getElementsByClassName('gallery-item');
-
-// // Loop through the image containers:
-// for (var i = 0; i < imageContainers.length; i++) {
-    
-//     // Find the image in each container:
-//     var image = imageContainers[i].getElementsByTagName('img')[0];
-    
-//     // Create a span element - we'll use this to house our caption:
-//     var caption = document.createElement('span');
-    
-//     // Stick the alt tag from the image we found above into the caption <span>:
-//     caption.innerHTML = image.alt;
-    
-//     // Insert the caption <span> into the image container:
-//     imageContainers[i].appendChild(caption);
-// }
-
-
-
-// Find .gallery and add .baguetteBox
-var baguetteBoxGallery = document.querySelector('.gallery');
-addClass(baguetteBoxGallery, 'baguetteBox');
-
-// Run it
-baguetteBox.run('.baguetteBox');
+// // Run it
+// baguetteBox.run('.baguetteBox');
 
 
 
