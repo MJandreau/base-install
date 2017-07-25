@@ -2346,20 +2346,35 @@ autosize(document.querySelectorAll('textarea'));
 
 
        
-// /**
-// * LIGHTBOX SLIDESHOW
-// * Trigger JavaScript slideshow using baguetteBox.js, no jQuery required
-// * If screen is smaller than 800px, hide left/right arrow buttons and use swipe
-// */ 
+/**
+* LIGHTBOX SLIDESHOW
+* Trigger JavaScript slideshow using baguetteBox.js, no jQuery required
+* If screen is smaller than 800px, hide left/right arrow buttons and use swipe
+*/ 
 
-// // Find .gallery and add .baguetteBox
-// var baguetteBoxGallery = document.querySelector('.gallery');
-// addClass(baguetteBoxGallery, 'baguetteBox');
+// Find .gallery and add .baguetteBox
+var baguetteBoxGallery = document.querySelectorAll('.gallery');
+addClass(baguetteBoxGallery, 'baguetteBox');
 
-// // Run it
-// baguetteBox.run('.baguetteBox');
+var baguetteBoxOne = document.getElementsByClassName('baguetteBox');
+if (baguetteBoxOne.length > 0) {
+    // Run it
+    baguetteBox.run('.baguetteBox');
+}
 
 
+var baguetteBoxTwo = document.getElementsByClassName('baguetteBox2');
+if (baguetteBoxTwo.length > 0) {
+    // Run it
+    baguetteBox.run('.baguetteBox2');
+}
+
+
+var baguetteBoxThree = document.getElementsByClassName('baguetteBox3');
+if (baguetteBoxThree.length > 0) {
+    // Run it
+    baguetteBox.run('.baguetteBox3');
+}
 
 
 /**
