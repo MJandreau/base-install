@@ -745,4 +745,3 @@ var baguetteBoxThree = document.getElementsByClassName('baguetteBox3');
 if (baguetteBoxThree.length > 0) {
     baguetteBox.run('.baguetteBox3');
 }
-

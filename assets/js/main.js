@@ -2376,7 +2376,6 @@ if (baguetteBoxThree.length > 0) {
     baguetteBox.run('.baguetteBox3');
 }
 
-
 /**
 * MOBILE NAVIGATION
 * Plain JavaScript functions to toggle the mobile navigation, no jQuery required
