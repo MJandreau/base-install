@@ -2345,34 +2345,36 @@ autosize(document.querySelectorAll('textarea'));
 
 
 
-       
+
 /**
 * LIGHTBOX SLIDESHOW
 * Trigger JavaScript slideshow using baguetteBox.js, no jQuery required
 * If screen is smaller than 800px, hide left/right arrow buttons and use swipe
 */ 
 
-// Find .gallery and add .baguetteBox
-var baguetteBoxGallery = document.querySelectorAll('.gallery');
-addClass(baguetteBoxGallery, 'baguetteBox');
+// Find all instances of .gallery
+var baguetteBoxGallery = document.getElementsByClassName('gallery');
 
-var baguetteBoxOne = document.getElementsByClassName('baguetteBox');
-if (baguetteBoxOne.length > 0) {
-    // Run it
-    baguetteBox.run('.baguetteBox');
+// Iterate through all instances of .gallery to add .baguetteBox
+for (var i = 0; i < baguetteBoxGallery.length; i++) {
+    // add the unique class to eliminate conflicts with multiple galleries
+    baguetteBoxGallery[i].classList.add("baguetteBox" + (i+1));
 }
 
+// Run up to 3 instances of slideshow on a single page
+// Follow the pattern to have more or less if needed
+var baguetteBoxOne = document.getElementsByClassName('baguetteBox1');
+if (baguetteBoxOne.length > 0) {
+    baguetteBox.run('.baguetteBox1');
+}
 
 var baguetteBoxTwo = document.getElementsByClassName('baguetteBox2');
 if (baguetteBoxTwo.length > 0) {
-    // Run it
     baguetteBox.run('.baguetteBox2');
 }
 
-
 var baguetteBoxThree = document.getElementsByClassName('baguetteBox3');
 if (baguetteBoxThree.length > 0) {
-    // Run it
     baguetteBox.run('.baguetteBox3');
 }
 
