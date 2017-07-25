@@ -714,8 +714,6 @@
 
 
 
-
-
 /**
 * LIGHTBOX SLIDESHOW
 * Trigger JavaScript slideshow using baguetteBox.js, no jQuery required

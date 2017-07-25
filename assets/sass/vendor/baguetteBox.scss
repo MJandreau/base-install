@@ -5,7 +5,8 @@
  * @url https://github.com/feimosi/baguetteBox.js
  */
 
-.baguetteBox {
+// .baguetteBox,
+*[class*="baguetteBox"] {
     img {
         border: 1px solid red;
     }
