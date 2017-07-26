@@ -191,11 +191,22 @@ function baseinstall_responsive_embeds( $content ) {
 }
 add_filter( 'the_content', 'baseinstall_responsive_embeds' );
 
-
+/**
+ * SET GALLERY LINKS TO MEDIA FILE
+ * Ensures photo gallery media items will trigger lightbox when clicked
+ */
+function baseinstall_set_gallery_links($out, $pairs, $atts) {
+	$atts = shortcode_atts( array( 
+		'link' => 'file' 
+		), $atts );
+	$out['link'] = $atts['link'];
+	return $out;
+}
+add_filter('shortcode_atts_gallery', 'baseinstall_set_gallery_links', 10, 3);
 
 /**
  * LINK SCROLL
- * remove link scroll from "read more" excerpt links
+ * Remove link scroll from "read more" excerpt links
  */
 function baseinstall_remove_more_link_scroll( $link ) {
 	$link = preg_replace( '|#more-[0-9]+|', '', $link );
@@ -333,25 +344,6 @@ add_filter( 'template_include', array( 'baseinstall_wrapper', 'wrap' ), 99 );
 
 
 
-
-/*
-// add data attribute for image gallery
-function wpdocs_filter_gallery_img_atts( $atts, $attachment ) {
-
-    if ( $full_size = wp_get_attachment_image_src( $attachment->ID, 'full' ) ) {
-        if ( ! empty( $full_size[0] ) ) {
-            $atts['data-full-size'] = $full_size[0];
-        }
-    }
-
-    $atts['data-caption'] = $attachment->_wp_attachment_image_alt;
-
-    $atts['data-description'] = $attachment->post_content;
-
-    return $atts;
-}
-add_filter( 'wp_get_attachment_image_attributes', 'wpdocs_filter_gallery_img_atts', 10, 2 );
-*/
 
 
 
