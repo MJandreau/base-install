@@ -134,7 +134,7 @@ section:focus {
 // scroll-to-content button (down-chevron)
 // to use this option, comment out the mouse-shaped CSS above
 // --------------------------------------------------
-@keyframes bounce {
+@keyframes arrowBounce {
 	0% { transform: translateY(0); }
 	50% { transform: translateY(-10px); }
 	100% { transform: translateY(0); }
@@ -157,7 +157,7 @@ section:focus {
 	transition: all $transistion_duration;
 	border-radius: 50%; // change to 0 to make the button square
 	padding: 0;
-	animation: bounce ($transistion_duration * 5) ease-out infinite forwards;
+	animation: arrowBounce ($transistion_duration * 5) ease-out infinite forwards;
 
 	@include laptop {
 		bottom: $chevronWidth * 2;
