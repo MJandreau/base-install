@@ -52,14 +52,14 @@ input[type="submit"] {
 
 		&:hover {
 			color: $color_white;
-			background: darken($brand_primary, 10%);
+			background-color: darken($brand_primary, 10%);
 			border-color: darken($brand_primary, 10%);
 		}
 
 		&:active,
 		&:focus {
 			color: $color_white;
-			background: darken($brand_primary, 20%);
+			background-color: darken($brand_primary, 20%);
 			border-color: darken($brand_primary, 20%);
 		}
 	}
