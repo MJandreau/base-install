@@ -1,51 +1,51 @@
-// Page sections and featured items
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-
+// Featured items
 // this is the base featured block, uses top padding and bottom margins
 // to give equal spacing between top/bottom of section and between divs
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 .section { 
-  padding: $column_margin 0 0;
-
-  @include tablet {
-    padding-top: $column_margin * 2;
-  }
+  padding: ($column_margin * 2) 0 0;
 
   .column {
-    margin-bottom: $column_margin;
-
-    @include tablet {
-      margin-bottom: $column_margin * 2;
-    }
+    margin-bottom: $column_margin * 2;
   }
 }
 
 // this is the subsection block
 .subsection {
-  background: $color_background_featured;
-  text-align: center;
+  // background: $color_background_featured;
+  // text-align: center;
+
+  img {
+    display: block;
+  }
   
   p {
     margin: 0;
-    line-height: 6rem;
   }
 }
 
 // alternate background color for section/subsection
 .section-alt {
   background-color: $color_background_featured;
-
-  .subsection {
-    background-color: #fff;
-  }
 }
 
-// styles for the section just below the hero
+
+
+// Strapline
+// styles for the strapline section just below the hero
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 .strapline {
   background: $color_background_strapline;
   border: 1px solid lighten($button_color_border, 15%);
 
   p {
     margin: 0;
+    line-height: 6rem;
+  }
+
+  .subsection {
+    background: $color_background_featured;
+    text-align: center;
   }
 }
 
@@ -67,13 +67,6 @@
 
 
 
-// move to blog styles
-.blog-sample {
-  background: #eee;
-  padding: $column_margin;
-  height: 360px;
-  margin-bottom: $column_margin * 2;
-}
 
 
 
