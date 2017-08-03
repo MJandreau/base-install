@@ -1,11 +1,15 @@
 .gallery {
 	margin-bottom: 1.5em;
+	margin-left: -($column_margin / 2);
+	margin-right: -($column_margin / 2);
 }
 
 .gallery-item {
 	display: inline-block;
 	text-align: center;
 	vertical-align: top;
+	margin-top: 0;
+	padding: 0 ($column_margin / 2);
 	width: 100%;
 
 	.gallery-columns-2 & {
