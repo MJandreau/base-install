@@ -109,20 +109,20 @@ add_action( 'widgets_init', 'baseinstall_widgets_init' );
 function baseinstall_scripts() {
 
 	// minified stylesheet
-	wp_enqueue_style( 'baseinstall-min-style', get_template_directory_uri() . '/assets/css/main.min.css', array(), time() ); 
-
+	wp_enqueue_style( 'baseinstall-min-style', get_template_directory_uri() . '/assets/css/main.css', array(), time() ); 
+	
 	// theme styles
 	wp_enqueue_style( 'baseinstall-css', get_stylesheet_uri() );
 
 	// theme scripts
-	wp_enqueue_script( 'baseinstall-js', get_template_directory_uri() . '/assets/js/main.min.js', array(), '20151215', true ); 
+	wp_enqueue_script( 'baseinstall-js', get_template_directory_uri() . '/assets/js/main.js', array(), '20151215', true ); 
 
 	// responsive media queries for IE
 	wp_enqueue_script( 'baseinstall-respond', get_template_directory_uri().'/assets/vendor/js/respond.min.js' );
 	wp_script_add_data( 'baseinstall-respond', 'conditional', 'lt IE 9' );
 
 	// html5shiv for IE
-	wp_enqueue_script( 'baseinstall-html5shiv',get_template_directory_uri().'/assets/vendor/js/html5shiv.min.js');
+	wp_enqueue_script( 'baseinstall-html5shiv', get_template_directory_uri().'/assets/vendor/js/html5shiv.min.js');
 	wp_script_add_data( 'baseinstall-html5shiv', 'conditional', 'lt IE 9' );
 
 	// comment script
