@@ -31,7 +31,7 @@ big {
 
 code, kbd, tt, var {
 	font-family: $font_code;
-	@include font-size(.9);
+	@include font-size(1.4);
 }
 
 pre {
@@ -40,7 +40,7 @@ pre {
 	font-weight: $font_weight_pre;
 	line-height: $font_line_height_pre;
 	border-radius: $border_radius;
-	@include font-size(.9);
+	@include font-size(1.4);
 	position: relative;
 	overflow: auto;
 	margin-top: 0;

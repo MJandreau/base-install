@@ -13,7 +13,7 @@
 
 .site-info {
 	@extend .container; // keeps copyright info lined up with body content
-	@include font-size(.9);
+	// @include font-size(1.4);
 }
 
 .copyright {
@@ -50,12 +50,12 @@
 	p {
 		line-height: 1.2;
 		margin-bottom: $column_margin;
-		@include font-size(1.2);
+		// @include font-size(1.2);
 
 		@include tablet {
 			margin-bottom: 0;
 			line-height: $font_line_height_forms;
-			@include font-size(1.5);
+			// @include font-size(1.5);
 		}
 	}
 

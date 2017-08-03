@@ -7,5 +7,5 @@ textarea {
 	font-family: $font_main;
 	font-weight: $font_weight_main;
 	line-height: $font_line_height_body;
-	@include font-size(1);
+	@include font-size(1.6);
 }

@@ -18,7 +18,7 @@ input[type="submit"] {
 	padding: 0 $column_margin;
 	font-weight: 300;
 	margin-bottom: 1rem;
-	@include font-size(.8);
+	@include font-size(1.4);
 	color: $button_color_text;
 	border-radius: $border_radius;
 	border: 1px solid $button_color_border;

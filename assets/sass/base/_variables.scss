@@ -61,9 +61,11 @@ $button_color_text: $color_text_main;
 $button_color_border: #c0c5ce;
 
 // Fonts
+// Currently the font files are located in assets/fonts
+// feel free to add/update as needed
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-$font_main: sans-serif;
-$font_headings: sans-serif;
+$font_main: 'robotoregular', sans-serif;
+$font_headings: 'robotobold', sans-serif;
 $font_code: 'Source Code Pro', Monaco, Consolas, monospace;
 $font_pre: 'Source Code Pro', Monaco, Consolas, monospace;
 $font_weight_main: 400;
@@ -77,8 +79,8 @@ $font_line_height_pre: 1.6;
 // Global font size base from which all type sizes are calculated
 // HTML set to 62.5% so REM measurements based on 10px - basically 1.5rem = 15px
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-$font_size_base: 16;
-$font_size_rem: 1.6rem;
+$font_size_base: 10;
+$font_size_rem: 1.0rem;
 
 // Grid and layout variables for site structure
 //––––––––––––––––––––––––––––––––––––––––––––––––––
