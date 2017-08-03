@@ -135,9 +135,9 @@ gulp.task('styles', function () {
   .pipe( sass( {
     errLogToConsole: true,
       // outputStyle: 'compact',
-      // outputStyle: 'compressed',
+      outputStyle: 'compressed',
       // outputStyle: 'nested',
-      outputStyle: 'expanded',
+      // outputStyle: 'expanded',
       precision: 10
     } ) )
   .on('error', console.error.bind(console))
@@ -169,9 +169,9 @@ gulp.task('login-styles', function () {
   .pipe( sass( {
     errLogToConsole: true,
       // outputStyle: 'compact',
-      // outputStyle: 'compressed',
+      outputStyle: 'compressed',
       // outputStyle: 'nested',
-      outputStyle: 'expanded',
+      // outputStyle: 'expanded',
       precision: 10
     } ) )
   .on('error', console.error.bind(console))
