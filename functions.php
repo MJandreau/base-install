@@ -215,6 +215,16 @@ function baseinstall_remove_more_link_scroll( $link ) {
 add_filter( 'the_content_more_link', 'baseinstall_remove_more_link_scroll' );
 
 /**
+ * MORE LINK
+ * Wrap more-link with div and change text
+ */
+function bellwether_wrap_readmore($more_link) {
+    return '<div class="post-readmore"><a class="more-link" href="' . get_permalink() . '">Read Full Post</a></div>';
+}
+add_filter('the_content_more_link', 'bellwether_wrap_readmore', 10, 1);
+
+
+/**
  * EXCERPT LENGTH
  * control length of excerpt on homepage blog section
  */
