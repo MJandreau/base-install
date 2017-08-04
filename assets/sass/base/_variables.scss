@@ -61,11 +61,13 @@ $button_color_text: $color_text_main;
 $button_color_border: #c0c5ce;
 
 // Fonts
-// Currently the font files are located in assets/fonts
-// feel free to add/update as needed
+// Currently the font files are located in assets/fonts, feel free to update as needed
+// Default is Roboto, a nice sans-serif font family
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 $font_main: 'robotoregular', sans-serif;
 $font_headings: 'robotobold', sans-serif;
+// $font_main: 'roboto_slabregular', serif; // If you prefer serif typefaces,
+// $font_headings: 'roboto_slabbold', serif; // Roboto Slab is included for a quick A/B test
 $font_code: 'Source Code Pro', Monaco, Consolas, monospace;
 $font_pre: 'Source Code Pro', Monaco, Consolas, monospace;
 $font_weight_main: 400;
