@@ -332,12 +332,7 @@ embed,iframe,object{max-width:100%}
 .gallery-columns-8 .gallery-item{max-width:12.5%}
 .gallery-columns-9 .gallery-item{max-width:11.11%}
 .gallery-caption{display:block}
-/*!
- * baguetteBox.js
- * @author  feimosi
- * @version %%INJECT_VERSION%%
- * @url https://github.com/feimosi/baguetteBox.js
- */#baguetteBox-overlay{display:none;opacity:0;position:fixed;overflow:hidden;top:0;left:0;width:100%;height:100%;z-index:1000000;background-color:#222;background-color:rgba(0,0,0,0.8);-webkit-transition:opacity .5s ease;transition:opacity .5s ease}
+#baguetteBox-overlay{display:none;opacity:0;position:fixed;overflow:hidden;top:0;left:0;width:100%;height:100%;z-index:1000000;background-color:#222;background-color:rgba(0,0,0,0.8);-webkit-transition:opacity .5s ease;transition:opacity .5s ease}
 #baguetteBox-overlay.visible{opacity:1}
 #baguetteBox-overlay .full-image{display:inline-block;position:relative;width:100%;height:100%;text-align:center}
 #baguetteBox-overlay .full-image figure{display:inline;margin:0;height:100%}
