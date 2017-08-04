@@ -85,6 +85,7 @@ input[type="submit"] {
 .more-link {
 	@extend .button;
 	// @extend .button-primary; // uncomment to look like .button-primary
+	margin-bottom: 2rem;
 
 	&:visited {
 		color: $button_color_text;
