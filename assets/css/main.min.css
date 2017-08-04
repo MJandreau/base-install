@@ -81,7 +81,7 @@ h5{font-size:1.8rem;line-height:1.5;letter-spacing:-.05rem}
 h6{font-size:1.5rem;line-height:1.6;letter-spacing:0}
 p{margin-top:0;margin-bottom:1.5em}
 dfn,cite,em,i{font-style:italic}
-blockquote{margin:0 1.5em}
+blockquote{padding:0 0 0 1.5em;margin:0;border-left:1px solid #eee}
 address{margin:0 0 1.5em}
 abbr,acronym{border-bottom:1px dotted #c0c5ce;cursor:help}
 mark,ins{background:#fff9c0;text-decoration:none}
