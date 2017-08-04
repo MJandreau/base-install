@@ -30,3 +30,5 @@
 		<span class="designer">Designed by <a href="https://www.mikejandreau.net/" target="_blank">Mike Jandreau</a></span>
 	</div>
 </footer>
+
+<a id="scroll-to-top" href="#page"></a>

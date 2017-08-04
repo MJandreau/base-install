@@ -3,13 +3,13 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .site-header { 
 	background-color: $color_background_header;
-	// position: relative;
-	// top:0;
-	// width: 100%;
-	// z-index: 1;
+	position: relative;
+	top:0;
+	width: 100%;
+	z-index: 1;
 
 	// border-bottom: 1px solid darken($color_background_header, 5%);
-	@include absoluteHeader; // uncomment to set absolute header
+	// @include absoluteHeader; // uncomment to set absolute header
 
 	@include dropShadow;
 

@@ -20,13 +20,14 @@
     // full-height header for homepage and single blog posts
     // .single &, 
     .home & {
-        height:100vh;
+        // height:100vh;
+        height: calc(100vh - 60px); // 60px header height
     }
 
     // adjust for admin bar when logged in
     // .home.single &,  
     .home.admin-bar & {
-        height: calc(100vh - 32px);
+        height: calc(100vh - 92px); // 32px admin bar + 60px header = 92px
     }
 }
 
@@ -34,12 +35,12 @@
     position:absolute;
     top:50%;
     width:100%;
-    // transform: translate(0,-50%); // vertically center hero text
+    transform: translate(0,-50%); // vertically center hero text
 
     // .single &, // single blog posts
-    .home & {
-        transform: translate(0,-50%); // vertically center hero text
-    }
+    // .home & {
+    //     transform: translate(0,-50%); // vertically center hero text
+    // }
 }
 
 .call-to-action {

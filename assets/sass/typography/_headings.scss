@@ -13,19 +13,19 @@ h1, h2, h3, h4, h5, h6 {
 		text-decoration: none;
 	}
 
-	.entry-header & {
-		margin-bottom: 0.5rem;
-	}
+	// .entry-header & {
+	// 	margin-bottom: 0.5rem;
+	// }
 
 	// .hero &,
-	.single & {
-		line-height: 1.2;
-		margin-bottom: 0;
+	// .single & {
+	// 	line-height: 1.2;
+	// 	margin-bottom: 0;
 
-		@include phablet {
-			line-height: $font_line_height_headings;
-		}
-	}
+	// 	@include phablet {
+	// 		line-height: $font_line_height_headings;
+	// 	}
+	// }
 }
 
 // Heading font sizes, calculated based on default font size
