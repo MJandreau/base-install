@@ -15,7 +15,7 @@ html {
 .login  {
 	background-color: $color_background_hero;
 	background: linear-gradient($color_hero_overlay, $color_hero_overlay), url('../img/hero.jpg'); 
-	@include font-size(1);
+	@include font-size(1.6);
 	@include bgImage;
 
 	// Container of the login form, max-width uses REMs with px fallback
