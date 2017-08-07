@@ -192,6 +192,16 @@ require get_template_directory() . '/inc/nav-walker.php';
 require get_template_directory() . '/inc/theme-options/theme-options.php';
 
 
+
+function tekst_wrapper($content) {
+  return preg_replace_callback('~<table.*?</table>~is', function($match) {
+    return '<div class="responsive-table">' . $match[0] . '</div>';
+  }, $content);
+}
+
+add_filter('the_content', 'tekst_wrapper');
+
+
 /**
  * RESPONSIVE VIDEO EMBED
  * Filter for adding wrappers around embedded objects
