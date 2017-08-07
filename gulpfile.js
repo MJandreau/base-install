@@ -48,6 +48,7 @@ var scriptSRC             = [
                               './assets/js/vendor/prism.js', // syntax highlighter for code blocks (optional, has associated SASS file for styles/themes)
                               './assets/js/vendor/autosize.js', // autosize text area in forms to fit content (optional)
                               './assets/js/vendor/baguetteBox.js', // pure js image lightbox & slideshow (optional)
+                              // './assets/js/vendor/isotope-pkgd.js', // category filtering and masonry layouts (optional)
                               './assets/js/custom/*.js' // menu-controls.js, scroll-to-top.js, etc.
                             ]; // Path to JS vendor and custom files in order.
 var scriptDestination     = './assets/js/'; // Path to save the compiled JS file.
