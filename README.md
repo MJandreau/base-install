@@ -3,7 +3,9 @@ Base Install
 
 [![WPGulp](https://img.shields.io/badge/Built%20For%20WordPress-%E2%93%A6-lightgrey.svg?style=flat-square)](https://github.com/mikejandreau/Base-Install-Four) [![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
 
-Base Install is a starter theme for WordPress development using Underscores as a starting point. It features a [theme wrapper](http://scribu.net/wordpress/theme-wrappers.html) inspired by Scribu, a responsive grid based on [Skeleton](http://getskeleton.com/) by Dave Gamache, and a workflow built on the fantastic [WPGulp](https://labs.ahmadawais.com/WPGulp/) by Ahmad Awais. 
+Base Install is a responsive starter theme for WordPress development built on Underscores as a starting point. It features a [theme wrapper](http://scribu.net/wordpress/theme-wrappers.html) inspired by Scribu, a responsive grid based on [Skeleton](http://getskeleton.com/) by Dave Gamache, and a workflow built on the fantastic [WPGulp](https://labs.ahmadawais.com/WPGulp/) by Ahmad Awais. 
+
+As an added bonus it also features a customizable theme options page, a mobile menu with sub-menu toggles, and no external library/framework dependencies such as jQuery, Bootstrap, or Foundation. The minified CSS/JS files weigh in at 77kb combined.
 
 This theme is currently under active development and will see some changes, but the demo as it is now can be viewed here: [Base Install Demo](http://losaidos.com/dev/baseinstall).
 
